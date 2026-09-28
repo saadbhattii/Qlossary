@@ -411,7 +411,7 @@ function renderRound(final) {
     const used = r.guessed.has(L);
     const wrong = r.wrong.includes(L);
     b.disabled = used || r.over;
-    b.className = 'key' + (wrong ? ' x' : '');
+    b.className = 'key' + (wrong ? ' x' : used ? ' ok' : '');
     b.setAttribute('aria-label', L + (used ? (wrong ? ', not in the term' : ', found') : ''));
   }
 

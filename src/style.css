@@ -131,7 +131,10 @@ fieldset label { display: inline-block; margin-right: 1rem; }
   font-family: "Courier New", Courier, monospace; font-size: 1.3rem; font-weight: bold;
 }
 .key:hover:not(:disabled) { text-decoration: none; background: #F2F2F2; }
-.key.x { text-decoration: line-through; }
+/* Guessed letters: light red when not in the term (also struck through, so it
+   does not rely on colour alone), light green when found. */
+.key.x { text-decoration: line-through; background: #FBE9E9; border: 1px solid #C98E8E; }
+.key.ok { background: #E8F3E6; border: 1px solid #7FA87A; }
 .info { font-size: 1.05rem; }
 .info span { margin-right: 1.6rem; }
 .hints { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.6rem; }
