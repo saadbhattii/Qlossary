@@ -33,7 +33,7 @@ const GALLOWS = [
 
 const DEFAULTS = {
   domains: DATA.domains.map(d => d.id), diff: 'any', timer: 'auto',
-  lives: 6, balanced: true, multi: true, maxLen: 44, name: '',
+  lives: 8, balanced: true, multi: true, maxLen: 44, name: '',
 };
 const settings = Object.assign({}, DEFAULTS, load('settings', {}));
 if (!Array.isArray(settings.domains)) settings.domains = DEFAULTS.domains.slice();
