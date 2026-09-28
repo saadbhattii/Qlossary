@@ -91,6 +91,7 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 /* ---------- home ---------- */
 
 .home { max-width: 46rem; margin: 0.6rem auto 0; padding: 0.9rem 2rem; }
+.home h1 { font-size: 2rem; margin: 0 0 0.5rem; }
 /* The top bar already shows the tagline on wider screens; phones show it here. */
 .tagline { display: none; font-size: 1.15rem; margin: 0 0 0.8rem; }
 .steps { font-size: 1.1rem; padding-left: 1.6rem; margin: 0 0 0.7rem; }
@@ -218,6 +219,7 @@ table.ro td.empty { font-style: italic; }
   .home, #menu, #summary { margin-top: 0.4rem; padding: 1rem; }
   .home-board { padding: 0.6rem 1rem; }
   .tagline { display: block; }
+  .home h1 { display: none; }   /* the top bar already shows the logo and name on phones */
   .home { padding: 0.8rem 1rem; }
   .steps { font-size: 1rem; padding-left: 1.3rem; }
   .steps li { margin: 0.2rem 0; }
