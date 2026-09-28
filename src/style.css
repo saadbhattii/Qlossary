@@ -90,7 +90,7 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 
 /* ---------- home ---------- */
 
-.home { max-width: 46rem; margin: 0.6rem auto 0; padding: 0.9rem 2rem; }
+.home { max-width: 72rem; margin: 0.6rem auto 0; padding: 0.9rem 2rem; }
 .home h1 { font-size: 2rem; margin: 0 0 0.5rem; }
 /* The top bar already shows the tagline on wider screens; phones show it here. */
 .tagline { display: none; font-size: 1.15rem; margin: 0 0 0.8rem; }
@@ -99,13 +99,24 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 .home #home-note { margin-bottom: 0; }
 .steps li { margin: 0.35rem 0; }
 .actions { margin-top: 1rem; }
-.home-board { max-width: 46rem; margin: 0.6rem auto 0; padding: 0.6rem 2rem; }
+/* Home on wider screens: How to play and "Just played" on the left, the
+   leaderboard down the whole right side. */
+.home-lower {
+  max-width: 76rem; margin: 0.6rem auto 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 0.6rem; align-items: start;
+}
+.home-left { display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
+.home-lower .bar { margin: 0; max-width: none; }
+.home-board, .home-activity { padding: 0.6rem 1.4rem; }
+.home-activity h2 { margin: 0.1rem 0 0.3rem; }
+.home-activity p { margin: 0.3rem 0; }
+.home-activity table.ro { width: 100%; }
 .home-board p { margin: 0.3rem 0; }
 .home-board table.ro { width: 100%; }
 .board-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 1rem; }
 .board-head h2, .board-head p { margin: 0.1rem 0; }
-.notice { max-width: 46rem; margin: 1.5rem auto 0; background: #FBF5DC; border-color: #BFAE63; }
-.notice + .home { margin-top: 0.6rem; }
+.notice { max-width: 76rem; margin: 1.5rem auto 0; background: #FBF5DC; border-color: #BFAE63; }
+.notice + .home-lower { margin-top: 0.6rem; }
 
 /* ---------- choose a game ---------- */
 
@@ -176,6 +187,8 @@ table.ro { border-collapse: collapse; margin: 0.4rem 0; }
 table.ro td, table.ro th { padding: 0.14rem 1.2rem 0.14rem 0; text-align: left; vertical-align: top; }
 table.ro th { border-bottom: 1px solid #000; }
 table.ro .n { text-align: right; }
+/* Your own rows on the worldwide lists: bold on a light green band. */
+table.ro tr.you td { font-weight: bold; background: #E8F3E6; }
 table.ro td.empty { font-style: italic; }
 .pager { min-height: 2.2rem; }
 
@@ -217,7 +230,13 @@ table.ro td.empty { font-style: italic; }
   .tabs { width: 100%; }
   .tab { flex: 1; text-align: center; padding: 0.45rem 0.1rem; font-size: 1rem; }
   .home, #menu, #summary { margin-top: 0.4rem; padding: 1rem; }
-  .home-board { padding: 0.6rem 1rem; }
+  .home-board, .home-activity { padding: 0.6rem 1rem; }
+  .home-lower { grid-template-columns: 1fr; }
+  /* "Just played" would push Home into scrolling; on phones it is on Scores > All-time total. */
+  .home-activity { display: none; }
+  .board-head button { font-size: 0.9rem; padding: 0.25rem 0.5rem; margin-right: 0.15rem; }
+  .board-head h2 { font-size: 1.2rem; }
+  .home-board p { margin: 0.2rem 0; }
   .tagline { display: block; }
   .home h1 { display: none; }   /* the top bar already shows the logo and name on phones */
   .home { padding: 0.8rem 1rem; }
@@ -238,6 +257,6 @@ table.ro td.empty { font-style: italic; }
   .cols2, .cols3 { grid-template-columns: 1fr; }
   #dom-list { columns: 1; }
   /* On phones the corner is needed for the game, so the link sits at the end of the page. */
-  .repo { position: static; display: none; margin: 0.6rem 0.5rem; text-align: center; }
+  .repo { position: static; display: none; margin: 0.3rem 0.5rem; text-align: center; }
   body[data-view="home"] .repo, body[data-view="help"] .repo { display: block; }
 }

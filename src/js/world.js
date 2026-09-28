@@ -30,22 +30,37 @@ async function readJson(res) {
   try { return await res.json(); } catch (e) { return {}; }
 }
 
-// Returns { entries, day }. Throws an Error with a message for the player.
-export async function fetchBoard(mode, fresh) {
-  const hit = boardCache[mode];
-  if (!fresh && hit && Date.now() - hit.at < BOARD_CACHE_MS) return hit.data;
+async function getJson(url, check) {
   let res;
   try {
-    res = await fetch('/api/leaderboard?mode=' + encodeURIComponent(mode) + (fresh ? '&t=' + Date.now() : ''),
-      { headers: { Accept: 'application/json' } });
+    res = await fetch(url, { headers: { Accept: 'application/json' } });
   } catch (e) {
     throw new Error('The worldwide leaderboard can\'t be reached right now.');
   }
   const body = await readJson(res);
-  if (!res.ok || !Array.isArray(body.entries)) {
-    throw new Error(body.error || 'The worldwide leaderboard can\'t be reached right now.');
-  }
-  boardCache[mode] = { at: Date.now(), data: body };
+  if (!res.ok || !check(body)) throw new Error(body.error || 'The worldwide leaderboard can\'t be reached right now.');
+  return body;
+}
+
+// board: total, week, run, endless or daily. Returns { entries, day, since }.
+// This browser's ID is sent so its own rows come back marked; nothing else is sent.
+// Throws an Error with a message for the player.
+export async function fetchBoard(board, fresh) {
+  const hit = boardCache[board];
+  if (!fresh && hit && Date.now() - hit.at < BOARD_CACHE_MS) return hit.data;
+  const body = await getJson('/api/leaderboard?board=' + encodeURIComponent(board) + '&me=' + encodeURIComponent(browserId()) +
+    (fresh ? '&t=' + Date.now() : ''), b => Array.isArray(b.entries));
+  boardCache[board] = { at: Date.now(), data: body };
+  return body;
+}
+
+// Recent games, yesterday's daily champion, players today.
+export async function fetchActivity(fresh) {
+  const hit = boardCache._activity;
+  if (!fresh && hit && Date.now() - hit.at < BOARD_CACHE_MS) return hit.data;
+  const body = await getJson('/api/activity?me=' + encodeURIComponent(browserId()) + (fresh ? '&t=' + Date.now() : ''),
+    b => Array.isArray(b.recent));
+  boardCache._activity = { at: Date.now(), data: body };
   return body;
 }
 
@@ -63,6 +78,6 @@ export async function submitScore(payload) {
   }
   const body = await readJson(res);
   if (!res.ok) throw new Error(body.error || 'The score could not be added. Please try again later.');
-  delete boardCache[payload.mode];
+  for (const k of Object.keys(boardCache)) delete boardCache[k];   // every list may have changed
   return body;
 }

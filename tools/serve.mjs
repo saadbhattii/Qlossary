@@ -10,12 +10,13 @@ import { ROOT } from './tsv.mjs';
 import { openLocalD1 } from './d1-local.mjs';
 import * as leaderboard from '../functions/api/leaderboard.js';
 import * as scores from '../functions/api/scores.js';
+import * as activityFn from '../functions/api/activity.js';
 
 const port = +process.argv[2] || 8788;
 const dist = join(ROOT, 'dist');
 const DB = await openLocalD1(join(ROOT, '.local', 'leaderboard.sqlite'), join(ROOT, 'migrations'));
 const env = DB ? { DB } : {};
-const routes = { '/api/leaderboard': leaderboard, '/api/scores': scores };
+const routes = { '/api/leaderboard': leaderboard, '/api/scores': scores, '/api/activity': activityFn };
 
 // Read on every request, so a rebuild never leaves stale CSP hashes.
 function readHeaders() {

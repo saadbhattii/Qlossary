@@ -1,4 +1,5 @@
-// POST /api/scores  { mode, name, pts, won, day, cid }  ->  { rank }
+// POST /api/scores  { mode, name, pts, won, day, cid }  ->  { rank, personalBest, total }
+// See addScore in lib/leaderboard.js for what each field means.
 import { checkScore, addScore, hashIp, today, json } from '../../lib/leaderboard.js';
 
 export async function onRequestPost({ request, env }) {
@@ -14,7 +15,7 @@ export async function onRequestPost({ request, env }) {
   try {
     const res = await addScore(env.DB, checked.value, ip);
     if (res.error) return json({ error: res.error }, res.status);
-    return json({ rank: res.rank });
+    return json({ rank: res.rank, personalBest: res.personalBest, total: res.total });
   } catch (e) {
     return json({ error: 'The score could not be saved. Please try again later.' }, 500);
   }

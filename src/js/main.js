@@ -7,7 +7,7 @@ import { scoreWord, autoSeconds } from './score.js';
 import { candidates, pickNext, dailyTerms, utcDate, DAILY_WORDS } from './pick.js';
 import { makeTimer, fmtTime } from './timer.js';
 import { load, save, emptyStats, emptyScores, addScore, addMissed, exportAll, importAll, clearAll, TOP } from './store.js';
-import { browserId, worldNameProblem, fetchBoard, submitScore } from './world.js';
+import { browserId, worldNameProblem, fetchBoard, fetchActivity, submitScore } from './world.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
@@ -62,12 +62,17 @@ let roundStart = 0;
 let lastMode = 'run';
 let lastGame = null; // the finished game shown on the summary, for "Add my score"
 let view = 'home';
-let boardTab = 'run';
+let boardTab = 'total';
 let scoresSub = 'boards';
-let homeBoard = 'run';      // which list the Home page shows
+let homeBoard = 'total';    // which list the Home page shows
 let homeData = null;
 const HOME_ROWS = 10;       // at most; fewer if the screen is short
 const HOME_MIN_ROWS = 3;
+const RECENT_ROWS = 5;      // "Just played" rows, fewer if the screen is short
+let actData = null;
+// Names of the worldwide lists, as the buttons show them.
+const BOARD_LABELS = { total: 'All-time total', week: 'This week', run: '10-word game', endless: 'Endless', daily: 'Daily challenge' };
+const isTotal = b => b === 'total' || b === 'week';
 const pages = { world: 0, board: 0, dom: 0, missed: 0 };
 let worldData = null;
 
@@ -121,6 +126,7 @@ function renderHome() {
   $('home-daily').textContent = daily && daily.date === today()
     ? 'Today\'s daily challenge (done)' : 'Today\'s daily challenge';
   loadHomeBoard();
+  loadActivity('act');
 }
 
 // The worldwide top 10 on the Home page. Fetched after the page is shown,
@@ -128,17 +134,61 @@ function renderHome() {
 async function loadHomeBoard() {
   const mode = homeBoard;
   for (const b of document.querySelectorAll('[data-hboard]')) b.setAttribute('aria-pressed', b.dataset.hboard === mode ? 'true' : 'false');
+  homeData = null;   // never show the previous list under the new button
   $('hw-status').textContent = 'Loading...';
   $('hw-board').textContent = '';
   try {
     const data = await fetchBoard(mode, lastGame && lastGame.sent);
     if (mode !== homeBoard || view !== 'home') return;
     homeData = data;
-    fitHomeBoard();
+    fitHome();
   } catch (e) {
     if (mode !== homeBoard) return;
     $('hw-status').textContent = e.message;
   }
+}
+
+// "Just played": the latest games added worldwide, yesterday's daily
+// champion, and how many players added a score today.
+async function loadActivity(prefix) {
+  if (!actData) $(prefix + '-status').textContent = 'Loading...';
+  try {
+    actData = await fetchActivity(lastGame && lastGame.sent);
+    if (prefix === 'act') fitHome(); else renderActivity('sa', actData, RECENT_ROWS);
+  } catch (e) {
+    $(prefix + '-status').textContent = e.message;
+    $(prefix + '-board').textContent = '';
+    $(prefix + '-champ').textContent = '';
+    $(prefix + '-count').textContent = '';
+  }
+}
+
+function ago(ms) {
+  const m = Math.floor(Math.max(0, ms) / 60000);
+  if (m < 1) return 'just now';
+  if (m < 60) return plural(m, 'minute', 'minutes') + ' ago';
+  const h = Math.floor(m / 60);
+  if (h < 24) return plural(h, 'hour', 'hours') + ' ago';
+  return plural(Math.floor(h / 24), 'day', 'days') + ' ago';
+}
+
+const SHORT_MODE = { run: '10-word', endless: 'Endless', daily: 'Daily' };
+
+function renderActivity(prefix, data, rows) {
+  const table = $(prefix + '-board');
+  table.textContent = '';
+  $(prefix + '-status').textContent = data.recent.length ? '' : 'No games added yet. Finish a game and press "Add my score".';
+  if (data.recent.length) {
+    row(table, [th('Name'), th('Game'), th('Score', 'n'), th('When')]);
+    for (const e of data.recent.slice(0, rows)) {
+      const r = row(table, [td(e.name + (e.you ? ' (you)' : '')), td(SHORT_MODE[e.mode] || e.mode), td(num(e.score), 'n'), td(ago(data.now - e.created))]);
+      if (e.you) r.className = 'you';
+    }
+  }
+  const c = data.champion;
+  $(prefix + '-champ').textContent = c ? 'Yesterday\'s daily challenge was won by ' + c.name + ' with ' + num(c.score) + ' points.' : '';
+  const n = data.playersToday;
+  $(prefix + '-count').textContent = n ? plural(n, 'player', 'players') + ' added a score today.' : 'Nobody has added a score today yet.';
 }
 
 // ---------- choose a game ----------
@@ -374,8 +424,20 @@ async function addToWorld() {
   try {
     const res = await submitScore({ mode: lastGame.mode, name, pts: lastGame.pts, won: lastGame.won, day: lastGame.day, cid: browserId() });
     lastGame.sent = true;
-    msg.textContent = 'Added. You are number ' + res.rank + ' on the worldwide ' + MODES[lastGame.mode].label.toLowerCase() + ' list.';
-    boardTab = lastGame.mode;
+    const list = MODES[lastGame.mode].label.toLowerCase();
+    const t = res.total;
+    if (t) {
+      // Where the player now stands on the all-time total, and who is just above.
+      let m = (res.personalBest ? 'New personal best! ' : '') +
+        'Added. Your all-time total is ' + num(t.points) + ' points from ' + plural(t.games, 'game', 'games') + ', ';
+      m += t.rank === 1 || !t.next ? 'number 1 of all players.'
+        : 'number ' + t.rank + ', ' + plural(t.next.gap, 'point', 'points') + ' behind ' + t.next.name + '.';
+      m += ' This game is number ' + res.rank + ' on the ' + list + ' list.';
+      msg.textContent = m;
+    } else {
+      msg.textContent = 'Added. You are number ' + res.rank + ' on the worldwide ' + list + ' list.';
+    }
+    boardTab = 'total';
   } catch (e) {
     msg.textContent = e.message;
     $('w-add').disabled = false;
@@ -458,7 +520,11 @@ function paged(table, pager, key, headers, items, empty) {
   pages[key] = Math.max(0, Math.min(pages[key], total - 1));
   row(table, headers.map(h => th(h[0], h[1])));
   const start = pages[key] * PER_PAGE;
-  for (const make of items.slice(start, start + PER_PAGE)) row(table, make());
+  for (const make of items.slice(start, start + PER_PAGE)) {
+    const cells = make();
+    const r = row(table, cells);
+    if (cells.you) r.className = 'you';
+  }
   if (total > 1) {
     const prev = el('button', '', 'Previous'), next = el('button', '', 'Next');
     prev.disabled = pages[key] === 0; next.disabled = pages[key] === total - 1;
@@ -477,8 +543,11 @@ function renderScores(keepWorld) {
   show($('sc-progress'), scoresSub === 'progress');
   if (scoresSub === 'boards') {
     for (const b of document.querySelectorAll('[data-board]')) b.setAttribute('aria-pressed', b.dataset.board === boardTab ? 'true' : 'false');
-    const list = scores[boardTab] || [];
-    paged($('board'), $('board-pager'), 'board',
+    show($('sc-local'), !isTotal(boardTab));
+    show($('sc-activity'), isTotal(boardTab));
+    if (isTotal(boardTab)) loadActivity('sa');
+    const list = isTotal(boardTab) ? [] : scores[boardTab] || [];
+    if (!isTotal(boardTab)) paged($('board'), $('board-pager'), 'board',
       [['#', 'n'], ['Name'], ['Score', 'n'], ['Words', 'n'], ['Date']],
       list.map((e, i) => () => [td(String(i + 1), 'n'), td(e.n), td(num(e.s), 'n'), td(e.w + ' of ' + e.of, 'n'), td(e.d)]),
       'No scores yet. Finish a ' + MODES[boardTab].label.toLowerCase() + ' with points to see it here.');
@@ -517,27 +586,40 @@ async function loadWorld() {
     renderWorld();
   } catch (e) {
     if (mode !== boardTab) return;
-    $('w-status').textContent = e.message + ' Your own scores are shown on the right.';
+    $('w-status').textContent = e.message + (isTotal(mode) ? '' : ' Your own scores are shown on the right.');
   }
 }
 
-// Show as many of the top 10 as fit without scrolling (at least 3).
-function fitHomeBoard() {
-  if (!homeData || view !== 'home') return;
-  const table = $('hw-board');
-  let n = Math.min(HOME_ROWS, homeData.entries.length);
+// Show as many rows of both Home lists as fit without scrolling, taking rows
+// from whichever list reaches lower down the page (at least 3 in each).
+function fitHome() {
+  if (view !== 'home') return;
+  let n = homeData ? Math.min(HOME_ROWS, homeData.entries.length) : 0;
+  let m = actData ? Math.min(RECENT_ROWS, actData.recent.length) : 0;
   const draw = () => {
-    worldTable(table, homeData.entries.slice(0, n));
-    $('hw-status').textContent = worldCaption(homeBoard, homeData, n);
+    if (homeData) {
+      worldTable($('hw-board'), homeData.entries.slice(0, n), homeBoard);
+      $('hw-status').textContent = worldCaption(homeBoard, homeData, n);
+    }
+    if (actData) renderActivity('act', actData, m);
   };
   draw();
-  while (n > HOME_MIN_ROWS && document.documentElement.scrollHeight > window.innerHeight) { n--; draw(); }
+  const bottom = id => $(id).getBoundingClientRect().bottom;
+  while (document.documentElement.scrollHeight > window.innerHeight) {
+    const boardLower = bottom('hw-board') >= bottom('act-board');
+    if (boardLower && n > HOME_MIN_ROWS) n--;
+    else if (m > HOME_MIN_ROWS) m--;
+    else if (n > HOME_MIN_ROWS) n--;
+    else break;
+    draw();
+  }
 }
-
 // One line above a worldwide list, the same on Home and Scores.
 function worldCaption(mode, data, shown) {
   const n = Math.min(shown, data.entries.length);
   if (!n) return '';
+  if (mode === 'total') return 'Top ' + n + ' by all the points they have ever added.';
+  if (mode === 'week') return 'Top ' + n + ' by points added since Monday, ' + data.since + ' (UTC).';
   return mode === 'daily'
     ? 'Top ' + n + ' for ' + data.day + '. The list starts fresh every day at midnight UTC.'
     : 'Top ' + n + ' of all time.';
@@ -545,22 +627,36 @@ function worldCaption(mode, data, shown) {
 
 const WORLD_EMPTY = 'No worldwide scores yet. Finish a game and press "Add my score" to be the first.';
 
+// Column headings and cells for a worldwide row. Totals show points and games;
+// single-game lists show the score, words solved and date. Your own rows say "(you)".
+function worldHeaders(board) {
+  return isTotal(board)
+    ? [['#', 'n'], ['Name'], ['Points', 'n'], ['Games', 'n']]
+    : [['#', 'n'], ['Name'], ['Score', 'n'], ['Words', 'n'], ['Date']];
+}
+function worldCells(e, board) {
+  const name = td(e.name + (e.you ? ' (you)' : ''));
+  const cells = isTotal(board)
+    ? [td(String(e.rank), 'n'), name, td(num(e.score), 'n'), td(num(e.games), 'n')]
+    : [td(String(e.rank), 'n'), name, td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)];
+  cells.you = e.you;
+  return cells;
+}
+
 // Worldwide rows without paging (Home). Scores uses the paged version below.
-function worldTable(table, entries) {
+function worldTable(table, entries, board) {
   table.textContent = '';
   if (!entries.length) { row(table, [td(WORLD_EMPTY, 'empty')]); return; }
-  row(table, [th('#', 'n'), th('Name'), th('Score', 'n'), th('Words', 'n'), th('Date')]);
-  for (const e of entries) row(table, [td(String(e.rank), 'n'), td(e.name), td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)]);
+  row(table, worldHeaders(board).map(h => th(h[0], h[1])));
+  for (const e of entries) { const cells = worldCells(e, board); const r = row(table, cells); if (cells.you) r.className = 'you'; }
 }
 
 function renderWorld() {
   if (!worldData) return;
   const entries = worldData.entries;
   $('w-status').textContent = worldCaption(boardTab, worldData, entries.length);
-  paged($('w-board'), $('w-pager'), 'world',
-    [['#', 'n'], ['Name'], ['Score', 'n'], ['Words', 'n'], ['Date']],
-    entries.map(e => () => [td(String(e.rank), 'n'), td(e.name), td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)]),
-    WORLD_EMPTY);
+  paged($('w-board'), $('w-pager'), 'world', worldHeaders(boardTab),
+    entries.map(e => () => worldCells(e, boardTab)), WORLD_EMPTY);
 }
 
 // ---------- settings screen ----------
@@ -729,7 +825,7 @@ function init() {
   let resizeId = 0;
   window.addEventListener('resize', () => {
     clearTimeout(resizeId);
-    resizeId = setTimeout(() => { if (view === 'home') fitHomeBoard(); }, 120);
+    resizeId = setTimeout(() => { if (view === 'home') fitHome(); }, 120);
   });
   bindSettings();
   showView(location.hash.slice(1) || 'home');

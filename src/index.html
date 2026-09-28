@@ -32,33 +32,46 @@
   <div class="bar notice" id="home-resume" hidden>
     A game is in progress. <button class="go" id="home-return">Return to the game</button>
   </div>
-  <div class="bar home">
-    <h1><svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">/*ICON*/</svg> Qlossary</h1>
-    <p class="tagline">Hangman for quantum computing jargon.</p>
-    <h2>How to play</h2>
-    <ol class="steps">
-      <li>A hidden quantum computing term is shown as blanks.</li>
-      <li>Guess one letter at a time. Each wrong guess adds a line to the drawing.</li>
-      <li>Find the whole term before the drawing is finished or the time runs out.</li>
-    </ol>
-    <p class="actions">
-      <button class="go big" id="home-start">Start playing</button>
-      <button class="big" id="home-daily">Today's daily challenge</button>
-    </p>
-    <p id="home-note"></p>
-  </div>
-  <div class="bar home-board">
-    <div class="board-head">
-      <h2>Worldwide Leaderboard</h2>
-      <p>
-        <button data-hboard="run">10-word game</button>
-        <button data-hboard="endless">Endless</button>
-        <button data-hboard="daily">Daily, today</button>
-      </p>
+  <div class="home-lower">
+    <div class="home-left">
+      <div class="bar home">
+        <h1><svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">/*ICON*/</svg> Qlossary</h1>
+        <p class="tagline">Hangman for quantum computing jargon.</p>
+        <h2>How to play</h2>
+        <ol class="steps">
+          <li>A hidden quantum computing term is shown as blanks.</li>
+          <li>Guess one letter at a time. Each wrong guess adds a line to the drawing.</li>
+          <li>Find the whole term before the drawing is finished or the time runs out.</li>
+        </ol>
+        <p class="actions">
+          <button class="go big" id="home-start">Start playing</button>
+          <button class="big" id="home-daily">Today's daily challenge</button>
+        </p>
+        <p id="home-note"></p>
+      </div>
+      <div class="bar home-activity">
+        <h2>Just played</h2>
+        <p id="act-status"></p>
+        <table class="ro" id="act-board"></table>
+        <p id="act-champ"></p>
+        <p id="act-count" class="small"></p>
+      </div>
     </div>
-    <p id="hw-status"></p>
-    <table class="ro" id="hw-board"></table>
-    <p class="small"><a href="#scores" id="hw-more">See the full top 20 and your own scores</a></p>
+    <div class="bar home-board">
+      <div class="board-head">
+        <h2>Worldwide Leaderboard</h2>
+        <p>
+          <button data-hboard="total">All-time total</button>
+          <button data-hboard="week">This week</button>
+          <button data-hboard="run">10-word game</button>
+          <button data-hboard="endless">Endless</button>
+          <button data-hboard="daily">Daily, today</button>
+        </p>
+      </div>
+      <p id="hw-status"></p>
+      <table class="ro" id="hw-board"></table>
+      <p class="small"><a href="#scores" id="hw-more">See the full top 20 and your own scores</a></p>
+    </div>
   </div>
 </section>
 
@@ -147,7 +160,9 @@
 
   <div id="sc-boards">
     <div class="bar">
-      <span class="b">Game:</span>
+      <span class="b">List:</span>
+      <button data-board="total">All-time total</button>
+      <button data-board="week">This week</button>
       <button data-board="run">10-word game</button>
       <button data-board="endless">Endless</button>
       <button data-board="daily">Daily, today</button>
@@ -159,10 +174,17 @@
         <table class="ro" id="w-board"></table>
         <p class="pager" id="w-pager"></p>
       </div>
-      <div class="bar">
+      <div class="bar" id="sc-local">
         <h3>In this browser</h3>
         <table class="ro" id="board"></table>
         <p class="pager" id="board-pager"></p>
+      </div>
+      <div class="bar" id="sc-activity" hidden>
+        <h3>Just played</h3>
+        <p id="sa-status"></p>
+        <table class="ro" id="sa-board"></table>
+        <p id="sa-champ"></p>
+        <p id="sa-count" class="small"></p>
       </div>
     </div>
   </div>
@@ -240,14 +262,16 @@
       <p>Only the letters A to Z are guessed. Spaces, digits and punctuation are shown from the start. Accented letters count as their plain letter, so O finds the ö in Schrödinger.</p>
       <h3>Which game should I pick?</h3>
       <p><b>10-word game:</b> ten terms, one total score. <b>Endless:</b> play until you miss three terms. <b>Daily challenge:</b> five terms, the same for everyone, new every day at midnight UTC, one try per day. <b>Practice:</b> no score, and the timer can be turned off.</p>
+      <h3>What do hints cost?</h3>
+      <p>Showing the topic costs 25 points. Showing the subtopic costs 50, and is available after the topic. Revealing a letter costs 30 each time, and never reveals the last missing letter.</p>
       <h3>Which keys can I use?</h3>
       <p>Letters guess. 1, 2 and 3 take the three hints. Enter goes to the next word.</p>
     </div>
     <div class="bar help">
       <h3>How are points counted?</h3>
       <p>For a solved term: 10 points for each different letter, multiplied by the difficulty (easy 1, medium 1.5, hard 2, expert 3). Add 2 points for each second left. Take away 10 for each wrong guess and the cost of any hints. A missed term scores nothing.</p>
-      <h3>What do hints cost?</h3>
-      <p>Showing the topic costs 25 points. Showing the subtopic costs 50, and is available after the topic. Revealing a letter costs 30 each time, and never reveals the last missing letter.</p>
+      <h3>How do the worldwide totals work?</h3>
+      <p>The all-time total adds up every game you add to the worldwide leaderboard, under the same name in the same browser, so the more you play, the higher you climb. "This week" counts games since Monday (UTC).</p>
       <h3>Is the worldwide leaderboard fair?</h3>
       <p>Mostly. Scores are worked out in each player's browser, so someone determined could send a fake one. Impossible scores are refused, and obvious fakes are removed.</p>
       <h3>What is stored about me?</h3>
