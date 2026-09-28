@@ -92,6 +92,7 @@ const VIEWS = ['home', 'play', 'scores', 'settings', 'help'];
 function showView(v) {
   if (!VIEWS.includes(v)) v = 'home';
   view = v;
+  document.body.dataset.view = v;   // lets the stylesheet place the repository link per screen
   for (const id of VIEWS) show($('v-' + id), id === v);
   for (const a of document.querySelectorAll('.tab')) {
     if (a.dataset.view === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
