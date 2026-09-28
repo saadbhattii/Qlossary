@@ -13,8 +13,8 @@
 [hidden] { display: none !important; }
 
 html {
-  font-size: 75%;
-  font-size: clamp(75%, min(calc(28.75% + 0.65vw), 2vh), 137.5%);
+  font-size: 86.25%;
+  font-size: clamp(86.25%, min(calc(33.06% + 0.7475vw), 2.3vh), 158%);
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -148,6 +148,15 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 /* ---------- game over ---------- */
 
 #summary { max-width: 52rem; margin: 1rem auto 0; padding: 1.2rem 1.6rem; }
+/* On wider screens the word table sits beside the text, so the page does not scroll. */
+@media (min-width: 701px) {
+  #summary:not([hidden]) {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 2.4rem;
+    max-width: 68rem; align-items: start;
+  }
+  #summary > * { grid-column: 1; }
+  #summary > #s-words { grid-column: 2; grid-row: 1 / span 8; margin-top: 0; }
+}
 #s-head { font-size: 1.2rem; }
 .world { border: 1px solid #7FA87A; padding: 0.5rem 0.8rem; margin: 0.8rem 0; }
 .world p { margin: 0.3rem 0; }
@@ -156,7 +165,7 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 /* ---------- tables ---------- */
 
 table.ro { border-collapse: collapse; margin: 0.4rem 0; }
-table.ro td, table.ro th { padding: 0.18rem 1.2rem 0.18rem 0; text-align: left; vertical-align: top; }
+table.ro td, table.ro th { padding: 0.14rem 1.2rem 0.14rem 0; text-align: left; vertical-align: top; }
 table.ro th { border-bottom: 1px solid #000; }
 table.ro .n { text-align: right; }
 table.ro td.empty { font-style: italic; }
@@ -172,6 +181,15 @@ table.ro td.empty { font-style: italic; }
 .help p { line-height: 1.5; }
 .help h3 { margin-top: 0.9rem; }
 .help h3:first-child { margin-top: 0; }
+
+/* ---------- link to the repository, bottom-right corner ---------- */
+
+.repo {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 5;
+  padding: 0.45rem 0.9rem; font-size: 0.95rem;
+  color: #000; background: #fff; border: 1px solid #000; text-decoration: none;
+}
+.repo:hover { text-decoration: underline; }
 
 /* ---------- export / import ---------- */
 
@@ -205,4 +223,7 @@ table.ro td.empty { font-style: italic; }
   .key { width: auto; height: 2.8rem; }
   .cols2, .cols3 { grid-template-columns: 1fr; }
   #dom-list { columns: 1; }
+  /* On phones the corner is needed for the game, so the link sits at the end of the page. */
+  .repo { position: static; display: none; margin: 0.6rem 0.5rem; text-align: center; }
+  body[data-view="home"] .repo, body[data-view="help"] .repo { display: block; }
 }
