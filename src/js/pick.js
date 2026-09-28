@@ -11,8 +11,13 @@ export function candidates(data, s) {
     t.t.length <= s.maxLen);
 }
 
-// Choose one term. seen is a Set of keys already played. If balanced, pick a
-// domain first so that large domains (hardware) do not dominate.
+// Choose one term. seen is a Set of keys already played.
+// With balanced on (the default), a topic is chosen first, with a chance that
+// grows with the square root of how many unseen terms it has left. Big topics
+// come up more often than small ones, but not in proportion to their size, so
+// Hardware (443 terms) does not take over and the smallest topics (about 25
+// terms) do not flood the game. With balanced off, every unseen term is
+// equally likely.
 // Returns { term, reset } where reset means the pool was exhausted and refilled.
 export function pickNext(cands, seen, rng, balanced) {
   let pool = cands.filter(t => !seen.has(t.key));
@@ -29,8 +34,12 @@ export function pickNext(cands, seen, rng, balanced) {
     if (!byDom.has(t.d)) byDom.set(t.d, []);
     byDom.get(t.d).push(t);
   }
-  const doms = [...byDom.keys()];
-  const list = byDom.get(doms[randInt(rng, doms.length)]);
+  const lists = [...byDom.values()];
+  const weights = lists.map(l => Math.sqrt(l.length));
+  let r = rng() * weights.reduce((a, b) => a + b, 0);
+  let i = 0;
+  while (i < lists.length - 1 && r >= weights[i]) { r -= weights[i]; i++; }
+  const list = lists[i];
   return { term: list[randInt(rng, list.length)], reset };
 }
 

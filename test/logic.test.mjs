@@ -96,11 +96,29 @@ test('pool never repeats until exhausted, then refills', () => {
   assert.ok(reset);
 });
 
-test('balanced draw picks each domain about equally', () => {
+test('balanced draw favours bigger topics, but only by the square root of their size', () => {
+  // Sample list: topic A has 3 terms, topic B has 1. B's chance: 1 / (1 + sqrt 3) = 36.6%.
   const rng = seeded(3);
   let b = 0;
-  for (let i = 0; i < 2000; i++) if (pickNext(DATA.terms, new Set(), rng, true).term.d === 1) b++;
-  assert.ok(b > 850 && b < 1150, 'domain B picked ' + b + ' of 2000');
+  for (let i = 0; i < 4000; i++) if (pickNext(DATA.terms, new Set(), rng, true).term.d === 1) b++;
+  assert.ok(b > 1350 && b < 1580, 'topic B picked ' + b + ' of 4000, expected about 1464');
+});
+
+test('a 443-term topic comes up about 4 times as often as a 25-term one, not 18 times', () => {
+  const big = Array.from({ length: 443 }, (_, i) => ({ key: 'h' + i, d: 0 }));
+  const small = Array.from({ length: 25 }, (_, i) => ({ key: 's' + i, d: 1 }));
+  const rng = seeded(11);
+  let s = 0;
+  for (let i = 0; i < 20000; i++) if (pickNext(big.concat(small), new Set(), rng, true).term.d === 1) s++;
+  // sqrt(25) / (sqrt(25) + sqrt(443)) = 19.2%; equal shares would be 50%, shares by size 5.3%.
+  assert.ok(s > 0.18 * 20000 && s < 0.205 * 20000, 'small topic picked ' + s + ' of 20000');
+});
+
+test('with balance off, every unseen term is equally likely', () => {
+  const rng = seeded(5);
+  let b = 0;
+  for (let i = 0; i < 4000; i++) if (pickNext(DATA.terms, new Set(), rng, false).term.d === 1) b++;
+  assert.ok(b > 880 && b < 1120, 'topic B (1 of 4 terms) picked ' + b + ' of 4000');
 });
 
 test('word list decodes topics, subtopics and aliases', () => {
