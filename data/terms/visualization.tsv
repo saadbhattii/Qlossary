@@ -1,0 +1,127 @@
+# term	subtopic	aliases	difficulty	origin
+Amplitude evolution plot	Algorithm plots			original
+Cost-function trajectory plot	Algorithm plots			original
+Energy convergence plot	Algorithm plots			original
+Gradient variance plot	Algorithm plots			original
+Grover iteration plot	Algorithm plots			original
+Loss landscape	Algorithm plots			original
+Parameter trajectory plot	Algorithm plots			original
+Phase estimation histogram	Algorithm plots			original
+State evolution timeline	Algorithm plots			original
+Variational landscape plot	Algorithm plots			original
+CLOPS scaling plot	Benchmark plots			original
+Counts bar plot	Benchmark plots			original
+Cross-entropy plot	Benchmark plots			original
+Fidelity decay curve	Benchmark plots			original
+Hellinger distance plot	Benchmark plots			original
+Logical T1 curve	Benchmark plots			original
+Measurement histogram	Benchmark plots			original
+Quantum volume heavy-output plot	Benchmark plots			original
+Allan deviation plot	Calibration plots			original
+Cycle benchmarking plot	Calibration plots			original
+Gate-set tomography report	Calibration plots			original
+Process tomography plot	Calibration plots			original
+Rabi oscillation plot	Calibration plots			original
+Ramsey fringe plot	Calibration plots			original
+Randomized benchmarking decay plot	Calibration plots			original
+Resonator response plot	Calibration plots			original
+Spectroscopy plot	Calibration plots			original
+State tomography matrix plot	Calibration plots			original
+T1 decay curve	Calibration plots			original
+T2 echo decay curve	Calibration plots			original
+Two-tone spectroscopy plot	Calibration plots			original
+Brick-wall circuit diagram	Circuit & pulse diagrams			original
+Circuit drawer	Circuit & pulse diagrams			original
+Gate-level schedule diagram	Circuit & pulse diagrams			original
+IQ-plane plot	Circuit & pulse diagrams			original
+Light cone diagram	Circuit & pulse diagrams			original
+Pulse envelope plot	Circuit & pulse diagrams			original
+Pulse schedule diagram	Circuit & pulse diagrams			original
+Quantum circuit diagram	Circuit & pulse diagrams			original
+Shot scatter plot	Circuit & pulse diagrams			original
+Time-sliced circuit diagram	Circuit & pulse diagrams			original
+Quantum decision diagram	Decision diagrams	QDD		original
+Quantum multiple-valued decision diagram	Decision diagrams	QMDD		original
+Tensor decision diagram	Decision diagrams			original
+Calibration heatmap	Device maps			original
+Chip floorplan diagram	Device maps			original
+Coupling graph	Device maps			original
+Crosstalk matrix plot	Device maps			original
+Error map	Device maps			original
+Frequency-allocation diagram	Device maps			original
+Fridge stack diagram	Device maps			original
+Gate map	Device maps			original
+Heavy-hex layout	Device maps			original
+Heavy-square layout	Device maps			original
+Square-grid layout	Device maps			original
+Wiring diagram	Device maps			original
+Anyon braiding diagram	Diagrammatic calculi			original
+Birdtrack diagram	Diagrammatic calculi			original
+Categorical quantum mechanics diagram	Diagrammatic calculi			original
+Dagger compact category diagram	Diagrammatic calculi			original
+Matrix product operator diagram	Diagrammatic calculi	MPO		original
+Matrix product state diagram	Diagrammatic calculi	MPS		original
+MERA diagram	Diagrammatic calculi	MERA		original
+Penrose graphical notation	Diagrammatic calculi			original
+Projected entangled pair state diagram	Diagrammatic calculi	PEPS		original
+Spider diagram	Diagrammatic calculi			original
+Spin network diagram	Diagrammatic calculi			original
+String diagram	Diagrammatic calculi			original
+Tensor network diagram	Diagrammatic calculi			original
+Topological defect diagram	Diagrammatic calculi			original
+Tree tensor network diagram	Diagrammatic calculi	TTN		original
+Worldline diagram	Diagrammatic calculi			original
+ZH-diagram	Diagrammatic calculi			original
+ZW-calculus diagram	Diagrammatic calculi			original
+ZX calculus	Diagrammatic calculi			original
+ZX-calculus rewrite rule diagram	Diagrammatic calculi			original
+ZX-diagram	Diagrammatic calculi			original
+Choi matrix plot	Noise plots			original
+Crosstalk heatmap	Noise plots			original
+Error budget pie chart	Noise plots			original
+Kraus operator plot	Noise plots			original
+Leakage population plot	Noise plots			original
+Noise spectroscopy plot	Noise plots			original
+Pauli transfer matrix plot	Noise plots	PTM		original
+Process matrix plot	Noise plots			original
+Cat state Wigner plot	Phase space			original
+Coherent state phase-space diagram	Phase space			original
+GKP state Wigner plot	Phase space			original
+Glauber–Sudarshan P function plot	Phase space			original
+Husimi Q function plot	Phase space			original
+Phase-space portrait	Phase space			original
+Quadrature distribution plot	Phase space			original
+Squeezing ellipse	Phase space			original
+Wigner function plot	Phase space			original
+Anyon worldline diagram	QEC diagrams			original
+Below-threshold scaling plot	QEC diagrams			original
+Braiding diagram	QEC diagrams			original
+Detector graph	QEC diagrams			original
+Lattice surgery diagram	QEC diagrams			original
+Logical operator string diagram	QEC diagrams			original
+Logical-error-rate plot	QEC diagrams			original
+Spacetime diagram of QEC cycles	QEC diagrams			original
+Stabilizer tableau diagram	QEC diagrams			original
+Surface-code patch diagram	QEC diagrams			original
+Syndrome plot	QEC diagrams			original
+Threshold plot	QEC diagrams			original
+Calibration dashboard	Reports & dashboards			original
+Circuit-layout overlay on device map	Reports & dashboards			original
+Directed acyclic graph	Reports & dashboards	DAG		original
+Resource estimation chart	Reports & dashboards			original
+Spacetime cost diagram	Reports & dashboards			original
+Transpiled-circuit visualization	Reports & dashboards			original
+Amplitude bar chart	State plots			original
+Bernoulli line	State plots			original
+Density matrix heatmap	State plots			original
+Hinton diagram	State plots			original
+Multi-qubit Bloch spheres	State plots			original
+Pauli axes diagram	State plots			original
+Paulivec plot	State plots			original
+Phase disk	State plots			original
+Phase-colored amplitude plot	State plots			original
+Poincaré sphere	State plots			original
+Probability histogram	State plots			original
+Q-sphere	State plots			original
+Schmidt-decomposition diagram	State plots			original
+State city plot	State plots			original

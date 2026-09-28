@@ -1,0 +1,444 @@
+# term	subtopic	aliases	difficulty	origin
+Chiplet	Architecture & connectivity			added
+Heavy-hex topology	Architecture & connectivity			original
+Heavy-square topology	Architecture & connectivity			original
+Hexagonal lattice	Architecture & connectivity			original
+Inter-module coupler	Architecture & connectivity			original
+Ion shuttling	Architecture & connectivity			original
+Multi-chip module	Architecture & connectivity			added
+Optical interconnect	Architecture & connectivity			original
+Photonic shuttling	Architecture & connectivity			original
+Quantum bus	Architecture & connectivity			original
+Quantum charge-coupled device	Architecture & connectivity	QCCD		original
+Quantum interconnect	Architecture & connectivity			original
+Square lattice	Architecture & connectivity			original
+Trap junction	Architecture & connectivity			original
+Trap zone	Architecture & connectivity			original
+3D microwave cavity	Bosonic			original
+Bosonic qubit	Bosonic			original
+Buffer mode	Bosonic			original
+Cat-state stabilization	Bosonic			original
+Cavity QED system	Bosonic			original
+GKP state preparation hardware	Bosonic			original
+Kerr nonlinearity	Bosonic			original
+Mechanical resonator	Bosonic			original
+Stabilizing drive	Bosonic			original
+Storage cavity	Bosonic			original
+Superconducting resonator	Bosonic			original
+Two-photon dissipation	Bosonic			original
+Analog-to-digital converter	Control electronics	ADC		original
+Application-specific integrated circuit	Control electronics	ASIC		original
+Arbitrary waveform generator	Control electronics	AWG		original
+Cosine pulse	Control electronics			original
+Cross-talk compensation	Control electronics			original
+Digital-to-analog converter	Control electronics	DAC		original
+DRAG pulse	Control electronics			original
+Field-programmable gate array	Control electronics	FPGA		original
+Gaussian pulse	Control electronics			original
+Microwave pulse	Control electronics			original
+Pulse calibration	Control electronics			original
+Pulse envelope	Control electronics			original
+Pulse generator	Control electronics			original
+Quantum control stack	Control electronics			original
+Quantum control unit	Control electronics	QCU		original
+Real-time controller	Control electronics			original
+Sequencer	Control electronics			original
+Square pulse	Control electronics			original
+1K pot	Cryogenics			original
+4K stage	Cryogenics			original
+50K stage	Cryogenics			original
+Aluminum shield	Cryogenics			original
+Base temperature	Cryogenics			original
+Coaxial line	Cryogenics			original
+Cold attenuator	Cryogenics			original
+Cold finger	Cryogenics			original
+Cold plate	Cryogenics			original
+Cooldown	Cryogenics			original
+Cooling power	Cryogenics			original
+Cryogenic filter	Cryogenics			original
+Cryogenic shielding stack	Cryogenics			original
+Cryostat	Cryogenics			original
+Dilution refrigerator	Cryogenics			original
+Heat load	Cryogenics			original
+Helium-3/helium-4 mixture	Cryogenics			original
+Microwave wiring	Cryogenics			original
+Mixing chamber	Cryogenics	MXC		original
+Mixing chamber plate	Cryogenics			original
+Mu-metal shield	Cryogenics			original
+Niobium-titanium cable	Cryogenics			original
+Phonon trap	Cryogenics			original
+Pulse-tube cryocooler	Cryogenics			original
+Quasiparticle trap	Cryogenics			original
+Still	Cryogenics			original
+Thermal anchor	Cryogenics			original
+Thermalization	Cryogenics			original
+Vibration isolation	Cryogenics			original
+Warmup	Cryogenics			original
+CVD diamond	Defect centers			original
+Diamond substrate	Defect centers			original
+Germanium-vacancy center	Defect centers	GeV		original
+Hyperfine-coupled nuclear spins	Defect centers			original
+Isotopically pure diamond	Defect centers			original
+Microwave addressing of defect	Defect centers			original
+Nuclear-spin register	Defect centers			original
+NV center	Defect centers			original
+Optical addressing of defect	Defect centers			original
+Optical detection of magnetic resonance	Defect centers	ODMR		original
+Silicon-vacancy center	Defect centers	SiV		original
+Single-photon emission from defect	Defect centers			original
+Spin contrast	Defect centers			original
+Spin-photon interface	Defect centers			original
+Tin-vacancy center	Defect centers	SnV		original
+Cryogenic adiabatic transistor circuits	Emerging	CATC		original
+Cryogenic CMOS DAC	Emerging			original
+Josephson pulse generator	Emerging	JPG		original
+Modular bicycle architecture	Emerging			original
+Rapid single flux quantum	Emerging	RSFQ		original
+Real-time decoding hardware	Emerging			original
+Single flux quantum control	Emerging	SFQ		original
+3D integration	Fabrication & materials			original
+Air bridge	Fabrication & materials			original
+Aluminum oxide tunnel barrier	Fabrication & materials			original
+Annealing	Fabrication & materials			original
+Atomic layer deposition	Fabrication & materials	ALD		original
+Bump bonding	Fabrication & materials			original
+Cleanroom	Fabrication & materials			original
+Crossover	Fabrication & materials			original
+Dolan bridge	Fabrication & materials			original
+Double-angle evaporation	Fabrication & materials			original
+Electron-beam lithography	Fabrication & materials	EBL		original
+Flip-chip integration	Fabrication & materials			original
+Ground plane	Fabrication & materials			original
+Lift-off process	Fabrication & materials			original
+Manhattan junction	Fabrication & materials			original
+Multi-layer stack	Fabrication & materials			original
+Niobium base layer	Fabrication & materials			original
+Niobium nitride	Fabrication & materials	NbN		original
+Niobium titanium nitride	Fabrication & materials	NbTiN		original
+Photolithography	Fabrication & materials			original
+Reactive ion etching	Fabrication & materials	RIE		original
+Sapphire substrate	Fabrication & materials			original
+Silicon substrate	Fabrication & materials			original
+Sputtering	Fabrication & materials			original
+Tantalum film	Fabrication & materials			original
+Through-silicon via	Fabrication & materials	TSV		original
+Wafer-scale fabrication	Fabrication & materials			original
+Backend	General			original
+Connectivity graph	General			original
+Control electronics	General			original
+Coupling map	General			original
+Drive line	General			original
+Feedline	General			original
+Flux line	General			original
+Native two-qubit gate	General			original
+Quantum chip	General			original
+Quantum processing unit	General	QPU		original
+Quantum register	General			original
+Quantum-classical interface	General			original
+Qubit modality	General			original
+Readout electronics	General			original
+Readout line	General			original
+Beam profiler	Lab equipment			original
+Cryogenic thermometer	Lab equipment			original
+Frequency synthesizer	Lab equipment			original
+Ion pump	Lab equipment			original
+Lock-in amplifier	Lab equipment			original
+Magnetic field sensor	Lab equipment			original
+Oscilloscope	Lab equipment			original
+Photodiode	Lab equipment			original
+Signal generator	Lab equipment			original
+Spectrum analyzer	Lab equipment			original
+Turbomolecular pump	Lab equipment			original
+Vacuum gauge	Lab equipment			original
+Vector network analyzer	Lab equipment	VNA		original
+Vibration-isolated optical table	Lab equipment			original
+Atom rearrangement	Neutral atom			original
+Blockade radius	Neutral atom			original
+Cesium atom	Neutral atom			original
+Clock state	Neutral atom			original
+Cooling beam	Neutral atom			original
+Crossed AOD pair	Neutral atom			original
+Defect-free assembly	Neutral atom			original
+Dynamic tweezer array	Neutral atom			original
+Erasure detection	Neutral atom			original
+Glass cell	Neutral atom			original
+Imaging beam	Neutral atom			original
+Laser cooling	Neutral atom			added
+Magneto-optical trap	Neutral atom	MOT		original
+Metastable state	Neutral atom			original
+Neutral atom qubit	Neutral atom			original
+Optical lattice	Neutral atom			added
+Optical tweezer	Neutral atom			original
+Principal quantum number	Neutral atom			original
+Reservoir loading	Neutral atom			original
+Rubidium atom	Neutral atom			original
+Rydberg blockade	Neutral atom			original
+Rydberg dressing	Neutral atom			original
+Rydberg state	Neutral atom			original
+Rydberg-mediated gate	Neutral atom			original
+Spatial light modulator	Neutral atom	SLM		original
+Static tweezer array	Neutral atom			original
+Survival probability	Neutral atom			original
+Trapping beam	Neutral atom			original
+Tweezer array	Neutral atom			original
+Tweezer reconfiguration	Neutral atom			original
+Two-photon excitation	Neutral atom			added
+Ultra-high vacuum chamber	Neutral atom	UHV		original
+Vacuum cell	Neutral atom			original
+Avalanche photodiode	Photonic	APD		original
+Beam splitter	Photonic			original
+Coupling loss	Photonic			original
+Dark count rate	Photonic			original
+Detection efficiency	Photonic			original
+Edge coupler	Photonic			original
+Electro-optic phase shifter	Photonic			original
+Fabry–Pérot cavity	Photonic			added
+Fiber-to-chip coupling	Photonic			original
+Four-wave mixing source	Photonic			original
+Grating coupler	Photonic			original
+Heralded single-photon source	Photonic			original
+Indium phosphide photonics	Photonic			original
+Mach–Zehnder interferometer	Photonic	MZI		original
+Microring resonator	Photonic			original
+Multi-mode waveguide	Photonic			original
+Optical cavity	Photonic			added
+Optical delay line	Photonic			original
+Optical switch	Photonic			original
+Parametric down-conversion source	Photonic	SPDC		original
+Periodically poled lithium niobate	Photonic	PPLN		original
+Phase shifter	Photonic			original
+Photon number resolution	Photonic			original
+Photonic crystal cavity	Photonic			original
+Photonic integrated circuit	Photonic	PIC		original
+Photonic loss	Photonic			original
+Photonic qubit	Photonic			original
+Polarization beam splitter	Photonic	PBS		original
+Polarization-maintaining fiber	Photonic			original
+Quantum dot single-photon source	Photonic			original
+Silicon nitride photonics	Photonic			original
+Silicon photonics	Photonic			original
+Single-mode waveguide	Photonic			original
+Single-photon avalanche diode	Photonic	SPAD		original
+Single-photon source brightness	Photonic			original
+SNSPD	Photonic			original
+Squeezed light source	Photonic			original
+Tantalum pentoxide platform	Photonic			original
+Thermo-optic phase shifter	Photonic			original
+Thin-film lithium niobate	Photonic	TFLN		original
+Timing jitter	Photonic			original
+Transition-edge sensor	Photonic	TES		original
+Waveguide	Photonic			original
+Waveguide-integrated SNSPD	Photonic			original
+Y-splitter	Photonic			original
+Active reset	Readout & amplification			original
+Bond wire	Readout & amplification			original
+Circulator	Readout & amplification			original
+Directional coupler	Readout & amplification			original
+Dispersive readout	Readout & amplification			original
+Down-conversion	Readout & amplification			original
+Eccosorb filter	Readout & amplification			original
+HEMT amplifier	Readout & amplification			original
+Heterodyne readout	Readout & amplification			original
+Homodyne readout	Readout & amplification			original
+Infrared filter	Readout & amplification			original
+IQ mixer	Readout & amplification			original
+Isolator	Readout & amplification			original
+Josephson parametric amplifier	Readout & amplification	JPA		original
+Kinetic inductance amplifier	Readout & amplification			original
+Latching readout	Readout & amplification			original
+Local oscillator	Readout & amplification	LO		original
+Magnetic shielding	Readout & amplification			original
+Multiplexed readout	Readout & amplification			original
+Pogo pin socket	Readout & amplification			original
+Quantum non-demolition readout	Readout & amplification	QND		original
+Quantum-limited amplifier	Readout & amplification			original
+Sample holder	Readout & amplification			original
+Sample mount	Readout & amplification			original
+Single-shot readout	Readout & amplification			original
+Traveling-wave parametric amplifier	Readout & amplification	TWPA		original
+Up-conversion	Readout & amplification			original
+Wirebonding	Readout & amplification			original
+Charge reservoir	Spin & quantum dot			original
+Charge sensor	Spin & quantum dot			original
+Charge transition	Spin & quantum dot			original
+CMOS foundry fabrication	Spin & quantum dot			original
+Cryogenic CMOS	Spin & quantum dot	cryoCMOS		original
+Donor spin qubit	Spin & quantum dot			original
+Electric dipole spin resonance	Spin & quantum dot	EDSR		original
+Electron spin resonance	Spin & quantum dot	ESR		original
+Elzerman readout	Spin & quantum dot			original
+Exchange interaction	Spin & quantum dot			original
+Exchange-only qubit	Spin & quantum dot			original
+Flopping-mode qubit	Spin & quantum dot			original
+Gate-defined quantum dot	Spin & quantum dot			original
+Hole spin qubit	Spin & quantum dot			original
+Hot qubits	Spin & quantum dot			original
+Hybrid qubit	Spin & quantum dot			original
+Isotopically purified silicon	Spin & quantum dot			original
+Loss–DiVincenzo qubit	Spin & quantum dot			original
+Micromagnet	Spin & quantum dot			original
+MOS stack	Spin & quantum dot			original
+Pauli spin blockade	Spin & quantum dot			original
+Quantum dot	Spin & quantum dot	QD		original
+Quantum point contact	Spin & quantum dot	QPC		original
+Radio-frequency SET	Spin & quantum dot	RF-SET		original
+SiGe heterostructure	Spin & quantum dot			original
+Silicon spin qubit	Spin & quantum dot			original
+Single-electron box	Spin & quantum dot	SEB		original
+Single-electron transistor	Spin & quantum dot	SET		original
+Singlet-triplet qubit	Spin & quantum dot			original
+Spin-to-charge conversion	Spin & quantum dot			original
+Stability diagram	Spin & quantum dot			original
+Symmetric operating point	Spin & quantum dot			original
+Two-dimensional electron gas	Spin & quantum dot	2DEG		original
+Aluminum tunnel junction	Superconducting			original
+Andreev qubit	Superconducting			original
+Anharmonic oscillator	Superconducting			original
+Asymmetric SQUID	Superconducting			original
+Asymmetric transmon	Superconducting			original
+Bandpass Purcell filter	Superconducting			original
+Bifluxon	Superconducting			original
+Bus resonator	Superconducting			original
+C-shunt flux qubit	Superconducting			original
+Capacitively-shunted flux qubit	Superconducting			original
+Cat qubit	Superconducting			original
+Charge qubit	Superconducting			original
+Charging energy	Superconducting	EC		original
+Cooper pair	Superconducting			original
+Cooper-pair box	Superconducting			original
+Cooper-pair parity qubit	Superconducting			original
+Coplanar waveguide	Superconducting	CPW		original
+Coplanar waveguide resonator	Superconducting			original
+Coupler	Superconducting			original
+Dual-rail superconducting qubit	Superconducting			original
+Fixed coupler	Superconducting			original
+Fixed-frequency transmon	Superconducting			original
+Flux bias	Superconducting			added
+Flux pulse	Superconducting			added
+Flux quantum	Superconducting			added
+Flux qubit	Superconducting			original
+Flux-insensitive point	Superconducting			original
+Fluxonium	Superconducting			original
+Gmon	Superconducting			original
+Granular aluminum	Superconducting			added
+Heavy fluxonium	Superconducting			original
+Josephson energy	Superconducting	EJ		original
+Josephson junction	Superconducting			original
+Kinetic inductance	Superconducting			added
+Linear bus interferometer coupler	Superconducting	LBI		original
+Lumped-element resonator	Superconducting			original
+Microwave cavity	Superconducting			original
+Niobium tunnel junction	Superconducting			original
+Notch Purcell filter	Superconducting			original
+Parametric coupler	Superconducting			added
+Phase qubit	Superconducting			original
+Purcell filter	Superconducting			original
+Quartic potential	Superconducting			original
+Quasi-charge	Superconducting			original
+Readout resonator	Superconducting			original
+Shunt capacitor	Superconducting			original
+Superconducting gap	Superconducting			original
+Superconducting quantum interference device	Superconducting	SQUID		original
+Superconducting qubit	Superconducting			original
+Symmetric transmon	Superconducting			original
+Transmon	Superconducting			original
+Tunable coupler	Superconducting			original
+Tunable transmon	Superconducting			original
+Xmon	Superconducting			original
+Zero-pi qubit	Superconducting			original
+Aluminum proximity superconductor	Topological			original
+Braiding operation	Topological			original
+InAs/Al hybrid	Topological			original
+Indium arsenide nanowire	Topological	InAs		original
+Interferometric measurement	Topological			original
+Majorana qubit	Topological			original
+Majorana zero mode	Topological	MZM		original
+Parity readout	Topological			original
+Quantum dot-mediated readout	Topological			original
+Semiconductor-superconductor nanowire	Topological			original
+Tetron	Topological			original
+Topoconductor	Topological			original
+Topological gap	Topological			original
+Topological gap protocol	Topological	TGP		original
+Topological qubit	Topological			original
+Topological superconductor	Topological			original
+Acousto-optic deflector	Trapped ion	AOD		original
+Acousto-optic modulator	Trapped ion	AOM		original
+Axial frequency	Trapped ion			original
+Barium ion	Trapped ion			original
+Beam-steering optics	Trapped ion			original
+Beryllium ion	Trapped ion			original
+Bichromatic beam	Trapped ion			original
+Blade trap	Trapped ion			original
+Breathing mode	Trapped ion			original
+Calcium ion	Trapped ion			original
+Carrier transition	Trapped ion			original
+Center-of-mass mode	Trapped ion			original
+Common mode of motion	Trapped ion			original
+Compensation electrode	Trapped ion			original
+DC electrode	Trapped ion			original
+Detection laser	Trapped ion			original
+Doppler cooling laser	Trapped ion			original
+Dual-species chain	Trapped ion			original
+EIT cooling	Trapped ion	EIT		original
+Electro-optic modulator	Trapped ion	EOM		original
+EMCCD camera	Trapped ion			original
+Fluorescence detection	Trapped ion			original
+Frequency comb	Trapped ion			original
+Global beam	Trapped ion			original
+Hyperfine qubit	Trapped ion			original
+Individual addressing optics	Trapped ion			original
+Ion chain	Trapped ion			original
+Linear crystal	Trapped ion			original
+Linear Paul trap	Trapped ion			original
+Magnesium ion	Trapped ion			original
+Microfabricated ion trap	Trapped ion			original
+Micromotion	Trapped ion			original
+Motional sideband	Trapped ion			original
+Mølmer–Sørensen drive	Trapped ion			original
+Optical fiber feed	Trapped ion			original
+Optical qubit	Trapped ion			original
+Paul trap	Trapped ion			original
+Penning trap	Trapped ion			original
+Photoionization laser	Trapped ion			original
+Photomultiplier tube	Trapped ion	PMT		original
+Point Paul trap	Trapped ion			original
+Pseudopotential	Trapped ion			original
+Radial frequency	Trapped ion			original
+Raman sideband cooling	Trapped ion			original
+Repump laser	Trapped ion			original
+Resolved sideband cooling	Trapped ion			original
+RF electrode	Trapped ion			original
+RF null	Trapped ion			original
+Ring trap	Trapped ion			original
+Secular frequency	Trapped ion			original
+Segmented trap	Trapped ion			original
+Sideband transition	Trapped ion			original
+State preparation laser	Trapped ion			original
+Stretch mode	Trapped ion			original
+Strontium ion	Trapped ion			original
+Surface trap	Trapped ion			original
+Surface-electrode trap	Trapped ion			original
+Sympathetic cooling ion	Trapped ion			original
+Trap depth	Trapped ion			original
+Trapped ion qubit	Trapped ion			original
+Wavemeter	Trapped ion			original
+Ytterbium ion	Trapped ion			original
+Zeeman qubit	Trapped ion			original
+Zigzag transition	Trapped ion			original
+Attenuator chain	Wiring & packaging			original
+Bandpass filter	Wiring & packaging	BPF		original
+Bond pad	Wiring & packaging			original
+Coaxial cabling	Wiring & packaging			original
+Cold finger interconnect	Wiring & packaging			original
+Cryogenic attenuator	Wiring & packaging			original
+Cryogenic PCB	Wiring & packaging			original
+Eccosorb absorber	Wiring & packaging			original
+Filter cascade	Wiring & packaging			original
+Hermetic feedthrough	Wiring & packaging			original
+Low-pass filter	Wiring & packaging	LPF		original
+Multi-layer PCB	Wiring & packaging			original
+RC filter	Wiring & packaging			original
+RF shield	Wiring & packaging			original
+Sample box	Wiring & packaging			original
+Vacuum feedthrough	Wiring & packaging			original

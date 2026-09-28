@@ -1,0 +1,127 @@
+# term	subtopic	aliases	difficulty	origin
+Clifford twirling	Compilation-level			original
+Coherent-to-incoherent conversion	Compilation-level			original
+Noise tailoring	Compilation-level			original
+Pauli twirling	Compilation-level			original
+Pauli-frame randomization	Compilation-level			original
+Randomized compiling	Compilation-level			original
+Twirled noise channel	Compilation-level			original
+Approximate error suppression	Core concepts			original
+Bias-variance tradeoff	Core concepts			original
+Error budget	Core concepts			original
+Error suppression	Core concepts			added
+Expectation value estimation	Core concepts			original
+Mitigated estimator	Core concepts			original
+Mitigation budget	Core concepts			original
+Mitigation overhead	Core concepts			original
+NISQ-era technique	Core concepts			original
+Noise amplification	Core concepts			original
+Noise characterization	Core concepts			original
+Noise scaling	Core concepts			original
+Noise-aware compilation	Core concepts			added
+Noisy operation decomposition	Core concepts			original
+Practical quantum advantage	Core concepts			original
+Quantum error mitigation	Core concepts	QEM		original
+Quasi-probability decomposition	Core concepts			original
+Sampling overhead	Core concepts			original
+Unbiased estimator	Core concepts			original
+Variance amplification	Core concepts			original
+Analog ZNE	Extrapolation			original
+Digital ZNE	Extrapolation			original
+Exponential extrapolation	Extrapolation			original
+Extrapolation bias	Extrapolation			original
+Folding-free ZNE	Extrapolation			original
+Gate folding	Extrapolation			original
+Global folding	Extrapolation			original
+Identity insertion	Extrapolation			original
+Linear extrapolation	Extrapolation			original
+Local folding	Extrapolation			original
+Noise scale factor	Extrapolation			original
+Polynomial extrapolation	Extrapolation			original
+Pulse stretching	Extrapolation			original
+Richardson extrapolation	Extrapolation			original
+Unitary folding	Extrapolation			original
+Zero-noise extrapolation	Extrapolation	ZNE		original
+Composable mitigation	Frameworks			original
+Hybrid mitigation	Frameworks			original
+Mitigation pipeline	Frameworks			original
+Stacked mitigation	Frameworks			original
+UNITED	Frameworks			original
+Clifford data regression	Learning-based methods	CDR		original
+Energy sampling	Learning-based methods			original
+Learning-based error mitigation	Learning-based methods			original
+Machine learning mitigation	Learning-based methods			original
+Near-Clifford training circuits	Learning-based methods			original
+Neural-network error mitigation	Learning-based methods			original
+Non-Clifford extrapolation	Learning-based methods	NCE		original
+Training circuit	Learning-based methods			original
+Variable-noise CDR	Learning-based methods	vnCDR		original
+Approximate quantum error correction	Mitigation & correction			original
+Concatenated mitigation and correction	Mitigation & correction			original
+Mitigation in early FTQC	Mitigation & correction			original
+Partial error correction	Mitigation & correction			original
+Pre-correction mitigation	Mitigation & correction			original
+Gate set tomography	Probabilistic methods			original
+Learning-based PEC	Probabilistic methods			original
+Monte Carlo sampling	Probabilistic methods			original
+Negative quasi-probability	Probabilistic methods			original
+Probabilistic error amplification	Probabilistic methods	PEA		original
+Probabilistic error cancellation	Probabilistic methods	PEC		original
+Quasi-probability sampling	Probabilistic methods			original
+Sampling cost	Probabilistic methods			original
+Sparse Pauli-Lindblad model	Probabilistic methods			original
+CPMG sequence	Pulse-level			original
+Derivative removal by adiabatic gate	Pulse-level	DRAG		original
+Knill dynamical decoupling	Pulse-level			original
+Pulse shaping for mitigation	Pulse-level			original
+Quantum optimal control	Pulse-level			original
+Robust optimal control	Pulse-level			original
+XY-4 sequence	Pulse-level			original
+XY-8 sequence	Pulse-level			original
+Cyclic permutation circuit	Purification			original
+Dominant eigenvector approximation	Purification			original
+Eigenstate purification	Purification			original
+Exponential error suppression	Purification			original
+State copies	Purification			original
+Symmetric subspace projection	Purification			original
+Virtual distillation	Purification	VD		original
+Assignment matrix	Readout mitigation			original
+Calibration matrix	Readout mitigation			original
+Confusion matrix	Readout mitigation			original
+Correlated measurement errors	Readout mitigation			original
+Iterative Bayesian unfolding	Readout mitigation			original
+Measurement error mitigation	Readout mitigation			original
+Readout error mitigation	Readout mitigation			original
+Readout matrix inversion	Readout mitigation			original
+Readout twirling	Readout mitigation			added
+SPAM mitigation	Readout mitigation			original
+Tensored measurement mitigation	Readout mitigation			original
+Twirled readout error extinction	Readout mitigation	TREX		added
+Light-cone mitigation	Tensor-network methods			original
+Local observable mitigation	Tensor-network methods			original
+Matrix product state mitigation	Tensor-network methods			original
+Pauli error propagation	Tensor-network methods			original
+Tensor-network mitigation	Tensor-network methods	TEM		original
+Bias-free mitigation	Theory & limits			original
+Circuit depth limit	Theory & limits			original
+Exponential sampling overhead	Theory & limits			original
+Mitigation scaling	Theory & limits			original
+Mitigation threshold	Theory & limits			original
+No-free-lunch	Theory & limits			original
+Optimality of mitigation	Theory & limits			original
+Practical mitigation regime	Theory & limits			original
+Universal cost bound	Theory & limits			original
+Clifford ansatz for quantum accuracy	Variational-specific	CAFQA		original
+Error-mitigated VQE	Variational-specific			original
+Mitigated cost function	Variational-specific			original
+Mitigation-aware optimization	Variational-specific			original
+Reference-state mitigation	Variational-specific			original
+Echo verification	Verification & post-selection			original
+Loschmidt echo verification	Verification & post-selection			original
+Mirror circuits	Verification & post-selection			original
+Parity check verification	Verification & post-selection			original
+Post-selection mitigation	Verification & post-selection			original
+Quantum subspace expansion	Verification & post-selection			original
+Subspace expansion	Verification & post-selection			original
+Symmetry verification	Verification & post-selection			original
+Verified phase estimation	Verification & post-selection			original

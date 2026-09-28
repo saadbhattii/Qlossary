@@ -1,0 +1,10 @@
+# Cloudflare Pages settings. See README, "Worldwide leaderboard".
+name = "qlossary"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "qlossary"
+database_id = "d3babcca-2009-44d9-a424-7daa065cdc06"
+migrations_dir = "migrations"

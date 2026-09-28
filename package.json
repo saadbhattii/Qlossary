@@ -1,0 +1,15 @@
+{
+  "name": "qlossary",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Qlossary: hangman for quantum computing terms. One static page, no dependencies, plus an optional worldwide leaderboard.",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "check": "node tools/build.mjs --check",
+    "test": "node --no-warnings --test",
+    "preview": "node tools/build.mjs && node --no-warnings tools/serve.mjs"
+  }
+}

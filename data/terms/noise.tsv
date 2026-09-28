@@ -1,0 +1,216 @@
+# term	subtopic	aliases	difficulty	origin
+Dissipator	Channel formalism			original
+GKSL equation	Channel formalism			original
+Jump operator	Channel formalism			original
+Kraus operator	Channel formalism			original
+Lindblad equation	Channel formalism			original
+Lindbladian	Channel formalism			original
+Master equation	Channel formalism			original
+Pauli transfer matrix	Channel formalism	PTM		original
+Quantum trajectory	Channel formalism			original
+Redfield equation	Channel formalism			original
+Stochastic master equation	Channel formalism			original
+CPMG noise probing	Characterization			original
+Cycle benchmarking	Characterization			original
+Dynamical decoupling noise spectroscopy	Characterization			original
+Hahn echo characterization	Characterization			original
+Lindblad tomography	Characterization			original
+Noise spectroscopy	Characterization			original
+Pauli noise learning	Characterization			original
+Process tomography	Characterization			original
+Randomized benchmarking	Characterization	RB		original
+Spectator tomography	Characterization			original
+Coherence	Core concepts			original
+Decoherence	Core concepts			original
+Dephasing	Core concepts			original
+Dissipation	Core concepts			original
+Energy relaxation	Core concepts			added
+Environment	Core concepts			original
+Irreversibility	Core concepts			original
+Markovian noise	Core concepts			original
+Memory effects	Core concepts			original
+Noise	Core concepts			original
+Non-Markovian noise	Core concepts			original
+Non-stationary noise	Core concepts			original
+Open quantum system	Core concepts			original
+Pure dephasing	Core concepts			original
+Relaxation	Core concepts			original
+Stationary noise	Core concepts			original
+System–bath coupling	Core concepts			original
+Thermal relaxation	Core concepts			added
+AC-Stark shift	Crosstalk			original
+Always-on coupling	Crosstalk			original
+Classical crosstalk	Crosstalk			original
+Coherent crosstalk	Crosstalk			added
+DC-Stark shift	Crosstalk			original
+Driven crosstalk	Crosstalk			original
+Microwave crosstalk	Crosstalk			original
+Quantum crosstalk	Crosstalk			original
+Residual ZZ	Crosstalk			original
+Spectator-induced phase	Crosstalk			original
+Stark shift error	Crosstalk			original
+Static crosstalk	Crosstalk			original
+ZZ coupling	Crosstalk			original
+Anomalous events	Drift & instability			original
+Burst events	Drift & instability			original
+Coherence-time fluctuation	Drift & instability			original
+Drift	Drift & instability			original
+Fast drift	Drift & instability			original
+Parameter fluctuation	Drift & instability			original
+Quasiparticle dynamics events	Drift & instability			original
+Qubit frequency drift	Drift & instability			original
+Slow drift	Drift & instability			original
+TLS hopping	Drift & instability			original
+Bit-flip error	Error types			original
+Bit-phase-flip error	Error types			original
+Burst error	Error types			original
+Calibration error	Error types			original
+Catastrophic error	Error types			original
+Coherent error	Error types			original
+Crosstalk error	Error types			original
+Drift error	Error types			original
+Gate error	Error types			original
+Heralded error	Error types			original
+Idle error	Error types			original
+iid error model	Error types			original
+Incoherent error	Error types			original
+Independent error	Error types			original
+Leakage error	Error types			original
+Memory error	Error types			original
+Non-unitary error	Error types			original
+Over-rotation error	Error types			original
+Pauli error	Error types			original
+Phase-flip error	Error types			original
+Readout assignment error	Error types			original
+SPAM error	Error types			original
+Spatially correlated error	Error types			original
+Spectator error	Error types			original
+State preparation error	Error types			original
+Stochastic error	Error types			original
+Stochastic Pauli error	Error types			original
+Systematic error	Error types			original
+Temporally correlated error	Error types			original
+Under-rotation error	Error types			original
+Unitary error	Error types			original
+Atom heating from tweezer	Neutral-atom sources			original
+Atom loss	Neutral-atom sources			original
+Black-body-induced transitions	Neutral-atom sources			original
+Doppler dephasing	Neutral-atom sources			original
+Rydberg-state decay	Neutral-atom sources			original
+Stray field gradient	Neutral-atom sources			original
+Trap-induced light shift	Neutral-atom sources			original
+Tweezer intensity fluctuation	Neutral-atom sources			original
+Adversarial noise	Noise models			original
+Average noise	Noise models			original
+Born–Markov approximation	Noise models			original
+Circuit-level noise model	Noise models			original
+Code-capacity noise model	Noise models			original
+Context-dependent noise	Noise models			original
+Effective noise model	Noise models			original
+Gate-dependent noise	Noise models			original
+Markov approximation	Noise models			original
+Noise model	Noise models			original
+Pauli approximation	Noise models			original
+Phenomenological noise model	Noise models			original
+Secular approximation	Noise models			original
+Time-dependent noise	Noise models			original
+Twirled noise	Noise models			original
+Worst-case noise	Noise models			original
+Detector dark counts	Photonic sources			original
+Detector efficiency loss	Photonic sources			original
+Distinguishability error	Photonic sources			original
+Interferometric phase noise	Photonic sources			original
+Mode mismatch	Photonic sources			original
+Multi-photon contamination	Photonic sources			original
+Photon loss	Photonic sources			original
+Source brightness fluctuation	Photonic sources			original
+Carr–Purcell sequence	Physical suppression			original
+Charge-insensitive design	Physical suppression			original
+Composite pulse	Physical suppression			original
+Decoherence-free subspace	Physical suppression	DFS		original
+Dynamical decoupling	Physical suppression			original
+Flux-insensitive design	Physical suppression			original
+Noiseless subsystem	Physical suppression			original
+Quantum error-avoiding code	Physical suppression			original
+Sweet spot	Physical suppression			original
+Symmetric biasing	Physical suppression			original
+Burst noise	Spectra & statistics			original
+Filter function formalism	Spectra & statistics			original
+Gaussian noise	Spectra & statistics			original
+Johnson–Nyquist noise	Spectra & statistics			original
+Lorentzian noise	Spectra & statistics			original
+Noise floor	Spectra & statistics			original
+One-over-f noise	Spectra & statistics			original
+Photon shot noise	Spectra & statistics			original
+Pink noise	Spectra & statistics			original
+Power spectral density	Spectra & statistics	PSD		original
+Random telegraph noise	Spectra & statistics	RTN		original
+Shot noise	Spectra & statistics			original
+Spectral diffusion	Spectra & statistics			original
+Telegraph noise	Spectra & statistics			original
+White noise	Spectra & statistics			original
+Amplitude damping channel	Standard channels			original
+Bit-flip channel	Standard channels			original
+Bit-phase-flip channel	Standard channels			original
+Depolarizing channel	Standard channels			original
+Erasure channel	Standard channels			original
+Generalized amplitude damping channel	Standard channels			original
+Global depolarizing channel	Standard channels			original
+Heralded loss channel	Standard channels			original
+Local depolarizing channel	Standard channels			original
+Non-unital channel	Standard channels			original
+Pauli channel	Standard channels			original
+Phase damping channel	Standard channels			original
+Phase-flip channel	Standard channels			original
+Pure dephasing channel	Standard channels			original
+Single-qubit depolarizing channel	Standard channels			original
+Two-qubit depolarizing channel	Standard channels			original
+Unital channel	Standard channels			original
+Charge noise	Superconducting sources			original
+Charge parity jump	Superconducting sources			original
+Cosmic-ray-induced error	Superconducting sources			original
+Critical current noise	Superconducting sources			original
+Dielectric loss	Superconducting sources			original
+Flux noise	Superconducting sources			original
+Gamma-ray-induced error	Superconducting sources			original
+Ionizing radiation event	Superconducting sources			original
+Magnetic vortex	Superconducting sources			original
+Measurement-induced dephasing	Superconducting sources			added
+Measurement-induced state transition	Superconducting sources			added
+Muon strike	Superconducting sources			original
+Offset charge fluctuation	Superconducting sources			original
+Phonon-mediated correlated error	Superconducting sources			original
+Photon-induced dephasing	Superconducting sources			original
+Purcell decay	Superconducting sources			original
+Quasiparticle burst	Superconducting sources			original
+Quasiparticle density	Superconducting sources			original
+Quasiparticle poisoning	Superconducting sources			original
+Quasiparticle tunneling	Superconducting sources			original
+Readout-induced leakage	Superconducting sources			added
+Resonator-induced relaxation	Superconducting sources			original
+Stray microwave photons	Superconducting sources			original
+Substrate loss	Superconducting sources			original
+Surface loss	Superconducting sources			original
+Thermal photon population	Superconducting sources			original
+TLS bath	Superconducting sources			original
+TLS defect	Superconducting sources			original
+Trapped flux	Superconducting sources			original
+Two-level fluctuator	Superconducting sources			original
+Anomalous heating	Trapped-ion sources			original
+Background gas collision	Trapped-ion sources			original
+Ion-loss event	Trapped-ion sources			original
+Laser intensity noise	Trapped-ion sources			original
+Laser phase noise	Trapped-ion sources			original
+Magnetic-field noise	Trapped-ion sources			original
+Micromotion-induced error	Trapped-ion sources			original
+Motional dephasing	Trapped-ion sources			original
+Motional heating	Trapped-ion sources			original
+Off-resonant scattering	Trapped-ion sources			original
+Patch potential noise	Trapped-ion sources			original
+Recoil heating	Trapped-ion sources			original
+Spontaneous emission error	Trapped-ion sources			original
+Surface electric-field noise	Trapped-ion sources			original
+Clifford twirl	Twirling & budgets			original
+Effective error rate	Twirling & budgets			original
+Error budget allocation	Twirling & budgets			original
+Pauli twirl	Twirling & budgets			original

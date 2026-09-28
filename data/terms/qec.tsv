@@ -1,0 +1,208 @@
+# term	subtopic	aliases	difficulty	origin
+Bicycle architecture	Architecture			original
+Early fault-tolerant computing	Architecture	early FTQC		original
+Fault-tolerant prototype	Architecture	FTP		original
+Fault-tolerant quantum computer	Architecture	FTQC		original
+Intermodule coupler	Architecture			original
+Logical clock cycle	Architecture			original
+Logical compiler	Architecture			original
+Logical instruction set	Architecture			original
+Logical processing unit	Architecture	LPU		original
+Long-range coupler	Architecture			original
+Modular architecture	Architecture			original
+Partial fault tolerance	Architecture			original
+QEC cycle	Architecture			original
+Stabilizer round	Architecture			original
+Syndrome round	Architecture			original
+Bacon–Shor code	Code families			original
+Balanced product code	Code families			original
+Binomial code	Code families			original
+Bivariate bicycle code	Code families			original
+Bosonic code	Code families			original
+Cat code	Code families			original
+Code concatenation	Code families			original
+Color code	Code families			original
+Concatenated cat code	Code families			added
+Concatenated code	Code families			original
+CSS code	Code families			original
+Dual-rail code	Code families			original
+Dynamical code	Code families			original
+Fibre bundle code	Code families			added
+Five-qubit perfect code	Code families	[[5, 1, 3]]		original
+Floquet code	Code families			original
+Four-qubit error-detecting code	Code families	[[4, 2, 2]]		original
+Gauge operator	Code families			original
+Gauge qubit	Code families			original
+GKP code	Code families			original
+Gross code	Code families			original
+HaPPY code	Code families			added
+Heavy-hex code	Code families			added
+Holographic code	Code families			added
+Honeycomb code	Code families			original
+Hyperbolic surface code	Code families			added
+Hypergraph product code	Code families			original
+Lifted product code	Code families			original
+Multivariate bicycle code	Code families			original
+Planar code	Code families			original
+Quantum convolutional code	Code families			added
+Quantum Hamming code	Code families			original
+Quantum LDPC code	Code families	qLDPC		original
+Quantum Reed–Muller code	Code families			original
+Quantum Tanner code	Code families			added
+Repetition code	Code families			original
+Rotated surface code	Code families			original
+Shor code	Code families			original
+Steane code	Code families			original
+Subsystem code	Code families			original
+Subsystem surface code	Code families			added
+Surface code	Code families			original
+Toric code	Code families			original
+Triangular color code	Code families			original
+Triorthogonal code	Code families			added
+Two-gross code	Code families			original
+XZZX code	Code families			added
+Yoked surface code	Code families			added
+Anyon	Core concepts			original
+Check operator	Core concepts			original
+Code distance	Core concepts			original
+Code rate	Core concepts			original
+Code space	Core concepts			original
+Codeword	Core concepts			original
+Decoding	Core concepts			original
+Defect	Core concepts			original
+Detector	Core concepts			original
+Detector error model	Core concepts			original
+Encoding	Core concepts			original
+Error chain	Core concepts			original
+Error string	Core concepts			original
+Frame tracking	Core concepts			original
+Logical error rate	Core concepts			original
+Logical operator	Core concepts			original
+Logical qubit	Core concepts			original
+Parity check	Core concepts			original
+Parity check matrix	Core concepts			original
+Pauli frame	Core concepts			original
+Pauli frame update	Core concepts			original
+Physical error rate	Core concepts			original
+Physical qubit	Core concepts			original
+Quantum error correction	Core concepts	QEC		original
+Quantum error detection	Core concepts			original
+Stabilizer	Core concepts			original
+Stabilizer code	Core concepts			original
+Stabilizer formalism	Core concepts			original
+Stabilizer generator	Core concepts			original
+Stabilizer group	Core concepts			original
+Stabilizer state	Core concepts			original
+Syndrome	Core concepts			original
+Syndrome extraction	Core concepts			original
+Syndrome extraction circuit	Core concepts	SEC		original
+Syndrome measurement	Core concepts			original
+Tanner graph	Core concepts			original
+Twist defect	Core concepts			original
+Algorithmic fault tolerance	Decoders			original
+ASIC decoder	Decoders			original
+Belief propagation	Decoders	BP		original
+Blossom algorithm	Decoders			original
+BP-OSD decoder	Decoders	BP-OSD		original
+Correlated decoding	Decoders			original
+Decoder	Decoders			original
+Decoder backlog	Decoders			added
+Decoder latency	Decoders			original
+Decoder throughput	Decoders			original
+Decoding graph	Decoders			original
+FPGA decoder	Decoders			original
+Just-in-time decoding	Decoders			added
+Localized statistics decoding	Decoders	LSD		original
+Lookup table decoder	Decoders			original
+Matching graph	Decoders			original
+Minimum-weight perfect matching	Decoders	MWPM		original
+Neural network decoder	Decoders			original
+Ordered statistics decoding	Decoders	OSD		original
+Real-time decoding	Decoders			original
+Sliding window decoding	Decoders			original
+Soft-information decoding	Decoders			original
+Tensor network decoder	Decoders			original
+Union-find decoder	Decoders			original
+Above-threshold	Fault tolerance			original
+Ancilla verification	Fault tolerance			original
+Autonomous error correction	Fault tolerance			added
+Bad error propagation	Fault tolerance			original
+Below-threshold	Fault tolerance			original
+Break-even	Fault tolerance			original
+Code threshold	Fault tolerance			original
+Erasure qubit	Fault tolerance			added
+Error propagation	Fault tolerance			original
+Fault tolerance	Fault tolerance			original
+Fault-tolerant gate	Fault tolerance			original
+Fault-tolerant measurement	Fault tolerance			original
+Fault-tolerant state preparation	Fault tolerance			original
+Fault-tolerant syndrome extraction	Fault tolerance			original
+Flag qubit	Fault tolerance			original
+Flag-based fault tolerance	Fault tolerance			original
+Foliation	Fault tolerance			original
+Hook error	Fault tolerance			original
+Knill-style syndrome extraction	Fault tolerance			original
+Leakage detection	Fault tolerance			added
+Logical Bell state	Fault tolerance			added
+Logical gate	Fault tolerance			original
+Logical measurement	Fault tolerance			added
+Pseudo-threshold	Fault tolerance			original
+Shor-style syndrome extraction	Fault tolerance			original
+Single-shot error correction	Fault tolerance			original
+Steane-style syndrome extraction	Fault tolerance			original
+Threshold theorem	Fault tolerance			original
+Transversal CNOT	Fault tolerance			original
+Transversal gate	Fault tolerance			original
+Biased noise	Noise models			original
+Circuit-level noise	Noise models			original
+Circuit-level simulation	Noise models			original
+Code capacity noise	Noise models			original
+Correlated error	Noise models			original
+Depolarizing noise	Noise models			original
+Erasure conversion	Noise models			original
+Erasure error	Noise models			original
+Leakage	Noise models			original
+Leakage reduction unit	Noise models	LRU		original
+Measurement error	Noise models			original
+Pauli noise model	Noise models			original
+Phenomenological noise	Noise models			original
+Below-threshold demonstration	Performance			original
+Footprint	Performance			original
+Lambda factor	Performance			original
+Logical clock speed	Performance			original
+Logical error suppression	Performance			original
+Logical memory lifetime	Performance			original
+Logical T1	Performance			original
+Memory experiment	Performance			original
+Repetition experiment	Performance			original
+Resource estimation	Performance			original
+Space-time cost	Performance			original
+Spacetime overhead	Performance			original
+T-depth	Performance			original
+Bravyi–König theorem	Theorems & bounds			original
+Eastin–Knill theorem	Theorems & bounds			original
+Gottesman–Knill theorem	Theorems & bounds			original
+Knill–Laflamme conditions	Theorems & bounds			original
+Quantum Hamming bound	Theorems & bounds			original
+Quantum Singleton bound	Theorems & bounds			original
+Anyonic braiding	Universal computation			original
+Braiding	Universal computation			original
+Clifford-only fault tolerance	Universal computation			original
+Code deformation	Universal computation			original
+Code switching	Universal computation			original
+Distillation factory	Universal computation			original
+Fifteen-to-one distillation	Universal computation			original
+Game of surface codes	Universal computation			original
+Lattice surgery	Universal computation			original
+Logical patch	Universal computation			original
+Magic state	Universal computation			original
+Magic state cultivation	Universal computation			original
+Magic state distillation	Universal computation			original
+Magic state injection	Universal computation			original
+Merge and split operations	Universal computation			original
+Patch	Universal computation			original
+Spacelike distance	Universal computation			original
+T-state factory	Universal computation			original
+T-state injection	Universal computation			original
+Timelike distance	Universal computation			original
+Universal fault-tolerant gate set	Universal computation			original

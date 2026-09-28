@@ -1,0 +1,34 @@
+# term	subtopic	aliases	difficulty	origin
+Clifford simulation	Classical simulation			added
+Magic monotone	Classical simulation			added
+Stabilizer rank	Classical simulation			added
+Stabilizer Rényi entropy	Classical simulation			added
+Bounded-error probabilistic polynomial time	Complexity classes	BPP		added
+Bounded-error quantum polynomial time	Complexity classes	BQP		added
+Complexity class	Complexity classes			added
+Decision problem	Complexity classes			added
+Nondeterministic polynomial time	Complexity classes	NP		added
+Polynomial hierarchy	Complexity classes			added
+PostBQP	Complexity classes			added
+Promise problem	Complexity classes			added
+QMA-complete	Complexity classes			added
+Quantum classical Merlin–Arthur	Complexity classes	QCMA		added
+Quantum Merlin–Arthur	Complexity classes	QMA		added
+Sharp-P hardness	Complexity classes	#P		added
+Adversary method	Lower bounds & separations			added
+Anticoncentration	Lower bounds & separations			added
+Average-case hardness	Lower bounds & separations			added
+Circuit complexity	Lower bounds & separations			added
+Fine-grained complexity	Lower bounds & separations			added
+Oracle separation	Lower bounds & separations			added
+Polynomial method	Lower bounds & separations			added
+Quantum-classical separation	Lower bounds & separations			added
+Query lower bound	Lower bounds & separations			added
+Sampling hardness	Lower bounds & separations			added
+Extended Church–Turing thesis	Problems & conjectures			added
+Hamiltonian complexity	Problems & conjectures			added
+Local Hamiltonian problem	Problems & conjectures			added
+Quantum PCP conjecture	Problems & conjectures			added
+Sign problem	Problems & conjectures			added
+Stoquastic Hamiltonian	Problems & conjectures			added
+Tensor network contraction	Problems & conjectures			added

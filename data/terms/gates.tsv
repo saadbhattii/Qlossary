@@ -1,0 +1,96 @@
+# term	subtopic	aliases	difficulty	origin
+Barrier	Circuit techniques			added
+Classical register	Circuit techniques			added
+Conditional gate	Circuit techniques			added
+Deferred measurement principle	Circuit techniques			original
+Dynamic circuits	Circuit techniques			original
+Feed-forward	Circuit techniques			added
+Garbage qubits	Circuit techniques			original
+Implicit measurement principle	Circuit techniques			original
+Mid-circuit measurement	Circuit techniques			original
+Mid-circuit reset	Circuit techniques			added
+Phase kickback	Circuit techniques			original
+Postselection	Circuit techniques			original
+Reversible computation	Circuit techniques			original
+Uncompute	Circuit techniques			original
+Approximate compilation	Compilation			added
+Basis translation	Compilation			added
+Circuit cutting	Compilation			added
+Circuit knitting	Compilation			added
+Circuit optimization	Compilation			added
+Clifford synthesis	Compilation			added
+Gate cancellation	Compilation			added
+Gate commutation	Compilation			added
+Gate cutting	Compilation			added
+Initial layout	Compilation			added
+Peephole optimization	Compilation			added
+Phase polynomial	Compilation			added
+Qubit mapping	Compilation			added
+Qubit routing	Compilation			added
+Stabilizer tableau	Compilation			added
+SWAP insertion	Compilation			added
+Template matching	Compilation			added
+Transpilation	Compilation			added
+Transpiler	Compilation			added
+Wire cutting	Compilation			added
+Clifford gates	Gate sets & groups			original
+Clifford group	Gate sets & groups			original
+Clifford+T gate set	Gate sets & groups			added
+Entangling gate	Gate sets & groups			original
+Native gate set	Gate sets & groups			original
+Non-Clifford gates	Gate sets & groups			original
+Parametric gate	Gate sets & groups			original
+Pauli group	Gate sets & groups			original
+Physical gate	Gate sets & groups			original
+Universal gate set	Gate sets & groups			original
+Virtual gate	Gate sets & groups			original
+Barenco gate	Hardware-native gates			original
+bSWAP gate	Hardware-native gates			original
+Cross-resonance gate	Hardware-native gates	CR		original
+CZ via parametric drive	Hardware-native gates			original
+Echoed cross-resonance	Hardware-native gates			original
+fSim gate	Hardware-native gates			original
+Resonator-induced phase gate	Hardware-native gates	RIP		original
+Rydberg blockade gate	Hardware-native gates			original
+Sycamore gate	Hardware-native gates			original
+Tunable coupler gates	Hardware-native gates			original
+XY gate family	Hardware-native gates			original
+Controlled-controlled rotation	Multi-qubit gates			original
+Deutsch gate	Multi-qubit gates			original
+Doubly controlled Z gate	Multi-qubit gates			original
+Fredkin gate	Multi-qubit gates	CSWAP		original
+Margolus gate	Multi-qubit gates			original
+Multi-controlled X gate	Multi-qubit gates	MCX, MCT		original
+Peres gate	Multi-qubit gates			added
+Relative-phase Toffoli	Multi-qubit gates	RTOF		original
+Toffoli gate	Multi-qubit gates	CCX		original
+Arbitrary single-qubit rotation	Single-qubit gates			original
+Hadamard gate	Single-qubit gates	H		original
+Phase gate	Single-qubit gates	S		original
+Phase shift gate	Single-qubit gates	P		original
+Rotation gate	Single-qubit gates			original
+Square root of NOT	Single-qubit gates	√X, SX		original
+U3 gate	Single-qubit gates	U		original
+Euler decomposition	Synthesis & decomposition			original
+Gate decomposition	Synthesis & decomposition			original
+Gate synthesis	Synthesis & decomposition			original
+Gate teleportation	Synthesis & decomposition			original
+KAK decomposition	Synthesis & decomposition			original
+Solovay-Kitaev theorem	Synthesis & decomposition			original
+B gate	Two-qubit gates			original
+Controlled-Hadamard gate	Two-qubit gates			added
+Controlled-NOT gate	Two-qubit gates	CNOT, CX		original
+Controlled-phase gate	Two-qubit gates	CP		original
+Controlled-S gate	Two-qubit gates			added
+Controlled-Y gate	Two-qubit gates			original
+Controlled-Z gate	Two-qubit gates	CZ		original
+DCNOT gate	Two-qubit gates			added
+Givens rotation	Two-qubit gates			added
+Ising coupling gate	Two-qubit gates			original
+Ising interaction	Two-qubit gates			original
+iSWAP gate	Two-qubit gates			original
+Matchgate	Two-qubit gates			added
+Mølmer–Sørensen gate	Two-qubit gates	MS		original
+Square root of iSWAP	Two-qubit gates	√iSWAP		original
+Square root of SWAP	Two-qubit gates	√SWAP		original
+SWAP gate	Two-qubit gates			original

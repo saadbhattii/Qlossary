@@ -1,0 +1,135 @@
+# term	subtopic	aliases	difficulty	origin
+Block encoding	Block encoding & QSVT			original
+Linear combination of unitaries	Block encoding & QSVT	LCU		original
+Quantum eigenvalue transformation	Block encoding & QSVT			original
+Quantum signal processing	Block encoding & QSVT	QSP		original
+Quantum singular value transformation	Block encoding & QSVT	QSVT		original
+Qubitization	Block encoding & QSVT			original
+Active space	Chemistry & materials			added
+Bravyi–Kitaev transformation	Chemistry & materials			added
+Electronic structure problem	Chemistry & materials			added
+Fermion-to-qubit mapping	Chemistry & materials			added
+Heisenberg model	Chemistry & materials			added
+Hubbard model	Chemistry & materials			added
+Jordan–Wigner transformation	Chemistry & materials			added
+Krylov subspace method	Chemistry & materials			added
+Molecular Hamiltonian	Chemistry & materials			added
+Parity mapping	Chemistry & materials			added
+Quantum chemistry	Chemistry & materials			added
+Second quantization	Chemistry & materials			added
+Transverse-field Ising model	Chemistry & materials			added
+Boson sampling	Complexity & advantage			original
+Classical simulability	Complexity & advantage			original
+Dequantization	Complexity & advantage			original
+Early fault-tolerant algorithms	Complexity & advantage			original
+Exponential speedup	Complexity & advantage			original
+Gaussian boson sampling	Complexity & advantage			original
+IQP circuits	Complexity & advantage			original
+Polynomial speedup	Complexity & advantage			original
+Quadratic speedup	Complexity & advantage			original
+Quantum advantage	Complexity & advantage			original
+Quantum supremacy	Complexity & advantage			original
+Random circuit sampling	Complexity & advantage			original
+Inverse QFT	Fourier & phase estimation			original
+Iterative phase estimation	Fourier & phase estimation			original
+Kitaev phase estimation	Fourier & phase estimation			original
+Quantum Fourier transform	Fourier & phase estimation	QFT		original
+Quantum phase estimation	Fourier & phase estimation	QPE		original
+Ground state preparation	Hamiltonian simulation			original
+Hamiltonian simulation	Hamiltonian simulation			original
+Imaginary time evolution	Hamiltonian simulation			original
+Post-Trotter methods	Hamiltonian simulation			original
+Product formulas	Hamiltonian simulation			original
+qDRIFT	Hamiltonian simulation			original
+Suzuki–Trotter decomposition	Hamiltonian simulation			original
+Taylor series method	Hamiltonian simulation			original
+Trotterization	Hamiltonian simulation			original
+Grover operator	Oracles & queries			original
+Marking oracle	Oracles & queries			original
+Oracle	Oracles & queries			original
+Phase oracle	Oracles & queries			original
+Query complexity	Oracles & queries			original
+Query model	Oracles & queries			original
+Reflection operator	Oracles & queries			original
+Amplitude encoding	Quantum machine learning			added
+Angle encoding	Quantum machine learning			added
+Basis encoding	Quantum machine learning			added
+Data re-uploading	Quantum machine learning			original
+Quantum Boltzmann machine	Quantum machine learning			added
+Quantum Born machine	Quantum machine learning			original
+Quantum convolutional neural network	Quantum machine learning	QCNN		added
+Quantum embedding	Quantum machine learning			original
+Quantum feature map	Quantum machine learning			added
+Quantum generative adversarial network	Quantum machine learning	QGAN		added
+Quantum kernel methods	Quantum machine learning			original
+Quantum neural network	Quantum machine learning	QNN		original
+Quantum principal component analysis	Quantum machine learning	qPCA		added
+Quantum recommendation system	Quantum machine learning			added
+Quantum reservoir computing	Quantum machine learning			original
+Quantum support vector machine	Quantum machine learning			added
+Variational quantum classifier	Quantum machine learning			original
+Amplitude amplification	Search & amplitude			original
+Amplitude estimation	Search & amplitude			original
+Fixed-point amplitude amplification	Search & amplitude			added
+Oblivious amplitude amplification	Search & amplitude			added
+Quantum approximate counting	Search & amplitude			original
+Quantum counting	Search & amplitude			original
+Quantum mean estimation	Search & amplitude			original
+Quantum minimum finding	Search & amplitude			original
+Quantum rejection sampling	Search & amplitude			added
+Classical shadows	Sensing & learning			original
+Heisenberg limit	Sensing & learning			original
+Quantum metrology	Sensing & learning			original
+Quantum state learning	Sensing & learning			original
+Shadow tomography	Sensing & learning			original
+Standard quantum limit	Sensing & learning			original
+Draper adder	Subroutines			added
+Hadamard test	Subroutines			original
+Quantum arithmetic	Subroutines			added
+Quantum random access memory	Subroutines	QRAM		added
+Ripple-carry adder	Subroutines			added
+SWAP test	Subroutines			original
+Bernstein–Vazirani algorithm	Textbook & oracular			original
+Continued fraction expansion	Textbook & oracular			added
+Deutsch's algorithm	Textbook & oracular			original
+Deutsch–Jozsa algorithm	Textbook & oracular			original
+Discrete logarithm problem	Textbook & oracular			added
+Grover's algorithm	Textbook & oracular			original
+HHL algorithm	Textbook & oracular			original
+Integer factorization	Textbook & oracular			added
+Modular exponentiation	Textbook & oracular			added
+Order finding	Textbook & oracular			added
+Period finding	Textbook & oracular			added
+Regev's algorithm	Textbook & oracular			added
+Shor's algorithm	Textbook & oracular			original
+Simon's algorithm	Textbook & oracular			original
+ADAPT-VQE	Variational			added
+Ansatz	Variational			original
+Barren plateau	Variational			original
+Classical optimizer	Variational			original
+Cost function	Variational			original
+Expressibility	Variational			original
+Hardware-efficient ansatz	Variational			original
+Parameter shift rule	Variational			original
+Problem-inspired ansatz	Variational			original
+Quantum alternating operator ansatz	Variational			added
+Quantum approximate optimization algorithm	Variational	QAOA		original
+Quantum imaginary time evolution	Variational	QITE		added
+Quantum natural gradient	Variational			added
+Recursive QAOA	Variational			added
+SPSA optimizer	Variational			added
+Subspace-search VQE	Variational			added
+Trainability	Variational			original
+Unitary coupled cluster ansatz	Variational	UCC		original
+Variational quantum algorithm	Variational	VQA		original
+Variational quantum deflation	Variational			added
+Variational quantum eigensolver	Variational	VQE		original
+Warm-start QAOA	Variational			original
+Abelian HSP	Walks & hidden structure			original
+Continuous-time quantum walk	Walks & hidden structure			original
+Discrete-time quantum walk	Walks & hidden structure			original
+Element distinctness algorithm	Walks & hidden structure			original
+Forrelation	Walks & hidden structure			original
+Glued trees algorithm	Walks & hidden structure			original
+Hidden subgroup problem	Walks & hidden structure	HSP		original
+Non-abelian HSP	Walks & hidden structure			original

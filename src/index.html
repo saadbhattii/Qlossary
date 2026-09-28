@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qlossary: hangman for quantum computing terms</title>
+<meta name="description" content="Qlossary is a hangman game for quantum computing terms. Guess the term one letter at a time.">
+<link rel="icon" type="image/svg+xml" href="/*FAVICON*/">
+<style>/*CSS*/</style>
+</head>
+<body>
+<div id="app">
+
+<header class="bar top">
+  <a class="brand" href="#home">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">/*ICON*/</svg>
+    <span class="name">Qlossary</span>
+    <span class="tag">Hangman for quantum computing terms</span>
+  </a>
+  <nav class="tabs" aria-label="Main">
+    <a class="tab" href="#home" data-view="home">Home</a>
+    <a class="tab" href="#play" data-view="play">Play</a>
+    <a class="tab" href="#scores" data-view="scores">Scores</a>
+    <a class="tab" href="#settings" data-view="settings">Settings</a>
+    <a class="tab" href="#help" data-view="help">Help</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="v-home">
+  <div class="bar notice" id="home-resume" hidden>
+    A game is in progress. <button class="go" id="home-return">Return to the game</button>
+  </div>
+  <div class="bar home">
+    <h1><svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">/*ICON*/</svg> Qlossary</h1>
+    <p class="tagline">Hangman for quantum computing terms</p>
+    <h2>How to play</h2>
+    <ol class="steps">
+      <li>A hidden quantum computing term is shown as blanks.</li>
+      <li>Guess one letter at a time. Each wrong guess adds a line to the drawing.</li>
+      <li>Find the whole term before the drawing is finished or the time runs out.</li>
+    </ol>
+    <p class="actions">
+      <button class="go big" id="home-start">Start playing</button>
+      <button class="big" id="home-daily">Today's daily challenge</button>
+    </p>
+    <p id="home-note"></p>
+  </div>
+</section>
+
+<section id="v-play" hidden>
+
+  <div id="menu" class="bar">
+    <h2>Choose a game</h2>
+    <div class="mode"><button class="big" id="m-run">10-word game</button><span>Ten terms. Your total goes on the scoreboard.</span></div>
+    <div class="mode"><button class="big" id="m-endless">Endless</button><span>Keep going until you miss three terms.</span></div>
+    <div class="mode"><button class="big" id="m-daily">Daily challenge</button><span id="daily-note">Five terms, the same for everyone today.</span></div>
+    <div class="mode"><button class="big" id="m-practice">Practice</button><span>No score. Uses the topics and timer from Settings.</span></div>
+    <p id="pool-note"></p>
+  </div>
+
+  <div id="game" hidden>
+    <div class="bar status">
+      <span id="st-mode" class="b"></span>
+      <span id="st-word"></span>
+      <span id="st-score"></span>
+      <span id="st-streak"></span>
+      <span id="st-time"></span>
+      <button class="end" id="quit">End game</button>
+    </div>
+
+    <div class="board">
+      <pre id="gallows" aria-hidden="true"></pre>
+      <div class="right">
+        <div id="word" role="img"></div>
+
+        <div id="play-area">
+          <p class="instr">Type a letter, or click one below.</p>
+          <div id="keys"></div>
+          <p class="info"><span id="lives"></span><span id="misses"></span></p>
+          <div class="hints">
+            <span class="b">Hints:</span>
+            <button class="hint" id="h1">Show topic −25</button>
+            <button class="hint" id="h2" disabled>Show subtopic −50</button>
+            <button class="hint" id="h3">Reveal a letter −30</button>
+          </div>
+          <p id="hint-text"></p>
+        </div>
+
+        <div id="result" hidden>
+          <p id="r-head" class="b"></p>
+          <p id="r-term"></p>
+          <p id="r-where"></p>
+          <p id="r-points"></p>
+          <p><button class="go big" id="next">Next word</button> <span class="small">or press Enter</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="summary" class="bar" hidden>
+    <h2>Game over</h2>
+    <p id="s-head"></p>
+    <p id="s-saved"></p>
+
+    <div class="world" id="world-box" hidden>
+      <p class="b">Worldwide leaderboard</p>
+      <p>
+        <label>Name <input type="text" id="w-name" maxlength="12" autocomplete="nickname"></label>
+        <button class="go" id="w-add">Add my score</button>
+      </p>
+      <p class="small">Your name and score will be shown publicly.</p>
+      <p id="w-msg"></p>
+    </div>
+
+    <table class="ro" id="s-words"></table>
+
+    <div id="s-share" hidden>
+      <p>Your result, to copy and share:</p>
+      <pre id="s-share-text"></pre>
+      <button id="s-copy">Copy result</button> <span id="s-copied"></span>
+    </div>
+    <p class="actions"><button class="go big" id="s-again"></button> <button class="big" id="s-menu">Choose another game</button></p>
+  </div>
+
+</section>
+
+<section id="v-scores" hidden>
+  <div class="bar subtabs">
+    <button data-sub="boards">Leaderboards</button>
+    <button data-sub="progress">My progress</button>
+  </div>
+
+  <div id="sc-boards">
+    <div class="bar">
+      <span class="b">Game:</span>
+      <button data-board="run">10-word game</button>
+      <button data-board="endless">Endless</button>
+      <button data-board="daily">Daily, today</button>
+    </div>
+    <div class="cols2">
+      <div class="bar">
+        <h3>Worldwide</h3>
+        <p id="w-status"></p>
+        <table class="ro" id="w-board"></table>
+        <p class="pager" id="w-pager"></p>
+      </div>
+      <div class="bar">
+        <h3>In this browser</h3>
+        <table class="ro" id="board"></table>
+        <p class="pager" id="board-pager"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-progress" hidden>
+    <div class="cols3">
+      <div class="bar">
+        <h3>All time</h3>
+        <table class="ro" id="lifetime"></table>
+      </div>
+      <div class="bar">
+        <h3>By topic</h3>
+        <table class="ro" id="by-domain"></table>
+        <p class="pager" id="dom-pager"></p>
+      </div>
+      <div class="bar">
+        <h3>Missed words</h3>
+        <table class="ro" id="missed"></table>
+        <p class="pager" id="missed-pager"></p>
+        <p><button id="clear-missed">Clear this list</button></p>
+      </div>
+    </div>
+    <div class="bar">
+      Your scores and progress are stored in this browser only.
+      <button id="export">Export</button>
+      <button id="import">Import</button>
+      <button class="end" id="clear-all">Delete all my data</button>
+    </div>
+  </div>
+</section>
+
+<section id="v-settings" hidden>
+  <div class="cols2">
+    <div class="bar">
+      <h3>Topics</h3>
+      <p>Words come from the topics you tick. <button id="dom-all">Tick all</button> <button id="dom-none">Untick all</button></p>
+      <div id="dom-list"></div>
+    </div>
+    <div class="bar">
+      <h3>Game options</h3>
+      <fieldset><legend>Difficulty</legend>
+        <label><input type="radio" name="diff" value="any"> Any</label>
+        <label><input type="radio" name="diff" value="0"> Easy</label>
+        <label><input type="radio" name="diff" value="1"> Medium</label>
+        <label><input type="radio" name="diff" value="2"> Hard</label>
+        <label><input type="radio" name="diff" value="3"> Expert</label>
+      </fieldset>
+      <fieldset><legend>Time for each word</legend>
+        <label><input type="radio" name="timer" value="auto"> Automatic</label>
+        <label><input type="radio" name="timer" value="30"> 30 seconds</label>
+        <label><input type="radio" name="timer" value="60"> 60 seconds</label>
+        <label><input type="radio" name="timer" value="90"> 90 seconds</label>
+        <label><input type="radio" name="timer" value="off"> No timer (practice only)</label>
+      </fieldset>
+      <fieldset><legend>Wrong guesses allowed</legend>
+        <label><input type="radio" name="lives" value="6"> 6</label>
+        <label><input type="radio" name="lives" value="8"> 8</label>
+        <label><input type="radio" name="lives" value="10"> 10</label>
+      </fieldset>
+      <label class="opt"><input type="checkbox" id="o-balanced"> Take words evenly from every topic</label>
+      <label class="opt"><input type="checkbox" id="o-multi"> Include terms of more than one word</label>
+      <p class="row"><label>Longest term: <input type="number" id="o-maxlen" min="4" max="44" step="1"> characters</label></p>
+      <p class="row"><label>Your name for scores: <input type="text" id="o-name" maxlength="12" autocomplete="nickname"></label></p>
+      <p class="row" id="set-count"></p>
+      <p class="row"><button id="reset-seen">Let every word come up again</button> <span id="seen-note"></span></p>
+    </div>
+  </div>
+</section>
+
+<section id="v-help" hidden>
+  <div class="cols2">
+    <div class="bar help">
+      <h3>How do I play?</h3>
+      <p>A quantum computing term is hidden as blanks. Type a letter or click it. If the letter is in the term, it appears in every place it occurs. If not, a line is added to the drawing. Find the whole term before the drawing is finished or the time runs out.</p>
+      <p>Only the letters A to Z are guessed. Spaces, digits and punctuation are shown from the start. Accented letters count as their plain letter, so O finds the ö in Schrödinger.</p>
+      <h3>Which game should I pick?</h3>
+      <p><b>10-word game:</b> ten terms, one total score. <b>Endless:</b> play until you miss three terms. <b>Daily challenge:</b> five terms, the same for everyone, new every day at midnight UTC, one try per day. <b>Practice:</b> no score, and the timer can be turned off.</p>
+      <h3>Which keys can I use?</h3>
+      <p>Letters guess. 1, 2 and 3 take the three hints. Enter goes to the next word.</p>
+    </div>
+    <div class="bar help">
+      <h3>How are points counted?</h3>
+      <p>For a solved term: 10 points for each different letter, multiplied by the difficulty (easy 1, medium 1.5, hard 2, expert 3). Add 2 points for each second left. Take away 10 for each wrong guess and the cost of any hints. A missed term scores nothing.</p>
+      <h3>What do hints cost?</h3>
+      <p>Showing the topic costs 25 points. Showing the subtopic costs 50, and is available after the topic. Revealing a letter costs 30 each time, and never reveals the last missing letter.</p>
+      <h3>Is the worldwide leaderboard fair?</h3>
+      <p>Mostly. Scores are worked out in each player's browser, so someone determined could send a fake one. Impossible scores are refused, and obvious fakes are removed.</p>
+      <h3>What is stored about me?</h3>
+      <p>Your scores, progress and settings stay in this browser. Nothing is sent anywhere unless you press "Add my score", which sends your chosen name and your score.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="live" class="sr" aria-live="polite"></div>
+
+<div id="overlay" role="dialog" aria-modal="true" aria-labelledby="ov-title" hidden>
+  <div class="bar card">
+    <p class="b" id="ov-title"></p>
+    <p id="ov-help"></p>
+    <textarea id="ov-text" spellcheck="false"></textarea>
+    <p><button class="go" id="ov-ok"></button> <button id="ov-close">Close</button> <span id="ov-msg"></span></p>
+  </div>
+</div>
+
+</div>
+<script>/*JS*/</script>
+</body>
+</html>

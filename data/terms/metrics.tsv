@@ -1,0 +1,183 @@
+# term	subtopic	aliases	difficulty	origin
+Classical simulation cost	Advantage metrics			original
+Crossover point	Advantage metrics			added
+Exponential separation	Advantage metrics			original
+Quantum supremacy threshold	Advantage metrics			original
+Quantum utility	Advantage metrics			added
+Quantum utility threshold	Advantage metrics			original
+Tensor-network simulation cost	Advantage metrics			original
+Time-to-solution speedup	Advantage metrics			original
+Utility-scale experiment	Advantage metrics			added
+XEB fidelity	Advantage metrics			original
+Approximation ratio	Algorithm metrics			original
+Concentration measure	Algorithm metrics			original
+Convergence rate	Algorithm metrics			original
+Cost-function gap	Algorithm metrics			original
+Effective dimension	Algorithm metrics			original
+Energy error	Algorithm metrics			original
+Gradient variance	Algorithm metrics			original
+Solution quality	Algorithm metrics			original
+Ancilla count	Circuit metrics			original
+Circuit depth	Circuit metrics			original
+Circuit width	Circuit metrics			original
+Clifford count	Circuit metrics			original
+Gate count	Circuit metrics			original
+Layer count	Circuit metrics			original
+Native gate count	Circuit metrics			original
+Non-Clifford gate count	Circuit metrics			original
+T-count	Circuit metrics			original
+Two-qubit gate count	Circuit metrics			original
+Coherence time	Coherence times			original
+Coherence-limited fidelity	Coherence times			original
+Dephasing time	Coherence times	T2		original
+Free-induction decay	Coherence times	T2*		original
+Hahn echo	Coherence times	T2 echo		original
+Homogeneous linewidth	Coherence times			original
+Inhomogeneous broadening	Coherence times			original
+Memory time	Coherence times			original
+Pure dephasing time	Coherence times	TΦ		original
+Quality factor	Coherence times			original
+Relaxation time	Coherence times	T1		original
+Rotating-frame relaxation	Coherence times	T1ρ		original
+T2 echo	Coherence times			original
+All-to-all connectivity	Connectivity			original
+Coupling map density	Connectivity			original
+Coupling-graph degree	Connectivity			original
+Graph diameter	Connectivity			original
+Logical qubit count	Connectivity			original
+Nearest-neighbor connectivity	Connectivity			original
+Physical qubit count	Connectivity			original
+Qubit count	Connectivity			original
+Routing overhead	Connectivity			original
+SWAP overhead	Connectivity			original
+Bures angle	Distances & divergences			original
+Bures distance	Distances & divergences			original
+Diamond distance	Distances & divergences			original
+Diamond norm	Distances & divergences			original
+Frobenius distance	Distances & divergences			original
+Fubini–Study metric	Distances & divergences			original
+Hilbert–Schmidt distance	Distances & divergences			original
+Jensen–Shannon divergence	Distances & divergences			original
+Kullback–Leibler divergence	Distances & divergences			original
+Operator norm distance	Distances & divergences			original
+Quantum relative entropy	Distances & divergences			original
+Total variation distance	Distances & divergences			original
+Trace distance	Distances & divergences			original
+Coherent information	Entanglement & information			original
+Concurrence	Entanglement & information			original
+Conditional entropy	Entanglement & information			original
+Distillable entanglement	Entanglement & information			original
+Entanglement cost	Entanglement & information			original
+Entanglement entropy	Entanglement & information			original
+Entanglement of formation	Entanglement & information			original
+Entanglement rank	Entanglement & information			original
+Holevo information	Entanglement & information			original
+Logarithmic negativity	Entanglement & information			original
+Negativity	Entanglement & information			original
+Quantum mutual information	Entanglement & information			original
+Assignment error	Error rates			original
+Error per Clifford	Error rates	EPC		original
+Error per gate	Error rates	EPG		original
+Error per layered gate	Error rates	EPLG		original
+Idle error rate	Error rates			original
+Leakage rate	Error rates			original
+Logical error per cycle	Error rates			original
+Logical error per round	Error rates			original
+Median gate error	Error rates			added
+Readout error	Error rates			original
+Single-qubit gate error	Error rates			original
+Two-qubit gate error	Error rates			original
+Average gate fidelity	Fidelities			original
+Bell-state fidelity	Fidelities			original
+Bures fidelity	Fidelities			original
+Entanglement fidelity	Fidelities			original
+Fidelity	Fidelities			original
+Gate fidelity	Fidelities			added
+GHZ-state fidelity	Fidelities			original
+Hellinger fidelity	Fidelities			original
+Heralded fidelity	Fidelities			original
+Logical fidelity	Fidelities			original
+Logical gate fidelity	Fidelities			added
+Mixed-state fidelity	Fidelities			original
+Process fidelity	Fidelities			original
+Pure-state fidelity	Fidelities			original
+State fidelity	Fidelities			original
+Sub-fidelity	Fidelities			original
+Super-fidelity	Fidelities			original
+Uhlmann fidelity	Fidelities			original
+Anharmonicity	Physical parameters			original
+Coupling strength	Physical parameters			original
+Critical photon number	Physical parameters			original
+Dispersive shift	Physical parameters			original
+Drive strength	Physical parameters			original
+Frequency collision	Physical parameters			added
+Photon number	Physical parameters			original
+Pulse amplitude	Physical parameters			original
+Qubit frequency	Physical parameters			original
+Qubit yield	Physical parameters			added
+Resonator linewidth	Physical parameters			original
+Spectator error rate	Physical parameters			original
+Spectator qubit	Physical parameters			added
+ZZ rate	Physical parameters			original
+Choi matrix	Process characterization			original
+Coherent error magnitude	Process characterization			original
+Incoherent error magnitude	Process characterization			original
+Kraus rank	Process characterization			original
+Process matrix	Process characterization			original
+Process purity	Process characterization			original
+Stinespring rank	Process characterization			original
+Unitarity	Process characterization			original
+Below-threshold ratio	QEC metrics			original
+Logical error suppression factor	QEC metrics			original
+Logical T2	QEC metrics			original
+Qubit footprint	QEC metrics			original
+Spacetime cost	QEC metrics			original
+Threshold error rate	QEC metrics			original
+Average fidelity decay	Randomized benchmarking			original
+Binary randomized benchmarking	Randomized benchmarking			original
+Cross-entropy benchmarking	Randomized benchmarking	XEB		original
+Direct RB	Randomized benchmarking			original
+Interleaved RB	Randomized benchmarking			original
+Layer fidelity	Randomized benchmarking	LF		original
+Linear cross-entropy benchmarking	Randomized benchmarking	LXEB		original
+Mirror RB	Randomized benchmarking			original
+Purity benchmarking	Randomized benchmarking			original
+RB decay rate	Randomized benchmarking			original
+Simultaneous RB	Randomized benchmarking			original
+Standard RB	Randomized benchmarking			original
+Assignment fidelity	Readout metrics			original
+Discrimination fidelity	Readout metrics			original
+IQ signal-to-noise ratio	Readout metrics			original
+Quantum non-demolition fidelity	Readout metrics	QND		original
+Readout error mitigation overhead	Readout metrics			original
+Readout fidelity	Readout metrics			original
+Single-shot readout fidelity	Readout metrics			original
+Confidence interval	Sampling & statistics			original
+Effective sample size	Sampling & statistics			original
+Estimator variance	Sampling & statistics			original
+Number of shots	Sampling & statistics			original
+Sample complexity	Sampling & statistics			original
+Statistical fluctuation	Sampling & statistics			original
+Circuit execution time	Speed & throughput			original
+Gate duration	Speed & throughput			original
+Gate execution time	Speed & throughput			original
+Gate speed	Speed & throughput			original
+Quantum throughput	Speed & throughput			original
+Readout duration	Speed & throughput			original
+Repetition rate	Speed & throughput			original
+Sampling rate	Speed & throughput			original
+Shots per second	Speed & throughput			original
+Time to solution	Speed & throughput			original
+Wall-clock time	Speed & throughput			original
+Algorithmic qubits	System benchmarks	#AQ		original
+Application-oriented benchmarks	System benchmarks			original
+Circuit layer operations per second	System benchmarks	CLOPS		original
+Heavy output generation	System benchmarks	HOG		original
+Heavy output probability	System benchmarks			original
+Mirror circuit benchmark	System benchmarks			original
+Q-score	System benchmarks			original
+Quantum LINPACK	System benchmarks			original
+Quantum volume	System benchmarks	QV		original
+Quantum-classical computing benchmark	System benchmarks			original
+Reliable quantum operations per second	System benchmarks	rQOPS		original
+Volumetric benchmark	System benchmarks			original

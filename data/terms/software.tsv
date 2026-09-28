@@ -1,0 +1,40 @@
+# term	subtopic	aliases	difficulty	origin
+QASMBench	Benchmark suites			original
+SupermarQ	Benchmark suites			original
+ARTIQ	Control software			original
+QCoDeS	Control software			original
+Sinara hardware	Control software			original
+Mitiq	Mitigation tools			original
+Mthree	Mitigation tools	M3		original
+PEC compiler	Mitigation tools			original
+Qiskit Runtime mitigation	Mitigation tools			original
+ZNE compiler	Mitigation tools			original
+PyMatching	QEC tools			original
+Stim	QEC tools			original
+Bloqade	SDKs & languages			added
+Cirq	SDKs & languages			added
+CUDA-Q	SDKs & languages			added
+Ocean SDK	SDKs & languages			added
+OpenPulse	SDKs & languages			added
+OpenQASM	SDKs & languages			added
+PennyLane	SDKs & languages			added
+ProjectQ	SDKs & languages			added
+PyQuil	SDKs & languages			added
+PyZX	SDKs & languages			added
+Qibo	SDKs & languages			added
+Qiskit	SDKs & languages			added
+Qrisp	SDKs & languages			added
+Quantum Development Kit	SDKs & languages	QDK		added
+Quantum intermediate representation	SDKs & languages	QIR		added
+Quil	SDKs & languages			added
+Quipper	SDKs & languages			added
+Silq	SDKs & languages			added
+Strawberry Fields	SDKs & languages			added
+TensorFlow Quantum	SDKs & languages			added
+tket	SDKs & languages			added
+Qiskit Aer	Simulators			added
+qsim	Simulators			added
+QuEST	Simulators			added
+Qulacs	Simulators			added
+QuTiP	Simulators			added
+Sinter	Simulators			added

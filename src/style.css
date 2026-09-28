@@ -1,0 +1,205 @@
+/* style.css -- plain on purpose: black on white, Arial and Courier, thin
+   borders. Colour is used only as a very light tint on three kinds of
+   button, so they are easy to find:
+     green  = go forward (Start playing, Next word, Play again, Add my score)
+     rose   = stop (End game, Delete all my data)
+     butter = optional help (hints)
+
+   Size: every measurement is in rem, and the root size is set once below.
+   It follows the window's width and height, stays tied to the browser's own
+   text size (so Ctrl + and Ctrl - still work), and never goes below 12 px. */
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  font-size: 75%;
+  font-size: clamp(75%, min(calc(28.75% + 0.65vw), 2vh), 137.5%);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0; padding: 0;
+  font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.4;
+  color: #000; background: #fff;
+}
+#app { max-width: 76rem; margin: 0 auto; padding: 0.8rem 1.2rem; }
+main { display: block; }
+
+h1, h2, h3 { margin: 0 0 0.6rem; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0.45rem 0; }
+.b { font-weight: bold; }
+.small { font-size: 0.9rem; }
+a { color: #000; }
+
+.bar { border: 1px solid #000; padding: 0.7rem 1rem; margin-bottom: 0.6rem; background: #fff; }
+
+/* ---------- top bar ---------- */
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.brand .name { font-size: 1.5rem; font-weight: bold; }
+.brand .tag { font-size: 1.05rem; margin-left: 0.4rem; }
+.icon { width: 1.6rem; height: 1.6rem; flex: none; }
+.icon.big { width: 2.4rem; height: 2.4rem; vertical-align: -0.35rem; }
+.tabs { display: flex; gap: 0.35rem; }
+.tab {
+  display: inline-block; padding: 0.35rem 0.9rem; font-size: 1.1rem;
+  border: 1px solid #000; color: #000; background: #fff; text-decoration: none;
+}
+.tab:hover { text-decoration: underline; }
+.tab[aria-current] { background: #000; color: #fff; text-decoration: none; }
+
+/* ---------- buttons ---------- */
+
+button {
+  font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.2;
+  padding: 0.3rem 0.8rem; margin: 0.1rem 0.3rem 0.1rem 0;
+  color: #000; background: #fff; border: 1px solid #000; border-radius: 0; cursor: pointer;
+}
+button.big { font-size: 1.1rem; padding: 0.5rem 1.1rem; }
+button:hover:not(:disabled) { text-decoration: underline; }
+button:disabled { border-style: dotted; color: #000; cursor: default; }
+button[aria-pressed="true"] { background: #000; color: #fff; }
+
+button.go { background: #E8F3E6; border-color: #7FA87A; }
+button.go:hover:not(:disabled) { background: #DCEBD8; }
+button.end { background: #FBE9E9; border-color: #C98E8E; }
+button.end:hover:not(:disabled) { background: #F6DCDC; }
+button.hint { background: #FBF5DC; border-color: #BFAE63; }
+button.hint:hover:not(:disabled) { background: #F5EDC8; }
+button.hint:disabled { background: #fff; border-color: #000; }
+
+/* A visible focus ring for keyboard users in every browser. */
+:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+input[type=number], input[type=text] {
+  font-family: Arial, Helvetica, sans-serif; font-size: 1rem;
+  border: 1px solid #000; padding: 0.25rem 0.4rem; color: #000; background: #fff;
+}
+input[type=number] { width: 4.5rem; }
+input[type=text] { width: 11rem; }
+input[type=checkbox], input[type=radio] { width: 1rem; height: 1rem; margin: 0 0.4rem 0 0; vertical-align: -0.12rem; accent-color: #000; }
+label.opt { display: block; margin: 0.35rem 0; }
+fieldset { border: 0; padding: 0; margin: 0 0 0.8rem; }
+legend { font-weight: bold; padding: 0; margin-bottom: 0.25rem; }
+fieldset label { display: inline-block; margin-right: 1rem; }
+.row { margin: 0.5rem 0; }
+
+/* ---------- home ---------- */
+
+.home { max-width: 46rem; margin: 1.5rem auto 0; padding: 1.5rem 2rem; }
+.home h1 { margin-bottom: 0.2rem; }
+.tagline { font-size: 1.2rem; margin: 0 0 1.4rem; }
+.steps { font-size: 1.1rem; padding-left: 1.6rem; margin: 0 0 1.4rem; }
+.steps li { margin: 0.35rem 0; }
+.actions { margin-top: 1rem; }
+.notice { max-width: 46rem; margin: 1.5rem auto 0; background: #FBF5DC; border-color: #BFAE63; }
+.notice + .home { margin-top: 0.6rem; }
+
+/* ---------- choose a game ---------- */
+
+#menu { max-width: 52rem; margin: 1rem auto 0; padding: 1.2rem 1.6rem; }
+.mode { display: grid; grid-template-columns: 13rem 1fr; gap: 1rem; align-items: center; margin: 0.6rem 0; font-size: 1.1rem; }
+.mode button { width: 100%; margin: 0; }
+
+/* ---------- the game ---------- */
+
+.status { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 1.1rem; }
+.status .end { margin-left: auto; }
+.board { display: grid; grid-template-columns: auto 1fr; column-gap: 2.5rem; align-items: start; padding: 0.4rem 0.4rem 0; }
+#gallows {
+  font-family: "Courier New", Courier, monospace; font-size: 1.6rem; line-height: 1.15;
+  margin: 0.8rem 0 0;
+}
+.right { min-width: 0; }
+#word {
+  font-family: "Courier New", Courier, monospace; font-size: 2.4rem; line-height: 1.5;
+  margin: 0.6rem 0 0.4rem; min-height: 3.6rem;
+}
+#word.long { font-size: 2rem; }
+.w { display: inline-block; white-space: nowrap; margin-right: 1.2ch; }
+.c { display: inline-block; width: 1.3ch; margin: 0 0.12ch; text-align: center; }
+.c.m { text-decoration: underline; }
+.instr { margin: 0.2rem 0 0.5rem; }
+
+#keys { display: grid; grid-template-columns: repeat(13, 2.6rem); gap: 0.3rem; margin-bottom: 0.4rem; }
+.key {
+  width: 2.6rem; height: 2.6rem; margin: 0; padding: 0;
+  font-family: "Courier New", Courier, monospace; font-size: 1.3rem; font-weight: bold;
+}
+.key:hover:not(:disabled) { text-decoration: none; background: #F2F2F2; }
+.key.x { text-decoration: line-through; }
+.info { font-size: 1.05rem; }
+.info span { margin-right: 1.6rem; }
+.hints { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.6rem; }
+.hints .b { margin-right: 0.3rem; }
+#hint-text { font-size: 1.05rem; min-height: 1.5rem; }
+
+#result { font-size: 1.1rem; }
+#r-head { font-size: 1.25rem; }
+#r-term { font-size: 1.3rem; }
+
+/* ---------- game over ---------- */
+
+#summary { max-width: 52rem; margin: 1rem auto 0; padding: 1.2rem 1.6rem; }
+#s-head { font-size: 1.2rem; }
+.world { border: 1px solid #7FA87A; padding: 0.5rem 0.8rem; margin: 0.8rem 0; }
+.world p { margin: 0.3rem 0; }
+#s-share-text { font-family: "Courier New", Courier, monospace; margin: 0.3rem 0; }
+
+/* ---------- tables ---------- */
+
+table.ro { border-collapse: collapse; margin: 0.4rem 0; }
+table.ro td, table.ro th { padding: 0.18rem 1.2rem 0.18rem 0; text-align: left; vertical-align: top; }
+table.ro th { border-bottom: 1px solid #000; }
+table.ro .n { text-align: right; }
+table.ro td.empty { font-style: italic; }
+.pager { min-height: 2.2rem; }
+
+.cols2, .cols3 { display: grid; gap: 0.6rem; align-items: start; }
+.cols2 { grid-template-columns: 1fr 1fr; }
+.cols3 { grid-template-columns: 1fr 1fr 1.3fr; }
+.cols2 > .bar, .cols3 > .bar { margin-bottom: 0; }
+#sc-boards .cols2, #sc-progress .cols3 { margin-bottom: 0.6rem; }
+#dom-list { columns: 2; margin-top: 0.4rem; }
+#dom-list label { display: block; margin: 0.25rem 0; break-inside: avoid; }
+.help p { line-height: 1.5; }
+.help h3 { margin-top: 0.9rem; }
+.help h3:first-child { margin-top: 0; }
+
+/* ---------- export / import ---------- */
+
+#overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; z-index: 10; }
+#overlay .card { width: min(46rem, 94vw); border-width: 2px; }
+#overlay textarea { width: 100%; height: 12rem; font-family: "Courier New", Courier, monospace; font-size: 0.9rem; border: 1px solid #000; }
+
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- phones and narrow windows ---------- */
+
+@media (max-width: 700px) {
+  html { font-size: clamp(87.5%, calc(50% + 1.6vw), 106.25%); }
+  #app { padding: 0.5rem; }
+  .top { padding: 0.5rem; gap: 0.5rem; }
+  .brand .tag { display: none; }
+  .tabs { width: 100%; }
+  .tab { flex: 1; text-align: center; padding: 0.45rem 0.1rem; font-size: 1rem; }
+  .home, #menu, #summary { margin-top: 0.4rem; padding: 1rem; }
+  .mode { grid-template-columns: 1fr; gap: 0.2rem; margin: 0.8rem 0; }
+  .status { gap: 0.2rem 0.9rem; font-size: 1rem; }
+  .status .end { margin-left: 0; }
+  .board { grid-template-columns: 1fr; }
+  #gallows { font-size: 0.95rem; margin: 0; }
+  .board { padding-top: 0; }
+  .instr { margin: 0.1rem 0 0.3rem; }
+  .hints { margin-top: 0.3rem; }
+  #word { font-size: 1.5rem; min-height: 2.4rem; }
+  #word.long { font-size: 1.3rem; }
+  #keys { grid-template-columns: repeat(9, 1fr); }
+  .key { width: auto; height: 2.8rem; }
+  .cols2, .cols3 { grid-template-columns: 1fr; }
+  #dom-list { columns: 1; }
+}

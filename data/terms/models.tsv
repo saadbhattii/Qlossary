@@ -1,0 +1,30 @@
+# term	subtopic	aliases	difficulty	origin
+Adiabatic quantum computation	Computational models	AQC		original
+Analog quantum simulation	Computational models			added
+Continuous-variable quantum computation	Computational models	CV		original
+Digital quantum simulation	Computational models			added
+Distributed quantum computing	Computational models			added
+Fusion-based quantum computation	Computational models	FBQC		added
+Holonomic quantum computation	Computational models			original
+Hybrid quantum-classical computing	Computational models			added
+KLM protocol	Computational models			added
+Linear optical quantum computing	Computational models	LOQC		added
+Measurement-based computation	Computational models	MBQC		original
+Quantum annealing	Computational models			added
+Quantum cellular automata	Computational models			original
+Quantum circuit model	Computational models			original
+Quantum Turing machine	Computational models			added
+Topological quantum computation	Computational models			original
+Atomic ensembles	Modalities			added
+Bosonic encodings	Modalities			original
+Color centers	Modalities			original
+Electron-on-Helium	Modalities			original
+Molecular qubits	Modalities			original
+Neutral atom	Modalities			original
+Nuclear magnetic resonance	Modalities	NMR		original
+Nuclear spins	Modalities			added
+Rydberg atoms	Modalities			added
+Spin qubits	Modalities			original
+Superconducting	Modalities			original
+Trapped electron	Modalities			original
+Trapped ion	Modalities			original

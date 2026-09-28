@@ -1,0 +1,53 @@
+# term	subtopic	aliases	difficulty	origin
+B92 protocol	Cryptography			added
+Continuous-variable QKD	Cryptography	CV-QKD		added
+Decoy-state protocol	Cryptography			added
+Device-independent QKD	Cryptography			added
+Harvest now decrypt later	Cryptography			added
+Information reconciliation	Cryptography			added
+Intercept-resend attack	Cryptography			added
+Lattice-based cryptography	Cryptography			added
+Measurement-device-independent QKD	Cryptography	MDI-QKD		added
+ML-DSA	Cryptography			added
+ML-KEM	Cryptography			added
+Photon number splitting attack	Cryptography			added
+Post-quantum cryptography	Cryptography	PQC		added
+Privacy amplification	Cryptography			added
+Quantum bit commitment	Cryptography			added
+Quantum coin flipping	Cryptography			added
+Quantum digital signature	Cryptography			added
+Quantum key distribution	Cryptography	QKD		original
+Quantum random number generator	Cryptography	QRNG		original
+Quantum secret sharing	Cryptography			added
+Quantum-safe cryptography	Cryptography			added
+Six-state protocol	Cryptography			added
+Twin-field QKD	Cryptography			added
+Unconditional security	Cryptography			added
+Blind quantum computing	Delegated computing			original
+Delegated quantum computing	Delegated computing			original
+Quantum money	Delegated computing			original
+Verifiable quantum computation	Delegated computing			original
+Bell-state measurement	Networks			added
+Entanglement distribution	Networks			added
+Entanglement purification	Networks			added
+Heralded entanglement	Networks			added
+Optical-to-microwave transducer	Networks			original
+Quantum internet	Networks			added
+Quantum memory	Networks			original
+Quantum network node	Networks			added
+Quantum networking	Networks			original
+Quantum networking link	Networks			original
+Quantum repeater	Networks			original
+Quantum-quantum link	Networks			original
+Satellite QKD	Networks			added
+Trusted node	Networks			added
+Entanglement swapping	Protocols			original
+Quantum teleportation	Protocols			original
+Remote state preparation	Protocols			original
+Superdense coding	Protocols			original
+Channel capacity	Rates & capacities			original
+Entanglement distribution rate	Rates & capacities			original
+Holevo capacity	Rates & capacities			original
+Quantum bit error rate	Rates & capacities	QBER		original
+Secret key rate	Rates & capacities			original
+Sifted key rate	Rates & capacities			original
