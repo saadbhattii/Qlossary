@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { join } from 'node:path';
 import { checkScore, nameProblem, topScores, addScore, hashIp, MAX_PER_WORD, RATE_PER_HOUR } from '../lib/leaderboard.js';
-import { openLocalD1 } from '../tools/d1-local.mjs';
+import { openLocalD1, toPlainPlaceholders } from '../tools/d1-local.mjs';
 import { ROOT } from '../tools/tsv.mjs';
 import * as boardFn from '../functions/api/leaderboard.js';
 import * as scoresFn from '../functions/api/scores.js';
@@ -49,6 +49,13 @@ test('the browser checks names the same way as the server', async () => {
   for (const n of ['Amir K.', '', 'a'.repeat(13), '<b>hi</b>', ' lead', 'x_y-z.1']) {
     assert.equal(worldNameProblem(n) === '', nameProblem(n) === '', 'disagree on ' + JSON.stringify(n));
   }
+});
+
+test('numbered placeholders become plain ones, for every Node version', () => {
+  assert.deepEqual(toPlainPlaceholders('SELECT a FROM t WHERE x = ?1 AND y > ?2'),
+    { sql: 'SELECT a FROM t WHERE x = ? AND y > ?', order: [0, 1] });
+  assert.deepEqual(toPlainPlaceholders('SELECT ?2, ?1, ?2').order, [1, 0, 1]);
+  assert.deepEqual(toPlainPlaceholders('SELECT 1').order, []);
 });
 
 test('scores are stored, ranked and limited, with real SQL', async () => {

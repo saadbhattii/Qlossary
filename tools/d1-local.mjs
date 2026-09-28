@@ -4,6 +4,17 @@
 import { readFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
+// D1 accepts numbered placeholders (?1, ?2, ...). Some Node versions' SQLite
+// module treats those as named parameters and refuses values given as a plain
+// list ("column index out of range"). So each ?N becomes a plain ?, and the
+// values are passed in the order the placeholders appear. A number used twice
+// simply gets its value twice.
+export function toPlainPlaceholders(sql) {
+  const order = [];
+  const plain = sql.replace(/\?(\d+)/g, (_, n) => { order.push(Number(n) - 1); return '?'; });
+  return { sql: plain, order };
+}
+
 export async function openLocalD1(file, migrationsDir) {
   let sqlite;
   try { sqlite = await import('node:sqlite'); } catch (e) { return null; }
@@ -13,12 +24,17 @@ export async function openLocalD1(file, migrationsDir) {
     db.exec(readFileSync(join(migrationsDir, f), 'utf8'));
   }
   const wrap = (sql, args) => {
-    const stmt = db.prepare(sql);
+    const { sql: plain, order } = toPlainPlaceholders(sql);
+    const stmt = db.prepare(plain);
+    const values = () => (order.length ? order.map(i => args[i]) : args);
     return {
       bind: (...a) => wrap(sql, a),
-      first: async () => stmt.get(...args) || null,
-      all: async () => ({ results: stmt.all(...args), success: true }),
-      run: async () => { const r = stmt.run(...args); return { success: true, meta: { changes: r.changes, last_row_id: Number(r.lastInsertRowid) } }; },
+      first: async () => stmt.get(...values()) || null,
+      all: async () => ({ results: stmt.all(...values()), success: true }),
+      run: async () => {
+        const r = stmt.run(...values());
+        return { success: true, meta: { changes: r.changes, last_row_id: Number(r.lastInsertRowid) } };
+      },
     };
   };
   return { prepare: sql => wrap(sql, []), raw: db };

@@ -64,6 +64,10 @@ let lastGame = null; // the finished game shown on the summary, for "Add my scor
 let view = 'home';
 let boardTab = 'run';
 let scoresSub = 'boards';
+let homeBoard = 'run';      // which list the Home page shows
+let homeData = null;
+const HOME_ROWS = 10;       // at most; fewer if the screen is short
+const HOME_MIN_ROWS = 3;
 const pages = { world: 0, board: 0, dom: 0, missed: 0 };
 let worldData = null;
 
@@ -116,6 +120,25 @@ function renderHome() {
     ' topics. Your scores are saved in this browser.';
   $('home-daily').textContent = daily && daily.date === today()
     ? 'Today\'s daily challenge (done)' : 'Today\'s daily challenge';
+  loadHomeBoard();
+}
+
+// The worldwide top 10 on the Home page. Fetched after the page is shown,
+// so it never delays the page; the full top 20 is on the Scores screen.
+async function loadHomeBoard() {
+  const mode = homeBoard;
+  for (const b of document.querySelectorAll('[data-hboard]')) b.setAttribute('aria-pressed', b.dataset.hboard === mode ? 'true' : 'false');
+  $('hw-status').textContent = 'Loading...';
+  $('hw-board').textContent = '';
+  try {
+    const data = await fetchBoard(mode, lastGame && lastGame.sent);
+    if (mode !== homeBoard || view !== 'home') return;
+    homeData = data;
+    fitHomeBoard();
+  } catch (e) {
+    if (mode !== homeBoard) return;
+    $('hw-status').textContent = e.message;
+  }
 }
 
 // ---------- choose a game ----------
@@ -494,20 +517,50 @@ async function loadWorld() {
     renderWorld();
   } catch (e) {
     if (mode !== boardTab) return;
-    $('w-status').textContent = e.message;
+    $('w-status').textContent = e.message + ' Your own scores are shown on the right.';
   }
+}
+
+// Show as many of the top 10 as fit without scrolling (at least 3).
+function fitHomeBoard() {
+  if (!homeData || view !== 'home') return;
+  const table = $('hw-board');
+  let n = Math.min(HOME_ROWS, homeData.entries.length);
+  const draw = () => {
+    worldTable(table, homeData.entries.slice(0, n));
+    $('hw-status').textContent = worldCaption(homeBoard, homeData, n);
+  };
+  draw();
+  while (n > HOME_MIN_ROWS && document.documentElement.scrollHeight > window.innerHeight) { n--; draw(); }
+}
+
+// One line above a worldwide list, the same on Home and Scores.
+function worldCaption(mode, data, shown) {
+  const n = Math.min(shown, data.entries.length);
+  if (!n) return '';
+  return mode === 'daily'
+    ? 'Top ' + n + ' for ' + data.day + '. The list starts fresh every day at midnight UTC.'
+    : 'Top ' + n + ' of all time.';
+}
+
+const WORLD_EMPTY = 'No worldwide scores yet. Finish a game and press "Add my score" to be the first.';
+
+// Worldwide rows without paging (Home). Scores uses the paged version below.
+function worldTable(table, entries) {
+  table.textContent = '';
+  if (!entries.length) { row(table, [td(WORLD_EMPTY, 'empty')]); return; }
+  row(table, [th('#', 'n'), th('Name'), th('Score', 'n'), th('Words', 'n'), th('Date')]);
+  for (const e of entries) row(table, [td(String(e.rank), 'n'), td(e.name), td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)]);
 }
 
 function renderWorld() {
   if (!worldData) return;
   const entries = worldData.entries;
-  $('w-status').textContent = boardTab === 'daily'
-    ? 'Top ' + entries.length + ' for ' + worldData.day + '. The list starts fresh every day at midnight UTC.'
-    : entries.length ? 'Top ' + entries.length + ' of all time.' : '';
+  $('w-status').textContent = worldCaption(boardTab, worldData, entries.length);
   paged($('w-board'), $('w-pager'), 'world',
     [['#', 'n'], ['Name'], ['Score', 'n'], ['Words', 'n'], ['Date']],
     entries.map(e => () => [td(String(e.rank), 'n'), td(e.name), td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)]),
-    'No worldwide scores yet. Finish a game and press "Add my score" to be the first.');
+    WORLD_EMPTY);
 }
 
 // ---------- settings screen ----------
@@ -636,6 +689,8 @@ function init() {
   $('home-start').addEventListener('click', () => go('play'));
   $('home-daily').addEventListener('click', () => startSession('daily'));
   $('home-return').addEventListener('click', () => go('play'));
+  for (const b of document.querySelectorAll('[data-hboard]')) b.addEventListener('click', () => { homeBoard = b.dataset.hboard; loadHomeBoard(); });
+  $('hw-more').addEventListener('click', () => { boardTab = homeBoard; scoresSub = 'boards'; pages.board = 0; pages.world = 0; });
   $('m-run').addEventListener('click', () => startSession('run'));
   $('m-endless').addEventListener('click', () => startSession('endless'));
   $('m-daily').addEventListener('click', () => startSession('daily'));
@@ -671,6 +726,11 @@ function init() {
     if (document.hidden) T.pause(); else if (view === 'play') T.start();
   });
   window.addEventListener('hashchange', () => showView(location.hash.slice(1)));
+  let resizeId = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeId);
+    resizeId = setTimeout(() => { if (view === 'home') fitHomeBoard(); }, 120);
+  });
   bindSettings();
   showView(location.hash.slice(1) || 'home');
 }

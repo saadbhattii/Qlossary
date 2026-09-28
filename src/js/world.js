@@ -1,6 +1,6 @@
 // world.js -- the worldwide leaderboard. Nothing here runs during a game:
-// the list is fetched only when the Scores screen opens, and a score is sent
-// only when the player presses "Add my score".
+// the list is fetched when the Home or Scores screen opens (kept for 30
+// seconds), and a score is sent only when the player presses "Add my score".
 import { load, save } from './store.js';
 
 const BOARD_CACHE_MS = 30000;
@@ -39,7 +39,7 @@ export async function fetchBoard(mode, fresh) {
     res = await fetch('/api/leaderboard?mode=' + encodeURIComponent(mode) + (fresh ? '&t=' + Date.now() : ''),
       { headers: { Accept: 'application/json' } });
   } catch (e) {
-    throw new Error('The worldwide leaderboard can\'t be reached right now. Your own scores are shown on the right.');
+    throw new Error('The worldwide leaderboard can\'t be reached right now.');
   }
   const body = await readJson(res);
   if (!res.ok || !Array.isArray(body.entries)) {

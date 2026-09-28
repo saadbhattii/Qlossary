@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qlossary</title>
+<title>Qlossary: hangman for quantum computing jargon.</title>
 <meta name="description" content="Qlossary is a hangman game for quantum computing jargon.">
 <link rel="icon" type="image/svg+xml" href="/*FAVICON*/">
 <style>/*CSS*/</style>
@@ -33,7 +33,6 @@
     A game is in progress. <button class="go" id="home-return">Return to the game</button>
   </div>
   <div class="bar home">
-    <h1><svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">/*ICON*/</svg> Qlossary</h1>
     <p class="tagline">Hangman for quantum computing jargon.</p>
     <h2>How to play</h2>
     <ol class="steps">
@@ -46,6 +45,19 @@
       <button class="big" id="home-daily">Today's daily challenge</button>
     </p>
     <p id="home-note"></p>
+  </div>
+  <div class="bar home-board">
+    <div class="board-head">
+      <h2>Worldwide Leaderboard</h2>
+      <p>
+        <button data-hboard="run">10-word game</button>
+        <button data-hboard="endless">Endless</button>
+        <button data-hboard="daily">Daily, today</button>
+      </p>
+    </div>
+    <p id="hw-status"></p>
+    <table class="ro" id="hw-board"></table>
+    <p class="small"><a href="#scores" id="hw-more">See the full top 20 and your own scores</a></p>
   </div>
 </section>
 
@@ -246,7 +258,7 @@
 </main>
 
 <!-- Link to the source code. Put your own GitHub address in href. -->
-<a class="repo" href="https://github.com/saadbhattii/Qlossary" target="_blank" rel="noopener" title="Opens the Qlossary repository on GitHub in a new tab">&#9733; Star Qlossary on GitHub</a>
+<a class="repo" href="https://github.com/YOUR-GITHUB-USERNAME/Qlossary" target="_blank" rel="noopener" title="Opens the Qlossary repository on GitHub in a new tab">&#9733; Star Qlossary on GitHub</a>
 
 <div id="live" class="sr" aria-live="polite"></div>
 

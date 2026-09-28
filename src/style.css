@@ -90,12 +90,19 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 
 /* ---------- home ---------- */
 
-.home { max-width: 46rem; margin: 1.5rem auto 0; padding: 1.5rem 2rem; }
-.home h1 { margin-bottom: 0.2rem; }
-.tagline { font-size: 1.2rem; margin: 0 0 1.4rem; }
-.steps { font-size: 1.1rem; padding-left: 1.6rem; margin: 0 0 1.4rem; }
+.home { max-width: 46rem; margin: 0.6rem auto 0; padding: 0.9rem 2rem; }
+/* The top bar already shows the tagline on wider screens; phones show it here. */
+.tagline { display: none; font-size: 1.15rem; margin: 0 0 0.8rem; }
+.steps { font-size: 1.1rem; padding-left: 1.6rem; margin: 0 0 0.7rem; }
+.home .actions { margin: 0.6rem 0 0.2rem; }
+.home #home-note { margin-bottom: 0; }
 .steps li { margin: 0.35rem 0; }
 .actions { margin-top: 1rem; }
+.home-board { max-width: 46rem; margin: 0.6rem auto 0; padding: 0.6rem 2rem; }
+.home-board p { margin: 0.3rem 0; }
+.home-board table.ro { width: 100%; }
+.board-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 1rem; }
+.board-head h2, .board-head p { margin: 0.1rem 0; }
 .notice { max-width: 46rem; margin: 1.5rem auto 0; background: #FBF5DC; border-color: #BFAE63; }
 .notice + .home { margin-top: 0.6rem; }
 
@@ -209,6 +216,11 @@ table.ro td.empty { font-style: italic; }
   .tabs { width: 100%; }
   .tab { flex: 1; text-align: center; padding: 0.45rem 0.1rem; font-size: 1rem; }
   .home, #menu, #summary { margin-top: 0.4rem; padding: 1rem; }
+  .home-board { padding: 0.6rem 1rem; }
+  .tagline { display: block; }
+  .home { padding: 0.8rem 1rem; }
+  .steps { font-size: 1rem; padding-left: 1.3rem; }
+  .steps li { margin: 0.2rem 0; }
   .mode { grid-template-columns: 1fr; gap: 0.2rem; margin: 0.8rem 0; }
   .status { gap: 0.2rem 0.9rem; font-size: 1rem; }
   .status .end { margin-left: 0; }
