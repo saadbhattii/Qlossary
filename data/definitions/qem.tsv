@@ -1,0 +1,127 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Clifford twirling	Averaging noise over random Clifford gates applied before and after an operation, which turns any noise into depolarizing noise. It simplifies noise so it is easier to model and remove.
+Coherent-to-incoherent conversion	Turning coherent errors, such as small over-rotations that can build up, into random (stochastic) errors that add up more slowly, usually by twirling or randomized compiling.
+Noise tailoring	Reshaping a device's noise into a simpler or more favourable form, such as Pauli noise, with randomized gates, so that mitigation or error correction works better.
+Pauli twirling	Surrounding gates with random Pauli operations that cancel out ideally, which converts any noise into Pauli noise. It is the basis of randomized compiling and PEC.
+Pauli-frame randomization	Tracking random Pauli operations in software instead of applying them physically, so twirling costs no extra gates.
+Randomized compiling	Running many randomly twirled but equivalent versions of a circuit and averaging the results, which turns coherent errors into less harmful stochastic noise.
+Twirled noise channel	The effective noise that results from averaging a channel over a twirling group. Pauli twirling, for example, leaves a Pauli channel.
+Approximate error suppression	Reducing errors partially rather than completely, for example with dynamical decoupling or better pulses, accepting some remaining error for a lower cost.
+Bias-variance tradeoff	The balance in error mitigation between removing systematic error (bias) and increasing statistical spread (variance). Removing more bias usually needs many more shots.	In statistics and machine learning, the same term describes balancing model simplicity against fit to data.
+Error budget	A breakdown of how much each error source, such as gates, readout or idling, contributes to the total error. It shows where improvements matter most.
+Error suppression	Techniques that reduce errors before they happen, through better pulses, dynamical decoupling or smarter compilation, without extra shots or post-processing.
+Expectation value estimation	Estimating an observable's average value from repeated measurements. Most error mitigation methods correct expectation values, not individual results.
+Mitigated estimator	An estimate of an expectation value after error mitigation has been applied, ideally with less bias than the raw result, though usually with more variance.
+Mitigation budget	The extra resources, mostly additional shots or circuit runs, that you are willing to spend to reduce errors in a result.
+Mitigation overhead	The extra cost of error mitigation, usually counted in additional shots or circuit runs needed to reach the same precision.
+NISQ-era technique	A method designed for today's noisy intermediate-scale quantum devices, which lack full error correction. Error mitigation methods are typical examples.
+Noise amplification	Deliberately increasing the noise in a circuit by a known factor, for example by gate folding, so results can be extrapolated back to zero noise.
+Noise characterization	Measuring what kinds of errors a device has and how strong they are, with methods like randomized benchmarking or tomography, to build noise models.
+Noise scaling	Changing the effective noise level of a circuit in a controlled way, up for ZNE or down in principle, to study how results depend on noise.
+Noise-aware compilation	Compiling a circuit using knowledge of the device's noise, for example placing it on the best qubits and avoiding error-prone connections.
+Noisy operation decomposition	Expressing an ideal operation as a weighted combination of noisy operations the hardware can perform, with some negative weights. It is the core of probabilistic error cancellation.
+Practical quantum advantage	A quantum computer beating classical methods on a task people actually care about, not just a benchmark. Error mitigation aims to reach it before full error correction.
+Quantum error mitigation	Techniques that reduce the effect of noise on computed results using extra runs and classical post-processing, instead of encoding qubits as error correction does.
+Quasi-probability decomposition	Writing an ideal operation as a sum of implementable operations with weights that can be negative, like probabilities that are allowed to go below zero. Sampling from it cancels noise on average.
+Sampling overhead	The factor by which the number of shots must grow for error mitigation to reach the same precision. It often grows exponentially with circuit size.
+Unbiased estimator	An estimate whose average equals the true value. Probabilistic error cancellation can give unbiased estimates, at the cost of higher variance.	This is also a standard term in statistics.
+Variance amplification	The increase in the statistical spread of results caused by error mitigation, which must be offset by taking more shots.
+Analog ZNE	Zero-noise extrapolation that scales noise by physically stretching pulses in time, so the same operation takes longer and suffers proportionally more noise.
+Digital ZNE	Zero-noise extrapolation that scales noise by adding gates, such as folding G into G G† G, which is equal ideally but noisier.
+Exponential extrapolation	Fitting results at several noise levels with an exponential decay and extrapolating to zero noise, which often matches how errors actually accumulate.
+Extrapolation bias	The error left after zero-noise extrapolation because the fitted curve does not exactly match how results change with noise.
+Folding-free ZNE	Zero-noise extrapolation methods that change the noise level without folding gates, for example with pulse stretching or noise that is added deliberately.
+Gate folding	Replacing a gate G with G G† G, which does the same thing ideally but adds noise, to amplify noise for zero-noise extrapolation.
+Global folding	Folding an entire circuit as U U† U to scale its noise evenly, for zero-noise extrapolation.
+Identity insertion	Adding pairs of gates that cancel, such as two CNOTs, to amplify noise without changing the ideal result, for zero-noise extrapolation.
+Linear extrapolation	Fitting a straight line to results at several noise levels and extending it to zero noise. It is simple but can be inaccurate when noise is high.
+Local folding	Folding only selected gates, rather than the whole circuit, to scale noise in finer steps for zero-noise extrapolation.
+Noise scale factor	The factor by which noise is amplified in zero-noise extrapolation, such as 1, 3 or 5 times the original.
+Polynomial extrapolation	Fitting a polynomial to results at several noise levels and extrapolating it to zero noise. Higher orders fit better but amplify statistical noise.
+Pulse stretching	Slowing down control pulses so each gate takes longer and picks up more noise in a known way, used for analog zero-noise extrapolation.
+Richardson extrapolation	A classical numerical technique that combines results at several noise levels to cancel error terms order by order. It is a standard choice in ZNE.
+Unitary folding	Inserting U†U pairs into a circuit, for single gates or the whole circuit, to raise noise without changing the ideal result.
+Zero-noise extrapolation	An error mitigation method that runs a circuit at several amplified noise levels and extrapolates the results back to estimate the zero-noise value.
+Composable mitigation	Designing mitigation methods so they can be combined, each handling a different error source, without interfering with each other.
+Hybrid mitigation	Combining several error mitigation methods, such as readout correction with ZNE, to reduce more kinds of error than any one alone.
+Mitigation pipeline	The sequence of error suppression and mitigation steps applied to a computation, from compilation choices to post-processing of results.
+Stacked mitigation	Applying several mitigation techniques one on top of another, for example readout correction, dynamical decoupling and ZNE together.
+UNITED	Unified Technique for Error mitigation with Data: a 2021 method that combines zero-noise extrapolation, Clifford data regression and virtual distillation into one learning-based approach.	In everyday English, united simply means joined together.
+Clifford data regression	A learning-based mitigation method that runs near-Clifford circuits, which can be simulated classically, on hardware, and learns a correction from noisy to exact results.
+Energy sampling	A way of choosing training circuits for Clifford data regression by selecting near-Clifford circuits whose energies are close to the target's, so the learned correction fits better.
+Learning-based error mitigation	Mitigation methods that learn how noise distorts results from training circuits with known answers, and then apply that correction to the target circuit.
+Machine learning mitigation	Using machine learning models, such as neural networks or regression, to predict noise-free results from noisy measurement data.
+Near-Clifford training circuits	Circuits made mostly of Clifford gates, with few non-Clifford gates, whose exact results can be computed classically. They are used to train learning-based mitigation.
+Neural-network error mitigation	Training a neural network to map noisy measurement results to corrected ones, using circuits whose ideal outputs are known.
+Non-Clifford extrapolation	A mitigation method that extrapolates in the number of non-Clifford gates, using classically simulable circuits to learn how results change as circuits become less Clifford.
+Training circuit	A circuit with a known ideal result, run on hardware to learn how noise distorts results, as in Clifford data regression.	In machine learning, training data plays the same role.
+Variable-noise CDR	A version of Clifford data regression that also runs training circuits at several noise levels, combining it with zero-noise extrapolation.
+Approximate quantum error correction	Error correction that protects information approximately rather than perfectly, using fewer qubits or tolerating some residual error.
+Concatenated mitigation and correction	Applying error mitigation on top of error correction, to reduce the remaining logical errors of an early fault-tolerant machine.
+Mitigation in early FTQC	Using error mitigation on early fault-tolerant quantum computers to clean up remaining logical errors, stretching limited error correction further.
+Partial error correction	Correcting only some kinds of errors, or only some qubits, and mitigating the rest, to balance protection against qubit cost.
+Pre-correction mitigation	Reducing errors before or during error correction, for example with better pulses or twirling, so the code works with a lower physical error rate.
+Gate set tomography	A thorough, self-consistent method for reconstructing a device's gates, state preparation and measurement, including their errors. It is accurate but costly.
+Learning-based PEC	Probabilistic error cancellation in which the noise model is learned from the device, for example as a sparse Pauli-Lindblad model, instead of assumed.
+Monte Carlo sampling	Estimating a quantity by averaging over random samples. In error mitigation it is used to sample circuits from a quasi-probability decomposition.	The name comes from the Monte Carlo casino; the method is used across science and finance.
+Negative quasi-probability	A weight below zero in a quasi-probability decomposition. The more negativity, the higher the sampling overhead of probabilistic error cancellation.
+Probabilistic error amplification	A method that amplifies learned noise in a controlled, probabilistic way to get several noise levels for zero-noise extrapolation. IBM used it in its 2023 utility experiment.
+Probabilistic error cancellation	An error mitigation method that samples from a quasi-probability decomposition of the inverse noise, cancelling errors on average at the cost of many more shots.
+Quasi-probability sampling	Choosing operations at random according to the absolute values of quasi-probability weights, and recording their signs, so averages reproduce the ideal result.
+Sampling cost	The number of circuit runs a method needs to reach a target precision. For probabilistic error cancellation it grows exponentially with the total noise.
+Sparse Pauli-Lindblad model	A noise model that represents errors as a few Pauli terms acting on neighbouring qubits, making noise learnable and efficient to cancel on large devices.
+CPMG sequence	The Carr–Purcell–Meiboom–Gill sequence: a train of evenly spaced π pulses that refocuses dephasing, used for dynamical decoupling and for measuring coherence.
+Derivative removal by adiabatic gate	DRAG: a pulse shaping method that adds a correction to a qubit drive to stop leakage to higher levels and phase errors in weakly anharmonic qubits such as transmons.
+Knill dynamical decoupling	A decoupling sequence built from composite pulses designed by Emanuel Knill, robust against pulse errors such as imperfect rotation angles.
+Pulse shaping for mitigation	Designing the shape of control pulses to reduce errors such as leakage, crosstalk and sensitivity to noise, before any post-processing.
+Quantum optimal control	Using numerical optimization to design control pulses that perform a gate as fast and accurately as possible on a given device.
+Robust optimal control	Optimal control that designs pulses to work well even when device parameters drift or are uncertain, not just for one exact model.
+XY-4 sequence	A dynamical decoupling sequence of four π pulses alternating about the X and Y axes. It protects qubits from noise and is more robust to pulse errors than simple X-only sequences.
+XY-8 sequence	A dynamical decoupling sequence made of XY-4 followed by its mirror image, which cancels more pulse errors than XY-4.
+Cyclic permutation circuit	A circuit that cyclically shifts several copies of a state, used in virtual distillation to measure quantities such as Tr(ρ²) or purified expectation values.
+Dominant eigenvector approximation	Treating a noisy state as close to its largest-eigenvalue eigenvector, the idea behind purification methods such as virtual distillation.
+Eigenstate purification	Suppressing noise by projecting a noisy state toward its dominant eigenstate, using multiple copies or repeated operations.
+Exponential error suppression	Error reduction that improves exponentially with resources, as in virtual distillation, where errors shrink exponentially with the number of copies.
+State copies	Several identical preparations of a quantum state held at once, needed by methods such as virtual distillation and the SWAP test.
+Symmetric subspace projection	Projecting several copies of a state onto their symmetric subspace, which filters out noise because the ideal copies are identical.
+Virtual distillation	An error mitigation method that uses several copies of a noisy state to compute expectation values of an effectively purer state, suppressing errors exponentially.
+Assignment matrix	A matrix giving the probability of each measured result for each true state, used to correct readout errors. It is also called the confusion or calibration matrix.
+Calibration matrix	The measured matrix of readout error probabilities, obtained by preparing each basis state and recording what is read out. It is inverted to correct results.	In other fields, a calibration matrix is any matrix used to calibrate an instrument, such as a camera.
+Confusion matrix	A table of how often each prepared state is read out as each result. Its off-diagonal entries show readout errors.	In machine learning, a confusion matrix shows how often a classifier's predictions match the true labels.
+Correlated measurement errors	Readout errors that depend on several qubits together, for example through crosstalk. They make simple per-qubit correction inaccurate.
+Iterative Bayesian unfolding	A readout mitigation method that repeatedly updates an estimate of the true result distribution using Bayes' rule, avoiding the negative probabilities matrix inversion can give.	The method originated in particle physics for correcting detector effects.
+Measurement error mitigation	Correcting results for errors made when reading out qubits, usually by characterizing the readout and inverting its effect.
+Readout error mitigation	Correcting measured results for readout errors, for example by inverting a calibration matrix or with twirled readout.
+Readout matrix inversion	Applying the inverse of the calibration matrix to measured probabilities to estimate the error-free distribution.
+Readout twirling	Randomly flipping qubits before measurement and flipping the results back in software, which turns readout errors into simple symmetric errors that are easy to correct.
+SPAM mitigation	Reducing state preparation and measurement (SPAM) errors in results, for example with readout correction or twirling.
+Tensored measurement mitigation	Readout correction that assumes errors are independent for each qubit or small group, so the calibration matrix is a tensor product. It scales to many qubits.
+Twirled readout error extinction	TREX: a readout mitigation method that combines readout twirling with a calibration that divides out the resulting simple error, with little overhead.
+Light-cone mitigation	Mitigation that only considers the gates inside an observable's causal light cone, since gates outside it cannot affect that result.
+Local observable mitigation	Mitigation targeted at expectation values of observables acting on few qubits, which can be corrected more cheaply than whole output distributions.
+Matrix product state mitigation	Using matrix product states, a classical tensor-network representation, to model noise or ideal results and correct measured data.
+Pauli error propagation	Tracking how Pauli errors move and spread through a circuit, used to predict and correct their effect on results.
+Tensor-network mitigation	Using tensor networks to represent and invert learned noise in classical post-processing, correcting results without extra quantum circuits.
+Bias-free mitigation	Mitigation that removes systematic error completely on average, such as probabilistic error cancellation with an exact noise model, at the cost of higher variance.
+Circuit depth limit	The practical maximum circuit depth beyond which error mitigation becomes too costly, because its overhead grows exponentially with the total noise.
+Exponential sampling overhead	The fact that most error mitigation methods need exponentially more shots as circuits grow in size or depth. It limits how far mitigation can scale.
+Mitigation scaling	How the cost of error mitigation grows with circuit size, depth and noise. It is usually exponential, which limits mitigation to moderate-sized circuits.
+Mitigation threshold	The noise level or circuit size beyond which error mitigation is no longer practical, because the required number of shots becomes too large.	This differs from the fault-tolerance threshold of error correction.
+No-free-lunch	The principle that no error mitigation method works best for every circuit and noise type, and that reducing bias always costs something, usually extra shots.	The phrase comes from optimization theory and the saying "there is no such thing as a free lunch".
+Optimality of mitigation	The question of how low the cost of error mitigation can be in principle, and which methods reach that limit.
+Practical mitigation regime	The range of circuit sizes and noise levels in which error mitigation gives useful results at a reasonable cost in shots.
+Universal cost bound	A proven lower limit on the sampling cost that any error mitigation method must pay, growing with the amount of noise in a circuit.
+Clifford ansatz for quantum accuracy	CAFQA: a method that finds the best Clifford circuit for a VQE problem classically, then uses it as the starting point, improving accuracy on noisy hardware.
+Error-mitigated VQE	A variational quantum eigensolver whose energy measurements are corrected with error mitigation techniques.
+Mitigated cost function	The cost in a variational algorithm computed from mitigated rather than raw measurements, so the optimizer is steered by less-biased values.
+Mitigation-aware optimization	Tuning variational circuit parameters while taking error mitigation into account, for example by budgeting shots between optimization and mitigation.
+Reference-state mitigation	Correcting results using a reference state whose exact answer is known, and whose noise behaves similarly to the target.
+Echo verification	Running a circuit forward and then backward to check how well the original state is recovered, to detect or mitigate errors.
+Loschmidt echo verification	Estimating errors by evolving forward and then applying the exact reverse evolution, and measuring how close the system returns to its start.
+Mirror circuits	Circuits that apply a sequence of gates and then its inverse, so the ideal output is known. They are used to benchmark devices and detect errors.
+Parity check verification	Checking that a measured result has the parity a correct answer must have, and discarding results that fail, to filter errors.
+Post-selection mitigation	Discarding runs whose results break a known rule, such as particle number conservation, which filters out many errors at the cost of throwing away shots.
+Quantum subspace expansion	A method that improves a variational result by also measuring a set of expanded states and solving a small classical eigenvalue problem, which can correct errors and find excited states.
+Subspace expansion	Improving a quantum estimate by expanding it into a small subspace of related states and solving an eigenvalue problem classically in that subspace.
+Symmetry verification	Checking that results respect symmetries the true state must have, such as particle number, and discarding or correcting those that do not.
+Verified phase estimation	A mitigation-friendly version of phase estimation that checks whether the system returns to its starting state, filtering out runs affected by errors.

@@ -1,0 +1,27 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Allan deviation	A measure of frequency stability over different averaging times, used for clocks and oscillators. Its shape reveals which kinds of noise dominate at each timescale.
+Back-action evasion	Measurement techniques that avoid disturbing the quantity being measured, by pushing the unavoidable disturbance into another variable that is not measured.
+Cramér–Rao bound	The lowest possible variance of an unbiased estimator, set by the Fisher information of the data. It limits how precisely a parameter can be measured.
+Measurement back-action	The disturbance a measurement causes to the system being measured, as required by quantum mechanics. It sets fundamental limits on precision sensing.
+Quantum Cramér–Rao bound	The ultimate limit on how precisely a parameter can be estimated from a quantum state, set by the quantum Fisher information and optimized over all measurements.
+Quantum Fisher information	A measure of how sensitively a quantum state changes with a parameter. Higher values mean the parameter can be estimated more precisely.
+Sensitivity	The smallest change in a signal that a sensor can detect in a given measurement time, often quoted per square root of hertz.	In statistics, sensitivity is a test's true positive rate; in everyday English it means being easily affected.
+Shot-noise limit	The precision limit set by counting random particles, such as photons, with error falling as 1/√N. It is the standard quantum limit for optical measurements.
+Atom interferometer	An instrument that splits atoms' matter waves along two paths and recombines them, measuring accelerations, rotations or gravity from the phase difference.
+Atomic clock	A clock that keeps time by locking to the frequency of an atomic transition, such as in caesium. Atomic clocks define the second and enable GPS.
+Cold-atom gravimeter	A gravity sensor that uses atom interferometry with laser-cooled atoms in free fall to measure local gravity very precisely, for geology or navigation.
+Ghost imaging	An imaging technique that forms a picture using correlations between two light beams, one of which never touches the object. It was first shown with entangled photons.
+NV magnetometry	Measuring magnetic fields with nitrogen-vacancy centres in diamond, whose spin energy levels shift with the field and can be read optically, even at room temperature.
+Optical clock	An atomic clock that uses an optical transition in ions or neutral atoms, ticking far faster than microwave clocks. Optical clocks are the most accurate timekeepers ever built.
+Optically pumped magnetometer	A magnetometer that uses laser light to polarize atomic spins, often in alkali vapour, and detects how a magnetic field changes their precession. It can sense brain signals without cryogenics.
+Quantum gyroscope	A rotation sensor based on quantum effects, such as atom interferometry or spins, for navigation without GPS.
+Quantum illumination	A sensing scheme that uses entangled light to detect a faint object in bright background noise better than any classical light of the same power.
+Quantum imaging	Imaging techniques that use quantum properties of light, such as entanglement or squeezing, to beat classical limits on resolution, noise or light dose.
+Quantum magnetometer	A magnetic field sensor based on quantum effects, such as SQUIDs, NV centres or atomic vapours, capable of extreme sensitivity.
+Squeezed light injection	Feeding squeezed light into an interferometer to lower quantum noise below the shot-noise limit. It is used in gravitational-wave detectors such as LIGO.
+SQUID magnetometer	A magnetometer built from a superconducting quantum interference device, among the most sensitive magnetic sensors known, used in medicine and materials research.
+Distributed quantum sensing	Using entanglement between sensors at different locations to estimate a combined quantity, such as an average field, more precisely than independent sensors could.
+Entanglement-enhanced sensing	Using entangled probes to measure a quantity with better precision than the standard quantum limit allows for independent particles.
+Quantum non-demolition measurement	A measurement that leaves the measured quantity unchanged, so repeating it gives the same result. It is used to read out qubits and to count photons without absorbing them.
+Ramsey interferometry	A precision technique that applies two π/2 pulses separated by free evolution; the phase gained in between reveals frequency differences. It is used in atomic clocks and qubit calibration.
+Spin squeezing	Entangling many spins so that the uncertainty in one direction drops below the standard quantum limit. It improves atomic clocks and magnetometers.

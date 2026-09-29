@@ -8,6 +8,7 @@ import { candidates, pickNext, dailyTerms, utcDate, DAILY_WORDS } from './pick.j
 import { makeTimer, fmtTime } from './timer.js';
 import { load, save, emptyStats, emptyScores, addScore, addMissed, exportAll, importAll, clearAll, TOP } from './store.js';
 import { browserId, worldNameProblem, fetchBoard, fetchActivity, submitScore } from './world.js';
+import { loadDefinitions, learnMoreUrl } from './defs.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
@@ -306,6 +307,8 @@ function endRound(timedOut) {
   $('r-head').textContent = head;
   $('r-term').textContent = t.t + (t.a ? '  (' + t.a + ')' : '');
   $('r-where').textContent = 'Topic: ' + domainOf(t).name + ' › ' + subOf(t);
+  $('r-learn').href = learnMoreUrl(t.t);
+  showDefinition(t);
   let points = '';
   if (!S.cfg.scored) points = 'Practice game, so no points are counted.';
   else if (!R.won) points = 'No points for this word.';
@@ -320,6 +323,34 @@ function endRound(timedOut) {
   $('next').textContent = sessionOver() ? 'See results' : 'Next word';
   $('next').focus();
   say(head + ' ' + t.t + '. ' + points);
+}
+
+// The definition appears under the answer once its topic file has loaded.
+// Terms without a definition yet show only the "Learn more" link.
+let defFor = null;
+async function showDefinition(t) {
+  defFor = t;
+  const def = $('r-def');
+  show($('r-other'), false);
+  const file = domainOf(t).defs;
+  def.textContent = file ? 'Loading the definition...' : '';
+  show(def, !!file);
+  const map = await loadDefinitions(file);
+  if (defFor !== t) return;                         // the player has moved on
+  const entry = map && map[t.key];
+  if (!entry) { def.textContent = ''; show(def, false); return; }
+  def.textContent = entry[0];
+  if (entry[1]) { $('r-other-text').textContent = entry[1]; show($('r-other'), true); }
+}
+
+// A table cell whose term links to "Learn more", for studying missed words.
+function termLink(term) {
+  const c = el('td');
+  const a = el('a', '', term);
+  a.href = learnMoreUrl(term); a.target = '_blank'; a.rel = 'noopener';
+  a.title = 'Learn more about ' + term + ' (opens a web search)';
+  c.appendChild(a);
+  return c;
 }
 
 function sessionOver() {
@@ -567,7 +598,7 @@ function renderScores(keepWorld) {
 
     const names = Object.fromEntries(DATA.domains.map(d => [d.id, d.name]));
     paged($('missed'), $('missed-pager'), 'missed', [['Term'], ['Topic']],
-      missed.map(m => () => [td(m.t), td(names[m.d] || m.d)]),
+      missed.map(m => () => [termLink(m.t), td(names[m.d] || m.d)]),
       'No missed words. Terms you miss are listed here so you can learn them.');
     show($('clear-missed'), missed.length > 0);
   }

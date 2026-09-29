@@ -145,3 +145,11 @@ test('timer counts down against a deadline and fires once', async () => {
   assert.equal(ended, 1);
   assert.deepEqual(ticks, [2, 1, 0]);
 });
+
+test('Learn more searches the term in its quantum computing sense', async () => {
+  const { learnMoreUrl } = await import('../src/js/defs.js');
+  const u = new URL(learnMoreUrl('Trace'));
+  assert.equal(u.hostname, 'www.google.com');
+  assert.equal(u.searchParams.get('q'), '"Trace" in quantum computing');
+});
+

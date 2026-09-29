@@ -45,6 +45,15 @@ createServer(async (req, res) => {
     res.end(await response.text());
     return;
   }
+  const def = path.match(/^\/defs\/([\w.-]+\.json)$/);
+  if (def) {
+    try {
+      const body = readFileSync(join(dist, 'defs', def[1]));
+      res.writeHead(200, Object.assign({ 'Content-Type': 'application/json; charset=utf-8' }, readHeaders()));
+      res.end(body);
+    } catch (e) { res.writeHead(404); res.end('Not found'); }
+    return;
+  }
   if (path !== '/' && path !== '/index.html') { res.writeHead(404); res.end('Not found'); return; }
   res.writeHead(200, Object.assign({ 'Content-Type': 'text/html; charset=utf-8' }, readHeaders()));
   res.end(readFileSync(join(dist, 'index.html')));

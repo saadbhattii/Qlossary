@@ -39,3 +39,22 @@ export function readTerms() {
   }
   return out;
 }
+
+// data/definitions/<topic id>.tsv: term <tab> definition <tab> other meaning (optional).
+// Not every term needs one yet; terms without a definition show only "Learn more".
+export const DEF_COLUMNS = ['term', 'definition', 'other meaning'];
+
+export function readDefinitions() {
+  const dir = join(ROOT, 'data', 'definitions');
+  let files = [];
+  try { files = readdirSync(dir).filter(f => f.endsWith('.tsv')).sort(); } catch (e) { return []; }
+  const out = [];
+  for (const f of files) {
+    const domain = f.replace(/\.tsv$/, '');
+    for (const c of rows(join(dir, f))) {
+      out.push({ file: f, line: c.line, domain, term: c[0] || '', def: (c[1] || '').trim(), other: (c[2] || '').trim(), cols: c.length });
+    }
+  }
+  return out;
+}
+

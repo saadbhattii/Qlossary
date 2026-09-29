@@ -1,0 +1,216 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Dissipator	The part of a Lindblad master equation that describes irreversible processes, such as energy loss and dephasing, built from jump operators.
+GKSL equation	The Gorini–Kossakowski–Sudarshan–Lindblad equation, the most general Markovian master equation for an open quantum system, also called the Lindblad equation.
+Jump operator	An operator in the Lindblad equation that describes one kind of sudden change caused by the environment, such as a qubit losing its energy (σ−) or dephasing (Z).
+Kraus operator	One operator K_i in a set describing a noise channel as ρ → Σ K_i ρ K_i†. Each Kraus operator represents one possible way the noise acts.
+Lindblad equation	The standard equation for the evolution of a quantum system that loses energy or coherence to a memoryless environment, adding jump-operator terms to the Schrödinger equation.
+Lindbladian	The generator of Lindblad dynamics, the superoperator that gives the rate of change of the density matrix, including both the Hamiltonian and dissipative parts.
+Master equation	An equation for how the density matrix of an open system changes over time, including the effects of its environment. The Lindblad equation is the most common one.	In classical probability, a master equation describes how probabilities of states change over time.
+Pauli transfer matrix	A real matrix describing a quantum channel by how it maps each Pauli operator to combinations of Paulis. It is a convenient way to write and compose noise processes.
+Quantum trajectory	One possible random history of a monitored quantum system, with sudden jumps or noisy evolution. Averaging many trajectories reproduces the master equation.
+Redfield equation	A master equation derived from weak coupling to an environment, more detailed than Lindblad but not guaranteed to keep the density matrix physical.
+Stochastic master equation	A master equation for a system under continuous measurement, where the state is updated using the noisy measurement record in real time.
+CPMG noise probing	Using Carr–Purcell–Meiboom–Gill pulse sequences with different spacings to measure how a qubit's coherence depends on noise frequency.
+Cycle benchmarking	A method that measures the error rate of a full layer (cycle) of gates, including crosstalk, by twirling and repeating that cycle many times.
+Dynamical decoupling noise spectroscopy	Measuring the frequency spectrum of noise on a qubit by applying decoupling pulse sequences that filter different frequencies and recording coherence.
+Hahn echo characterization	Measuring a qubit's coherence with a Hahn echo, a single π pulse midway, which cancels slow noise and gives the echo time T2E.
+Lindblad tomography	Reconstructing a device's Lindblad model, its Hamiltonian and dissipation rates, from measurements of how states evolve over time.
+Noise spectroscopy	Measuring the strength of noise at different frequencies, its power spectral density, usually with sequences of control pulses that act as filters.
+Pauli noise learning	Estimating the probabilities of Pauli errors in a device's gates, often after twirling, so the noise can be modelled and mitigated.
+Process tomography	Fully reconstructing a quantum process or gate by preparing many input states and measuring the outputs. It is thorough but scales badly with qubit number.
+Randomized benchmarking	Estimating the average error per gate by running random sequences of Clifford gates of increasing length and measuring how fast the survival probability decays.
+Spectator tomography	Characterizing how operations on some qubits affect nearby idle (spectator) qubits, to measure crosstalk.
+Coherence	The ability of a quantum state to keep definite phase relationships between its components, which quantum algorithms rely on. Noise gradually destroys it.	In everyday English, coherence means being logical and consistent; in optics, it describes stable light waves.
+Decoherence	The loss of quantum coherence as a system interacts with its environment, which turns superpositions into mixtures and is the main enemy of quantum computing.
+Dephasing	The loss of phase coherence between states without loss of energy, turning a superposition into a mixture. It is measured by the T2 time.
+Dissipation	Loss of energy from a quantum system to its environment, such as a qubit decaying from |1⟩ to |0⟩.	In everyday physics, dissipation also means energy lost as heat, for example through friction.
+Energy relaxation	A qubit losing its energy to the environment and falling from the excited state |1⟩ to the ground state |0⟩. Its time scale is T1.
+Environment	Everything outside the quantum system that it can interact with, such as materials, electromagnetic fields or stray photons. Coupling to it causes decoherence.	In everyday English, the environment usually means the natural world.
+Irreversibility	The fact that some processes, such as decoherence into a large environment, cannot practically be undone, unlike ideal unitary gates.
+Markovian noise	Noise with no memory, where each moment's errors are independent of the past. It is simpler to model and correct than non-Markovian noise.
+Memory effects	Noise effects that depend on past history, for example slowly fluctuating defects, so errors are correlated in time. They make noise non-Markovian.
+Noise	Any unwanted disturbance that causes errors in a quantum computation, from the environment, control electronics or imperfect gates.	In everyday English, noise means unwanted sound.
+Non-Markovian noise	Noise that has memory of the past, so errors at different times are correlated. It is common in real devices and harder to model.
+Non-stationary noise	Noise whose statistics change over time, such as drifting defects. It makes one-time calibration insufficient.
+Open quantum system	A quantum system that interacts with its environment, so its evolution includes noise and dissipation, not just unitary dynamics.
+Pure dephasing	Loss of phase coherence without any energy exchange, caused by fluctuations in a qubit's frequency. Its time scale is often written Tφ.
+Relaxation	A system returning toward equilibrium by exchanging energy with its environment, such as a qubit decaying to its ground state (T1).	In everyday English, relaxation means rest.
+Stationary noise	Noise whose statistical properties do not change over time, the usual assumption in noise models.
+System–bath coupling	The interaction between a quantum system and its environment, or bath, which determines how noise and decoherence affect it.
+Thermal relaxation	A qubit's decay toward thermal equilibrium with its surroundings, combining energy relaxation and heating, set by T1 and temperature.
+AC-Stark shift	A shift in a qubit's frequency caused by an oscillating field, such as a drive or photons in a resonator. It can cause phase errors if uncalibrated.
+Always-on coupling	A coupling between qubits that cannot be switched off, which causes unwanted interactions such as residual ZZ even when no gate is applied.
+Classical crosstalk	Unwanted signals leaking between control lines, so pulses meant for one qubit partly reach another.
+Coherent crosstalk	Crosstalk that produces unwanted unitary rotations on neighbouring qubits, which can build up systematically across a circuit.
+DC-Stark shift	A shift in energy levels caused by a static electric field. It can shift qubit frequencies, for example in atoms or defects.
+Driven crosstalk	Crosstalk that appears only while a drive is applied, for example when driving one qubit also rotates a neighbour.
+Microwave crosstalk	Microwave control signals leaking onto qubits they were not meant for, through wiring, the package or the chip.
+Quantum crosstalk	Crosstalk that comes from quantum couplings between qubits, such as residual ZZ interactions, rather than from leaking control signals.
+Residual ZZ	The small unwanted ZZ interaction left between coupled qubits when no gate is applied. It shifts each qubit's frequency depending on its neighbour's state.
+Spectator-induced phase	A phase error on a qubit that depends on the state of a neighbouring idle qubit, typically caused by residual ZZ coupling.
+Stark shift error	An error caused by an unaccounted-for Stark shift, which changes a qubit's frequency and makes gates rotate by the wrong phase.
+Static crosstalk	Crosstalk that is always present, even when no gates are applied, such as residual ZZ coupling.
+ZZ coupling	An interaction in which one qubit's frequency depends on another's state, written ZZ. It enables CZ gates but causes errors when not wanted.
+Anomalous events	Rare, sudden disturbances, such as radiation strikes, that cause large bursts of correlated errors across a chip.
+Burst events	Sudden events that cause many errors at once for a short time, such as cosmic-ray impacts. They challenge error correction.
+Coherence-time fluctuation	Changes over time in a qubit's T1 or T2, often caused by defects moving in and out of resonance.
+Drift	Slow changes in a device's parameters, such as qubit frequency or gate calibration, which make gates less accurate over time.	In everyday English, drift means slowly moving or wandering.
+Fast drift	Parameter changes on short time scales, from seconds to minutes, that require frequent recalibration.
+Parameter fluctuation	Random changes in device parameters, such as frequencies or couplings, that cause gate and coherence errors.
+Quasiparticle dynamics events	Changes in the number of broken Cooper pairs (quasiparticles) in a superconducting chip, for example after radiation, that cause bursts of errors.
+Qubit frequency drift	Slow changes in a qubit's frequency over time, which make calibrated gates slowly go off target.
+Slow drift	Parameter changes over hours or days, handled by periodic recalibration.
+TLS hopping	A two-level defect switching between configurations, which moves its frequency and changes how it interacts with a qubit, causing coherence fluctuations.
+Bit-flip error	An error that swaps |0⟩ and |1⟩, the Pauli X error, the quantum version of a classical bit flip.
+Bit-phase-flip error	An error that flips both the bit and the phase, the Pauli Y error.
+Burst error	A cluster of errors that happen close together in space or time, for example from a radiation strike.	In classical communication, burst errors are runs of corrupted bits.
+Calibration error	An error from imperfectly tuned control settings, such as the wrong pulse amplitude, producing systematic over- or under-rotations.
+Catastrophic error	An error event so large, such as a radiation strike affecting many qubits at once, that it overwhelms error correction.
+Coherent error	A systematic unitary error, such as a consistent over-rotation. Coherent errors can add up quickly, faster than random errors.
+Crosstalk error	An error on one qubit caused by operations on, or the presence of, other qubits.
+Drift error	An error caused by device parameters drifting after calibration.
+Gate error	The difference between a gate actually performed and the ideal gate, often measured as an error rate.
+Heralded error	An error that announces itself, for example through a detector signal, so its location is known. Such errors are easier to correct.
+Idle error	An error on a qubit while it waits, not being operated on, caused by decoherence and crosstalk.
+iid error model	A model in which errors are independent and identically distributed: each qubit and step fails with the same probability, independently.	iid is standard notation in probability and statistics.
+Incoherent error	A random error, such as a stochastic Pauli error, that does not build up coherently across repeated operations.
+Independent error	An error that happens independently of errors on other qubits or at other times. Error correction theory often assumes errors are independent.
+Leakage error	An error that takes a qubit out of the computational states |0⟩ and |1⟩ into another level.
+Memory error	An error that happens while a qubit stores information, rather than during a gate.
+Non-unitary error	An error that cannot be described by a unitary, such as energy loss or measurement, which involves the environment.
+Over-rotation error	A gate rotating a qubit by slightly more than intended, a common coherent calibration error.
+Pauli error	An error equal to a Pauli operator, X, Y or Z, or products of them on several qubits.
+Phase-flip error	An error that flips the relative sign of |1⟩, the Pauli Z error, which has no classical counterpart.
+Readout assignment error	An error in measurement in which a qubit in one state is recorded as the other.
+SPAM error	State preparation and measurement error: errors in preparing initial states or reading out results, as opposed to gate errors.	In everyday use, spam means unwanted email.
+Spatially correlated error	Errors on several qubits at the same time that are linked, for example from a shared noise source or radiation.
+Spectator error	An error on a qubit that is not taking part in an operation, caused by that operation, through crosstalk.
+State preparation error	Starting a computation in a slightly wrong state, for example a qubit left partly excited instead of in |0⟩.
+Stochastic error	A random error that occurs with some probability each time, as opposed to a systematic coherent error.
+Stochastic Pauli error	A random Pauli error (X, Y or Z) applied with some probability, the standard error model for error correction.
+Systematic error	A repeatable error with a consistent cause, such as a miscalibrated pulse, as opposed to a random one.	This is a general term in measurement science.
+Temporally correlated error	Errors at different times that are linked, for example from slowly fluctuating noise.
+Under-rotation error	A gate rotating a qubit by slightly less than intended, a coherent calibration error.
+Unitary error	An error that is a small unwanted unitary transformation, such as an over-rotation, as opposed to an error involving the environment.
+Atom heating from tweezer	Neutral atoms gaining motional energy from fluctuations of their optical tweezer trap, which can cause dephasing or atom loss.
+Atom loss	A neutral atom escaping its trap, removing a qubit entirely. Detecting the loss turns it into an erasure error.
+Black-body-induced transitions	Transitions in atoms, especially in Rydberg states, caused by thermal radiation from the surroundings. They limit Rydberg lifetimes.
+Doppler dephasing	Dephasing in atoms caused by their thermal motion, which shifts the laser frequency they see through the Doppler effect.
+Rydberg-state decay	A neutral atom in a Rydberg state spontaneously decaying during a gate, a key error source for Rydberg gates.
+Stray field gradient	An unwanted variation in electric or magnetic field across an atom array, which shifts qubit frequencies differently at different sites.
+Trap-induced light shift	The shift in an atom's energy levels caused by the light of its optical tweezer trap, which can differ between qubit states and cause dephasing.
+Tweezer intensity fluctuation	Changes in the brightness of an optical tweezer, which change trap depth and light shifts, causing noise for neutral-atom qubits.
+Adversarial noise	A worst-case noise model in which errors are chosen to be as damaging as possible, used for rigorous guarantees.
+Average noise	Noise described by its average effect, such as an average gate fidelity, instead of its worst case.
+Born–Markov approximation	The assumptions of weak coupling to the environment (Born) and a memoryless environment (Markov), used to derive master equations.
+Circuit-level noise model	A noise model in which every operation in a circuit, including gates, idling and measurement, has a chance of error. It is the most realistic standard model.
+Code-capacity noise model	The simplest noise model for error correction, in which only data qubits suffer errors and syndrome measurement is perfect.
+Context-dependent noise	Noise whose effect on an operation depends on what else is happening, such as neighbouring gates or earlier operations.
+Effective noise model	A simplified noise model that captures the main effects of real noise, such as a Pauli model after twirling.
+Gate-dependent noise	Noise that differs for different gates, as opposed to the same noise after every gate.
+Markov approximation	Assuming the environment has no memory, so the system's future depends only on its present state. It leads to Lindblad master equations.
+Noise model	A mathematical description of the errors a device experiences, used to simulate circuits and design error correction and mitigation.
+Pauli approximation	Approximating a device's noise as a Pauli channel, which is easier to simulate and analyse. Twirling makes it exact.
+Phenomenological noise model	A noise model with errors on data qubits and on syndrome measurements, but ideal syndrome circuits.
+Secular approximation	Dropping fast-oscillating terms in a master equation, similar to the rotating wave approximation, to obtain a Lindblad form.
+Time-dependent noise	Noise whose strength or type changes over time, for example because of drift.
+Twirled noise	Noise after twirling has converted it into a simpler form, such as Pauli or depolarizing noise.
+Worst-case noise	The most damaging possible noise within given limits, used to derive guaranteed performance bounds.
+Detector dark counts	Clicks from a photon detector when no photon arrived, caused by thermal or electronic noise, which produce false signals.
+Detector efficiency loss	A photon detector failing to click when a photon arrives, which acts as photon loss.
+Distinguishability error	Photons that should be identical differing slightly, in timing, colour or polarization, which spoils the interference photonic gates rely on.
+Interferometric phase noise	Random fluctuations in the path lengths of an optical interferometer, which change relative phases and cause errors.
+Mode mismatch	Light fields not matching in shape, timing or polarization, so they interfere imperfectly.
+Multi-photon contamination	A photon source sometimes emitting two or more photons instead of one, causing errors in photonic protocols.
+Photon loss	A photon disappearing through absorption, scattering or imperfect detection. It is the dominant error in photonic quantum computing and communication.
+Source brightness fluctuation	Changes in how many photons a source emits per attempt, affecting the rate and reliability of photonic operations.
+Carr–Purcell sequence	A pulse sequence of repeated π pulses that refocuses dephasing, the basis of the CPMG and other decoupling sequences.
+Charge-insensitive design	Designing superconducting qubits, such as the transmon, so that their frequency barely depends on stray charge, suppressing charge noise.
+Composite pulse	A sequence of pulses designed so that errors in each cancel, giving a more robust overall rotation.
+Decoherence-free subspace	A subspace of states that the environment affects identically, so information stored there does not decohere, thanks to a symmetry of the noise.
+Dynamical decoupling	Applying sequences of pulses to idle qubits to average away slow noise and unwanted couplings, extending coherence.
+Flux-insensitive design	Designing flux-tunable qubits so they are first-order insensitive to magnetic flux noise, for example by operating at a sweet spot.
+Noiseless subsystem	A generalization of a decoherence-free subspace in which information stored in a subsystem is unaffected by the noise.
+Quantum error-avoiding code	A code that avoids errors by encoding information in states the noise cannot affect, such as a decoherence-free subspace.
+Sweet spot	A bias point at which a qubit's frequency is insensitive, to first order, to fluctuations in a control parameter such as magnetic flux, reducing dephasing.	In everyday English, a sweet spot is the ideal point, such as the best spot on a bat.
+Symmetric biasing	Setting a qubit's bias so it sits at a symmetric point of its tuning curve, where its frequency is insensitive to small fluctuations, like a sweet spot.
+Burst noise	Noise made of sudden jumps between levels, such as random telegraph noise from a single defect.	In electronics, burst noise is also called popcorn noise.
+Filter function formalism	A method that describes how a pulse sequence filters noise at different frequencies, to predict how much each noise frequency harms a qubit.
+Gaussian noise	Noise whose values follow a Gaussian (bell-curve) distribution. Many noise sources are well described this way.
+Johnson–Nyquist noise	Thermal noise from the random motion of electrons in any resistor, a source of noise in qubit control and readout lines.
+Lorentzian noise	Noise with a Lorentzian spectrum, flat at low frequencies and falling at high ones, typical of a single fluctuating defect.
+Noise floor	The lowest level of noise in a measurement system, below which signals cannot be distinguished.
+One-over-f noise	Noise whose power grows at low frequencies in proportion to 1/f, common in materials and a major source of dephasing in solid-state qubits.
+Photon shot noise	Noise from the random arrival times of photons, which limits the precision of optical measurements.
+Pink noise	Another name for 1/f noise, whose power falls as frequency rises.	The name comes from the colour of light with a similar spectrum.
+Power spectral density	How the strength of a noise signal is distributed across frequencies. It tells which frequencies of noise affect a qubit most.
+Random telegraph noise	Noise that switches randomly between two values, typically from a single defect flipping between two states.
+Shot noise	Noise from the discreteness of particles such as electrons or photons, which arrive randomly. It sets the standard quantum limit in measurements.
+Spectral diffusion	Random wandering of an emitter's or qubit's frequency over time, caused by a fluctuating environment.
+Telegraph noise	Noise that jumps between two levels at random times, like a telegraph signal, often caused by a single fluctuating defect.
+White noise	Noise with equal power at all frequencies, with no memory between moments.
+Amplitude damping channel	The noise channel that models energy loss: an excited qubit decays to |0⟩ with some probability, as in T1 relaxation.
+Bit-flip channel	A noise channel that applies an X error with probability p and leaves the qubit unchanged otherwise.
+Bit-phase-flip channel	A noise channel that applies a Y error, flipping both bit and phase, with probability p.
+Depolarizing channel	A noise channel that replaces the state with a completely mixed one with probability p, or equivalently applies X, Y or Z errors equally.
+Erasure channel	A channel that loses a qubit with some probability and flags the loss, so the receiver knows which qubits were erased.
+Generalized amplitude damping channel	Amplitude damping at non-zero temperature, where a qubit can both lose and gain energy from its environment.
+Global depolarizing channel	A noise model in which the whole multi-qubit state is replaced by the maximally mixed state with some probability.
+Heralded loss channel	A loss channel in which a detector signals when a loss occurs, making it an erasure error.
+Local depolarizing channel	Depolarizing noise applied to each qubit independently, instead of to the whole register at once.
+Non-unital channel	A channel that does not map the maximally mixed state to itself, such as amplitude damping, which pushes states toward |0⟩.
+Pauli channel	A noise channel that applies Pauli errors (I, X, Y, Z) with fixed probabilities. Twirling turns any channel into one.
+Phase damping channel	A channel that destroys phase coherence without changing populations, modelling pure dephasing.
+Phase-flip channel	A noise channel that applies a Z error with probability p, flipping the relative phase.
+Pure dephasing channel	The channel describing loss of phase coherence without energy loss, equivalent to phase damping.
+Single-qubit depolarizing channel	Depolarizing noise acting on a single qubit, applying X, Y or Z errors each with probability p/3.
+Two-qubit depolarizing channel	Depolarizing noise on a pair of qubits, applying one of the 15 non-identity two-qubit Pauli errors with equal probability. It models two-qubit gate errors.
+Unital channel	A channel that maps the maximally mixed state to itself, such as dephasing or depolarizing noise.
+Charge noise	Fluctuations in the electric charge around a qubit, from defects or trapped charges. It affects charge-sensitive qubits and spin qubits.
+Charge parity jump	A change in whether the number of electrons on a superconducting island is even or odd, caused by a quasiparticle tunnelling, which shifts the qubit slightly.
+Cosmic-ray-induced error	Errors caused when cosmic-ray particles hit the chip, creating bursts of quasiparticles that cause correlated errors across many qubits.
+Critical current noise	Fluctuations in the critical current of a Josephson junction, which change the qubit's frequency and cause dephasing.
+Dielectric loss	Energy loss into insulating materials around a qubit, largely from two-level defects, a major limit on T1.
+Flux noise	Fluctuations in magnetic flux through superconducting loops, usually from surface spins, which cause dephasing in flux-tunable qubits.
+Gamma-ray-induced error	Errors caused by gamma rays from natural radioactivity hitting the chip, which create quasiparticles and correlated errors.
+Ionizing radiation event	A high-energy particle, such as a gamma ray or muon, depositing energy in the chip, causing a burst of correlated errors across many qubits.
+Magnetic vortex	A tiny whirl of current carrying trapped magnetic flux in a superconducting film. Moving vortices cause energy loss and noise.
+Measurement-induced dephasing	Loss of a qubit's coherence caused by photons in its readout resonator, which carry away information about its state.
+Measurement-induced state transition	Unwanted transitions of a qubit to other levels caused by a strong readout drive, which can lead to readout errors and leakage.
+Muon strike	A cosmic-ray muon passing through a chip, depositing energy that creates quasiparticles and causes correlated errors.
+Offset charge fluctuation	Random changes in the background charge near a superconducting qubit, which slightly shift the frequency of charge-sensitive qubits.
+Phonon-mediated correlated error	Errors on many qubits at once caused by vibrations (phonons) spreading through the chip after a radiation impact.
+Photon-induced dephasing	Dephasing caused by stray photons in a qubit's resonator, which shift its frequency randomly.
+Purcell decay	Energy loss of a qubit through its coupled readout resonator into the measurement line. Purcell filters reduce it.
+Quasiparticle burst	A sudden rise in quasiparticles across a chip, often after a radiation impact, causing errors on many qubits at once.
+Quasiparticle density	The concentration of broken Cooper pairs in a superconductor. Higher density means more energy loss and errors in qubits.
+Quasiparticle poisoning	Quasiparticles tunnelling into a superconducting island or qubit, changing its state or charge parity and causing errors.
+Quasiparticle tunneling	A quasiparticle crossing a Josephson junction, which can cause energy loss or a charge parity jump in a qubit.
+Readout-induced leakage	A qubit leaking to higher levels during measurement, caused by the readout drive.
+Resonator-induced relaxation	Energy loss of a qubit through its coupling to a resonator, such as Purcell decay.
+Stray microwave photons	Unwanted photons in a qubit's circuit, from imperfect filtering or warm components, which cause dephasing and excitation.
+Substrate loss	Energy loss into the chip's substrate, such as silicon or sapphire, from defects in the material.
+Surface loss	Energy loss from defects at the surfaces and interfaces of a qubit's metal and substrate, a leading limit on superconducting qubit coherence.
+Thermal photon population	Photons present in resonators because of residual heat, which cause dephasing and excitation of qubits.
+TLS bath	The large collection of two-level defects in a device's materials, which together cause energy loss and noise in qubits.
+TLS defect	A microscopic defect, often in oxides, that behaves as a two-level system and can absorb a qubit's energy when their frequencies match.
+Trapped flux	Magnetic flux stuck in a superconducting film as it cools, which can create vortices that cause loss and noise.
+Two-level fluctuator	A defect that switches randomly between two states, causing telegraph noise in a nearby qubit.
+Anomalous heating	Heating of trapped ions' motion far faster than expected, believed to come from fluctuating electric fields at the trap electrode surfaces.
+Background gas collision	A collision between a trapped ion or atom and a leftover gas molecule in the vacuum, which can knock it out or disturb its state.
+Ion-loss event	A trapped ion escaping its trap, removing a qubit.
+Laser intensity noise	Fluctuations in laser power, which change the strength of laser-driven gates and cause errors.
+Laser phase noise	Random fluctuations in a laser's phase, which directly cause phase errors in gates driven by that laser.
+Magnetic-field noise	Fluctuations in the magnetic field around qubits, which shift the frequencies of spin-based qubits and cause dephasing.
+Micromotion-induced error	Errors from an ion's small driven oscillation in the trap's radio-frequency field, which shifts its interaction with lasers.
+Motional dephasing	Loss of coherence in the shared motion of trapped ions, which is used for gates, causing gate errors.
+Motional heating	Trapped ions gaining motional energy over time from electric-field noise, degrading gates that use their motion.
+Off-resonant scattering	An atom or ion scattering laser photons even when the laser is detuned, which randomly changes its state and causes errors.
+Patch potential noise	Electric-field noise from uneven potentials on electrode surfaces, a source of ion heating.
+Recoil heating	The kick an atom or ion receives each time it scatters a photon, which heats its motion.
+Spontaneous emission error	An error caused by an excited atom or ion randomly emitting a photon, which disturbs its state.
+Surface electric-field noise	Fluctuating electric fields from trap electrode surfaces, a main cause of anomalous heating in trapped ions.
+Clifford twirl	Averaging a channel over random Clifford operations, which turns it into a depolarizing channel.
+Effective error rate	A single number summarizing a device's error level after averaging over different error sources and gates.
+Error budget allocation	Dividing an acceptable total error among the parts of a computation, to decide which components need improving.
+Pauli twirl	Averaging a channel over random Pauli operations, which turns it into a Pauli channel.

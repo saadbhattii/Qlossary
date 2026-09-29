@@ -1,0 +1,183 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Classical simulation cost	The time and memory a classical computer needs to reproduce a quantum computation. It is the bar a quantum advantage claim must beat.
+Crossover point	The problem size at which a quantum computer starts to outperform the best classical method, including all overheads.
+Exponential separation	A proven gap in which the best classical method needs exponentially more resources than the quantum one, as with Shor's algorithm for factoring.
+Quantum supremacy threshold	The point, often put at around 50 good qubits, at which a quantum device can perform a task no classical supercomputer can reproduce in reasonable time.
+Quantum utility	A quantum computer producing reliable results at a scale beyond brute-force classical simulation, useful for research, even if faster classical approximations may exist.
+Quantum utility threshold	The size and quality at which a quantum computer first reaches quantum utility, typically put at about 100 qubits running deep circuits reliably.
+Tensor-network simulation cost	The computing effort for a tensor-network method to simulate a quantum circuit, which grows with the entanglement the circuit creates.
+Time-to-solution speedup	How much faster a quantum approach reaches a solution of given quality compared with a classical one, measured in real time.
+Utility-scale experiment	An experiment run on a quantum computer at a size beyond brute-force classical simulation, such as IBM's 127-qubit experiment in 2023.
+XEB fidelity	A fidelity estimate from cross-entropy benchmarking, which compares measured outputs of random circuits with their ideal probabilities. It was used in quantum supremacy experiments.
+Approximation ratio	For an optimization algorithm, the value of the solution found divided by the best possible value. For QAOA, a ratio close to 1 means near-optimal answers.
+Concentration measure	A quantity describing how tightly values, such as gradients or kernel values, cluster around their average. Strong concentration signals barren plateaus.
+Convergence rate	How quickly an optimization or algorithm approaches its final answer as iterations increase.
+Cost-function gap	The difference between the cost a variational algorithm reaches and the true optimum, a measure of how well it has converged.
+Effective dimension	A measure of a model's capacity, how many independent directions its parameters can explore, used to compare quantum and classical learning models.
+Energy error	The difference between an estimated energy, for example from VQE, and the exact value. Chemical accuracy requires about 1.6 millihartree.
+Gradient variance	The spread of gradients of a variational circuit over random parameters. If it shrinks exponentially with qubit number, the circuit has a barren plateau.
+Solution quality	How good an answer an algorithm returns, for example how close an optimization result is to the true optimum.
+Ancilla count	The number of helper qubits a circuit needs beyond those holding the data.
+Circuit depth	The number of layers of gates in a circuit when gates that can run at the same time are grouped. Deeper circuits suffer more noise.
+Circuit width	The number of qubits a circuit uses, including ancillas. Together with depth, it describes the size of a circuit.
+Clifford count	The number of Clifford gates in a circuit. These are cheap on fault-tolerant hardware, unlike non-Clifford gates.
+Gate count	The total number of gates in a circuit, a basic measure of its size and cost.
+Layer count	The number of layers in a circuit, where each layer contains gates that act in parallel.
+Native gate count	The number of gates after compiling a circuit into a device's native gate set, which reflects its real cost on that device.
+Non-Clifford gate count	The number of non-Clifford gates, such as T or Toffoli, in a circuit. It drives the cost of fault-tolerant computation.
+T-count	The number of T gates in a circuit. Since T gates are the expensive part of fault-tolerant computing, minimizing it is a major goal.
+Two-qubit gate count	The number of two-qubit gates in a circuit. They are usually the noisiest gates, so this count strongly predicts errors.
+Coherence time	How long a qubit keeps its quantum information before noise destroys it, usually described by T1 and T2.
+Coherence-limited fidelity	The best fidelity a gate could reach if its only errors came from the qubit's finite T1 and T2 during the gate.
+Dephasing time	T2: the time over which a qubit loses phase coherence between |0⟩ and |1⟩. It includes both energy relaxation and pure dephasing.
+Free-induction decay	T2*: the coherence time measured by a Ramsey experiment without refocusing, including slow noise and inhomogeneities. It is usually shorter than T2.	In NMR, free-induction decay is the signal emitted by nuclear spins after a pulse.
+Hahn echo	A technique that applies a π pulse halfway through free evolution to refocus slow noise, giving a longer coherence time T2E. It is also the name of that measurement.
+Homogeneous linewidth	The spectral width of a transition set by processes affecting every emitter or qubit equally, such as its own decay and dephasing.
+Inhomogeneous broadening	Widening of a spectral line because different emitters or repetitions have slightly different frequencies, for example from their environments.
+Memory time	How long a quantum memory can store a state with acceptable fidelity.
+Pure dephasing time	Tφ: the dephasing time that comes only from frequency fluctuations, excluding energy loss. It satisfies 1/T2 = 1/(2T1) + 1/Tφ.
+Quality factor	A measure of how slowly a resonator or qubit loses energy: its frequency times its energy lifetime (Q = ωT1). Higher Q means lower loss.	In engineering generally, the Q factor describes the damping of any oscillator.
+Relaxation time	T1: the average time for a qubit in |1⟩ to decay to |0⟩ by losing energy. It sets an upper limit on coherence.
+Rotating-frame relaxation	T1ρ: the relaxation time of a qubit while it is continuously driven, which reveals noise at the drive's Rabi frequency.
+T2 echo	The coherence time measured with a Hahn echo sequence, which removes slow noise. It is usually longer than T2*.
+All-to-all connectivity	The ability of any qubit to interact directly with any other, as in trapped ions. It avoids the SWAP gates needed on sparse layouts.
+Coupling map density	How many qubit pairs can interact directly, relative to all possible pairs. Denser maps need fewer SWAPs.
+Coupling-graph degree	The number of qubits each qubit can interact with directly. Higher degree makes routing easier but increases crosstalk.
+Graph diameter	The largest number of steps needed to connect any two qubits on a device's coupling graph. It bounds how far qubits may need to be moved.
+Logical qubit count	The number of error-corrected logical qubits a device can provide.
+Nearest-neighbor connectivity	A layout in which each qubit interacts only with those next to it, common in superconducting chips.
+Physical qubit count	The number of hardware qubits in a device, which says little about its power without quality measures.
+Qubit count	The number of qubits in a device or circuit, the most quoted but often least informative quality measure.
+Routing overhead	The extra gates, mostly SWAPs, added to move qubits next to each other on hardware with limited connectivity.
+SWAP overhead	The number of extra SWAP gates a circuit needs to fit a device's connectivity, each typically costing three CNOTs.
+Bures angle	A distance between quantum states equal to the arccosine of the square root of their fidelity. It measures the angle between them in state space.
+Bures distance	A distance between density matrices based on their fidelity. It is related to the quantum Fisher information and is used in geometry of states.
+Diamond distance	The distance between two quantum channels given by the diamond norm of their difference. It measures how well they can be told apart in the worst case.
+Diamond norm	A norm on quantum channels that measures worst-case distinguishability, even when the channel acts on part of an entangled state. It is the standard measure for fault-tolerance proofs.	In mathematics, the diamond norm is also called the completely bounded trace norm.
+Frobenius distance	The distance between two matrices given by the square root of the sum of squared differences of their entries. It is simple but not tied to measurement outcomes.
+Fubini–Study metric	The natural distance on the space of pure quantum states, based on the angle between state vectors. It underlies the quantum natural gradient.
+Hilbert–Schmidt distance	The distance between two matrices, √Tr((A−B)†(A−B)). It is easy to compute and used in circuit compilation and learning.
+Jensen–Shannon divergence	A symmetric, bounded measure of the difference between two probability distributions, based on their average. It is used to compare measured and ideal outputs.
+Kullback–Leibler divergence	A measure of how one probability distribution differs from another, the classical version of relative entropy. It is not symmetric.
+Operator norm distance	The distance between two operators given by the largest singular value of their difference, measuring the worst-case effect on any state.
+Quantum relative entropy	A measure of how distinguishable one state is from another, Tr ρ(log ρ − log σ). It never increases under noise.
+Total variation distance	The largest difference in probability two distributions can assign to any event, half the sum of absolute differences. It is used to compare output distributions.
+Trace distance	The distance between two states, half the trace norm of their difference. It gives the best possible probability of telling them apart with one measurement.
+Coherent information	A measure of how much quantum information survives a channel, S(B) − S(RB). It sets the rate for sending qubits through the channel.
+Concurrence	A measure of entanglement for two qubits, from 0 for separable states to 1 for maximally entangled ones. It gives the entanglement of formation.
+Conditional entropy	The uncertainty remaining about one system when another is known, S(A|B) = S(AB) − S(B). Unlike the classical case, it can be negative for entangled states.
+Distillable entanglement	How many perfect Bell pairs can be extracted per copy of a state using local operations and classical communication, in the limit of many copies.
+Entanglement cost	How many Bell pairs are needed per copy to create a state using local operations and classical communication, in the limit of many copies.
+Entanglement entropy	The von Neumann entropy of one part of a pure state, which measures how entangled that part is with the rest.
+Entanglement of formation	The average entanglement needed to build a mixed state, minimized over all ways of writing it as a mixture of pure states.
+Entanglement rank	The smallest number of product terms needed to write a state, or its components, which measures how entangled it is. It generalizes the Schmidt rank.
+Holevo information	The quantity χ that bounds how much classical information can be extracted from an ensemble of quantum states.
+Logarithmic negativity	An easily computed entanglement measure based on the partial transpose, log₂ of the trace norm of the partially transposed state.
+Negativity	An entanglement measure based on the negative eigenvalues of the partial transpose. It is non-zero only for entangled states and is easy to compute.
+Quantum mutual information	The total correlation between two systems, S(A) + S(B) − S(AB), including both classical and quantum parts.
+Assignment error	The probability that a measurement records the wrong state, for example reading |1⟩ as 0.
+Error per Clifford	The average error of a Clifford gate from randomized benchmarking, measured over random Clifford sequences.
+Error per gate	The average error of a single gate, often derived from benchmarking.
+Error per layered gate	IBM's measure of average error per two-qubit gate within full layers of gates across a chain of qubits, including crosstalk. It is derived from layer fidelity.
+Idle error rate	The error rate of a qubit while it waits without being operated on.
+Leakage rate	The probability per operation that a qubit leaks out of its computational states into higher levels.
+Logical error per cycle	The probability that a logical qubit suffers an error during one round of error correction.
+Logical error per round	The logical error rate per round of syndrome measurement, the same as logical error per cycle.
+Median gate error	The middle value of gate errors across a device, often quoted because it is less affected by a few bad qubits than the average.
+Readout error	The probability of getting the wrong result when measuring a qubit.
+Single-qubit gate error	The average error of one-qubit gates, typically much lower than two-qubit gate error.
+Two-qubit gate error	The average error of two-qubit gates, usually the largest gate error in a device and a key figure of merit.
+Average gate fidelity	The fidelity between a real gate and the ideal one, averaged over all input states. It is what randomized benchmarking estimates.
+Bell-state fidelity	How close a prepared two-qubit state is to the ideal Bell state, a common test of entangling gates.
+Bures fidelity	The fidelity between two density matrices, (Tr√(√ρ σ √ρ))², also called Uhlmann fidelity. Some authors use it without the square.
+Entanglement fidelity	How well a channel preserves the entanglement of a system with a reference, measuring how well it transmits quantum information.
+Fidelity	A measure from 0 to 1 of how close two quantum states or processes are, where 1 means identical.	In everyday English, fidelity means faithfulness; in audio it means accuracy of sound reproduction.
+Gate fidelity	How close a real gate is to the ideal one, from 0 to 1. Fault-tolerant computing typically needs gate fidelities above about 99%.
+GHZ-state fidelity	How close a prepared state is to the ideal GHZ state, used to show genuine multi-qubit entanglement.
+Hellinger fidelity	A similarity measure between two probability distributions, (Σ √(p_i q_i))², used to compare measured and ideal outputs.
+Heralded fidelity	The fidelity of an operation counted only on the runs a detector marked as successful.
+Logical fidelity	The fidelity of a state or operation on encoded logical qubits after error correction.
+Logical gate fidelity	How close a gate on error-corrected logical qubits is to the ideal gate.
+Mixed-state fidelity	The fidelity between two density matrices, which may be mixed, given by the Uhlmann formula.
+Process fidelity	The fidelity between a real process and the ideal one, computed from their Choi states. It relates simply to the average gate fidelity.
+Pure-state fidelity	The fidelity between two pure states, the squared overlap |⟨ψ|φ⟩|².
+State fidelity	How close a prepared state is to a target state, from 0 to 1.
+Sub-fidelity	An easily computed lower bound on the Uhlmann fidelity between two states.
+Super-fidelity	An easily computed upper bound on the Uhlmann fidelity between two states.
+Uhlmann fidelity	The standard fidelity between two density matrices, (Tr√(√ρ σ √ρ))², equal to the best overlap between their purifications.
+Anharmonicity	The difference between a qubit's 0→1 and 1→2 transition frequencies. It lets a transmon act as a qubit, and a small value makes leakage easier.
+Coupling strength	How strongly two quantum systems interact, such as two qubits or a qubit and a resonator, usually given as a frequency. It sets gate speed.
+Critical photon number	The number of photons in a readout resonator above which the simple dispersive picture breaks down and readout starts to disturb the qubit.
+Dispersive shift	The shift in a resonator's frequency that depends on the qubit's state, written χ. Detecting it is how superconducting qubits are read out.
+Drive strength	The amplitude of the field driving a qubit, which sets how fast it rotates (its Rabi frequency).
+Frequency collision	Two qubits, or two of their transitions, having frequencies close enough to interfere, causing crosstalk and gate errors. It limits fixed-frequency chip yields.
+Photon number	The number of photons in a mode, such as a resonator. Measuring or controlling it matters for readout and bosonic qubits.
+Pulse amplitude	The strength of a control pulse, which sets how far it rotates a qubit. It must be calibrated precisely.
+Qubit frequency	The energy difference between a qubit's |0⟩ and |1⟩ states, expressed as a frequency, typically a few gigahertz for superconducting qubits.
+Qubit yield	The fraction of fabricated qubits that work well enough to use.	In manufacturing generally, yield is the fraction of good products.
+Resonator linewidth	The frequency width of a resonator's response, κ, set by how fast photons leak out. It affects readout speed and Purcell decay.
+Spectator error rate	The error rate on qubits that are idle while operations happen nearby, caused by crosstalk.
+Spectator qubit	A qubit that is not part of an operation but may be affected by it, or may affect it, through crosstalk. It can also mean a qubit used only to sense noise.
+ZZ rate	The strength of the residual ZZ interaction between two qubits, usually in kilohertz. Lower is better when no gate is applied.
+Choi matrix	The matrix representing a quantum channel, obtained by applying it to half of a maximally entangled state. It fully describes the channel.
+Coherent error magnitude	How large the systematic, unitary part of a device's error is, which can add up quickly across a circuit.
+Incoherent error magnitude	How large the random, stochastic part of a device's error is.
+Kraus rank	The smallest number of Kraus operators needed to describe a channel. A rank of 1 means the channel is unitary.
+Process matrix	The χ matrix describing a quantum process in a fixed operator basis, such as the Paulis. It is what process tomography reconstructs.
+Process purity	A measure of how close a process is to unitary, 1 for a perfect unitary and lower for noisy processes.
+Stinespring rank	The smallest environment size needed to realize a channel as a unitary followed by discarding the environment. It equals the Kraus rank.
+Unitarity	A measure of how much a noise process preserves the purity of states, which separates coherent from incoherent errors. It is measured by purity benchmarking.
+Below-threshold ratio	How far a device's physical error rate is below the code threshold. The further below, the faster logical errors fall with code size.
+Logical error suppression factor	The factor by which logical errors fall when the code distance increases, also called the Lambda factor.
+Logical T2	The coherence time of an encoded logical qubit, the logical counterpart of a physical qubit's T2.
+Qubit footprint	The number of physical qubits used per logical qubit, or the physical area a qubit takes on a chip.
+Spacetime cost	The product of the number of qubits used and the time they are used, measuring the total resources of a fault-tolerant operation.
+Threshold error rate	The physical error rate below which error correction lowers logical errors as the code grows.
+Average fidelity decay	How the average success probability falls with sequence length in randomized benchmarking, used to extract the error per gate.
+Binary randomized benchmarking	A randomized benchmarking variant that needs no inverse gate at the end, using random sequences whose ideal output is a single known bit string.
+Cross-entropy benchmarking	A method that estimates circuit fidelity by comparing measured outputs of random circuits with their ideal probabilities, used in supremacy experiments.
+Direct RB	A randomized benchmarking variant that samples random layers of native gates directly, so it scales to more qubits than standard RB.
+Interleaved RB	A randomized benchmarking variant that inserts a specific gate between random Cliffords, to estimate that one gate's error.
+Layer fidelity	IBM's measure of the fidelity of a full layer of gates across many qubits, including crosstalk, from which the error per layered gate is derived.
+Linear cross-entropy benchmarking	The linear version of XEB, which estimates fidelity from the average ideal probability of observed bit strings. It is the form used by Google.
+Mirror RB	A randomized benchmarking method that runs a random circuit and then its mirror image, so the ideal output is known and many qubits can be tested.
+Purity benchmarking	A randomized benchmarking variant that measures how purity decays, to separate incoherent errors from coherent ones.
+RB decay rate	The rate at which success probability falls with sequence length in randomized benchmarking, from which the error per gate is computed.
+Simultaneous RB	Running randomized benchmarking on several qubits at once, to measure how crosstalk raises errors compared with isolated runs.
+Standard RB	Randomized benchmarking with random Clifford sequences followed by an inverse gate, fitting the exponential decay of survival probability.
+Assignment fidelity	One minus the average probability of misreading a qubit's state, a measure of readout quality.
+Discrimination fidelity	How well a readout can tell apart the signals for |0⟩ and |1⟩, set by how much their distributions overlap.
+IQ signal-to-noise ratio	In superconducting readout, how far apart the signals for |0⟩ and |1⟩ are in the IQ plane compared with their noise, which sets readout fidelity.
+Quantum non-demolition fidelity	How well a measurement leaves the qubit in the state it reported, tested by measuring twice and checking agreement.
+Readout error mitigation overhead	The extra shots or processing needed to correct readout errors, which grows with error rates and qubit number.
+Readout fidelity	The probability of reading a qubit's state correctly, averaged over |0⟩ and |1⟩.
+Single-shot readout fidelity	The probability of correctly identifying a qubit's state from one measurement, without averaging.
+Confidence interval	A range that, with a stated probability, contains the true value of an estimated quantity, such as a fidelity.	This is a standard statistics term.
+Effective sample size	The number of independent samples a set of measurements is worth, which can be lower than the raw count when samples are correlated or weighted.
+Estimator variance	How much an estimate would vary if the experiment were repeated. It falls as the number of shots grows.
+Number of shots	How many times a circuit is run and measured to estimate its results. More shots give more precise estimates.
+Sample complexity	The number of samples, or state copies, needed to learn something to a given accuracy.
+Statistical fluctuation	Random variation in results caused by a finite number of shots.
+Circuit execution time	How long it takes to run a circuit once on hardware, including gates and measurement.
+Gate duration	How long a single gate takes to perform, from nanoseconds for superconducting qubits to microseconds for trapped ions.
+Gate execution time	The time taken to perform a gate on hardware, the same as gate duration.
+Gate speed	How quickly gates can be performed, the inverse of gate duration. Faster gates allow more operations within coherence time.
+Quantum throughput	How much useful quantum computation a system completes per unit of time, including overheads.
+Readout duration	How long it takes to measure a qubit. Long readout slows error correction and leaves more time for errors.
+Repetition rate	How many times per second an experiment or circuit can be repeated, including reset and measurement.
+Sampling rate	How many measurement samples per second a system produces.
+Shots per second	How many circuit runs a quantum computer completes each second.
+Time to solution	The total time needed to reach an answer of required quality, including all repetitions and classical processing.
+Wall-clock time	The real elapsed time a computation takes, as measured by a clock, including all overheads.
+Algorithmic qubits	A metric, promoted by IonQ, for the largest number of qubits on which a suite of application benchmark circuits run successfully.
+Application-oriented benchmarks	Benchmarks that measure performance on circuits from real applications, such as chemistry or optimization, instead of random circuits.
+Circuit layer operations per second	CLOPS: IBM's measure of how many layers of a quantum volume circuit a system runs per second, including classical overheads.
+Heavy output generation	A task used in quantum volume: producing heavy outputs, bit strings with above-median ideal probability, more than two-thirds of the time.
+Heavy output probability	The fraction of measured bit strings that are heavy outputs. It is the pass-or-fail test in the quantum volume benchmark.
+Mirror circuit benchmark	A benchmark that runs circuits followed by their mirror images, so the ideal output is known and many circuit shapes can be tested at scale.
+Q-score	A benchmark from Atos that measures the largest Max-Cut problem size for which a quantum computer running QAOA does significantly better than random guessing.
+Quantum LINPACK	A benchmark proposed by Dong and Lin in 2021, inspired by the classical LINPACK, which tests quantum computers on random linear-algebra problems encoded in circuits.	LINPACK is a classic benchmark used to rank classical supercomputers.
+Quantum volume	IBM's single-number benchmark: the largest square random circuit (width equals depth) a device can run successfully, reported as 2 to the power of that size.
+Quantum-classical computing benchmark	A benchmark that measures the performance of a combined quantum and classical system, including communication and classical processing.
+Reliable quantum operations per second	rQOPS: Microsoft's metric for fault-tolerant machines, counting how many operations per second run on logical qubits at a set low error rate.
+Volumetric benchmark	A benchmark that tests circuits across a range of widths and depths, mapping which circuit sizes a device can run successfully.

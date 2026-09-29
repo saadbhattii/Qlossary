@@ -1,7 +1,7 @@
 // data.js -- decode the word list the build embeds in the page.
 //
 // Format (one record per line):
-//   line 1: topics      id~name;...
+//   line 1: topics      id~name~definitions file;...
 //   line 2: subtopics   name~topicIndex;...
 //   rest:   term|subtopicIndex|difficulty 0-3|aliases
 import { termKey, lettersOf } from './normalize.js';
@@ -9,8 +9,8 @@ import { termKey, lettersOf } from './normalize.js';
 export function parseData(text) {
   const lines = text.split('\n');
   const domains = lines[0].split(';').map(r => {
-    const [id, name] = r.split('~');
-    return { id, name };
+    const [id, name, defs] = r.split('~');
+    return { id, name, defs: defs || '' };
   });
   const subs = lines[1].split(';').map(r => {
     const [name, d] = r.split('~');

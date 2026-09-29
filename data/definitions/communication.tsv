@@ -1,0 +1,53 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+B92 protocol	A quantum key distribution protocol by Charles Bennett (1992) that uses only two non-orthogonal states, simpler than BB84 but more sensitive to loss.
+Continuous-variable QKD	Quantum key distribution that encodes keys in the continuous amplitude and phase of light, measured with homodyne or heterodyne detection. It works with standard telecom equipment.
+Decoy-state protocol	A QKD technique that randomly mixes in weaker or stronger decoy pulses to detect photon-number-splitting attacks, making practical laser sources secure.
+Device-independent QKD	Quantum key distribution whose security follows from observing a Bell inequality violation, with no need to trust how the devices work. It is very secure but hard to do.
+Harvest now decrypt later	The threat of collecting encrypted data today to decrypt it once large quantum computers exist. It is a key reason to adopt post-quantum cryptography now.
+Information reconciliation	The step in QKD where the two parties correct errors between their raw keys over a public channel, using error-correcting codes, while revealing as little as possible.
+Intercept-resend attack	An attack on QKD in which an eavesdropper measures each photon and sends a new one based on the result. It introduces detectable errors, which is how QKD reveals eavesdropping.
+Lattice-based cryptography	Cryptography based on hard problems involving lattices of points, such as learning with errors. It is believed to resist quantum attacks and underlies the NIST post-quantum standards ML-KEM and ML-DSA.
+Measurement-device-independent QKD	A QKD protocol in which both parties send states to an untrusted middle node that performs a Bell measurement. It removes all attacks on the detectors.
+ML-DSA	Module-Lattice-Based Digital Signature Algorithm, a NIST post-quantum signature standard (FIPS 204) based on CRYSTALS-Dilithium. It signs data in a way believed secure against quantum computers.
+ML-KEM	Module-Lattice-Based Key-Encapsulation Mechanism, a NIST post-quantum standard (FIPS 203) based on CRYSTALS-Kyber. It lets two parties agree on a secret key securely against quantum attacks.
+Photon number splitting attack	An attack on QKD with weak laser pulses: when a pulse contains two or more photons, the eavesdropper keeps one and lets the rest through, learning the key undetected. Decoy states defeat it.
+Post-quantum cryptography	Classical cryptography designed to resist attacks by quantum computers, such as lattice-based schemes. Unlike QKD, it runs on ordinary computers and networks.
+Privacy amplification	The final QKD step that shrinks the shared key with hashing, so that any partial information an eavesdropper has becomes negligible.
+Quantum bit commitment	A protocol to lock in a bit now and reveal it later, so it can neither be changed nor read early. Unconditionally secure quantum bit commitment was proven impossible.
+Quantum coin flipping	A protocol for two distrustful parties to generate a fair random bit remotely. Quantum mechanics allows better guarantees than classical protocols, though not perfect ones.
+Quantum digital signature	A signature scheme that uses quantum states so that a signature cannot be forged or repudiated, with security based on physics instead of computational hardness.
+Quantum key distribution	A method for two parties to create a shared secret key, with any eavesdropping revealed by disturbances to the quantum states sent. BB84 is the best-known protocol.
+Quantum random number generator	A device that produces random numbers from inherently unpredictable quantum processes, such as photons choosing a path at a beam splitter.
+Quantum secret sharing	A protocol that splits a secret among several parties using quantum states, so that only authorized groups can recover it.
+Quantum-safe cryptography	Cryptography expected to stay secure against quantum computers, including both post-quantum algorithms and quantum key distribution.
+Six-state protocol	A QKD protocol like BB84 but using all three qubit bases (six states). It tolerates more noise, at the cost of discarding more measurements.
+Twin-field QKD	A QKD protocol in which both parties send weak pulses to a central node that detects single-photon interference. It greatly extends the distance QKD can reach without repeaters.
+Unconditional security	Security that holds against an attacker with unlimited computing power, based only on the laws of physics. QKD aims for it, unlike classical public-key cryptography.
+Blind quantum computing	Running a computation on a remote quantum server without the server learning the input, the algorithm or the output.
+Delegated quantum computing	Sending a computation to a remote quantum computer, as in cloud access, possibly with protocols that keep the task private or allow checking the result.
+Quantum money	A proposal for banknotes carrying quantum states that cannot be copied, because of the no-cloning theorem, making them unforgeable. It was one of the first ideas in quantum cryptography.
+Verifiable quantum computation	Protocols that let a client check that a remote quantum computer has computed correctly, even without a quantum computer of their own.
+Bell-state measurement	A measurement that projects two qubits onto the four Bell states. It is the key step in teleportation, entanglement swapping and quantum repeaters.
+Entanglement distribution	Sharing entangled pairs between distant locations through fibre, free space or satellites, as the basic resource of a quantum network.
+Entanglement purification	Turning several noisy entangled pairs into fewer, higher-quality pairs using local operations and classical communication. Also called entanglement distillation, it is essential for quantum repeaters.
+Heralded entanglement	Entanglement between distant qubits whose success is announced by a detector signal, so the parties know exactly when a usable entangled pair exists.
+Optical-to-microwave transducer	A device that converts quantum signals between microwave photons, used by superconducting qubits, and optical photons that travel through fibre. It is needed to network superconducting processors.
+Quantum internet	A future network that sends quantum information and entanglement between quantum devices worldwide, enabling secure communication and distributed quantum computing.
+Quantum memory	A device that stores a quantum state, often of a photon, and releases it on demand. It is needed for quantum repeaters and to synchronize operations in a network.
+Quantum network node	A location in a quantum network that can send, receive, store or process qubits, such as a small quantum processor with an optical link.
+Quantum networking	The field of connecting quantum devices so they can share quantum states and entanglement over distance.
+Quantum networking link	A connection between two quantum network nodes, such as an optical fibre with its sources and detectors, able to carry qubits or create entanglement.
+Quantum repeater	A device that extends quantum communication over long distances by creating entanglement over short segments and joining them with entanglement swapping, since qubits cannot simply be amplified.
+Quantum-quantum link	A direct connection that moves quantum states between two quantum processors, as opposed to a classical link. It allows modules to be combined into a larger machine.
+Satellite QKD	Quantum key distribution using satellites to send photons through space, where loss is lower than in long fibres. China's Micius satellite demonstrated it in 2017.
+Trusted node	A relay in a QKD network that holds the keys in the clear to pass them on. It extends distance today, but it must be physically secured and trusted.
+Entanglement swapping	Creating entanglement between two qubits that never interacted, by performing a Bell measurement on their entangled partners. It is how quantum repeaters extend entanglement.
+Quantum teleportation	Transferring an unknown quantum state from one place to another using a shared entangled pair and two classical bits. The original is destroyed, and nothing travels faster than light.	In science fiction, teleportation means instantly moving matter, which is not what happens here.
+Remote state preparation	Preparing a known quantum state at a distant location using shared entanglement and classical communication. Knowing the state in advance can make it cheaper than teleportation.
+Superdense coding	Sending two classical bits by transmitting a single qubit, using a previously shared entangled pair. It is the reverse of teleportation.
+Channel capacity	The highest rate at which information can be sent reliably through a communication channel. Quantum channels have several capacities, for classical bits, qubits and secret keys.
+Entanglement distribution rate	The number of entangled pairs a quantum link or network delivers per second, at a given quality. It is a key figure of merit for quantum networks.
+Holevo capacity	The highest rate at which classical information can be sent through a quantum channel when each signal is encoded separately. It is based on the Holevo bound.
+Quantum bit error rate	The fraction of key bits that differ between sender and receiver in QKD. If it exceeds a threshold, eavesdropping or noise is too high for a secure key.
+Secret key rate	The number of secure key bits per second, or per pulse, a QKD system produces after error correction and privacy amplification.
+Sifted key rate	The rate of key bits left in QKD after discarding measurements made in mismatched bases, before error correction and privacy amplification.

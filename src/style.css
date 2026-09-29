@@ -163,6 +163,17 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 #result { font-size: 1.1rem; }
 #r-head { font-size: 1.25rem; }
 #r-term { font-size: 1.3rem; }
+#r-def { max-width: 44rem; line-height: 1.45; }
+/* A term that also means something else, in everyday English or another field. */
+.other { max-width: 44rem; background: #FBF5DC; border: 1px solid #BFAE63; padding: 0.35rem 0.6rem; }
+/* "Learn more" looks like a button but is a link, so it can open a new tab. */
+a.learn {
+  display: inline-block; padding: 0.3rem 0.8rem; font-size: 1rem; color: #000; text-decoration: none;
+  border: 1px solid #000; background: #fff;
+}
+a.learn::after { content: " \2197"; }
+a.learn:hover { text-decoration: underline; }
+table.ro td a { color: #000; }
 
 /* ---------- game over ---------- */
 
@@ -234,6 +245,10 @@ table.ro td.empty { font-style: italic; }
   .home-lower { grid-template-columns: 1fr; }
   /* "Just played" would push Home into scrolling; on phones it is on Scores > All-time total. */
   .home-activity { display: none; }
+  /* Keep the answer, its definition and Next on one phone screen. */
+  #result p { margin: 0.3rem 0; }
+  #r-def { font-size: 0.95rem; line-height: 1.35; }
+  .other { font-size: 0.9rem; padding: 0.25rem 0.5rem; }
   .board-head button { font-size: 0.9rem; padding: 0.25rem 0.5rem; margin-right: 0.15rem; }
   .board-head h2 { font-size: 1.2rem; }
   .home-board p { margin: 0.2rem 0; }

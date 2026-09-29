@@ -1,0 +1,208 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Bicycle architecture	IBM's planned fault-tolerant design built from modules encoded in bivariate bicycle (gross) codes, linked by couplers, with a logical processing unit to perform operations on the stored logical qubits.	In everyday English, a bicycle is a pedal-driven vehicle; the name comes from the bicycle codes it uses.
+Early fault-tolerant computing	The coming stage of quantum computing with a small number of error-corrected logical qubits and limited logical operations, between today's noisy devices and full fault tolerance.
+Fault-tolerant prototype	An early machine built to demonstrate fault-tolerant quantum computation at small scale, testing the codes, decoders and control needed for larger systems.
+Fault-tolerant quantum computer	A quantum computer that uses error correction so that computations of any length can run reliably, as long as physical error rates are below the threshold.
+Intermodule coupler	A connection between separate quantum chips or modules that lets qubits on different modules interact, so a larger computer can be built from smaller pieces.
+Logical clock cycle	The time taken to perform one round of logical operations on encoded qubits, including the error correction they need. It sets the speed of a fault-tolerant computer.
+Logical compiler	A compiler that turns a program into operations on error-corrected logical qubits, such as lattice surgery and magic state use, and schedules them.
+Logical instruction set	The set of operations a fault-tolerant computer can perform directly on its logical qubits, such as logical Clifford gates, measurements and magic state injection.
+Logical processing unit	In IBM's bicycle architecture, the part that performs logical operations, such as measurements of logical Pauli operators, on qubits stored in a code module.	In computing, a processing unit such as a CPU is the part that executes instructions.
+Long-range coupler	A connection that links qubits that are not next to each other on a chip, which some high-rate codes, such as bivariate bicycle codes, need.
+Modular architecture	Building a large quantum computer from many smaller connected modules, instead of one giant chip, to make manufacturing and scaling easier.
+Partial fault tolerance	A scheme that protects only some operations or some error types with error correction, trading full protection for fewer qubits.
+QEC cycle	One round of measuring all the stabilizers of an error-correcting code and processing the results. Its duration limits how fast errors can be caught.
+Stabilizer round	One complete measurement of all the stabilizers of a code, giving a fresh syndrome. Error correction repeats stabilizer rounds continuously.
+Syndrome round	One round of measuring a code's parity checks to collect a syndrome, the same thing as a stabilizer round.
+Bacon–Shor code	A subsystem code on a square grid of qubits whose checks are simple two-qubit measurements, making it easy to measure. It protects well against some noise but has no threshold as it grows.
+Balanced product code	A way of building quantum LDPC codes from two classical codes that share a symmetry, giving codes with better distance than hypergraph products.
+Binomial code	A bosonic code that stores a qubit in superpositions of photon-number states with binomial weights, protecting against photon loss.
+Bivariate bicycle code	A family of quantum LDPC codes defined by polynomials in two variables, such as IBM's gross code. They encode many logical qubits with far fewer physical qubits than the surface code.
+Bosonic code	A code that stores a qubit in the many levels of a harmonic oscillator, such as a microwave cavity, instead of many separate qubits. Cat, binomial and GKP codes are examples.
+Cat code	A bosonic code that stores a qubit in superpositions of two or four coherent states of a resonator. It is strongly protected against bit flips, so only phase flips need further correction.
+Code concatenation	Encoding each qubit of a code in another code, repeatedly, so that errors are suppressed more at each level. It was used in the first threshold proofs.
+Color code	A topological code on a lattice with three-colourable faces. It allows all Clifford gates to be applied transversally, but is harder to decode than the surface code.
+Concatenated cat code	A scheme that combines cat qubits, which suppress bit flips, with an outer code such as a repetition code that corrects the remaining phase flips.
+Concatenated code	A code built by encoding the qubits of one code in another code, level by level, so that errors shrink rapidly with each level.
+CSS code	A Calderbank–Shor–Steane code, a stabilizer code built from two classical codes, one handling bit flips and one handling phase flips. The surface and Steane codes are CSS codes.
+Dual-rail code	An encoding of a qubit in which of two modes or resonators holds a single excitation. Losing the excitation leaves both empty, which can be detected as an erasure.
+Dynamical code	A code whose checks change from round to round, so the protected logical space itself evolves in time. Floquet codes, such as the honeycomb code, are examples.
+Fibre bundle code	A quantum LDPC code built with a construction borrowed from the topology of fibre bundles. It was the first to beat the long-standing √n distance barrier for such codes.
+Five-qubit perfect code	The smallest code that corrects any single-qubit error, encoding one logical qubit into five physical qubits with distance three.
+Floquet code	A code whose logical qubit is protected by measuring two-qubit checks in a repeating sequence, so the stabilizers change each step. The honeycomb code was the first example.
+Four-qubit error-detecting code	The smallest code that detects any single-qubit error, encoding two logical qubits in four physical qubits. It detects errors but cannot correct them.
+Gauge operator	In a subsystem code, an operator that acts on the gauge qubits, which carry no protected information. Measuring gauge operators can give the stabilizers more simply.
+Gauge qubit	A qubit in a subsystem code that is left unprotected and whose state does not matter. Allowing gauge qubits can make syndrome measurement simpler.
+GKP code	The Gottesman–Kitaev–Preskill code, which encodes a qubit in an oscillator using grid-like states. It corrects small shifts in position and momentum and is used in photonic and superconducting systems.
+Gross code	IBM's [[144,12,12]] bivariate bicycle code, which stores 12 logical qubits in 144 data qubits with distance 12, about ten times fewer qubits than surface codes need.	In everyday English, gross means disgusting, or 144 (a dozen dozen), the source of the name.
+HaPPY code	A holographic code by Pastawski, Yoshida, Harlow and Preskill, built from a tiling of perfect tensors. It models how spacetime might emerge in the AdS/CFT correspondence.
+Heavy-hex code	An error-correcting code designed for IBM's heavy-hexagon qubit layout, in which each qubit has at most three neighbours. It mixes features of surface and Bacon–Shor codes.
+Holographic code	A code built from a network of tensors on a hyperbolic tiling, used as a toy model of how bulk spacetime is encoded on its boundary in quantum gravity.
+Honeycomb code	The first Floquet code, by Hastings and Haah: qubits on a honeycomb lattice with two-qubit checks measured in a repeating three-step pattern.
+Hyperbolic surface code	A surface code on a tiling of a hyperbolic (negatively curved) surface. It can store many more logical qubits per physical qubit than a flat surface code.
+Hypergraph product code	A construction that combines two classical codes into a quantum LDPC code. It gives codes with constant rate and distance of about √n.
+Lifted product code	A construction of quantum LDPC codes using matrices of group elements, which led to codes with good rate and linear distance.
+Multivariate bicycle code	A generalization of bivariate bicycle codes defined with polynomials in more than two variables, giving more design options for high-rate LDPC codes.
+Planar code	The surface code laid out on a flat patch with open boundaries instead of a torus. It stores one logical qubit and is the form built in hardware.
+Quantum convolutional code	A code that protects a continuous stream of qubits using a repeating encoding pattern, like classical convolutional codes, suited to communication.
+Quantum Hamming code	A quantum code built from the classical Hamming code, such as the Steane code built from the [7,4] Hamming code.
+Quantum LDPC code	A low-density parity-check code: a stabilizer code in which each check touches few qubits and each qubit is in few checks. Some encode many logical qubits efficiently.
+Quantum Reed–Muller code	A quantum code built from classical Reed–Muller codes. Some, such as the 15-qubit code, allow a transversal T gate and are used in magic state distillation.
+Quantum Tanner code	A quantum LDPC code built on expander graphs that has both constant rate and distance growing linearly with size, a so-called good qLDPC code.
+Repetition code	The simplest code: copy a bit into several qubits and take a majority vote. It corrects only one type of error, bit flips or phase flips, but is a common first test.
+Rotated surface code	A surface code laid out at 45 degrees, which reaches the same distance with about half as many qubits. It is the version used in most experiments.
+Shor code	The first quantum error-correcting code, by Peter Shor in 1995. It encodes one qubit in nine and corrects any single-qubit error.
+Steane code	A seven-qubit code by Andrew Steane that corrects any single-qubit error. It is a CSS code with transversal Clifford gates.
+Subsystem code	A code in which part of the protected space is left unprotected as gauge qubits, which can make measuring the syndrome simpler. The Bacon–Shor code is an example.
+Subsystem surface code	A subsystem version of the surface code whose checks are measured with lower-weight operators, simplifying the circuits at some cost in performance.
+Surface code	The leading quantum error-correcting code: qubits on a 2D grid with local four-qubit checks. It has a high threshold of about 1% and needs only nearest-neighbour connections.
+Toric code	Kitaev's code on a lattice wrapped around a torus, the original topological code. It stores two logical qubits, and its excitations behave as anyons.	A torus is a doughnut shape, which is where the name comes from.
+Triangular color code	A color code on a triangle-shaped patch with boundaries of three colours, storing one logical qubit. The Steane code is the smallest example.
+Triorthogonal code	A code with a special structure that allows a transversal T gate, used to distil magic states efficiently.
+Two-gross code	IBM's [[288,12,18]] bivariate bicycle code, twice the size of the gross code, storing 12 logical qubits with distance 18.
+XZZX code	A surface code variant whose checks are XZZX products. It performs especially well when noise is biased toward one type of error.
+Yoked surface code	Surface code patches linked by extra checks across patches (yokes), which raise the protection of stored qubits using fewer extra qubits than enlarging each patch.
+Anyon	A quasiparticle in two dimensions that is neither a boson nor a fermion; swapping two anyons can change the state by any phase or even a matrix. They underlie topological codes and computing.
+Check operator	An operator measured to detect errors in a code, such as a stabilizer or gauge operator. A flipped result signals that an error occurred nearby.
+Code distance	The smallest number of physical errors that can cause an undetected logical error. A code of distance d can correct up to (d−1)/2 errors.
+Code rate	The number of logical qubits encoded per physical qubit. The surface code has a low rate, while qLDPC codes can have much higher rates.
+Code space	The subspace of states that a code uses to store information, where all stabilizers have the value +1. Errors push states out of it.
+Codeword	A valid encoded state of a code, one of the states in the code space.	In classical coding theory, a codeword is a valid string of symbols.
+Decoding	Working out, from the syndrome, which errors most likely happened and how to correct them. It must be fast and accurate for error correction to work.
+Defect	A flipped check result in a syndrome, marking where an error chain starts or ends. It is also used for holes or boundaries cut into a code to store qubits.	In materials science, a defect is a flaw in a crystal, a common source of qubit noise.
+Detector	A combination of measurement results whose value is fixed in the absence of errors, such as comparing a stabilizer between rounds. Decoders work with detectors that fire.	In everyday English, a detector is any device that senses something, such as a smoke detector.
+Detector error model	A description of which detectors each possible error flips, and how likely each error is. It is the input to decoders such as matching.
+Encoding	Spreading the information of logical qubits across many physical qubits, so that errors on a few can be found and fixed.	In computing generally, encoding means converting data into another format.
+Error chain	A string of errors on neighbouring qubits in a topological code. Only its endpoints show up in the syndrome; a chain spanning the code causes a logical error.
+Error string	Another name for an error chain: a line of errors whose ends light up checks. Strings that cross the whole code act as logical operators.
+Frame tracking	Keeping a record in software of Pauli corrections that should have been applied, instead of applying them physically, and adjusting later results accordingly.
+Logical error rate	The rate at which encoded, logical qubits suffer errors after error correction. Below threshold it falls rapidly as the code distance grows.
+Logical operator	An operator that changes the encoded logical state while leaving the code space intact, such as logical X or Z. Its minimum weight is the code distance.
+Logical qubit	A qubit encoded in many physical qubits with error correction, so it is far more reliable than any single physical qubit.
+Parity check	A measurement of whether a group of bits or qubits has an even or odd number of flips. In quantum codes it is a stabilizer measurement.
+Parity check matrix	A matrix whose rows list which bits each parity check involves. It fully describes a classical code and, for CSS codes, the quantum code.
+Pauli frame	The record of Pauli corrections that have been inferred but not physically applied, tracked in software.
+Pauli frame update	Changing the tracked Pauli frame when a new correction is inferred or a gate transforms it, instead of applying a physical gate.
+Physical error rate	The error rate of individual physical qubits and operations. It must be below the code's threshold for error correction to help.
+Physical qubit	A single hardware qubit, such as one transmon or one trapped ion. Many physical qubits make up one logical qubit.
+Quantum error correction	Protecting quantum information by encoding it redundantly across many qubits and repeatedly measuring checks to find and fix errors without disturbing the stored data.
+Quantum error detection	Finding that an error happened without being able to fix it, so the result can be discarded. It needs fewer qubits than full correction.
+Stabilizer	An operator, usually a product of Paulis, that leaves every valid code state unchanged. Measuring stabilizers reveals errors without revealing the encoded data.
+Stabilizer code	An error-correcting code defined by a group of commuting Pauli stabilizers. Most quantum codes, including the surface code, are stabilizer codes.
+Stabilizer formalism	A way to describe many-qubit states and codes by the Pauli operators that stabilize them, instead of their exponentially many amplitudes. It makes Clifford circuits easy to track.
+Stabilizer generator	One of a minimal set of stabilizers from which all others can be formed by multiplication. Error correction measures the generators.
+Stabilizer group	The group of all Pauli operators that leave the code states unchanged. It is generated by a small set of stabilizer generators.
+Stabilizer state	A state that is the unique +1 eigenstate of a group of Pauli operators, such as a Bell or GHZ state. Such states can be simulated efficiently on classical computers.
+Syndrome	The pattern of stabilizer measurement results, which reveals where errors occurred without revealing the encoded information.
+Syndrome extraction	Measuring a code's stabilizers, usually with ancilla qubits, to obtain the error syndrome.
+Syndrome extraction circuit	The circuit of gates and ancilla measurements used to measure a code's stabilizers each round. Its design affects how errors spread.
+Syndrome measurement	Measuring the stabilizers of a code to learn the error syndrome. It must be repeated because measurements themselves can be wrong.
+Tanner graph	A graph linking qubits (or bits) to the parity checks that involve them. It is used to design and decode LDPC codes.
+Twist defect	A point in a topological code where the lattice is twisted so that anyon types swap around it. Twists can store qubits and enable extra logical gates.
+Algorithmic fault tolerance	A fault-tolerance approach, shown with neutral atoms, in which transversal gates and correlated decoding reduce the number of syndrome rounds needed per logical operation.
+ASIC decoder	A decoder built as a custom chip (application-specific integrated circuit), designed to decode fast and at low power, possibly inside the cryostat.
+Belief propagation	A decoding algorithm that passes messages between qubits and checks on a Tanner graph to estimate which errors happened. It is fast but needs help, such as OSD, for quantum codes.
+Blossom algorithm	Edmonds's algorithm for finding a minimum-weight perfect matching in a graph. It is the classic engine of matching decoders for the surface code.
+BP-OSD decoder	A decoder that runs belief propagation and, if it fails, uses ordered statistics decoding to find a solution. It is the standard decoder for quantum LDPC codes.
+Correlated decoding	Decoding several logical qubits together, rather than separately, to account for errors that spread between them during transversal gates.
+Decoder	The classical algorithm or hardware that turns syndrome data into a guess of which errors happened, so they can be corrected.
+Decoder backlog	A growing queue of syndrome data that happens when the decoder is slower than the rate at which data arrives. It slows the whole computation exponentially.
+Decoder latency	The delay between measuring a syndrome and the decoder's answer. Low latency is needed so that corrections are ready before later operations depend on them.
+Decoder throughput	How much syndrome data a decoder can process per second. It must keep pace with the error-correction cycle to avoid a backlog.
+Decoding graph	A graph whose nodes are detectors and whose edges are possible errors, used by decoders such as matching to find the likeliest errors.
+FPGA decoder	A decoder running on a field-programmable gate array, reconfigurable hardware that can decode quickly and close to the quantum device.
+Just-in-time decoding	Decoding syndrome data only as far as needed, when a result is about to be used, to keep latency low.
+Localized statistics decoding	A decoder for qLDPC codes, related to ordered statistics decoding, that splits the problem into small local clusters so they can be decoded in parallel and faster.
+Lookup table decoder	A decoder that stores the correction for every possible syndrome in a table. It is very fast but only practical for small codes.
+Matching graph	The graph used by a matching decoder, whose nodes are detection events and whose edge weights reflect how likely errors are.
+Minimum-weight perfect matching	A decoding method that pairs up flipped detectors using the most likely (lowest-weight) set of errors. It is the standard decoder for the surface code.
+Neural network decoder	A decoder that uses a trained neural network to predict corrections from syndromes. It can learn a device's real noise, including correlations.
+Ordered statistics decoding	A decoding method that sorts bits by reliability and solves for the least likely errors among the least reliable bits. It helps belief propagation decode quantum LDPC codes.
+Real-time decoding	Decoding syndromes as fast as they are produced, while the computation runs, which is required for fault-tolerant quantum computing.
+Sliding window decoding	Decoding a continuous stream of syndrome rounds in overlapping windows, committing to corrections in each window before moving on, so decoding never waits for the whole run.
+Soft-information decoding	Decoding that uses how confident each measurement was, not just its 0 or 1 result, to make better decisions.
+Tensor network decoder	A decoder that uses tensor network contraction to compute the most likely logical correction almost exactly. It is accurate but slow, used mainly as a benchmark.
+Union-find decoder	A fast decoder that grows clusters around flipped checks until they can be corrected. It runs in almost linear time with accuracy close to matching.	In computer science, union-find is a general data structure for tracking groups.
+Above-threshold	Operating with physical error rates above a code's threshold, where making the code bigger makes logical errors worse, not better.
+Ancilla verification	Checking that ancilla qubits were prepared correctly before using them in error correction, and discarding bad ones, to avoid spreading errors.
+Autonomous error correction	Error correction built into the hardware's physics, for example with engineered dissipation, that fixes errors continuously without measurements and feedback.
+Bad error propagation	When a single fault in a circuit spreads into several errors on data qubits, possibly more than the code can correct. Fault-tolerant circuits are designed to prevent it.
+Below-threshold	Operating with physical error rates under a code's threshold, so that larger codes give lower logical error rates. It is the key requirement for scalable error correction.
+Break-even	The point at which an error-corrected logical qubit lasts longer, or performs better, than the best physical qubit in the same system.
+Code threshold	The physical error rate below which a code's logical error rate falls as the code grows. For the surface code it is about 1% under realistic noise.
+Erasure qubit	A qubit designed so that its main errors are erasures, errors whose location is known, which are much easier to correct than unknown errors.
+Error propagation	The spreading of errors through gates, for example a CNOT copying an error from one qubit to another. Fault-tolerant design limits it.
+Fault tolerance	The ability to compute reliably even though individual components are faulty, by designing error correction so that errors do not spread uncontrollably.	In engineering generally, fault tolerance means a system continues working when parts fail.
+Fault-tolerant gate	A logical gate implemented so that one faulty component causes at most a correctable number of errors in each code block.
+Fault-tolerant measurement	Measuring a logical qubit or syndrome in a way that a single fault cannot cause an uncorrectable error, for example by repeating it.
+Fault-tolerant state preparation	Preparing encoded states, such as logical |0⟩, so that a single fault cannot produce an uncorrectable error, often by verifying the result.
+Fault-tolerant syndrome extraction	Measuring stabilizers in a way that limits error spread from faulty ancillas, using methods such as Shor, Steane, Knill or flag schemes.
+Flag qubit	An extra qubit that detects when a fault during syndrome measurement has spread into a dangerous multi-qubit error, allowing fault tolerance with few ancillas.
+Flag-based fault tolerance	Fault-tolerant syndrome extraction using flag qubits to catch dangerous error spreads, needing far fewer ancillas than older schemes.
+Foliation	A method for turning a stabilizer code into a cluster state for measurement-based fault-tolerant computing, adding a time direction to the code.	In mathematics, a foliation is a way of slicing a space into layers.
+Hook error	An error from a single fault partway through a stabilizer measurement that spreads to several data qubits. Choosing the right gate order limits its damage.
+Knill-style syndrome extraction	Measuring syndromes by teleporting the data through an encoded Bell pair, which extracts all the error information at once.
+Leakage detection	Finding qubits that have left the computational states |0⟩ and |1⟩ for higher energy levels, so they can be reset before they corrupt error correction.
+Logical Bell state	A Bell state between two logical qubits, an entangled pair of error-corrected qubits. Preparing it is a benchmark for fault-tolerant hardware.
+Logical gate	A gate acting on encoded logical qubits, built from many physical operations so that errors stay correctable.
+Logical measurement	Measuring the value of an encoded logical qubit, usually by measuring its physical qubits and decoding the result.
+Pseudo-threshold	The physical error rate at which a specific code of fixed size starts to outperform an unencoded qubit. It differs from the true threshold.
+Shor-style syndrome extraction	Measuring each stabilizer with a verified cat state of ancillas, so faults cannot spread to several data qubits. It is robust but needs many ancillas.
+Single-shot error correction	Error correction that works reliably from a single round of syndrome measurement, without repeating it to catch measurement errors.
+Steane-style syndrome extraction	Measuring all syndromes at once by coupling the data to a whole encoded ancilla block with transversal gates, then measuring the ancilla.
+Threshold theorem	The theorem that arbitrarily long quantum computations can be performed reliably if physical error rates are below a certain threshold, with only modest overhead.
+Transversal CNOT	A logical CNOT between two code blocks made by applying CNOTs between matching physical qubits. It is naturally fault-tolerant because errors cannot spread within a block.
+Transversal gate	A logical gate built from independent gates on matching physical qubits across code blocks, so a single fault affects at most one qubit per block.
+Biased noise	Noise in which one type of error, often phase flips, is far more common than others. Codes such as XZZX or cat qubits can exploit it.
+Circuit-level noise	A noise model in which every gate, idle step, preparation and measurement in the syndrome circuit can fail. It is the most realistic standard model.
+Circuit-level simulation	Simulating error correction with noise on every operation of the actual circuits, to estimate realistic thresholds and logical error rates.
+Code capacity noise	A simplified noise model in which only data qubits suffer errors, once, and syndrome measurement is perfect. It gives the most optimistic thresholds.
+Correlated error	An error that affects several qubits at once, for example from crosstalk or cosmic rays. Correlated errors are harder to correct than independent ones.
+Depolarizing noise	Noise that replaces the state with a completely random one with some probability, or equivalently applies X, Y or Z errors with equal chance.
+Erasure conversion	Engineering a qubit so that its dominant errors become erasures, detectable errors whose location is known, which codes can correct much more easily.
+Erasure error	An error whose location is known, such as a qubit found to have been lost. Codes can correct about twice as many erasures as unknown errors.
+Leakage	When a qubit leaves the computational states |0⟩ and |1⟩ for other levels, such as a transmon's |2⟩. Leaked qubits spread errors and must be detected and reset.	In everyday English, a leakage is fluid or information escaping.
+Leakage reduction unit	An operation that returns leaked qubits to the computational subspace, applied regularly during error correction so leakage does not build up.
+Measurement error	A wrong measurement result, reading 0 as 1 or the reverse. In error correction it is why syndromes must be measured repeatedly.
+Pauli noise model	A noise model in which errors are random Pauli operators (X, Y, Z) applied with some probabilities. It is easy to simulate and many real noises can be twirled into it.
+Phenomenological noise	A noise model in which data qubits have errors and syndrome measurements can also be wrong, but the gates inside the syndrome circuits are ideal.
+Below-threshold demonstration	An experiment showing that increasing the code distance lowers the logical error rate, proving hardware operates below threshold. Google showed this with its Willow chip in 2024.
+Footprint	The number of physical qubits needed per logical qubit, or for a whole algorithm. Lowering the footprint is a major goal of new codes.	In everyday English, a footprint is the mark left by a foot, or the space something takes up.
+Lambda factor	The factor by which the logical error rate drops each time the code distance increases by two. A value above 1 means the code is working below threshold.	In physics and mathematics, lambda (λ) is used for many other quantities, such as wavelength.
+Logical clock speed	How many logical operations per second a fault-tolerant computer can perform, set by the error-correction cycle time and decoding speed.
+Logical error suppression	The drop in logical error rate achieved by error correction, ideally exponential in the code distance when running below threshold.
+Logical memory lifetime	How long a logical qubit keeps its information under error correction before a logical error occurs.
+Logical T1	The lifetime of an encoded logical qubit, the logical counterpart of a physical qubit's T1 relaxation time.
+Memory experiment	An experiment that stores a logical qubit under repeated error correction and measures how quickly logical errors occur. It is the standard first test of a code.
+Repetition experiment	An experiment running a repetition code to test error correction against one type of error, a simpler step before full codes.
+Resource estimation	Calculating how many physical qubits, how much time and how many operations a fault-tolerant algorithm will need on given hardware.
+Space-time cost	The number of physical qubits multiplied by the time they are used. It measures the total cost of a fault-tolerant operation or algorithm.
+Spacetime overhead	The extra qubits and time that error correction adds compared with an ideal computation, measured as space-time volume.
+T-depth	The number of layers of T gates in a circuit when T gates that can run at the same time are grouped. It limits run time on fault-tolerant hardware.
+Bravyi–König theorem	The result that transversal or constant-depth logical gates on 2D topological codes are limited to the Clifford hierarchy's third level, restricting which gates are cheap.
+Eastin–Knill theorem	The theorem that no quantum error-correcting code can implement a universal set of logical gates transversally. Extra methods, such as magic states, are always needed.
+Gottesman–Knill theorem	The theorem that circuits of Clifford gates, Pauli measurements and stabilizer states can be simulated efficiently on a classical computer.
+Knill–Laflamme conditions	The necessary and sufficient conditions for a quantum code to correct a set of errors: errors must not distinguish codewords or disturb them differently.
+Quantum Hamming bound	An upper limit on how many logical qubits a code can store while correcting a given number of errors, for non-degenerate codes.
+Quantum Singleton bound	A limit on quantum codes: the number of physical qubits minus logical qubits must be at least 2(d − 1), where d is the distance.
+Anyonic braiding	Moving anyons around each other so their paths form braids. The result depends only on the braid's topology, which makes it a robust way to perform gates.
+Braiding	Moving quasiparticles or code defects around each other to perform logical operations. In topological codes, braiding defects implements gates.	In everyday English, braiding is weaving strands of hair or rope together.
+Clifford-only fault tolerance	A fault-tolerant scheme that performs only Clifford gates on encoded qubits. It is easy to protect but not universal without magic states.
+Code deformation	Changing the shape or checks of a code step by step to move, split or merge logical qubits, performing logical operations without leaving the code.
+Code switching	Converting encoded qubits from one code to another, for example to use each code's easy transversal gates, getting a universal gate set.
+Distillation factory	A dedicated area of a fault-tolerant computer that continuously produces high-quality magic states through distillation for use in T gates.
+Fifteen-to-one distillation	A magic state distillation protocol that takes 15 noisy T states and outputs one much cleaner one, based on the 15-qubit Reed–Muller code.
+Game of surface codes	A 2019 paper by Daniel Litinski describing fault-tolerant computing with the surface code as a board game of patches and lattice surgery, a widely used design framework.
+Lattice surgery	A way to perform logical operations between surface code patches by temporarily merging and splitting their boundaries, needing only nearest-neighbour operations.
+Logical patch	A region of qubits encoding one or more logical qubits in a code such as the surface code, which can be moved and merged with lattice surgery.
+Magic state	A special non-stabilizer state, such as the T state, that lets a Clifford-only machine perform a non-Clifford gate by consuming it.
+Magic state cultivation	A 2024 method by Gidney, Shutty and Jones that grows a high-quality magic state inside a surface code patch, far more cheaply than traditional distillation.
+Magic state distillation	Turning many noisy magic states into fewer, cleaner ones using error-detecting codes, so fault-tolerant T gates can be performed.
+Magic state injection	Preparing a magic state on physical qubits and encoding it into a logical qubit, the first, noisy step before distillation.
+Merge and split operations	The two basic steps of lattice surgery: merging code patches measures a joint logical operator, and splitting them apart again completes the operation.
+Patch	A section of a surface code lattice that stores a logical qubit. Computations are carried out by moving, merging and splitting patches.	In everyday English, a patch is a small piece of material used to mend something.
+Spacelike distance	The code distance against errors spreading across the qubits of a code at one moment, set by the patch size.
+T-state factory	A region of a fault-tolerant computer that produces T-type magic states, usually by distillation or cultivation.
+T-state injection	Preparing a noisy T state and encoding it into a code, to be improved and then consumed to perform a T gate.
+Timelike distance	The code distance against errors spreading in time, such as repeated measurement errors, set by how many rounds of syndrome measurement are repeated.
+Universal fault-tolerant gate set	A set of fault-tolerant logical operations, such as transversal Clifford gates plus magic-state T gates, that together can perform any quantum computation.

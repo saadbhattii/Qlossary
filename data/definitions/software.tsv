@@ -1,0 +1,40 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+QASMBench	A benchmark suite of quantum circuits written in OpenQASM, from Pacific Northwest National Laboratory, covering small to large circuits for testing compilers, simulators and hardware.
+SupermarQ	An application-based benchmark suite for quantum computers, created by Super.tech (later part of Infleqtion), that scores hardware on circuits drawn from real application areas.
+ARTIQ	Advanced Real-Time Infrastructure for Quantum physics: an open-source Python-based control system from M-Labs for running experiments with precise timing, widely used with trapped ions.	Artiq is also the name of an Inuit spirit in mythology.
+QCoDeS	An open-source Python framework, begun by Microsoft and the University of Copenhagen, for controlling lab instruments and recording measurement data in quantum experiments.
+Sinara hardware	An open-source family of control electronics, including FPGA controllers and signal sources, designed to run with ARTIQ in atomic physics and trapped-ion labs.
+Mitiq	An open-source Python toolkit from Unitary Foundation for quantum error mitigation, providing ZNE, PEC, Clifford data regression and more, working with several quantum SDKs.
+Mthree	A Qiskit add-on for readout error mitigation that corrects measurement errors using only the bit strings actually observed, making it scale to many qubits.
+PEC compiler	Software that automates probabilistic error cancellation: it learns a device's noise, then generates and weights the many randomized circuit variants PEC needs.
+Qiskit Runtime mitigation	The error suppression and mitigation options built into IBM's Qiskit Runtime service, such as readout correction, dynamical decoupling, ZNE and PEC, selected with simple settings.
+ZNE compiler	Software that automates zero-noise extrapolation: it creates noise-amplified versions of a circuit, for example by gate folding, runs them and extrapolates to zero noise.
+PyMatching	An open-source Python library for decoding quantum error-correcting codes, such as the surface code, with fast minimum-weight perfect matching.
+Stim	A very fast open-source simulator by Craig Gidney for stabilizer (Clifford) circuits, widely used to simulate and study quantum error correction.
+Bloqade	QuEra's software for programming neutral-atom quantum computers, including analog Hamiltonian simulation with Rydberg atoms, available for Python and Julia.
+Cirq	Google's open-source Python framework for writing, optimizing and running quantum circuits, designed around the details of near-term hardware.
+CUDA-Q	NVIDIA's open-source platform for hybrid quantum-classical programming in C++ and Python, with GPU-accelerated simulation and support for many quantum hardware backends.
+Ocean SDK	D-Wave's open-source Python tools for formulating optimization problems, such as QUBOs, and solving them on quantum annealers or classical solvers.
+OpenPulse	A specification for describing quantum programs at the level of control pulses, such as microwave waveforms, instead of gates. It is part of the OpenQASM ecosystem.
+OpenQASM	Open Quantum Assembly Language: a widely used text format for quantum circuits, created at IBM. Version 3 adds classical control, timing and pulses.
+PennyLane	Xanadu's open-source Python library for quantum machine learning and differentiable programming, connecting quantum circuits to libraries such as PyTorch and JAX.
+ProjectQ	An open-source Python framework for quantum computing started at ETH Zurich, with a compiler that translates high-level programs to various backends.
+PyQuil	Rigetti's Python library for writing Quil programs and running them on Rigetti's quantum processors or simulators.
+PyZX	An open-source Python library for rewriting and simplifying quantum circuits using the ZX-calculus, often reducing gate counts.
+Qibo	An open-source full-stack framework for quantum computing, led by the Technology Innovation Institute (Abu Dhabi), covering simulation, hardware control and calibration.
+Qiskit	IBM's open-source software development kit for quantum computing, the most widely used. It covers building circuits, transpiling them and running them on simulators or IBM hardware.
+Qrisp	A high-level open-source quantum programming framework from Fraunhofer FOKUS that works with variables and functions instead of individual gates and qubits.
+Quantum Development Kit	Microsoft's toolkit for quantum programming, including the Q# language, simulators and resource estimation tools.
+Quantum intermediate representation	QIR: a common intermediate format for quantum programs based on LLVM, led by Microsoft and the QIR Alliance, so different languages can target different hardware.
+Quil	Quantum Instruction Language: Rigetti's low-level language for quantum programs, with classical memory and control.
+Quipper	A functional quantum programming language embedded in Haskell, designed for describing large, complex quantum algorithms.
+Silq	A high-level quantum programming language from ETH Zurich that automatically uncomputes temporary values, avoiding a common source of errors.
+Strawberry Fields	Xanadu's open-source Python library for photonic, continuous-variable quantum computing, used to design and simulate optical circuits.
+TensorFlow Quantum	A Google library that combines Cirq circuits with TensorFlow, for building hybrid quantum-classical machine learning models.
+tket	Quantinuum's quantum software development kit and compiler, used through Python as pytket, which optimizes circuits for many types of hardware.
+Qiskit Aer	The high-performance simulator package for Qiskit, able to simulate circuits with realistic noise models on CPUs and GPUs.
+qsim	Google's fast open-source state-vector simulator, written in C++ and used with Cirq.
+QuEST	The Quantum Exact Simulation Toolkit: an open-source, high-performance simulator from the University of Oxford that runs on laptops, GPUs and supercomputers.
+Qulacs	A fast open-source quantum circuit simulator from Japan, written in C++ with a Python interface, popular for variational algorithm research.
+QuTiP	The Quantum Toolbox in Python: an open-source library for simulating the dynamics of open quantum systems, widely used in physics research.
+Sinter	A companion tool to Stim that runs large batches of error-correction simulations in parallel and collects statistics, such as logical error rates.

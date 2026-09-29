@@ -1,0 +1,26 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Amazon Braket	Amazon Web Services' quantum computing service, which gives cloud access to quantum hardware from several companies and to simulators through one interface.	Braket is also the name of Dirac's bra-ket notation.
+Azure Quantum	Microsoft's cloud service for quantum computing, offering access to partner hardware, simulators and tools such as the Q# language and resource estimation.
+IBM Quantum Platform	IBM's cloud service for running circuits on its superconducting quantum processors, used through Qiskit and Qiskit Runtime.
+Qblox	A Dutch company, founded in Delft, that makes modular control and readout electronics for qubits, used by labs and quantum computer builders.
+Quantum Machines	An Israeli company that makes the OPX control systems for running quantum experiments and processors, programmed with its QUA language.
+Zurich Instruments	A Swiss maker of test and measurement equipment, including lock-in amplifiers and control systems used to operate qubits.
+Bluefors	A Finnish company that makes dilution refrigerators, the cryostats that cool superconducting and other qubits to millikelvin temperatures.
+Oxford Instruments	A British scientific-instruments company known in quantum computing for its dilution refrigerators and cryogenic systems.
+Alice & Bob	A French company building superconducting quantum computers based on cat qubits, which are naturally protected against bit flips.	Alice and Bob are also the traditional names for the two parties in cryptography and communication examples.
+Alpine Quantum Technologies	An Austrian company from Innsbruck, known as AQT, that builds trapped-ion quantum computers.
+Atom Computing	An American company building neutral-atom quantum computers that store qubits in the nuclear spins of atoms held in optical tweezers.
+D-Wave	A Canadian company, the first to sell quantum computers commercially, known for its quantum annealers for optimization problems.
+Diraq	An Australian company, spun out of UNSW Sydney, building silicon spin qubits with standard CMOS chip manufacturing.
+Google Quantum AI	Google's quantum computing team, which built the Sycamore processor used in the 2019 supremacy experiment and the Willow chip for error-correction milestones.
+Infleqtion	An American company, formerly ColdQuanta, building neutral-atom quantum computers as well as quantum sensors and atomic clocks.
+IonQ	An American trapped-ion quantum computing company, which in 2021 became one of the first publicly traded pure-play quantum computing companies.
+IQM Quantum Computers	A Finnish company building superconducting quantum computers, both for on-premises installation and through the cloud.
+Oxford Quantum Circuits	A British company building superconducting quantum computers based on its three-dimensional "coaxmon" qubit design.
+Pasqal	A French company building neutral-atom quantum computers that use arrays of atoms held by laser tweezers.
+PsiQuantum	An American company building a large-scale photonic quantum computer using fusion-based quantum computation, with chips made in standard semiconductor fabs.
+Quantinuum	A company formed in 2021 by merging Honeywell Quantum Solutions and Cambridge Quantum. It builds trapped-ion quantum computers and develops the tket compiler.
+Quantum Motion	A British company building silicon spin-qubit quantum computers with standard CMOS chip technology.
+QuEra Computing	An American neutral-atom quantum computing company, spun out of research at Harvard and MIT, using Rydberg atom arrays.
+Rigetti Computing	An American company building superconducting quantum processors, offered through the cloud, and developer of the Quil language.
+Xanadu	A Canadian photonic quantum computing company, maker of the PennyLane and Strawberry Fields software and the Borealis photonic processor.

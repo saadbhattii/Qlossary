@@ -1,0 +1,96 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Barrier	An instruction in a circuit that stops the compiler from moving or merging gates across it. It has no physical effect on the qubits, but keeps parts of a circuit in the intended order.	In everyday English, a barrier is any fence or obstacle; in physics, a potential barrier is an energy hill a particle may tunnel through.
+Classical register	A set of classical bits in a quantum circuit that stores measurement results. Later operations can read it to decide what to do next, as in dynamic circuits.
+Conditional gate	A gate applied only if a classical condition holds, usually a measurement result stored in a classical register. It is the basic building block of feed-forward and dynamic circuits.
+Deferred measurement principle	The rule that any measurement in the middle of a circuit can be moved to the end, with classically controlled gates replaced by quantum-controlled ones, without changing the results.
+Dynamic circuits	Circuits that measure qubits partway through and use the results to choose later gates while the circuit is still running. They enable error correction, teleportation and shorter circuits.
+Feed-forward	Using a measurement result, in real time, to decide which operations to apply next in the same circuit, as in teleportation corrections or error correction.	In machine learning, a feed-forward network is a neural network in which signals flow only one way, from input to output.
+Garbage qubits	Extra qubits left in an unwanted state after a computation, holding intermediate results. They can spoil interference unless uncomputed, which is why reversible circuits clean them up.
+Implicit measurement principle	The rule that qubits which are never touched again can be treated as if they had been measured, without changing the results for the other qubits.
+Mid-circuit measurement	Measuring some qubits partway through a circuit while the others keep their quantum state. It is needed for error correction, qubit reuse and dynamic circuits.
+Mid-circuit reset	Resetting a qubit to |0⟩ partway through a circuit so it can be reused, for example as a fresh ancilla in each round of error correction.
+Phase kickback	The effect in which a controlled gate acting on a target eigenstate transfers the eigenvalue's phase back onto the control qubit. It is the key step in phase estimation and many oracle algorithms.
+Postselection	Keeping only the runs of an experiment whose measurement results meet a condition, and discarding the rest. It can filter errors, but the discarded runs cost time.
+Reversible computation	Computation in which every step can be undone, so no information is erased. All unitary quantum gates are reversible, and classical logic must be made reversible to run on qubits.
+Uncompute	To run the inverse of earlier gates to return helper qubits to their starting state, removing leftover entanglement so the main result can interfere correctly.
+Approximate compilation	Compiling a circuit into a shorter one that performs the target operation only approximately. The small error introduced can be worth it on noisy hardware, where shorter circuits suffer less noise.
+Basis translation	The compiler step that rewrites gates into the native gates a device actually supports, such as turning a Toffoli into CNOTs and single-qubit rotations.
+Circuit cutting	Splitting a large circuit into smaller pieces that fit on available hardware, running them separately and combining the results classically, at the cost of many more runs.
+Circuit knitting	A general term for techniques, such as circuit cutting and entanglement forging, that combine results from smaller quantum circuits with classical processing to simulate a larger one.
+Circuit optimization	Rewriting a circuit to use fewer gates, less depth or fewer two-qubit gates while keeping the same result, which reduces errors on real hardware.	In electronics, circuit optimization means improving the design of an electrical circuit.
+Clifford synthesis	Building an optimized circuit of Clifford gates, such as H, S and CNOT, that performs a given Clifford operation, often from its stabilizer tableau.
+Gate cancellation	A circuit optimization that removes pairs of gates that undo each other, such as two CNOTs or two Hadamards in a row, after moving gates next to each other where allowed.
+Gate commutation	Swapping the order of gates that commute, so they give the same result in either order. Compilers use it to bring gates together so they can cancel or merge.
+Gate cutting	A circuit-cutting technique that replaces a two-qubit gate between two parts of a circuit with a combination of local operations, so the parts can run separately.
+Initial layout	The assignment of a circuit's logical qubits to a device's physical qubits before routing. A good layout places interacting qubits next to each other and avoids noisy qubits.
+Peephole optimization	A compiler technique that looks at small windows of consecutive gates and replaces them with shorter equivalent sequences.	The term comes from classical compilers, where it means the same thing for machine instructions.
+Phase polynomial	A description of circuits built from CNOT and phase gates as a sum of phases on parity functions of the input bits. It is used to optimize T-count and CNOT count.
+Qubit mapping	Assigning the logical qubits of a circuit to physical qubits on a device, together with inserting the swaps needed when qubits that must interact are not connected.
+Qubit routing	Moving quantum states around a device, usually with SWAP gates, so that qubits that must interact end up next to each other. It adds gates, so good routing reduces errors.	In networking, routing means choosing paths for data packets.
+Stabilizer tableau	A table of bits recording how a Clifford circuit transforms Pauli operators, used to simulate Clifford circuits efficiently on a classical computer and to synthesize them.
+SWAP insertion	Adding SWAP gates during routing to bring interacting qubits next to each other on hardware with limited connectivity. Each SWAP usually costs three CNOTs.
+Template matching	A circuit optimization that finds sub-circuits matching known identities (templates) and replaces them with cheaper equivalents.	In image processing, template matching means finding where a small image appears inside a larger one.
+Transpilation	The process of converting a circuit to run on a specific device: choosing qubits, routing, translating to native gates and optimizing.	In web and software development, transpiling means translating code from one programming language to another.
+Transpiler	The software that performs transpilation, turning an abstract circuit into one that fits a device's gates and connectivity. Qiskit's transpiler is a well-known example.	In software development, a transpiler converts source code from one programming language to another.
+Wire cutting	A circuit-cutting technique that cuts a qubit's line in time, so the circuit before and after the cut can run as separate pieces, reconstructed with many measurement settings.	In everyday English, wire cutting means cutting an electrical wire.
+Clifford gates	The gates generated by Hadamard, phase (S) and CNOT. They map Pauli operators to Pauli operators and can be simulated efficiently on a classical computer.
+Clifford group	The group of all unitaries that map Pauli operators to Pauli operators under conjugation, generated by H, S and CNOT. It is central to error correction and randomized benchmarking.
+Clifford+T gate set	The Clifford gates plus the T gate, a universal gate set. It is the standard gate set for fault-tolerant quantum computing, where T gates are the costly part.
+Entangling gate	A multi-qubit gate that can turn product states into entangled states, such as CNOT or CZ. Together with single-qubit gates, any entangling gate is enough for universal computation.
+Native gate set	The gates a quantum device performs directly in hardware. Any other gate must be compiled into a sequence of native gates.
+Non-Clifford gates	Gates outside the Clifford group, such as T or Toffoli. They are needed for universal quantum computation and for any quantum advantage, and are the expensive part of fault-tolerant circuits.
+Parametric gate	A gate with an adjustable parameter, such as a rotation angle, used in variational algorithms. On some hardware it also means a gate activated by modulating a qubit or coupler parameter.
+Pauli group	The group formed by all products of Pauli matrices (I, X, Y, Z) on n qubits, with phase factors ±1 and ±i. Stabilizer codes and Pauli noise models are built on it.
+Physical gate	A gate as actually executed on hardware qubits, as opposed to a logical gate on encoded qubits. One logical gate may require many physical gates.
+Universal gate set	A set of gates that can approximate any quantum operation to any accuracy, such as Clifford+T or single-qubit rotations plus CNOT.
+Virtual gate	A gate done in software instead of on hardware, usually the Z rotation, applied by shifting the phase of later pulses. It takes no time and adds no error.
+Barenco gate	A two-qubit controlled gate with three parameters, proposed by Adriano Barenco in 1995, shown to be universal on its own for quantum computation.
+bSWAP gate	A superconducting-qubit gate that drives the two-photon transition between |00⟩ and |11⟩, producing entanglement directly from the ground state. It is the circuit analogue of the Mølmer–Sørensen gate.
+Cross-resonance gate	IBM's main two-qubit gate for fixed-frequency transmons: one qubit is driven at the other's frequency, rotating the target depending on the control's state. It needs only microwave pulses.
+CZ via parametric drive	A controlled-Z gate made by modulating a qubit's or coupler's frequency so that the |11⟩ and |20⟩ states briefly exchange energy, adding the needed phase. It is used on tunable superconducting qubits.
+Echoed cross-resonance	A cross-resonance gate split into two halves with π pulses on the control between them, which cancels unwanted interaction terms. IBM exposes it as the ECR gate.
+fSim gate	The fermionic simulation gate: a two-qubit gate combining a partial swap (angle θ) and a conditional phase (angle φ). Google uses it on its superconducting processors, and it suits simulating fermions.
+Resonator-induced phase gate	A two-qubit gate for fixed-frequency superconducting qubits that off-resonantly drives a resonator they share, adding a phase that depends on both qubits' states.
+Rydberg blockade gate	A neutral-atom two-qubit gate: exciting one atom to a Rydberg state shifts its neighbour's Rydberg level so it cannot be excited too. This blockade creates a controlled phase.
+Sycamore gate	The two-qubit gate on Google's Sycamore processor, the fSim gate with a full swap angle (θ = π/2) and conditional phase φ = π/6. It was used in the 2019 quantum supremacy experiment.	Sycamore is also the name of Google's 53-qubit processor, and in everyday English a kind of tree.
+Tunable coupler gates	Two-qubit gates on superconducting processors that use a coupler element whose strength can be tuned: switched off between gates to avoid crosstalk, and on during the gate.
+XY gate family	A family of two-qubit gates that rotate within the |01⟩, |10⟩ subspace by a chosen angle, including iSWAP and √iSWAP. Rigetti offers them as parametric native gates.
+Controlled-controlled rotation	A three-qubit gate that rotates the target qubit by a chosen angle only if both control qubits are |1⟩. The Deutsch gate is an example.
+Deutsch gate	A three-qubit gate by David Deutsch (1989): a controlled-controlled rotation by an angle θ. With a suitable θ it is universal on its own for quantum computation.
+Doubly controlled Z gate	The CCZ gate: flips the phase of |111⟩ and leaves all other states unchanged. It is equivalent to Toffoli up to Hadamards on the target, and is often used in fault-tolerant circuits.
+Fredkin gate	The controlled-SWAP gate: swaps two target qubits only if the control is |1⟩. It is reversible and universal for classical reversible logic, and used in the SWAP test.
+Margolus gate	A simplified Toffoli that is correct up to relative phases, built with only three CNOTs instead of six. It works when those phases are cancelled later, for example by uncomputation.
+Multi-controlled X gate	A NOT gate on a target that acts only when several control qubits are all |1⟩, generalizing CNOT and Toffoli. It is often built from Toffolis with ancilla qubits.
+Peres gate	A three-qubit reversible gate equal to a Toffoli followed by a CNOT. It computes several outputs at once and is a cheap building block in reversible arithmetic circuits.
+Relative-phase Toffoli	A Toffoli gate that is correct except for phases on some basis states. It needs fewer CNOTs and T gates, and works where those phases cancel later in the circuit.
+Toffoli gate	The controlled-controlled-NOT (CCX): flips the target only when both controls are |1⟩. It is universal for classical reversible logic and, with the Hadamard, for quantum computation.
+Arbitrary single-qubit rotation	Any rotation of one qubit's Bloch sphere, by any angle about any axis. Any single-qubit gate is such a rotation, up to a global phase.
+Hadamard gate	The gate that maps |0⟩ to (|0⟩+|1⟩)/√2 and |1⟩ to (|0⟩−|1⟩)/√2, creating equal superpositions. It swaps the Z and X bases and appears in almost every quantum algorithm.
+Phase gate	The S gate: leaves |0⟩ unchanged and multiplies |1⟩ by i, a quarter-turn about the Z axis. It is a Clifford gate, and applying it twice gives Z.	Some texts use "phase gate" for the general phase shift P(φ), which adds any angle φ to |1⟩; S is the case φ = π/2.
+Phase shift gate	The gate P(φ) that leaves |0⟩ unchanged and multiplies |1⟩ by e^(iφ), a rotation about the Z axis. S, T and Z are special cases.
+Rotation gate	A gate that rotates a qubit's Bloch sphere about the X, Y or Z axis by a chosen angle, written Rx(θ), Ry(θ) and Rz(θ). They are the basic parameterized gates of variational circuits.
+Square root of NOT	The √X or SX gate, which applied twice gives the X (NOT) gate. It is a native gate on IBM hardware, where it is combined with Z rotations to build any single-qubit gate.
+U3 gate	A general single-qubit gate with three angles (θ, φ, λ) that can express any single-qubit unitary up to a global phase. It appears in Qiskit and OpenQASM as U.
+Euler decomposition	Writing any single-qubit gate as three rotations about two fixed axes, such as Rz·Ry·Rz. Compilers use it to turn arbitrary single-qubit gates into native ones.
+Gate decomposition	Breaking a complex gate into a sequence of simpler gates, such as expressing a Toffoli using CNOTs and single-qubit gates.
+Gate synthesis	Finding a sequence of available gates that performs, or closely approximates, a target operation, ideally using as few gates, or as few T gates, as possible.
+Gate teleportation	Performing a gate by teleporting a qubit through a specially prepared entangled state that already holds the gate's effect. It is how magic states give fault-tolerant T gates.
+KAK decomposition	A way to write any two-qubit gate as single-qubit gates, then an interaction core exp(i(aXX + bYY + cZZ)), then single-qubit gates again. It shows every two-qubit gate needs at most three CNOTs.
+Solovay-Kitaev theorem	The theorem that any single-qubit gate can be approximated to accuracy ε with a sequence of gates from a finite universal set, using only about log^c(1/ε) gates.
+B gate	A two-qubit gate found in 2004 that can build any two-qubit gate using just two applications of it plus single-qubit gates, the fewest possible for any gate.
+Controlled-Hadamard gate	A two-qubit gate that applies a Hadamard to the target only when the control is |1⟩. It is used in some state-preparation and amplitude-encoding circuits.
+Controlled-NOT gate	The CNOT or CX gate: flips the target qubit when the control is |1⟩. It is the most common entangling gate and, with single-qubit gates, makes a universal set.
+Controlled-phase gate	A two-qubit gate that adds a phase e^(iφ) only to the |11⟩ state. With φ = π it becomes the CZ gate; it appears in the quantum Fourier transform.
+Controlled-S gate	A two-qubit gate that applies the S (phase) gate to the target when the control is |1⟩, adding a phase of i to |11⟩. It is a controlled-phase gate with φ = π/2.
+Controlled-Y gate	A two-qubit gate that applies Pauli Y to the target when the control is |1⟩. It equals a CNOT surrounded by S gates on the target.
+Controlled-Z gate	The CZ gate: flips the sign of |11⟩ and leaves the other states unchanged. It is symmetric between its two qubits and is the native entangling gate on many platforms.
+DCNOT gate	The double CNOT: two CNOTs in a row with control and target swapped. It is equivalent to iSWAP up to single-qubit gates, so iSWAP hardware can produce it efficiently.
+Givens rotation	A two-qubit gate that rotates between |01⟩ and |10⟩, like a rotation mixing two orbitals. It is widely used to prepare fermionic states in quantum chemistry.
+Ising coupling gate	A two-qubit rotation generated by a product of Pauli operators, such as RZZ(θ) = exp(−iθZZ/2). It arises naturally from Ising interactions and appears in QAOA.
+Ising interaction	A coupling between spins or qubits of the form ZZ, which gives each pair of aligned or anti-aligned spins a different energy. Many optimization problems and qubit couplings take this form.	In physics, the Ising model is also a classic model of magnetism.
+iSWAP gate	A two-qubit gate that swaps |01⟩ and |10⟩ and adds a phase of i to each. It arises naturally from exchange (XY) coupling in superconducting and spin qubits.
+Matchgate	A two-qubit gate that acts on the even-parity states (|00⟩, |11⟩) and odd-parity states (|01⟩, |10⟩) with separate matrices of equal determinant. Circuits of nearest-neighbour matchgates can be simulated efficiently.
+Mølmer–Sørensen gate	The standard entangling gate for trapped ions: a two-colour laser drive couples the ions' spins through their shared motion, creating an XX interaction that can produce Bell states.
+Square root of iSWAP	A gate that applied twice gives iSWAP. It is an efficient entangling gate for superconducting qubits with exchange coupling, and can build a CNOT with two applications.
+Square root of SWAP	A gate that applied twice gives SWAP. It entangles qubits and, with single-qubit gates, is universal; it arises naturally in spin qubits with exchange coupling.
+SWAP gate	A two-qubit gate that exchanges the states of two qubits. It is used to move quantum information on hardware with limited connectivity, and is usually built from three CNOTs.

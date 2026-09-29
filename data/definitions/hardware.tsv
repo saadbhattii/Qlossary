@@ -1,0 +1,444 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Chiplet	A small chip that is combined with others in one package to build a larger processor. Quantum chiplets let big systems be built from smaller, higher-yield pieces.	In classical computing, chiplets are used the same way to build large processors.
+Heavy-hex topology	IBM's qubit connectivity pattern, a hexagonal lattice with extra qubits on the edges, so each qubit has two or three neighbours. It reduces crosstalk and frequency collisions.
+Heavy-square topology	A qubit connectivity pattern based on a square lattice with extra qubits on the edges, lowering each qubit's number of neighbours.
+Hexagonal lattice	A layout in which qubits sit on a honeycomb or hexagonal grid. It is used by some processors and codes, such as the honeycomb code.
+Inter-module coupler	A link that connects qubits on separate chips or modules, so a processor can be built from several smaller modules.
+Ion shuttling	Moving trapped ions between zones of a trap by changing electrode voltages, used to bring ions together for gates in QCCD architectures.
+Multi-chip module	A package holding several quantum chips connected together, so they work as one larger processor.
+Optical interconnect	A link that uses photons in fibre or free space to connect quantum modules, for example ion traps or atom arrays, into a larger system.
+Photonic shuttling	Moving quantum information between locations by sending it as photons, instead of physically moving qubits.
+Quantum bus	A shared element, such as a resonator or a common motional mode, that couples several qubits so they can interact.
+Quantum charge-coupled device	A trapped-ion architecture in which ions are moved between dedicated zones on a chip for storage, gates and measurement. Quantinuum's machines use it.
+Quantum interconnect	Any link that transfers quantum states or entanglement between separate quantum devices, such as a fibre or microwave link.
+Square lattice	A layout in which each qubit connects to four neighbours on a square grid, as needed by the standard surface code.
+Trap junction	A crossing point in a trapped-ion chip where ions can be routed between different arms of the trap.
+Trap zone	A region of a trapped-ion chip with a specific role, such as storage, gates, loading or measurement.
+3D microwave cavity	A machined metal box, often aluminium, that holds microwave photons for a long time. It is used as a long-lived memory or bosonic qubit.
+Bosonic qubit	A qubit encoded in the many energy levels of a harmonic oscillator, such as a microwave cavity, allowing built-in error protection.
+Buffer mode	A lossy auxiliary mode used to engineer interactions, for example to remove photons in pairs from a cat-qubit storage cavity, which stabilizes the cat states.
+Cat-state stabilization	Keeping a resonator in cat states by continuously driving and removing photons in pairs, which protects the qubit from bit flips.
+Cavity QED system	A system in which an atom or qubit interacts strongly with photons in a cavity. Circuit QED is its superconducting version.
+GKP state preparation hardware	Equipment and control used to create Gottesman–Kitaev–Preskill states in oscillators, such as cavities coupled to transmons or trapped-ion motion.
+Kerr nonlinearity	An effect in which a mode's frequency depends on how many photons it holds. It is used to create and protect bosonic states but can also distort them.
+Mechanical resonator	A vibrating structure, such as a tiny membrane or beam, whose vibrations (phonons) can be controlled quantum mechanically and used as a memory or bosonic mode.
+Stabilizing drive	A continuous drive applied to a bosonic mode to keep its state in a protected subspace, such as the pumping that stabilizes cat qubits.
+Storage cavity	A long-lived resonator that stores quantum information, often as a bosonic qubit, while a separate transmon controls it.
+Superconducting resonator	A superconducting circuit that oscillates at a microwave frequency with very low loss. It is used to read out qubits and store bosonic states.
+Two-photon dissipation	Engineered loss that removes photons in pairs from a resonator, which drives it toward cat states and suppresses bit flips in cat qubits.
+Analog-to-digital converter	An electronic device that turns an analog signal, such as a readout waveform, into digital numbers for processing.
+Application-specific integrated circuit	A custom chip designed for one task, such as fast, low-power qubit control or decoding.
+Arbitrary waveform generator	An instrument that outputs voltage waveforms of any shape, used to generate the precisely shaped pulses that control qubits.
+Cosine pulse	A control pulse whose envelope follows a raised cosine shape, smooth at the start and end, which limits spectral leakage to other transitions.
+Cross-talk compensation	Adjusting control signals to cancel crosstalk, for example by applying small opposite corrections to neighbouring qubits' lines.
+Digital-to-analog converter	An electronic device that turns digital numbers into an analog voltage, used to generate qubit control pulses.
+DRAG pulse	A qubit control pulse with an added derivative component that suppresses leakage to the third level and phase errors.
+Field-programmable gate array	A reconfigurable chip used to run fast, low-latency control and feedback logic for qubits, such as real-time decoding.
+Gaussian pulse	A control pulse with a bell-shaped envelope, commonly used for qubit gates because its smooth edges limit spectral spread.
+Microwave pulse	A short burst of microwave radiation that rotates a qubit, the standard way to perform gates on superconducting and spin qubits.
+Pulse calibration	Tuning the amplitude, frequency, duration and shape of control pulses so gates rotate qubits exactly as intended.
+Pulse envelope	The shape of a control pulse's amplitude over time, such as Gaussian or DRAG, which affects gate speed and errors.
+Pulse generator	An instrument or circuit that produces the timed control pulses applied to qubits.
+Quantum control stack	The layers of hardware and software that turn a quantum program into pulses and read back results, from compilers down to electronics.
+Quantum control unit	The part of a control system that generates, times and sequences pulses for qubits, and processes their measurements.
+Real-time controller	Electronics that react to measurement results within the qubits' coherence time, enabling feedback and dynamic circuits.
+Sequencer	The part of a control system that plays pulses and instructions in the right order and timing, including branching on measurement results.
+Square pulse	A control pulse that switches on and off abruptly. It is simple, but its sharp edges spread energy across many frequencies.
+1K pot	A small bath of pumped liquid helium-4 at about 1.5 kelvin in some dilution refrigerators, used to condense the helium mixture.
+4K stage	The stage of a cryostat at about 4 kelvin, where cryogenic amplifiers and many filters are mounted.
+50K stage	The first cooling stage of a cryostat, at about 50 kelvin, which intercepts heat from room temperature.
+Aluminum shield	A shield made of aluminium, which becomes superconducting at low temperature and blocks magnetic fields from reaching qubits.
+Base temperature	The lowest temperature a cryostat reaches, typically about 10 millikelvin for a dilution refrigerator used with superconducting qubits.
+Coaxial line	A cable with a central conductor inside a cylindrical shield, used to carry microwave signals to and from qubits in the cryostat.
+Cold attenuator	An attenuator mounted on a cold stage of the cryostat, which reduces signal strength and blocks thermal noise from reaching qubits.
+Cold finger	A metal rod or plate that conducts heat away from a sample to a cold stage, keeping it cool.
+Cold plate	A plate in a dilution refrigerator, at about 100 millikelvin, where components such as attenuators are anchored.
+Cooldown	The process of cooling a cryostat from room temperature to its base temperature, which can take a day or more.
+Cooling power	How much heat a cryostat stage can remove while holding its temperature, which limits how much wiring and electronics it can support.
+Cryogenic filter	A filter on the cryostat wiring that blocks high-frequency noise and infrared radiation from reaching qubits.
+Cryogenic shielding stack	The nested layers of radiation and magnetic shields around the qubits inside a cryostat.
+Cryostat	A device that cools its contents to very low temperatures. Dilution refrigerators are the kind used for superconducting and spin qubits.
+Dilution refrigerator	A cryostat that reaches about 10 millikelvin by mixing helium-3 and helium-4. It is essential for superconducting and spin qubits.
+Heat load	The heat entering a cryostat stage, for example through wiring and signals. It must stay below the stage's cooling power.
+Helium-3/helium-4 mixture	The mixture of two helium isotopes used in dilution refrigerators. Moving helium-3 across the boundary between the two phases absorbs heat.
+Microwave wiring	The cables and components that carry microwave control and readout signals between room temperature and the qubits.
+Mixing chamber	The coldest part of a dilution refrigerator, where helium-3 crosses between the two phases of the mixture and absorbs heat.
+Mixing chamber plate	The plate attached to the mixing chamber, the coldest stage, where the quantum chip is mounted.
+Mu-metal shield	A shield made of a nickel-iron alloy with very high magnetic permeability, used to block external magnetic fields from qubits.
+Niobium-titanium cable	A superconducting cable that carries signals between cold stages with very little heat conduction.
+Phonon trap	A structure on a chip that absorbs stray vibrations (phonons), for example after a radiation strike, before they reach qubits and create quasiparticles.
+Pulse-tube cryocooler	A cryocooler that uses oscillating helium gas pressure to reach about 3 to 4 kelvin, with no moving parts at the cold end. It provides the first cooling stages of modern dry fridges.
+Quasiparticle trap	A region, often of normal metal or lower-gap superconductor, that captures quasiparticles and keeps them away from qubits' junctions.
+Still	The chamber in a dilution refrigerator, at about 0.7 kelvin, where helium-3 evaporates from the mixture and is pumped away.	In everyday English, still means motionless; a still is also an apparatus for distilling.
+Thermal anchor	A point where a cable or component is firmly connected to a cold stage so it cools to that temperature and does not carry heat further down.
+Thermalization	Bringing a component or signal to the temperature of its surroundings, so it does not carry excess heat or noise to the qubits.
+Vibration isolation	Measures that stop mechanical vibrations, for example from pumps, reaching the qubits, where they could cause heating or noise.
+Warmup	Bringing a cryostat back from its base temperature to room temperature, for example to change hardware.
+CVD diamond	Diamond grown by chemical vapour deposition, which can be made very pure for hosting defect-centre qubits.
+Diamond substrate	A piece of diamond hosting colour-centre qubits such as NV or SiV centres.
+Germanium-vacancy center	A defect in diamond made of a germanium atom next to vacancies. It emits bright, stable light, useful for quantum networks.
+Hyperfine-coupled nuclear spins	Nuclear spins near a defect or atom that interact with its electron spin through the hyperfine interaction, so they can be controlled and used as memories.
+Isotopically pure diamond	Diamond grown mostly from carbon-12, removing the carbon-13 nuclear spins that cause noise for defect qubits.
+Microwave addressing of defect	Controlling a defect's electron spin with microwave pulses, the usual way to perform gates on NV-centre qubits.
+Nuclear-spin register	A group of nuclear spins around a defect, such as carbon-13 near an NV centre, used as long-lived qubits controlled through the defect.
+NV center	A nitrogen-vacancy centre in diamond: a nitrogen atom next to a missing carbon. Its electron spin can be read with light even at room temperature.
+Optical addressing of defect	Using laser light to initialize, control or read out a defect's spin state.
+Optical detection of magnetic resonance	Reading a defect's spin state from changes in its fluorescence while sweeping microwaves, the standard way to operate NV centres.
+Silicon-vacancy center	A defect in diamond made of a silicon atom between two vacancies. It emits narrow, stable light, useful for quantum networking.
+Single-photon emission from defect	The emission of one photon at a time by a defect such as an NV centre, making defects useful as single-photon sources.
+Spin contrast	The difference in fluorescence between a defect's spin states, which determines how well they can be distinguished in readout.
+Spin-photon interface	A system that links a spin qubit to photons, so its state can be transferred to light for networking.
+Tin-vacancy center	A defect in diamond made of a tin atom and vacancies. It keeps its coherence at somewhat higher temperatures than the silicon-vacancy centre.
+Cryogenic adiabatic transistor circuits	Low-power transistor logic designed to run at cryogenic temperatures by recovering the energy used for switching, proposed for control electronics near qubits.
+Cryogenic CMOS DAC	A digital-to-analog converter built in CMOS and run at cryogenic temperatures near the qubits, reducing wiring from room temperature.
+Josephson pulse generator	A superconducting circuit that produces precise, quantized voltage pulses to control qubits, developed at NIST.
+Modular bicycle architecture	IBM's planned design of linked modules, each storing logical qubits in bivariate bicycle codes, connected by couplers to form a larger fault-tolerant machine.
+Rapid single flux quantum	Superconducting digital logic that represents bits as tiny, quantized voltage pulses. It is very fast and could control qubits inside the cryostat.
+Real-time decoding hardware	Dedicated electronics, such as FPGAs or ASICs, that decode error-correction syndromes fast enough to keep up with the qubits.
+Single flux quantum control	Controlling qubits with trains of single-flux-quantum pulses from superconducting logic placed near the chip, instead of microwaves from room temperature.
+3D integration	Stacking chips or layers vertically and connecting them, so wiring and control can reach qubits from above instead of the chip's edges.	In classical chip design, 3D integration means the same kind of stacking.
+Air bridge	A thin metal bridge that arches over another line on a chip, connecting ground planes and suppressing unwanted modes.
+Aluminum oxide tunnel barrier	The thin insulating layer of aluminium oxide between two aluminium films that forms a Josephson junction.
+Annealing	Heating a fabricated device in a controlled way to change its properties, for example to adjust Josephson junction resistance.	In quantum computing, quantum annealing is an unrelated method of optimization.
+Atomic layer deposition	A method of depositing extremely thin, uniform films one atomic layer at a time, used for insulators and barriers.
+Bump bonding	Joining two chips face to face with small metal bumps, used in flip-chip designs to connect qubits to wiring layers.
+Cleanroom	A room with tightly controlled dust, temperature and humidity, needed to fabricate qubit chips without defects.
+Crossover	A structure that lets one line on a chip cross over another without connecting, such as an air bridge.	In other fields, crossover has many meanings, such as a point where two trends meet.
+Dolan bridge	A suspended strip of resist that lets a Josephson junction be made by evaporating metal from two angles in one step.
+Double-angle evaporation	Depositing metal from two angles, with an oxidation step between, to form a Josephson junction through a resist mask.
+Electron-beam lithography	Patterning very fine features by writing with a focused electron beam in a resist, used to define Josephson junctions and quantum dots.
+Flip-chip integration	Mounting one chip face down on another and connecting them with bumps, separating qubits from their wiring layer.
+Ground plane	A large area of metal on a chip held at ground potential, which shields circuits and provides a return path for signals.
+Lift-off process	A patterning method in which metal is deposited over a patterned resist and then the resist is dissolved, leaving metal only where the resist was open.
+Manhattan junction	A Josephson junction made by evaporating metal along two perpendicular directions, avoiding the suspended bridge of the Dolan method.
+Multi-layer stack	A chip built from several layers of metal and insulator, allowing wiring to cross and route signals to many qubits.
+Niobium base layer	A layer of niobium, a superconductor, used for a chip's wiring, resonators and ground plane.
+Niobium nitride	A superconducting compound used for single-photon detectors and high-kinetic-inductance resonators.
+Niobium titanium nitride	A superconducting compound with high kinetic inductance, used in resonators, single-photon detectors and some qubit designs.
+Photolithography	Patterning features on a chip by shining light through a mask onto a light-sensitive resist, the standard method for larger features.
+Reactive ion etching	A method of etching materials with reactive gas ions in a plasma, used to carve precise features into films and substrates.
+Sapphire substrate	A crystalline aluminium oxide base for qubit chips, valued for its low microwave loss.
+Silicon substrate	A silicon wafer used as the base for qubit chips, compatible with standard semiconductor manufacturing.
+Sputtering	A method of depositing thin films by knocking atoms off a target with ions, used to lay down superconducting metals such as niobium.
+Tantalum film	A layer of tantalum used for superconducting qubits, whose cleaner surface oxide gives lower loss and longer coherence.
+Through-silicon via	A vertical metal connection passing through a silicon chip, used to route signals in 3D-integrated quantum processors.
+Wafer-scale fabrication	Making many chips at once on full wafers with industrial processes, improving uniformity and scale.
+Backend	The quantum device or simulator that actually runs a circuit, such as a particular processor offered through a cloud service.	In software, the backend is the server side of an application.
+Connectivity graph	A graph showing which qubits can interact directly on a device.
+Control electronics	The instruments and circuits that generate the signals controlling qubits and process their readout.
+Coupling map	A list or graph of which qubit pairs can perform two-qubit gates directly on a device, used by compilers.
+Drive line	A wire or waveguide that carries control pulses to a qubit.
+Feedline	A transmission line shared by several readout resonators, through which they are all measured.
+Flux line	A line carrying current near a superconducting qubit's loop to tune its frequency or activate gates with magnetic flux.
+Native two-qubit gate	The two-qubit gate a device performs directly, such as CZ, iSWAP or cross-resonance. Other two-qubit gates are built from it.
+Quantum chip	A chip carrying qubits and their couplers, resonators and wiring, the physical heart of a quantum processor.
+Quantum processing unit	The part of a quantum computer that holds and operates the qubits, analogous to a CPU.
+Quantum register	A group of qubits treated together to hold a quantum value, such as an n-qubit number.
+Quantum-classical interface	The hardware and software that pass information between qubits and classical electronics, such as control signals and measurement results.
+Qubit modality	The physical technology used to build qubits, such as superconducting circuits, trapped ions, neutral atoms, photons or spins.
+Readout electronics	The electronics that generate readout signals, amplify and digitize the responses, and turn them into qubit measurement results.
+Readout line	The transmission line carrying readout signals from the qubits' resonators out of the cryostat.
+Beam profiler	An instrument that measures the shape and size of a laser beam, used to align optical systems for atoms and ions.
+Cryogenic thermometer	A thermometer that measures very low temperatures inside a cryostat, using sensors such as ruthenium oxide or Cernox.
+Frequency synthesizer	An instrument that generates stable signals at precisely set frequencies, used for qubit control and readout.
+Ion pump	A vacuum pump that removes gas by ionizing it and burying the ions in metal. It is used to keep trapped-ion and atom systems in ultra-high vacuum.
+Lock-in amplifier	An instrument that extracts a small signal at a known frequency from noise, used for sensitive measurements.
+Magnetic field sensor	A device, such as a fluxgate or Hall probe, that measures magnetic fields around an experiment.
+Oscilloscope	An instrument that displays voltage signals over time, used to inspect control pulses and readout signals.
+Photodiode	A semiconductor device that turns light into current, used to monitor laser power and detect photons.
+Signal generator	An instrument that produces electrical signals, such as microwave tones, for qubit control or testing.
+Spectrum analyzer	An instrument that shows how a signal's power is spread across frequencies, used to check for noise and spurious tones.
+Turbomolecular pump	A high-speed vacuum pump with spinning blades that knock gas molecules out, used to reach high vacuum.
+Vacuum gauge	An instrument that measures pressure inside a vacuum system.
+Vector network analyzer	An instrument that measures how a device transmits and reflects signals across frequencies, used to characterize resonators and qubits.
+Vibration-isolated optical table	A heavy table with vibration dampers that keeps lasers and optics stable, essential for atom and ion experiments.
+Atom rearrangement	Moving trapped atoms with optical tweezers to fill gaps and form defect-free arrays.
+Blockade radius	The distance within which one Rydberg atom prevents another from being excited to a Rydberg state. It sets which atoms can be entangled.
+Cesium atom	An alkali atom used in neutral-atom quantum computers and atomic clocks. The second is defined by a caesium transition.
+Clock state	A pair of atomic states whose energy difference is insensitive to magnetic fields, or the long-lived states used in optical clocks, giving qubits with long coherence.
+Cooling beam	A laser beam used to slow and cool atoms or ions.
+Crossed AOD pair	Two acousto-optic deflectors at right angles, which steer a laser beam in two dimensions to make or move a grid of optical tweezers.
+Defect-free assembly	Arranging atoms into an array with no empty sites, usually by rearranging them with tweezers after random loading.
+Dynamic tweezer array	A set of optical tweezers that can move during an experiment, used to rearrange atoms and bring them together for gates.
+Erasure detection	Detecting when a qubit has left its computational states, turning an unknown error into an erasure, which is easier to correct.
+Glass cell	A glass vacuum chamber that gives clear optical access to trapped atoms or ions.
+Imaging beam	A laser used to make atoms fluoresce so a camera can see them, used to detect atom positions and read out states.
+Laser cooling	Slowing atoms or ions by making them absorb and re-emit laser light many times, cooling them to microkelvin temperatures.
+Magneto-optical trap	A trap that uses laser beams and a magnetic field gradient to cool and collect a cloud of cold atoms, the first step in atom experiments.
+Metastable state	A long-lived excited state that decays slowly. Some neutral-atom and ion qubits are stored in metastable states.	In physics generally, a metastable state is one that is stable for a long time but not the lowest-energy state.
+Neutral atom qubit	A qubit stored in the internal states of an uncharged atom held in an optical tweezer.
+Optical lattice	A periodic pattern of light, made by interfering laser beams, that traps atoms at regular sites like eggs in a carton.
+Optical tweezer	A tightly focused laser beam that traps a single atom at its focus, used to build and rearrange atom arrays.
+Principal quantum number	The number n labelling an electron's main energy level. Rydberg states have large n, often above 50, which makes atoms huge.
+Reservoir loading	Loading atoms into a reservoir region and then moving them into the working array as needed, to refill lost atoms.
+Rubidium atom	An alkali atom widely used in neutral-atom quantum computers and cold-atom experiments.
+Rydberg blockade	The effect in which one atom excited to a Rydberg state shifts its neighbours' Rydberg levels so they cannot be excited. It is used to make two-qubit gates.
+Rydberg dressing	Mixing a small amount of a Rydberg state into an atom's ground state with off-resonant light, giving weaker but longer-lived interactions.
+Rydberg state	A highly excited atomic state with a large principal quantum number, in which the atom is huge and interacts strongly with its neighbours.
+Rydberg-mediated gate	A two-qubit gate between neutral atoms that uses the strong interaction of Rydberg states, such as the blockade.
+Spatial light modulator	A device that shapes laser light pixel by pixel, used to create many optical tweezers at once.
+Static tweezer array	A fixed pattern of optical tweezers holding atoms in place.
+Survival probability	The probability that an atom or qubit is still present, or in the intended state, after an operation.
+Trapping beam	A laser beam that holds atoms in place, as in an optical tweezer or lattice.
+Tweezer array	A set of many optical tweezers, each holding one atom, forming the register of a neutral-atom quantum computer.
+Tweezer reconfiguration	Changing the positions of tweezers during an experiment to move atoms, for example to fill gaps or connect distant qubits.
+Two-photon excitation	Exciting an atom with two laser photons whose energies add up, used to reach Rydberg states through an intermediate level.
+Ultra-high vacuum chamber	A chamber pumped to extremely low pressure, so collisions with leftover gas rarely disturb trapped atoms or ions.
+Vacuum cell	The sealed, evacuated chamber, often glass, in which atoms or ions are trapped and controlled.
+Avalanche photodiode	A photodiode with internal gain from an avalanche of electrons, which can detect weak light or single photons.
+Beam splitter	An optical element that splits a beam into two, transmitting part and reflecting part. It is the basic interferometric element in photonic quantum computing.
+Coupling loss	Light lost when coupling between components, such as from a fibre into a chip. It is a major limit for photonic systems.
+Dark count rate	How often a photon detector clicks when no photon is present, which adds false signals.
+Detection efficiency	The probability that a detector registers a photon that reaches it.
+Edge coupler	A structure that couples light into or out of a photonic chip through its edge, often with low loss over a wide range of wavelengths.
+Electro-optic phase shifter	A component that changes the phase of light by applying a voltage to an electro-optic material, which can switch very fast.
+Fabry–Pérot cavity	An optical cavity made of two facing mirrors between which light bounces back and forth, enhancing its interaction with atoms or emitters.
+Fiber-to-chip coupling	Transferring light between an optical fibre and a photonic chip, where loss must be minimized.
+Four-wave mixing source	A photon pair source that uses a nonlinear process in which two pump photons convert into a signal and an idler photon, common in silicon photonics.
+Grating coupler	A patterned structure on a photonic chip that diffracts light between the chip and a fibre above it.
+Heralded single-photon source	A source that produces photon pairs and detects one photon to announce (herald) that its partner exists.
+Indium phosphide photonics	Photonic integrated circuits built on indium phosphide, which can include lasers and amplifiers on the same chip.
+Mach–Zehnder interferometer	An interferometer that splits light into two paths and recombines it. With phase shifters, it acts as a tunable beam splitter in photonic circuits.
+Microring resonator	A tiny ring-shaped waveguide in which light circulates many times, used as a filter, modulator or photon-pair source.
+Multi-mode waveguide	A waveguide wide enough to carry several spatial modes of light.
+Optical cavity	An arrangement of mirrors or structures that traps light, enhancing its interaction with atoms or emitters.
+Optical delay line	A path, often a long fibre or waveguide, that delays light by a set time, used to synchronize photons.
+Optical switch	A device that routes light between paths, needed for feed-forward in photonic quantum computing.
+Parametric down-conversion source	A source in which a nonlinear crystal splits one pump photon into two lower-energy photons, producing entangled or heralded photon pairs.
+Periodically poled lithium niobate	Lithium niobate with a periodically flipped crystal structure, which makes nonlinear processes such as down-conversion efficient.
+Phase shifter	A component that changes the phase of light in a waveguide, used to program photonic circuits.
+Photon number resolution	A detector's ability to count how many photons arrive, not just whether any did. It is needed for some photonic protocols.
+Photonic crystal cavity	A cavity formed by a periodic pattern of holes in a material, which traps light in a tiny volume.
+Photonic integrated circuit	A chip that routes and processes light in waveguides, beam splitters and phase shifters, the photonic counterpart of an electronic chip.
+Photonic loss	The fraction of photons lost in a photonic system, through absorption, scattering or poor coupling. It is the main source of errors in photonic computing.
+Photonic qubit	A qubit encoded in a photon, for example in its polarization, path or arrival time.
+Polarization beam splitter	A beam splitter that transmits one polarization and reflects the other, used to measure polarization-encoded qubits.
+Polarization-maintaining fiber	An optical fibre that preserves the polarization of light along its length.
+Quantum dot single-photon source	A semiconductor quantum dot that emits one photon at a time when excited, producing bright, identical single photons.
+Silicon nitride photonics	Photonic circuits made from silicon nitride, which has very low loss and is used for sources, filters and delay lines.
+Silicon photonics	Photonic circuits made in silicon with standard chip manufacturing, used by several photonic quantum computing efforts.
+Single-mode waveguide	A waveguide that carries only one spatial mode of light, which is needed for clean interference between photons.
+Single-photon avalanche diode	A photodiode biased so that a single photon triggers an avalanche, allowing it to detect individual photons.
+Single-photon source brightness	How often a single-photon source delivers a photon into the collection path per excitation, which sets achievable rates.
+SNSPD	A superconducting nanowire single-photon detector: a thin superconducting wire that briefly loses superconductivity when hit by a photon. It is highly efficient and fast.
+Squeezed light source	A source that produces light with reduced noise in one quadrature, used for continuous-variable photonic computing and sensing.
+Tantalum pentoxide platform	Photonic circuits made from tantalum pentoxide, a material with low loss and useful nonlinear properties.
+Thermo-optic phase shifter	A component that changes light's phase by heating a waveguide, changing its refractive index. It is common but slower than electro-optic shifters.
+Thin-film lithium niobate	A thin layer of lithium niobate on an insulator, used to make fast, low-loss electro-optic modulators and nonlinear photonic circuits.
+Timing jitter	Random variation in when a detector or source registers an event, which limits how precisely photons can be timed and synchronized.	In electronics generally, jitter is timing variation in any signal.
+Transition-edge sensor	A superconducting detector kept at the edge of its superconducting transition, where absorbing a photon changes its resistance measurably. It can count photons.
+Waveguide	A structure that confines and guides light or microwaves along a path, such as an optical fibre, a photonic chip channel or a metal tube.
+Waveguide-integrated SNSPD	A superconducting nanowire single-photon detector built directly on top of a photonic waveguide, absorbing photons as they travel along it.
+Y-splitter	A waveguide junction shaped like a Y that splits light from one path into two.
+Active reset	Returning a qubit to |0⟩ quickly by measuring it and applying a flip if needed, instead of waiting for it to relax.
+Bond wire	A thin wire, often aluminium, that connects pads on a chip to its package or circuit board.
+Circulator	A device that routes microwave signals in one direction around a loop of ports, used to separate outgoing readout signals from incoming ones and block noise.
+Directional coupler	A device that splits off part of a signal travelling in one direction, used to combine or sample signals in control and readout lines.
+Dispersive readout	Measuring a qubit through the small, state-dependent frequency shift it causes in a coupled resonator, without directly exciting the qubit. It is standard for superconducting qubits.
+Down-conversion	Shifting a high-frequency signal to a lower frequency by mixing it with a local oscillator, so it can be digitized and processed.	In optics, down-conversion instead means splitting one photon into two.
+Eccosorb filter	A filter containing Eccosorb, a lossy absorbing material, that removes infrared and high-frequency radiation from cryogenic signal lines.
+HEMT amplifier	A high-electron-mobility transistor amplifier at about 4 kelvin, which boosts faint readout signals with low added noise.
+Heterodyne readout	Measuring a signal by mixing it with a slightly different frequency, which captures both of its quadratures at once.
+Homodyne readout	Measuring a signal by mixing it with a reference at the same frequency, which captures one chosen quadrature.
+Infrared filter	A filter that blocks infrared radiation from reaching qubits, where it would break Cooper pairs and create quasiparticles.
+IQ mixer	A mixer that combines a signal with in-phase (I) and quadrature (Q) components of a local oscillator, used to shape pulses and demodulate readout.
+Isolator	A device that lets microwave signals pass in one direction only, protecting qubits from noise travelling back down the readout line.
+Josephson parametric amplifier	A superconducting amplifier based on Josephson junctions that boosts faint readout signals while adding almost the minimum noise quantum mechanics allows.
+Kinetic inductance amplifier	A parametric amplifier that uses the nonlinear kinetic inductance of thin superconducting films, which can handle larger signals than junction-based amplifiers.
+Latching readout	A spin readout method in which the spin state is converted into a charge state that stays locked in place, allowing a longer, more reliable measurement.
+Local oscillator	A stable reference signal mixed with other signals to shift their frequency, used in generating and reading qubit signals.
+Magnetic shielding	Enclosures made of materials such as mu-metal or superconductors that block external magnetic fields from reaching qubits.
+Multiplexed readout	Reading out several qubits at once through one shared line, each through its own resonator at a different frequency.
+Pogo pin socket	A connector that presses spring-loaded pins onto a chip's pads, giving many signal connections without wire bonds.
+Quantum non-demolition readout	A readout that leaves the qubit in the state it reported, so measuring again gives the same answer.
+Quantum-limited amplifier	An amplifier that adds only the minimum noise quantum mechanics allows, such as a Josephson parametric amplifier, needed for fast, accurate readout.
+Sample holder	The package that holds a quantum chip in the cryostat, providing electrical connections, shielding and cooling.
+Sample mount	The part that holds and thermally anchors a quantum chip or its package inside the cryostat.
+Single-shot readout	Determining a qubit's state from one measurement, without averaging over repetitions. It is needed for error correction.
+Traveling-wave parametric amplifier	A broadband quantum-limited amplifier made of a long chain of Josephson junctions, which can amplify many readout channels at once.
+Up-conversion	Shifting a low-frequency signal to a higher frequency by mixing it with a local oscillator, used to create qubit control pulses.	In optics, up-conversion means combining photons into higher-energy ones.
+Wirebonding	Connecting a chip's pads to its package or board with thin bonded wires.
+Charge reservoir	A region of electrons, such as a doped lead, from which a quantum dot is filled or emptied.
+Charge sensor	A sensitive device, such as a single-electron transistor, placed next to quantum dots to detect changes in their electron number.
+Charge transition	A change in the number of electrons on a quantum dot, seen as a line in a stability diagram.
+CMOS foundry fabrication	Making qubit devices, especially silicon spin qubits, in industrial semiconductor factories using standard chip processes.
+Cryogenic CMOS	Ordinary CMOS electronics designed to operate at cryogenic temperatures near the qubits, reducing wiring and latency.
+Donor spin qubit	A qubit stored in the spin of an electron or nucleus of a single donor atom, such as phosphorus, placed in silicon.
+Electric dipole spin resonance	Controlling an electron spin with oscillating electric fields, which works through spin-orbit coupling or a nearby micromagnet.
+Electron spin resonance	Controlling or measuring electron spins by driving transitions between spin states with microwaves in a magnetic field.
+Elzerman readout	A single-shot spin readout in which a spin-up electron can tunnel out of the dot and a spin-down one cannot, detected by a charge sensor.
+Exchange interaction	The quantum interaction between neighbouring electron spins caused by the overlap of their wavefunctions. It is used to make two-qubit gates between spin qubits.
+Exchange-only qubit	A spin qubit encoded in three electrons, fully controlled with voltage-driven exchange interactions, so no microwave or magnetic fields are needed.
+Flopping-mode qubit	A spin qubit in which an electron is spread over two quantum dots, making it couple strongly to electric fields and microwave photons.
+Gate-defined quantum dot	A quantum dot created by voltages on metal gates above a semiconductor, which confine single electrons or holes.
+Hole spin qubit	A spin qubit using the spin of a hole, a missing electron, often in germanium. Strong spin-orbit coupling allows fast electrical control.
+Hot qubits	Spin qubits operated at around 1 kelvin or above, rather than millikelvin, where cryogenic electronics have much more cooling power.
+Hybrid qubit	A spin qubit using three electrons in a double quantum dot, combining spin and charge properties for fast electrical control.	The term is also used for any qubit combining two physical systems.
+Isotopically purified silicon	Silicon enriched in silicon-28, which has no nuclear spin, removing a major source of noise for spin qubits.
+Loss–DiVincenzo qubit	The original spin qubit proposal (1998): a single electron spin in a quantum dot, with exchange interactions between neighbours for two-qubit gates.
+Micromagnet	A tiny magnet placed near quantum dots to create a magnetic field gradient, letting electric fields drive and address individual spin qubits.
+MOS stack	A metal-oxide-semiconductor layered structure, as in ordinary transistors, used to form quantum dots in silicon.
+Pauli spin blockade	The blocking of current or charge movement between two quantum dots when electrons have parallel spins, used to read out spin qubits.
+Quantum dot	A tiny region of a semiconductor that confines electrons so they have discrete energy levels, like an artificial atom. It can hold spin qubits or emit single photons.
+Quantum point contact	A narrow constriction in a two-dimensional electron gas whose conductance is very sensitive to nearby charges, used as a charge sensor.
+Radio-frequency SET	A single-electron transistor read out with radio-frequency signals, allowing fast and sensitive charge sensing.
+SiGe heterostructure	Layers of silicon and silicon-germanium that trap electrons in a thin silicon layer, a common host for spin qubits.
+Silicon spin qubit	A qubit stored in the spin of an electron or hole in silicon, compatible with chip manufacturing and potentially very dense.
+Single-electron box	A small island that exchanges single electrons with a reservoir through one tunnel junction, used as a compact charge sensor in gate-based readout.
+Single-electron transistor	A transistor whose current depends on single electrons tunnelling on and off a tiny island, making it an extremely sensitive charge sensor.
+Singlet-triplet qubit	A spin qubit encoded in two electrons, using their singlet and triplet spin states, which can be controlled with voltages.
+Spin-to-charge conversion	Turning a spin state into a charge configuration that can be detected, the basis of most spin qubit readout.
+Stability diagram	A map of a quantum dot device's charge states as two gate voltages are swept, used to tune dots to hold single electrons.
+Symmetric operating point	A bias condition for exchange-coupled spin qubits where the exchange is first-order insensitive to charge noise, reducing errors.
+Two-dimensional electron gas	Electrons confined to a thin layer at a semiconductor interface, free to move in two dimensions. Quantum dots and point contacts are made in it.
+Aluminum tunnel junction	A Josephson junction made of two aluminium films separated by a thin aluminium oxide barrier, the standard junction in superconducting qubits.
+Andreev qubit	A superconducting qubit based on Andreev bound states, electron states localized in a weak link between two superconductors, such as a nanowire junction.
+Anharmonic oscillator	An oscillator whose energy levels are unevenly spaced. The uneven spacing lets its two lowest levels be addressed as a qubit, as in the transmon.
+Asymmetric SQUID	A SQUID with two Josephson junctions of different sizes. Used in tunable transmons, it limits the tuning range and lowers sensitivity to flux noise.
+Asymmetric transmon	A tunable transmon whose SQUID has unequal junctions, giving two flux sweet spots and reduced sensitivity to flux noise.
+Bandpass Purcell filter	A filter that lets through only signals near the readout frequency, protecting a qubit from decaying into the readout line.
+Bifluxon	A superconducting qubit that combines a fluxonium-like loop with a Cooper-pair box, protecting it against certain errors through parity.
+Bus resonator	A resonator shared by several qubits that mediates interactions between them.
+C-shunt flux qubit	A flux qubit with a large added capacitor, which reduces its sensitivity to charge noise and improves coherence.
+Capacitively-shunted flux qubit	A flux qubit with a shunt capacitor that reduces charge noise sensitivity and improves reproducibility, the same as a C-shunt flux qubit.
+Cat qubit	A qubit stored in cat states of a resonator, superpositions of two coherent states. Bit flips are suppressed exponentially, leaving mainly phase flips to correct.
+Charge qubit	A superconducting qubit whose states differ by the number of Cooper pairs on an island. Early versions suffered from charge noise; the transmon fixed this.
+Charging energy	The energy cost of adding one electron (or Cooper pair) to a superconducting island, EC. Its ratio to the Josephson energy sets a qubit's properties.
+Cooper pair	A pair of electrons bound together in a superconductor. Cooper pairs carry current without resistance and make superconducting qubits possible.
+Cooper-pair box	A small superconducting island connected by a Josephson junction, whose states differ by the number of Cooper pairs. It was an early charge qubit.
+Cooper-pair parity qubit	A protected superconducting qubit whose states differ in the parity of the number of Cooper pairs, making it insensitive to many kinds of noise.
+Coplanar waveguide	A transmission line with a central conductor between two ground planes on the same surface, used to make resonators and lines on qubit chips.
+Coplanar waveguide resonator	A resonator made from a length of coplanar waveguide, used for qubit readout and coupling.
+Coupler	A circuit element that connects qubits so they can interact, which may be fixed or tunable.
+Dual-rail superconducting qubit	A qubit encoded in which of two resonators or transmons holds a single excitation, so that energy loss becomes a detectable erasure.
+Fixed coupler	A permanent coupling, such as a capacitor, between two qubits. It is simple but causes always-on interactions.
+Fixed-frequency transmon	A transmon with a single Josephson junction, so its frequency cannot be tuned. It avoids flux noise but needs microwave-only gates.
+Flux bias	A constant or slowly varying magnetic flux applied to a superconducting loop to set a qubit's or coupler's frequency.
+Flux pulse	A fast change in the magnetic flux through a qubit's or coupler's loop, used to tune its frequency briefly, for example to perform a CZ gate.
+Flux quantum	The smallest unit of magnetic flux in a superconducting loop, h/2e, about 2.07 × 10⁻¹⁵ webers.
+Flux qubit	A superconducting qubit whose states correspond to current circulating clockwise or anticlockwise in a loop with Josephson junctions.
+Flux-insensitive point	A flux bias at which a qubit's frequency is insensitive to first order to flux changes, reducing dephasing from flux noise.
+Fluxonium	A superconducting qubit made of a Josephson junction shunted by a very large inductance. It has low frequency, large anharmonicity and very long coherence.
+Gmon	A Google superconducting qubit design with a tunable inductive coupler, allowing qubit interactions to be switched on and off.
+Granular aluminum	A superconductor made of tiny aluminium grains in oxide, with high kinetic inductance, used for superinductors in qubits such as fluxonium.
+Heavy fluxonium	A fluxonium with a large capacitance, giving a very low frequency and long lifetime, controlled with special techniques.
+Josephson energy	The energy scale EJ of a Josephson junction, set by how easily Cooper pairs tunnel across it. With charging energy, it sets a qubit's behaviour.
+Josephson junction	Two superconductors separated by a thin barrier, through which Cooper pairs tunnel. It provides the nonlinearity that makes superconducting qubits possible.
+Kinetic inductance	Inductance caused by the inertia of moving Cooper pairs, large in thin or disordered superconductors, used to make compact resonators and superinductors.
+Linear bus interferometer coupler	A multi-mode coupler from IBM whose engineered multi-path interference cancels unwanted qubit coupling over a wide frequency range, without flux tuning.
+Lumped-element resonator	A resonator made from separate compact capacitor and inductor elements, instead of a length of transmission line.
+Microwave cavity	A metal box or resonant structure that confines microwave photons, used for qubit readout, coupling or as a long-lived memory.
+Niobium tunnel junction	A Josephson junction made with niobium electrodes, common in superconducting electronics but less used in qubits than aluminium junctions.
+Notch Purcell filter	A filter that blocks signals at the qubit's frequency on the readout line, preventing the qubit from decaying through it.
+Parametric coupler	A coupler whose parameters are modulated at a chosen frequency to turn on specific interactions between qubits on demand.
+Phase qubit	An early superconducting qubit based on a current-biased Josephson junction, whose states are levels in a tilted potential well.
+Purcell filter	A filter between a qubit's readout resonator and the output line that allows fast readout while preventing the qubit from decaying through it.
+Quartic potential	A potential energy that grows with the fourth power of a variable. Some superconducting circuits use it to give qubits particular energy level spacings.
+Quasi-charge	A variable in some superconducting circuits, dual to the phase across a junction, that plays the role of charge in describing Bloch-band states.
+Readout resonator	A resonator coupled to a qubit whose frequency shifts depending on the qubit's state, used to measure it.
+Shunt capacitor	A capacitor placed in parallel with a Josephson junction, which lowers the charging energy and makes the qubit insensitive to charge noise, as in the transmon.
+Superconducting gap	The minimum energy needed to break a Cooper pair in a superconductor. It protects qubits from excitations, and breaking pairs creates quasiparticles.
+Superconducting quantum interference device	A superconducting loop with one or two Josephson junctions, extremely sensitive to magnetic flux. It is used as a magnetometer and to tune qubits.
+Superconducting qubit	A qubit built from superconducting circuits with Josephson junctions, cooled to millikelvin temperatures. Transmons are the most common kind.
+Symmetric transmon	A tunable transmon whose SQUID has two equal junctions, giving a wide tuning range but greater sensitivity to flux noise away from the sweet spot.
+Transmon	The most widely used superconducting qubit: a Josephson junction shunted by a large capacitor, which makes it insensitive to charge noise.
+Tunable coupler	A coupler whose strength can be adjusted, typically with flux, so qubits interact during gates and are isolated otherwise.
+Tunable transmon	A transmon with a SQUID in place of a single junction, so its frequency can be tuned with magnetic flux.
+Xmon	A transmon design from Google shaped like a cross, allowing connections to control lines, readout and other qubits on its arms.
+Zero-pi qubit	A protected superconducting qubit whose two states are separated in the circuit's phase, designed to be intrinsically resistant to both relaxation and dephasing.
+Aluminum proximity superconductor	Aluminium grown on a semiconductor, such as an InAs nanowire, which induces superconductivity in it through the proximity effect. It is used for Majorana devices.
+Braiding operation	Exchanging anyons, such as Majorana zero modes, around each other to perform a gate that depends only on the topology of the exchange.
+InAs/Al hybrid	A combination of indium arsenide semiconductor and aluminium superconductor, the main material platform for Majorana-based topological qubits.
+Indium arsenide nanowire	A thin semiconductor wire of indium arsenide which, coated with a superconductor and placed in a magnetic field, can host Majorana zero modes.
+Interferometric measurement	A measurement that detects a phase difference between paths. In Majorana devices, it is used to read out the fermion parity of the qubit.
+Majorana qubit	A qubit encoded non-locally in several Majorana zero modes, so local noise cannot easily disturb it. It is the basis of topological quantum computing.
+Majorana zero mode	A quasiparticle state at the end of a topological superconductor that is its own antiparticle. Pairs of them store qubit information non-locally.	Majorana fermions in particle physics are the related elementary particles proposed by Ettore Majorana.
+Parity readout	Measuring whether a system has an even or odd number of fermions, which is how Majorana qubits are read out.
+Quantum dot-mediated readout	Reading out a Majorana qubit's parity through a quantum dot coupled to it, whose response depends on that parity.
+Semiconductor-superconductor nanowire	A nanowire of semiconductor coated with a superconductor, engineered to become a topological superconductor hosting Majorana modes.
+Tetron	Microsoft's topological qubit design: two parallel topological nanowires joined by a superconducting link, together hosting four Majorana zero modes.
+Topoconductor	Microsoft's name for its topological superconductor material, used in its Majorana 1 chip announced in 2025.
+Topological gap	The energy gap that protects a topological phase. Its size sets how well Majorana modes are shielded from noise.
+Topological gap protocol	A test procedure proposed by Microsoft to decide whether a device has entered a topological phase with Majorana modes. Its reliability has been debated.
+Topological qubit	A qubit whose information is stored in the global, topological properties of a system, making it inherently resistant to local noise.
+Topological superconductor	A superconductor with a topological phase that hosts Majorana zero modes at its ends or edges.
+Acousto-optic deflector	A device that steers a laser beam by bouncing it off sound waves in a crystal, used to move optical tweezers or address individual ions.
+Acousto-optic modulator	A device that uses sound waves in a crystal to switch, shift the frequency of, or shape a laser beam quickly, used to pulse lasers in ion and atom experiments.
+Axial frequency	The oscillation frequency of trapped ions along the trap's long axis.
+Barium ion	An ion species used as a trapped-ion qubit. Its visible transitions work well with standard optics and fibres.
+Beam-steering optics	Optical elements that direct laser beams precisely onto individual ions or atoms.
+Beryllium ion	A light ion species used in trapped-ion experiments, often for logic gates or as a cooling partner for other ions.
+Bichromatic beam	A laser beam containing two frequencies, used in the Mølmer–Sørensen gate to drive red and blue motional sidebands together.
+Blade trap	A linear Paul trap made of four blade-shaped electrodes pointing at the ions, giving good optical access.
+Breathing mode	A collective motion of trapped ions in which they move symmetrically toward and away from the centre.
+Calcium ion	A common trapped-ion species, used for optical and hyperfine qubits and addressed with lasers at convenient wavelengths.
+Carrier transition	A transition that changes an ion's internal state without changing its motional state, used for single-qubit gates.
+Center-of-mass mode	The motion in which all ions in a chain move together in the same direction. It is often used to mediate two-qubit gates.
+Common mode of motion	A collective motion shared by all ions in a trap, such as the centre-of-mass mode, which couples their qubits for gates.
+Compensation electrode	An electrode used to cancel stray electric fields so ions sit at the trap's field-free point, minimizing micromotion.
+DC electrode	A trap electrode with a static voltage that confines ions along the trap axis and moves them between zones.
+Detection laser	A laser that makes ions in one qubit state fluoresce and not the other, so the state can be read out with a detector.
+Doppler cooling laser	A laser tuned slightly below an atomic transition that slows moving ions or atoms through the Doppler effect.
+Dual-species chain	A chain of trapped ions of two different elements, one for computation and the other for cooling or networking without disturbing the qubits.
+EIT cooling	Electromagnetically induced transparency cooling: a laser cooling method that cools several motional modes of trapped ions quickly to near the ground state.
+Electro-optic modulator	A device that changes the phase or amplitude of light with an electric field, used to add sidebands or modulate lasers.
+EMCCD camera	An electron-multiplying CCD camera, sensitive enough to detect a few photons, used to image fluorescence from ions or atoms.
+Fluorescence detection	Reading out a qubit by shining a laser that makes one state glow and the other stay dark, then detecting the emitted light.
+Frequency comb	A laser whose spectrum is a comb of evenly spaced frequencies, used to drive Raman gates in ions and to compare atomic clocks.
+Global beam	A laser beam that illuminates all ions or atoms at once, used for operations applied to every qubit.
+Hyperfine qubit	A qubit stored in two hyperfine levels of an atom or ion's ground state, which have very long coherence times.
+Individual addressing optics	Optics that focus laser beams tightly onto single ions or atoms, so each qubit can be controlled separately.
+Ion chain	A line of ions held in a trap, repelling each other, whose shared motion connects their qubits.
+Linear crystal	A string of trapped ions arranged in a straight line along the trap axis.
+Linear Paul trap	A Paul trap with electrodes along a line, confining ions radially with radio-frequency fields and axially with static fields, so they form a chain.
+Magnesium ion	A light ion species used in trapped-ion experiments, often as a cooling or logic partner ion.
+Microfabricated ion trap	An ion trap made with chip fabrication techniques, allowing complex electrode layouts and many trapping zones.
+Micromotion	A small, fast jiggling of a trapped ion driven by the trap's radio-frequency field, which can cause errors if not minimized.
+Motional sideband	A transition that changes both an ion's internal state and its motional state, used for cooling and for two-qubit gates.
+Mølmer–Sørensen drive	The two-frequency laser or microwave drive that implements the Mølmer–Sørensen entangling gate between trapped ions.
+Optical fiber feed	Delivering laser light to a trap through optical fibres, which improves stability and scalability.
+Optical qubit	A qubit stored in two levels of an ion or atom separated by an optical frequency, controlled with narrow-linewidth lasers.
+Paul trap	A trap that holds charged particles using oscillating radio-frequency electric fields. It is the standard ion trap and earned Wolfgang Paul a Nobel Prize.
+Penning trap	A trap that confines charged particles using a strong magnetic field combined with static electric fields. It can hold large crystals of ions.
+Photoionization laser	A laser that removes an electron from neutral atoms to create ions for loading into a trap.
+Photomultiplier tube	A light detector that multiplies electrons produced by incoming photons, sensitive enough to detect single photons from ions.
+Point Paul trap	A Paul trap designed to hold ions at a single point, rather than along a line.
+Pseudopotential	The effective static potential that describes the average force of an oscillating trap field on an ion.
+Radial frequency	The oscillation frequency of trapped ions in the directions across the trap axis.
+Raman sideband cooling	A laser cooling technique that uses Raman transitions to remove motional quanta one at a time, cooling atoms or ions to their motional ground state.
+Repump laser	A laser that returns atoms or ions from unwanted states back into the cooling or qubit cycle.
+Resolved sideband cooling	Cooling a trapped ion to its motional ground state by driving the transition that also removes one motional quantum.
+RF electrode	The trap electrode carrying the radio-frequency voltage that provides radial confinement in a Paul trap.
+RF null	The line or point in a Paul trap where the radio-frequency field is zero, where ions sit with minimal micromotion.
+Ring trap	An ion trap in which ions are held in a ring-shaped configuration.
+Secular frequency	The frequency of an ion's slow oscillation in a Paul trap's effective potential, as opposed to its fast micromotion.
+Segmented trap	A trap with many separate electrodes along its axis, so ions can be held in different zones and moved between them.
+Sideband transition	A transition that changes both an ion's internal state and its motion by one quantum, used for cooling and gates.
+State preparation laser	A laser that puts atoms or ions into a known starting state, usually by optical pumping.
+Stretch mode	A collective motion of ions in which they move in opposite directions, stretching and compressing the chain.
+Strontium ion	An ion species used for trapped-ion qubits and optical clocks.
+Surface trap	A trapped-ion chip with all electrodes on one surface, holding ions just above it. It is easier to scale than 3D traps.
+Surface-electrode trap	An ion trap with all its electrodes on a flat surface, trapping ions tens of micrometres above it, made with chip fabrication.
+Sympathetic cooling ion	An ion of a different species in the same trap, cooled by lasers to cool the computing ions through their shared motion without disturbing their qubits.
+Trap depth	The energy needed for an ion or atom to escape its trap. Deeper traps hold particles more reliably.
+Trapped ion qubit	A qubit stored in the internal states of a single trapped ion, controlled with lasers or microwaves. It offers long coherence and high-fidelity gates.
+Wavemeter	An instrument that measures a laser's wavelength precisely, used to keep lasers tuned to atomic transitions.
+Ytterbium ion	A popular trapped-ion species whose hyperfine qubit is very stable and easy to control. It is used by several companies.
+Zeeman qubit	A qubit stored in two Zeeman levels of an atom or ion, which split in a magnetic field. It is simple to control but sensitive to field noise.
+Zigzag transition	The change of a trapped-ion chain from a straight line to a zigzag shape when the axial confinement grows relative to the radial.
+Attenuator chain	A series of attenuators at different cryostat stages that reduce signal power and thermal noise on the way down to the qubits.
+Bandpass filter	A filter that passes signals within a frequency band and blocks those outside it.
+Bond pad	A metal pad on a chip where wires or bumps are attached to make electrical connections.
+Coaxial cabling	The coaxial cables that carry microwave signals through the cryostat to and from the quantum chip.
+Cold finger interconnect	A thermal connection, often a metal rod, that links a component to a cold stage so it stays cold.
+Cryogenic attenuator	An attenuator designed to work at cryogenic temperatures, reducing signal power and blocking thermal noise.
+Cryogenic PCB	A printed circuit board designed to work at cryogenic temperatures, routing signals near the quantum chip.
+Eccosorb absorber	A lossy, magnetically loaded material that absorbs stray microwave and infrared radiation inside cryogenic packaging.
+Filter cascade	A series of filters on a signal line that together block noise across a wide range of frequencies.
+Hermetic feedthrough	A sealed connector that passes signals through a wall without letting gas through.
+Low-pass filter	A filter that passes low-frequency signals and blocks high-frequency noise.
+Multi-layer PCB	A printed circuit board with several layers of wiring, needed to route many signals to large quantum chips.
+RC filter	A simple filter made of a resistor and capacitor, used to remove high-frequency noise from DC and flux lines.
+RF shield	A metal enclosure that blocks radio-frequency and microwave interference from reaching sensitive circuits.
+Sample box	The shielded enclosure that holds a quantum chip and its connections inside the cryostat.
+Vacuum feedthrough	A sealed connector that passes electrical or optical signals into a vacuum system.

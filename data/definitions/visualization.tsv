@@ -1,0 +1,127 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Amplitude evolution plot	A plot showing how the amplitudes or probabilities of basis states change step by step through an algorithm, such as the marked state growing in Grover's search.
+Cost-function trajectory plot	A plot of a variational algorithm's cost at each optimization step, showing how quickly and how well it converges.
+Energy convergence plot	A plot of the estimated energy against optimization steps in VQE or similar methods, often compared with the exact ground-state energy.
+Gradient variance plot	A plot of gradient variance against qubit number or circuit depth. An exponential drop reveals a barren plateau.
+Grover iteration plot	A plot of the success probability against the number of Grover iterations, rising to a peak near π/4·√N and then falling again.
+Loss landscape	The shape of a model's cost function over its parameter space, with valleys, plateaus and local minima that affect training.	In machine learning, the same term describes neural network training.
+Parameter trajectory plot	A plot tracing how a variational circuit's parameters change during optimization.
+Phase estimation histogram	A histogram of results from quantum phase estimation, whose peak shows the estimated eigenphase.
+State evolution timeline	A diagram showing a quantum state at successive steps of a circuit, used to explain how an algorithm works.
+Variational landscape plot	A plot of a variational algorithm's cost as one or two parameters vary, showing minima, plateaus and traps.
+CLOPS scaling plot	A plot of CLOPS, circuit layers per second, against problem size or system version, showing how processing speed scales.
+Counts bar plot	A bar chart of how many times each bit string was measured, the most common way to show circuit results.
+Cross-entropy plot	A plot of cross-entropy benchmarking fidelity against circuit size or depth, used in supremacy experiments.
+Fidelity decay curve	A plot of fidelity against sequence length or time, whose decay rate gives the error per gate or coherence time.
+Hellinger distance plot	A plot comparing measured and ideal output distributions using the Hellinger distance, for example across circuit sizes.
+Logical T1 curve	A plot of a logical qubit's survival probability over time, whose decay gives the logical lifetime.
+Measurement histogram	A histogram of measurement outcomes across many shots, showing the estimated probability of each result.
+Quantum volume heavy-output plot	A plot of the heavy-output probability for each circuit size in the quantum volume test, compared with the two-thirds pass line.
+Allan deviation plot	A log-log plot of frequency stability against averaging time. Its slopes reveal the dominant noise types, used for clocks and qubit drift.
+Cycle benchmarking plot	A plot of decay curves from cycle benchmarking, used to extract the error rate of a whole layer of gates.
+Gate-set tomography report	The detailed output of gate set tomography, including estimated gates, error models and goodness-of-fit statistics.
+Process tomography plot	A 3D bar chart of the process (χ) matrix reconstructed by process tomography, compared with the ideal gate.
+Rabi oscillation plot	A plot of excited-state population against drive time or amplitude, showing oscillations. It is used to calibrate π pulses.
+Ramsey fringe plot	A plot of population against the wait time between two π/2 pulses. The oscillation frequency gives the detuning and the decay gives T2*.
+Randomized benchmarking decay plot	A plot of survival probability against sequence length in randomized benchmarking, fitted with an exponential to get the error per gate.
+Resonator response plot	A plot of a resonator's transmission or reflection against frequency, showing its resonance, linewidth and state-dependent shift.
+Spectroscopy plot	A plot of a qubit's or resonator's response against drive frequency, used to find transition frequencies.
+State tomography matrix plot	A 3D bar chart of the real and imaginary parts of a density matrix reconstructed by state tomography.
+T1 decay curve	A plot of excited-state population against wait time, whose exponential decay gives the relaxation time T1.
+T2 echo decay curve	A plot of coherence against total time in a Hahn echo experiment, whose decay gives T2 echo.
+Two-tone spectroscopy plot	A spectroscopy plot made by probing the readout resonator while sweeping a second drive tone, to find qubit transitions.
+Brick-wall circuit diagram	A circuit layout in which two-qubit gates alternate between even and odd pairs in each layer, looking like bricks in a wall.
+Circuit drawer	A software tool that draws quantum circuits as text or images, such as Qiskit's circuit drawer.
+Gate-level schedule diagram	A diagram showing when each gate runs on each qubit, including durations and idle periods.
+IQ-plane plot	A scatter plot of readout signals in the in-phase and quadrature (I-Q) plane, where |0⟩ and |1⟩ appear as separate clouds.
+Light cone diagram	A diagram showing which gates and qubits can influence a given qubit or measurement, spreading like a cone through the circuit.
+Pulse envelope plot	A plot of a control pulse's amplitude over time, such as a Gaussian or DRAG shape.
+Pulse schedule diagram	A diagram of the microwave or laser pulses sent to each channel over time, showing how a circuit is executed at the hardware level.
+Quantum circuit diagram	The standard drawing of a quantum circuit: horizontal lines for qubits, boxes and symbols for gates, and meters for measurements.
+Shot scatter plot	A scatter plot of individual readout results in the IQ plane, one point per shot, showing how well states are separated.
+Time-sliced circuit diagram	A circuit diagram divided into time steps, showing which gates run in parallel in each step.
+Quantum decision diagram	A compact graph representation of quantum states or operations that merges repeated parts, used to simulate and verify circuits.
+Quantum multiple-valued decision diagram	A decision diagram (QMDD) for representing quantum operations and states, with edge weights for amplitudes. It is used in circuit simulation and equivalence checking.
+Tensor decision diagram	A decision diagram that represents tensors, combining ideas from tensor networks and decision diagrams to simulate circuits.
+Calibration heatmap	A colour map of calibration values, such as gate errors or T1, across a device's qubits.
+Chip floorplan diagram	A layout drawing of a quantum chip showing where qubits, couplers, resonators and wiring sit.
+Coupling graph	A graph whose nodes are qubits and whose edges are pairs that can interact directly. Compilers use it to route circuits.
+Crosstalk matrix plot	A colour map showing how strongly operations on each qubit affect every other qubit.
+Error map	A diagram of a device's layout coloured by error rates, showing which qubits and couplers are best.
+Frequency-allocation diagram	A diagram showing the planned frequencies of qubits and resonators on a chip, arranged to avoid collisions.
+Fridge stack diagram	A diagram of a dilution refrigerator's stages, from room temperature down to millikelvin, showing wiring, filters and amplifiers.
+Gate map	A diagram of a device's qubits and couplings, often coloured by gate error.
+Heavy-hex layout	IBM's qubit layout in which qubits sit on the vertices and edges of hexagons, giving each qubit at most three neighbours to reduce crosstalk.
+Heavy-square layout	A qubit layout based on a square grid with extra qubits on the edges, lowering the number of neighbours per qubit.
+Square-grid layout	A qubit layout in which each qubit connects to four neighbours on a square grid, which suits the surface code.
+Wiring diagram	A diagram of the cables, filters, attenuators and amplifiers connecting room-temperature electronics to qubits in the cryostat.	In electrical engineering, wiring diagrams show how any circuit is connected.
+Anyon braiding diagram	A diagram showing anyon paths winding around each other over time, representing a topological quantum operation.
+Birdtrack diagram	A diagrammatic notation by Predrag Cvitanović for tensors and group theory calculations, in which lines are indices and joined lines are sums.
+Categorical quantum mechanics diagram	A diagram from categorical quantum mechanics, a framework that describes quantum processes as wires and boxes and reasons about them graphically.
+Dagger compact category diagram	A diagram in a dagger compact category, the mathematical structure behind categorical quantum mechanics, where wires can bend and processes can be reversed.
+Matrix product operator diagram	A tensor network diagram of a matrix product operator, a chain of tensors representing an operator, such as a Hamiltonian, efficiently.
+Matrix product state diagram	A tensor network diagram of a matrix product state, a chain of tensors that represents a many-qubit state with limited entanglement compactly.
+MERA diagram	A diagram of the multi-scale entanglement renormalization ansatz, a layered tensor network suited to critical states, with disentanglers and coarse-graining steps.
+Penrose graphical notation	Roger Penrose's diagrammatic notation for tensors, in which shapes are tensors and lines are indices, the ancestor of tensor network diagrams.
+Projected entangled pair state diagram	A tensor network diagram of a PEPS, a 2D grid of tensors that represents states of two-dimensional quantum systems.
+Spider diagram	The basic building block of the ZX-calculus, a node (spider) of a given colour and phase with any number of legs, representing a simple linear map.
+Spin network diagram	A graph with edges labelled by spins, used in quantum gravity and in representing angular momentum couplings.
+String diagram	A diagram in which processes are boxes and systems are wires, so combining processes is drawn by connecting wires. It is the language of ZX and categorical quantum mechanics.
+Tensor network diagram	A diagram in which tensors are shapes and shared indices are connecting lines, used to represent and compute with many-body states and circuits.
+Topological defect diagram	A diagram showing defects, such as holes or twists, in a topological code, and how logical qubits are stored and manipulated with them.
+Tree tensor network diagram	A diagram of a tensor network arranged as a tree, used to represent states with hierarchical entanglement.
+Worldline diagram	A diagram tracing particles' positions through time, used to show anyon braiding or error chains in spacetime.
+ZH-diagram	A diagram in the ZH-calculus, a graphical language like ZX that adds H-boxes, making multi-controlled gates such as Toffoli easy to express.
+ZW-calculus diagram	A diagram in the ZW-calculus, a graphical language based on GHZ-like and W-like nodes, suited to reasoning about fermions and W-type entanglement.
+ZX calculus	A graphical language for quantum circuits using green and red spiders, with rewrite rules that can simplify circuits and prove them equal.
+ZX-calculus rewrite rule diagram	A diagram showing one of the ZX-calculus's rules, such as spider fusion, for transforming a ZX-diagram into an equivalent one.
+ZX-diagram	A diagram in the ZX-calculus, a network of green (Z) and red (X) spiders connected by wires, representing a quantum circuit or linear map.
+Choi matrix plot	A colour or bar plot of a channel's Choi matrix, used to show its structure and deviations from the ideal process.
+Crosstalk heatmap	A colour map showing how much each qubit's error rate rises when neighbouring qubits are operated on.
+Error budget pie chart	A pie chart showing how much each error source, such as T1, T2, readout or leakage, contributes to the total error.
+Kraus operator plot	A plot showing the Kraus operators of a noise channel, for example their matrix elements, to show how the noise acts.
+Leakage population plot	A plot of how much population sits outside the computational states over time or gate count.
+Noise spectroscopy plot	A plot of noise power against frequency obtained from noise spectroscopy, often showing 1/f or Lorentzian features.
+Pauli transfer matrix plot	A colour map of a channel's Pauli transfer matrix, showing how it maps each Pauli operator. It is a common way to show gate errors.
+Process matrix plot	A 3D bar chart of a process (χ) matrix, comparing measured and ideal processes.
+Cat state Wigner plot	A Wigner function plot of a cat state, showing two blobs for the coherent states and interference fringes between them, with negative values.
+Coherent state phase-space diagram	A phase-space plot of a coherent state, a round blob displaced from the origin, whose position shows amplitude and phase.
+GKP state Wigner plot	A Wigner function plot of a Gottesman–Kitaev–Preskill state, showing a grid of peaks in phase space.
+Glauber–Sudarshan P function plot	A plot of the P function, a phase-space representation of light. It is singular or negative for strongly non-classical states.
+Husimi Q function plot	A plot of the Husimi Q function, a smoothed, always non-negative phase-space representation of a quantum state.
+Phase-space portrait	A picture of a quantum state in position–momentum (or quadrature) space, as with a Wigner or Q function.	In classical mechanics, a phase portrait shows the trajectories of a dynamical system.
+Quadrature distribution plot	A plot of the probability distribution of a field quadrature, as measured by homodyne detection.
+Squeezing ellipse	The elliptical shape of a squeezed state's uncertainty in phase space, narrow in one direction and stretched in the other.
+Wigner function plot	A plot of the Wigner function, a quasi-probability distribution in phase space. Negative regions reveal non-classical states.
+Anyon worldline diagram	A spacetime diagram of anyon paths, whose braiding pattern determines the resulting topological operation.
+Below-threshold scaling plot	A plot of logical error rate against code distance, showing errors falling exponentially as the code grows when operating below threshold.
+Braiding diagram	A diagram of strands, such as anyon paths or code defects, crossing over and under each other, representing a braid and its logical effect.
+Detector graph	A graph of detectors and the errors that flip them, used to picture decoding problems.
+Lattice surgery diagram	A diagram showing surface code patches being merged and split over time to perform logical operations.
+Logical operator string diagram	A drawing of a logical operator as a string of Paulis crossing a code patch from one boundary to the other.
+Logical-error-rate plot	A plot of logical error rate against physical error rate or code distance, used to find thresholds and show error suppression.
+Spacetime diagram of QEC cycles	A 3D picture of an error-correction code over time, with space on two axes and rounds on the third, showing errors and detection events.
+Stabilizer tableau diagram	A table showing the stabilizers of a state or code as rows of Pauli operators.
+Surface-code patch diagram	A drawing of a surface code patch showing data qubits, measurement qubits and the X- and Z-type stabilizer plaquettes.
+Syndrome plot	A plot showing which stabilizers flagged errors, and when, used to visualize detection events in error correction.
+Threshold plot	A plot of logical versus physical error rates for several code sizes. The crossing point of the curves marks the threshold.
+Calibration dashboard	A display of a quantum device's current calibration data, such as qubit frequencies, T1, T2 and gate errors.
+Circuit-layout overlay on device map	A picture showing which physical qubits and couplers a compiled circuit uses, drawn on the device's layout.
+Directed acyclic graph	A graph with arrows and no loops. Compilers represent circuits as DAGs of gates to reorder and optimize them.	This is a general structure in computer science and mathematics.
+Resource estimation chart	A chart showing the qubits, time and gates an algorithm needs on fault-tolerant hardware, often split by component.
+Spacetime cost diagram	A diagram showing how qubits and time are used by a fault-tolerant computation, such as the layout of patches and factories over time.
+Transpiled-circuit visualization	A drawing of a circuit after transpilation, showing the native gates, added SWAPs and physical qubits actually used.
+Amplitude bar chart	A bar chart of the amplitudes of each basis state in a state vector, often showing real and imaginary parts or magnitude and phase.
+Bernoulli line	A visualization linking a qubit to a coin toss: the line from |0⟩ to |1⟩ through the Bloch sphere, onto which the state is projected to read its measurement probability.	In probability, a Bernoulli trial is any experiment with two outcomes.
+Density matrix heatmap	A colour map of a density matrix's entries, showing populations on the diagonal and coherences off it.
+Hinton diagram	A plot showing a matrix as squares whose size shows each entry's magnitude and whose colour shows its sign. It is used for density matrices.	Hinton diagrams are also used to display neural network weights.
+Multi-qubit Bloch spheres	A display with one Bloch sphere per qubit, each showing that qubit's reduced state. Entanglement shows up as vectors shorter than full length.
+Pauli axes diagram	A diagram of the X, Y and Z axes of the Bloch sphere, showing how Pauli operators and rotations act on a qubit.
+Paulivec plot	A bar chart of a state's expectation values for each Pauli string, used in Qiskit to display multi-qubit states.
+Phase disk	A per-qubit visualization, used in IBM Quantum Composer, showing a qubit's probability of being 1, its phase and its purity as a filled, rotating disk.
+Phase-colored amplitude plot	A plot of state amplitudes in which bar height shows magnitude and colour shows phase.
+Poincaré sphere	A sphere representing all polarization states of light, mathematically the same as the Bloch sphere. It is used for photonic qubits.
+Probability histogram	A bar chart of the probability of each measurement outcome, computed or estimated from shots.
+Q-sphere	A Qiskit visualization placing each basis state on a sphere by its number of 1s, with dot size showing probability and colour showing phase.
+Schmidt-decomposition diagram	A diagram showing a two-part state as a sum of product terms with Schmidt coefficients, illustrating how entangled the parts are.
+State city plot	A Qiskit plot showing the real and imaginary parts of a density matrix as two 3D bar charts that look like city skylines.

@@ -1,0 +1,34 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Clifford simulation	Simulating Clifford circuits efficiently on a classical computer by tracking stabilizers, as the Gottesman–Knill theorem shows is possible. It is why Clifford circuits alone give no quantum advantage.
+Magic monotone	A quantity that never increases under Clifford operations and stabilizer measurements, used to measure how much non-stabilizer "magic" a state holds, and so how hard it is to simulate.
+Stabilizer rank	The smallest number of stabilizer states needed to write a given state as their sum. Classical simulation cost grows with it, so it measures a state's non-Clifford resources.
+Stabilizer Rényi entropy	A measure of magic based on how a state's weight spreads over Pauli operators. It is zero for stabilizer states and can be measured experimentally.
+Bounded-error probabilistic polynomial time	BPP: the problems a classical computer with random coins can solve in polynomial time with error probability at most 1/3. It is the usual model of efficient classical computation.
+Bounded-error quantum polynomial time	BQP: the problems a quantum computer can solve in polynomial time with error probability at most 1/3. It is the standard definition of what quantum computers can do efficiently.
+Complexity class	A set of problems that can be solved within given resource limits, such as time or memory, on a given model of computation. P, NP and BQP are examples.
+Decision problem	A problem whose answer is simply yes or no, such as "is this number prime?". Complexity classes are usually defined in terms of decision problems.	In everyday English, a decision problem is just a hard choice.
+Nondeterministic polynomial time	NP: the problems whose yes answers can be checked quickly given a proof, such as a solution to a puzzle. Quantum computers are not believed to solve NP-complete problems efficiently.
+Polynomial hierarchy	A tower of complexity classes that generalizes P and NP with alternating "there exists" and "for all" statements. Sampling-advantage arguments show classical simulation would collapse it.
+PostBQP	The problems a quantum computer could solve efficiently if it could postselect on unlikely measurement results. Aaronson showed PostBQP equals the class PP.
+Promise problem	A problem in which the input is guaranteed to satisfy some condition, such as a function being either constant or balanced. Many quantum speedups are shown for promise problems.
+QMA-complete	Describes the hardest problems in QMA: every QMA problem reduces to them. The local Hamiltonian problem was the first shown to be QMA-complete.
+Quantum classical Merlin–Arthur	QCMA: problems whose yes answers a quantum verifier can check using a classical proof. It sits between NP and QMA.
+Quantum Merlin–Arthur	QMA: the quantum version of NP, problems whose yes answers a quantum verifier can check in polynomial time given a quantum-state proof.
+Sharp-P hardness	#P-hardness: at least as hard as counting the solutions to NP problems. Computing exact output probabilities of many quantum circuits is #P-hard.
+Adversary method	A technique for proving lower bounds on quantum query complexity, by showing an algorithm cannot tell apart hard pairs of inputs with few queries.
+Anticoncentration	The property that a circuit's output probabilities are spread out rather than concentrated on a few outcomes. It is needed in proofs that random circuit sampling is classically hard.
+Average-case hardness	Hardness for typical random inputs, not just the worst case. Quantum advantage proofs need it, since experiments use random circuits.
+Circuit complexity	The minimum number of gates needed to build a circuit for a function or unitary. Most unitaries need exponentially many gates.
+Fine-grained complexity	The study of exact running-time exponents, such as whether a problem needs n² time, not just polynomial versus exponential. It sharpens claims about quantum speedups.
+Oracle separation	A proof that two complexity classes differ relative to some oracle, such as BQP and BPP relative to Simon's oracle. It gives evidence of separation without a full proof.
+Polynomial method	A technique for proving quantum query lower bounds: an algorithm's acceptance probability is a polynomial of limited degree in the input bits.
+Quantum-classical separation	A proven or strongly supported gap between what quantum and classical computers can do for a task, in queries, time or other resources.
+Query lower bound	A proof that any algorithm needs at least a certain number of oracle queries, such as √N for unstructured search, which shows Grover's algorithm is optimal.
+Sampling hardness	The belief, supported by complexity theory, that sampling from certain quantum circuits' outputs is infeasible for classical computers. It underlies boson sampling and random circuit sampling.
+Extended Church–Turing thesis	The claim that any physically reasonable computer can be simulated efficiently by a probabilistic Turing machine. Quantum computers are expected to disprove it.
+Hamiltonian complexity	The field that studies how hard it is to compute properties, such as ground-state energies, of quantum many-body Hamiltonians.
+Local Hamiltonian problem	Deciding whether a Hamiltonian made of local terms has ground energy below one threshold or above another. It is QMA-complete, the quantum analogue of satisfiability.
+Quantum PCP conjecture	An open conjecture that estimating a local Hamiltonian's ground energy even roughly is QMA-hard, a quantum version of the classical PCP theorem.
+Sign problem	The difficulty in quantum Monte Carlo simulation when a system's weights are not all positive, causing cancellations that need exponentially many samples. It is one reason fermions are hard to simulate classically.	In everyday English, a sign problem is simply a mistake with plus or minus.
+Stoquastic Hamiltonian	A Hamiltonian whose off-diagonal entries are all zero or negative in a standard basis. Such systems avoid the sign problem, so they are often easier to simulate classically.
+Tensor network contraction	Computing a number or state by summing over the shared indices of a network of tensors. It is a leading classical method for simulating quantum circuits.

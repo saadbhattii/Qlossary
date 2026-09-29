@@ -1,0 +1,36 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Daniel Simon	Computer scientist who in 1994 devised Simon's algorithm, the first to show an exponential quantum speedup over classical probabilistic algorithms. It directly inspired Shor's factoring algorithm.
+Ethan Bernstein	Computer scientist who with Umesh Vazirani wrote a foundational 1993 paper on quantum complexity theory, defining the class BQP and giving the Bernstein–Vazirani algorithm.
+Lov Grover	Computer scientist who in 1996, at Bell Labs, discovered Grover's search algorithm, which finds an item among N in about √N steps.
+Peter Shor	Mathematician who in 1994 found Shor's algorithm for factoring and discrete logarithms, and in 1995 the first quantum error-correcting code. He is a professor at MIT.
+Richard Jozsa	Mathematical physicist, co-author of the Deutsch–Jozsa algorithm (1992) and of the 1993 paper that proposed quantum teleportation.
+Umesh Vazirani	Computer scientist at UC Berkeley, a founder of quantum complexity theory (with Ethan Bernstein) and a pioneer of device-independent cryptography and certified randomness.
+Aram Harrow	Physicist at MIT, co-author of the HHL algorithm for linear systems of equations, with work spanning quantum algorithms and information theory.
+Edward Farhi	Physicist at MIT who co-invented adiabatic quantum computation and the quantum approximate optimization algorithm (QAOA).
+Scott Aaronson	Computer scientist known for quantum complexity theory, including boson sampling (with Alex Arkhipov), and for explaining quantum computing on his blog Shtetl-Optimized.
+Alexei Kitaev	Physicist who invented the toric code and topological quantum computation, and showed the local Hamiltonian problem is QMA-complete. The Solovay–Kitaev theorem also bears his name.
+Andrew Steane	Physicist at the University of Oxford who invented the seven-qubit Steane code (1996) and co-developed CSS codes.
+Daniel Gottesman	Physicist who developed the stabilizer formalism, the Gottesman–Knill theorem and, with Kitaev and Preskill, the GKP bosonic code.
+Emanuel Knill	Physicist at NIST who co-developed the Knill–Laflamme error-correction conditions, the KLM protocol for optical quantum computing, and methods for benchmarking gates.
+John Preskill	Physicist at Caltech who coined the terms "quantum supremacy" (2012) and "NISQ" (2018), and is a leading researcher in fault-tolerant quantum computing.
+Raymond Laflamme	Physicist, founding director of the Institute for Quantum Computing at the University of Waterloo, co-author of the Knill–Laflamme conditions and the KLM protocol.
+Alain Aspect	French physicist whose 1982 experiments tested Bell inequalities with entangled photons, closing important loopholes. He shared the 2022 Nobel Prize in Physics.
+Anton Zeilinger	Austrian physicist who led the first quantum teleportation experiment (1997) and many entanglement experiments. The GHZ state is partly named after him; he shared the 2022 Nobel Prize in Physics.
+John Clauser	American physicist who performed the first experimental Bell test in 1972 and co-authored the CHSH inequality. He shared the 2022 Nobel Prize in Physics.
+John Stewart Bell	Northern Irish physicist who proved Bell's theorem in 1964, showing that no local hidden-variable theory can reproduce quantum mechanics.
+David Deutsch	Physicist at the University of Oxford who in 1985 defined the universal quantum computer and gave the first quantum algorithm, founding the theory of quantum computation.
+Paul Benioff	Physicist at Argonne National Laboratory who in 1980 described a quantum mechanical model of a Turing machine, one of the first steps toward quantum computers.
+Richard Feynman	Nobel-winning physicist who in 1981 argued that simulating quantum physics needs a computer built on quantum mechanics, an idea that launched the field.
+Yuri Manin	Russian mathematician who suggested the idea of quantum computing in 1980, noting that quantum systems may be too complex to simulate classically.
+Daniel Loss	Physicist at the University of Basel who with David DiVincenzo proposed in 1998 using electron spins in quantum dots as qubits, the basis of spin-qubit hardware.
+David DiVincenzo	Physicist known for the DiVincenzo criteria (2000), the list of requirements for building a quantum computer, and for the Loss–DiVincenzo spin-qubit proposal.
+David Wineland	Physicist at NIST whose trapped-ion experiments achieved precise control of single quantum systems, including early quantum logic gates. He shared the 2012 Nobel Prize in Physics.
+Ignacio Cirac	Physicist at the Max Planck Institute of Quantum Optics who with Peter Zoller proposed in 1995 how to build a quantum computer with trapped ions.
+John Martinis	Physicist who led Google's quantum hardware team for its 2019 quantum supremacy experiment. He shared the 2025 Nobel Prize in Physics for macroscopic quantum tunnelling in circuits.
+Peter Zoller	Austrian physicist at the University of Innsbruck who with Ignacio Cirac proposed the trapped-ion quantum computer in 1995, and pioneered quantum simulation with cold atoms.
+Serge Haroche	French physicist whose cavity experiments trapped photons and observed quantum states and decoherence in action. He shared the 2012 Nobel Prize in Physics with David Wineland.
+Alexander Holevo	Russian mathematician who proved the Holevo bound in 1973, limiting how much classical information quantum states can carry.
+Artur Ekert	Physicist who proposed the E91 protocol in 1991, basing quantum key distribution on entanglement and Bell inequalities.
+Charles Bennett	Physicist at IBM who co-invented BB84 quantum key distribution and quantum teleportation, and pioneered reversible computation.
+Gilles Brassard	Computer scientist at the Université de Montréal who co-invented BB84 quantum key distribution with Charles Bennett, and co-authored quantum teleportation.
+Seth Lloyd	Physicist at MIT who showed in 1996 that quantum computers can efficiently simulate local quantum systems, and co-authored the HHL algorithm.

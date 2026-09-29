@@ -1,0 +1,30 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Adiabatic quantum computation	A model of quantum computing that starts in the easy ground state of a simple Hamiltonian and slowly changes it into one whose ground state holds the answer. It is equivalent in power to the circuit model.
+Analog quantum simulation	Simulating a quantum system by engineering another controllable system with the same Hamiltonian, such as atoms in optical lattices, instead of using gates.
+Continuous-variable quantum computation	Quantum computing with systems described by continuous quantities, such as the amplitude and phase of light, instead of qubits. It is natural for photonic hardware.
+Digital quantum simulation	Simulating a quantum system by breaking its time evolution into a sequence of quantum gates, as in Trotterization. It is flexible and can be error-corrected.
+Distributed quantum computing	Connecting several quantum processors through quantum links so they work as one larger computer, sharing entanglement to run gates between modules.
+Fusion-based quantum computation	A photonic model that builds large entangled states from small resource states joined by fusion measurements. It is the approach pursued by PsiQuantum.
+Holonomic quantum computation	Quantum computing with gates made from geometric (holonomic) phases acquired along loops in parameter space. Such gates can be robust to some control errors.
+Hybrid quantum-classical computing	Computing in which quantum and classical processors work together, each doing the part it is good at. Variational algorithms and real-time error decoding are examples.
+KLM protocol	The Knill–Laflamme–Milburn scheme (2001), which showed that universal quantum computing is possible with only single photons, linear optics and photon detectors.
+Linear optical quantum computing	Quantum computing with photons manipulated by beam splitters, phase shifters and detectors. Gates are made probabilistically, with measurement and feed-forward.
+Measurement-based computation	A model in which a large entangled cluster state is prepared first, and the computation happens entirely through single-qubit measurements, choosing later bases from earlier results.
+Quantum annealing	An optimization method that slowly evolves a quantum system toward the ground state of a problem Hamiltonian, as D-Wave's machines do. It is a heuristic, often without guaranteed speedup.	In metallurgy, annealing means heating and slowly cooling a material; simulated annealing is the classical optimization method.
+Quantum cellular automata	Models of computation made of cells on a lattice that all update by the same local quantum rule, applied everywhere at once. They are universal for quantum computation.
+Quantum circuit model	The standard model of quantum computing: qubits acted on by a sequence of gates and then measured. Most quantum algorithms are written in it.
+Quantum Turing machine	A quantum version of the Turing machine, defined by David Deutsch in 1985, which laid the theoretical foundations of quantum computing.
+Topological quantum computation	Quantum computing that stores information in topological properties of exotic quasiparticles (anyons) and performs gates by braiding them, making it naturally resistant to local noise.
+Atomic ensembles	Large collections of atoms that act together, often used as quantum memories for light or as sensors, because many atoms interact more strongly with light than one.
+Bosonic encodings	Ways to encode a qubit in a harmonic oscillator mode, such as a microwave cavity, using its many levels for built-in error protection. Cat and GKP codes are examples.
+Color centers	Point defects in crystals, such as nitrogen-vacancy centres in diamond, whose electron spins act as qubits and emit light for networking and sensing.
+Electron-on-Helium	A qubit platform using single electrons floating above the surface of liquid helium or solid neon in a vacuum, controlled by electrodes. It promises very clean, low-noise qubits.
+Molecular qubits	Qubits encoded in molecules, using their spins, rotations or vibrations. Chemical design allows fine control of their properties.
+Neutral atom	A qubit platform using uncharged atoms trapped by laser tweezers, entangled through Rydberg states. Arrays can hold hundreds of atoms and be rearranged.
+Nuclear magnetic resonance	Controlling nuclear spins in molecules with radio-frequency pulses in a strong magnetic field. It gave the first small demonstrations of quantum algorithms, but does not scale well.	In medicine, NMR is the principle behind MRI scanners.
+Nuclear spins	The spins of atomic nuclei, which are very well isolated from noise and store quantum information for a long time. They are used as memories in spin and defect-centre qubits.
+Rydberg atoms	Atoms with an electron excited to a very high energy level, which makes them huge and strongly interacting. They are used to entangle neutral-atom qubits.
+Spin qubits	Qubits stored in the spin of electrons or nuclei, often in silicon quantum dots. They are tiny and can use semiconductor manufacturing.
+Superconducting	The qubit platform based on superconducting electrical circuits, such as transmons, cooled to millikelvin temperatures. It is used by IBM, Google and others.	In physics generally, superconducting describes materials that conduct electricity with zero resistance below a critical temperature.
+Trapped electron	A qubit platform in which single electrons are held in electromagnetic traps and their spin or motion is used as a qubit.
+Trapped ion	A qubit platform using charged atoms held in electromagnetic traps and controlled by lasers or microwaves. It offers very high gate fidelity and all-to-all connectivity.

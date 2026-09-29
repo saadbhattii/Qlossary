@@ -1,0 +1,135 @@
+# term	definition	other meaning (only when the word means something else elsewhere)
+Block encoding	A way to place a matrix, usually not unitary, inside the top-left block of a larger unitary, so a quantum computer can apply it. It is the input format for QSVT and many modern algorithms.
+Linear combination of unitaries	A technique for applying a weighted sum of unitaries, Σ a_i U_i, using ancilla qubits and controlled operations. It is a key tool for Hamiltonian simulation and block encoding.
+Quantum eigenvalue transformation	Applying a polynomial function to the eigenvalues of a block-encoded Hermitian matrix, using quantum signal processing. It is the Hermitian special case of QSVT.
+Quantum signal processing	A method that interleaves a single-qubit signal rotation with chosen phase rotations to apply a polynomial of the signal. It is the engine behind QSVT and optimal Hamiltonian simulation.
+Quantum singular value transformation	A framework that applies polynomial functions to the singular values of a block-encoded matrix. Search, phase estimation, simulation and linear systems algorithms can all be written as QSVT.
+Qubitization	A technique that turns a block encoding of a Hamiltonian into a walk operator whose eigenphases encode its energies. It gives optimal-cost Hamiltonian simulation and efficient energy estimation.
+Active space	The subset of a molecule's orbitals and electrons treated in full quantum detail, while the rest are approximated. Choosing it keeps quantum chemistry problems small enough to run.	In chemistry software, active space can also refer to specific methods such as CASSCF built on this idea.
+Bravyi–Kitaev transformation	A mapping of fermion operators to qubit operators that stores both occupation and parity information in a tree, so each operator touches only about log n qubits instead of up to n.
+Electronic structure problem	Finding the energy levels and ground state of the electrons in a molecule or material for fixed nuclear positions. It is a leading target application for quantum computers.
+Fermion-to-qubit mapping	A way to represent fermions, such as electrons, with qubits while keeping their antisymmetry. Jordan–Wigner, Bravyi–Kitaev and parity mappings are common choices.
+Heisenberg model	A model of magnetism in which neighbouring spins interact through XX + YY + ZZ couplings. It is a standard benchmark for quantum simulation.	The Heisenberg picture and Heisenberg limit are unrelated ideas named after the same physicist.
+Hubbard model	A simple model of interacting electrons hopping on a lattice, with an energy cost when two share a site. It is believed to capture high-temperature superconductivity and is hard to solve classically.
+Jordan–Wigner transformation	The simplest mapping of fermion operators to qubits: qubit i records whether orbital i is occupied, and strings of Z operators keep track of fermionic signs.
+Krylov subspace method	A method that approximates a large matrix's eigenvalues or its action using the space spanned by a state and repeated applications of the matrix. Quantum versions build this space on hardware.
+Molecular Hamiltonian	The energy operator of a molecule's electrons, including their kinetic energy and attractions and repulsions, usually written in second quantization before mapping to qubits.
+Parity mapping	A fermion-to-qubit mapping in which each qubit stores the parity of occupations up to that orbital. It allows two qubits to be removed using symmetries.
+Quantum chemistry	The use of quantum mechanics to compute the properties of molecules, such as energies and reaction rates. It is one of the most promising uses of quantum computers.
+Second quantization	A way of describing many identical particles with creation and annihilation operators on orbitals, instead of wavefunctions of each particle. It is the starting point for simulating electrons on qubits.
+Transverse-field Ising model	An Ising model of ZZ-coupled spins with an added field in the X direction that causes quantum flips. It shows a quantum phase transition and is a common simulation benchmark.
+Boson sampling	A task of sampling the output of identical photons passing through a large random linear optical network. It is believed to be hard for classical computers and was proposed as a route to quantum advantage.
+Classical simulability	Whether a quantum computation can be efficiently reproduced by a classical computer. Clifford circuits and low-entanglement circuits are simulable; quantum advantage requires circuits that are not.
+Dequantization	Finding a classical algorithm that matches a proposed quantum speedup, often by giving the classical algorithm similar data access. Ewin Tang's dequantization of quantum recommendation is a famous example.
+Early fault-tolerant algorithms	Algorithms designed for the first error-corrected machines, which will have limited logical qubits and circuit depth. They trade extra repetitions for shorter circuits and fewer qubits.
+Exponential speedup	A quantum algorithm running exponentially faster than the best known classical algorithm, as Shor's algorithm does for factoring. Such speedups are rare and valuable.
+Gaussian boson sampling	A variant of boson sampling that sends squeezed light, instead of single photons, through a linear optical network. It was used in photonic quantum advantage experiments.
+IQP circuits	Instantaneous Quantum Polynomial-time circuits: commuting gates between layers of Hadamards. Sampling their outputs is believed to be hard classically, making them a simple advantage candidate.
+Polynomial speedup	A quantum algorithm faster than classical by a polynomial factor, such as n versus n². It can matter in practice, but small polynomial gains may be eaten by error-correction overheads.
+Quadratic speedup	A quantum speedup that turns N steps into about √N, as Grover's search does. It is broadly applicable but often not enough to beat classical computers once overheads are included.
+Quantum advantage	A quantum computer solving a task faster, cheaper or better than any classical computer can in practice. It is claimed for specific tasks and often contested as classical methods improve.
+Quantum supremacy	The term, coined by John Preskill, for a quantum computer doing a task that no classical computer can do in reasonable time, even a useless one. Google claimed it in 2019.	Many now prefer "quantum advantage", partly because of the word's other associations.
+Random circuit sampling	Running random quantum circuits and sampling their outputs, a task believed to be classically hard for large circuits. Google's 2019 supremacy experiment used it.
+Inverse QFT	The reverse of the quantum Fourier transform, which turns phase information back into computational basis states. It is the final step of phase estimation and Shor's algorithm.
+Iterative phase estimation	A version of phase estimation that uses one ancilla qubit, measured and reused over several rounds, to find the phase one bit at a time. It needs fewer qubits than the standard version.
+Kitaev phase estimation	Alexei Kitaev's original phase estimation method, which estimates an eigenphase by repeating simple Hadamard-test circuits with different powers of the unitary and combining the results classically.
+Quantum Fourier transform	The quantum version of the discrete Fourier transform, acting on amplitudes. It needs only about n² gates for n qubits and is the core of Shor's algorithm and phase estimation.
+Quantum phase estimation	An algorithm that finds the eigenphase of a unitary for a given eigenstate, using controlled powers of the unitary and an inverse QFT. It underlies Shor's algorithm and energy estimation.
+Ground state preparation	Preparing the lowest-energy state of a Hamiltonian on a quantum computer, through methods such as adiabatic evolution, phase estimation or variational algorithms. It is hard in general.
+Hamiltonian simulation	Using a quantum computer to reproduce the time evolution e^(−iHt) of a physical system. It was Feynman's original motivation for quantum computers and remains a leading application.
+Imaginary time evolution	Evolving a state under e^(−Hτ), which damps high-energy components and leaves the ground state. It is not unitary, so quantum computers can only approximate it, as QITE does.
+Post-Trotter methods	Hamiltonian simulation methods that go beyond Trotter product formulas, such as LCU, qubitization and QSP. They have better cost scaling with accuracy.
+Product formulas	Approximating the evolution under a sum of Hamiltonian terms by a product of evolutions under each term separately, repeated in small steps. Trotter-Suzuki formulas are the best-known kind.
+qDRIFT	A randomized Hamiltonian simulation method that applies terms chosen at random, with probability proportional to their strength. Its cost does not depend on the number of terms.
+Suzuki–Trotter decomposition	Higher-order product formulas, built recursively by Masuo Suzuki, that approximate evolution under a sum of terms with smaller error than the basic Trotter formula.
+Taylor series method	A Hamiltonian simulation algorithm that truncates the Taylor series of e^(−iHt) and applies it with linear combination of unitaries. It has cost logarithmic in the target accuracy.
+Trotterization	Splitting the evolution under a sum of Hamiltonian terms into many short steps, each applying the terms one at a time. The error shrinks as the steps get smaller.
+Grover operator	The step repeated in Grover's algorithm: an oracle that marks target states, followed by a reflection about the average amplitude. Each application boosts the amplitude of the marked states.
+Marking oracle	An oracle that flips an extra qubit when the input is a solution: |x⟩|y⟩ → |x⟩|y ⊕ f(x)⟩. With the extra qubit in |−⟩, it acts as a phase oracle.
+Oracle	A black-box operation that encodes a problem, such as a function to be searched. Query algorithms count how many times they must call the oracle.	In everyday English an oracle is a source of prophecy; Oracle is also a software company.
+Phase oracle	An oracle that marks solutions by flipping their sign: |x⟩ → (−1)^f(x) |x⟩. Grover's algorithm uses this form.
+Query complexity	The number of calls to an oracle an algorithm needs to solve a problem. Many quantum speedups, such as Grover's, are proven in terms of query complexity.
+Query model	A model of computation that counts only calls to a black-box oracle, ignoring other work. It allows proven separations between quantum and classical algorithms.
+Reflection operator	An operator of the form 2|ψ⟩⟨ψ| − I, which reflects states about |ψ⟩. Two reflections make a rotation, which is how Grover's algorithm moves toward the answer.
+Amplitude encoding	Loading a vector of 2^n numbers into the amplitudes of n qubits. It is very compact, but preparing such states can take many gates.
+Angle encoding	Loading each data value as a rotation angle on its own qubit. It is simple and shallow but uses one qubit per feature.
+Basis encoding	Representing data as computational basis states, such as the integer 5 as |101⟩. It is the natural format for arithmetic and search.
+Data re-uploading	Encoding the same classical data several times, interleaved with trainable layers, so even a single qubit can represent complex functions.
+Quantum Boltzmann machine	A quantum version of the Boltzmann machine that uses a quantum Hamiltonian, including terms such as transverse fields, to model probability distributions.
+Quantum Born machine	A generative model that uses a parameterized circuit and samples outputs according to the Born rule. It is trained so its measurement statistics match a target distribution.
+Quantum convolutional neural network	A circuit inspired by convolutional networks, with layers of local gates and pooling that reduce qubits. It is used to classify quantum states such as phases of matter.
+Quantum embedding	Mapping classical data into quantum states so a quantum model can process it. The choice of embedding strongly affects what the model can learn.	In machine learning, an embedding is a vector representation of data such as words.
+Quantum feature map	The circuit that encodes classical data into a quantum state, defining the space in which a quantum kernel or classifier works.
+Quantum generative adversarial network	A quantum version of GANs, in which a generator and a discriminator, one or both quantum, compete so the generator learns to produce realistic data.
+Quantum kernel methods	Machine learning methods that compute similarities between data points as overlaps of quantum states, then use them in classical tools such as support vector machines.
+Quantum neural network	A parameterized quantum circuit trained like a neural network to perform tasks such as classification. The name is loose; its structure differs from classical networks.
+Quantum principal component analysis	An algorithm that uses copies of a density matrix to reveal its largest eigenvalues and eigenvectors, the principal components, exponentially faster under strong assumptions.
+Quantum recommendation system	An algorithm by Kerenidis and Prakash for recommending products using quantum linear algebra. Ewin Tang later found a classical algorithm with similar performance.
+Quantum reservoir computing	Using a fixed, complex quantum system as a reservoir that transforms inputs, and training only a simple classical readout. It avoids hard training of the quantum part.
+Quantum support vector machine	A support vector machine that uses a quantum kernel or quantum linear algebra to classify data. Whether it gives a practical advantage is still open.
+Variational quantum classifier	A classifier built from a parameterized circuit whose measurement results are trained, with a classical optimizer, to predict data labels.
+Amplitude amplification	A generalization of Grover's search that boosts the amplitude of good outcomes from any quantum procedure, needing about 1/√p repetitions instead of 1/p.
+Amplitude estimation	Estimating the probability of a good outcome with error ε using about 1/ε runs instead of 1/ε². It speeds up Monte Carlo estimation, for example in finance.
+Fixed-point amplitude amplification	A version of amplitude amplification that never overshoots the target: the success probability approaches 1 without needing to know the exact number of steps.
+Oblivious amplitude amplification	Amplitude amplification that works without knowing the input state, used to boost the success of operations such as LCU. It is key to some Hamiltonian simulation algorithms.
+Quantum approximate counting	Estimating the number of solutions to a search problem with a quantum speedup, using amplitude estimation on Grover's operator.
+Quantum counting	Finding how many items an oracle marks, by phase estimation on the Grover operator. It needs about √N queries.
+Quantum mean estimation	Estimating the average of a random variable with quadratically fewer samples than classical methods, using amplitude estimation.
+Quantum minimum finding	The Dürr–Høyer algorithm that finds the minimum of N unsorted values with about √N queries, by repeated Grover searches for smaller values.
+Quantum rejection sampling	A quantum version of rejection sampling that transforms one quantum state into another with a target distribution, using amplitude amplification to cut the number of rejected attempts.
+Classical shadows	A method that measures a state in random bases and stores the results as a compact classical snapshot, from which many properties can be predicted with few measurements.
+Heisenberg limit	The best possible precision scaling in quantum measurement, error ∝ 1/N for N resources, reached using entanglement or repeated coherent interactions.
+Quantum metrology	Using quantum effects such as entanglement and squeezing to measure physical quantities, like time or magnetic fields, more precisely than classical methods allow.
+Quantum state learning	Learning an unknown quantum state, or its properties, from measurements on copies of it. It includes tomography, shadow tomography and related methods.
+Shadow tomography	Predicting the expectation values of many observables on an unknown state from relatively few copies, without reconstructing the full state. Classical shadows are a practical version.
+Standard quantum limit	The precision limit of measurements using independent particles, error ∝ 1/√N, set by shot noise. Entanglement or squeezing can beat it.
+Draper adder	A quantum adder by Thomas Draper that adds numbers in the Fourier basis using controlled phase rotations, needing no carry qubits.
+Hadamard test	A simple circuit using one ancilla qubit, a controlled unitary and Hadamard gates to estimate the real or imaginary part of ⟨ψ|U|ψ⟩.
+Quantum arithmetic	Circuits that perform arithmetic, such as addition, multiplication and modular exponentiation, on numbers stored in qubits. They are a large part of Shor's algorithm.
+Quantum random access memory	A proposed device that loads data in superposition, turning an index register into the corresponding data. Many algorithms assume it, but no efficient hardware version exists yet.
+Ripple-carry adder	A quantum adder that passes carry bits from one digit to the next, as in classical addition. It uses few qubits but has depth growing with the number of digits.	In classical electronics, the ripple-carry adder is the basic digital adder circuit.
+SWAP test	A circuit that estimates the overlap between two states, using an ancilla qubit, a controlled-SWAP and Hadamards. The ancilla reads 0 with probability (1 + |⟨ψ|φ⟩|²)/2.
+Bernstein–Vazirani algorithm	An algorithm that finds a hidden bit string s from a function f(x) = s·x mod 2 with one query, where classical methods need n queries.
+Continued fraction expansion	Writing a number as a whole number plus a nested fraction. Shor's algorithm uses it on the measured result to recover the period, turning a decimal estimate into an exact fraction.
+Deutsch's algorithm	The first quantum algorithm (1985): it decides whether a one-bit function is constant or balanced with a single query, where classical methods need two.
+Deutsch–Jozsa algorithm	An algorithm that decides whether a function is constant or balanced with one query, where a deterministic classical algorithm needs up to 2^(n−1) + 1.
+Discrete logarithm problem	Finding x such that g^x = h in a group, such as numbers modulo a prime or elliptic-curve points. Its hardness secures much of today's cryptography, and Shor's algorithm solves it efficiently.
+Grover's algorithm	A quantum search algorithm that finds a marked item among N unsorted items in about √N queries, where classical search needs about N. It gives a quadratic speedup for many problems.
+HHL algorithm	The Harrow–Hassidim–Lloyd algorithm for solving linear systems Ax = b, exponentially faster in some settings. It outputs a quantum state, not the full solution, and has strict conditions for a speedup.
+Integer factorization	Breaking a whole number into its prime factors. It is hard for classical computers, securing RSA encryption, while Shor's algorithm solves it in polynomial time.
+Modular exponentiation	Computing a^x mod N. In Shor's algorithm it is done in superposition over x and is the most expensive part of the circuit.
+Order finding	Finding the smallest r with a^r ≡ 1 (mod N). It is the quantum core of Shor's factoring algorithm and is solved with phase estimation.
+Period finding	Finding the period of a function that repeats, such as f(x) = a^x mod N. Quantum computers do this efficiently with the QFT, which is the key to Shor's algorithm.
+Regev's algorithm	A 2023 factoring algorithm by Oded Regev that uses smaller circuits than Shor's, about n^1.5 gates per run, but needs about √n runs and classical lattice processing to combine them.
+Shor's algorithm	Peter Shor's 1994 algorithm that factors integers and computes discrete logarithms in polynomial time. It would break RSA and elliptic-curve cryptography on a large fault-tolerant quantum computer.
+Simon's algorithm	An algorithm that finds a hidden XOR period of a function with exponentially fewer queries than any classical algorithm. It inspired Shor's algorithm.
+ADAPT-VQE	A variant of VQE that builds its ansatz step by step, each time adding the operator from a pool that most lowers the energy. It gives shorter, problem-tailored circuits.
+Ansatz	The trial circuit shape, with adjustable parameters, used in a variational algorithm. Its design balances expressive power against circuit depth and trainability.	Ansatz is German for "approach"; in physics generally it means an educated guess at the form of a solution.
+Barren plateau	A flat landscape in which the gradients of a variational circuit shrink exponentially with the number of qubits, making training practically impossible.	In geography, a plateau is a flat area of high ground.
+Classical optimizer	The classical algorithm in a variational loop that adjusts circuit parameters to lower the cost, such as COBYLA, SPSA or gradient descent.
+Cost function	The quantity a variational algorithm minimizes, usually an expectation value such as a Hamiltonian's energy. It is estimated from measurements on the quantum device.	In economics, a cost function relates production output to cost.
+Expressibility	How much of the space of states an ansatz can reach as its parameters vary. Very expressive circuits can suffer barren plateaus.
+Hardware-efficient ansatz	An ansatz built from a device's native gates and connectivity, keeping circuits shallow. It is easy to run but not tailored to the problem, and can be hard to train.
+Parameter shift rule	A method to compute exact gradients of a circuit by running it at two shifted parameter values and taking the difference. It works on real hardware, unlike backpropagation.
+Problem-inspired ansatz	An ansatz whose structure comes from the problem, such as UCC for chemistry or QAOA for optimization. It builds in known physics to improve accuracy and trainability.
+Quantum alternating operator ansatz	A generalization of QAOA that alternates problem and mixer operators, with mixers designed to stay within valid solutions for constrained problems.
+Quantum approximate optimization algorithm	A variational algorithm for combinatorial optimization that alternates a cost Hamiltonian and a mixer for p layers, with angles tuned by a classical optimizer.
+Quantum imaginary time evolution	A method that approximates imaginary time evolution with unitary circuits updated step by step, driving a state toward the ground state without training parameters.
+Quantum natural gradient	A gradient method that accounts for the geometry of quantum state space via the quantum Fisher information, often converging faster than ordinary gradient descent.
+Recursive QAOA	A variant of QAOA that uses correlations from each run to fix one variable at a time, shrinking the problem until it can be solved directly.
+SPSA optimizer	Simultaneous perturbation stochastic approximation: an optimizer that estimates the gradient from just two cost evaluations per step, whatever the number of parameters. It copes well with noisy estimates.
+Subspace-search VQE	A VQE variant that finds several low-energy states at once by optimizing a single circuit on a set of orthogonal starting states.
+Trainability	Whether a variational circuit's parameters can be optimized effectively, which requires gradients large enough to measure. Barren plateaus make circuits untrainable.
+Unitary coupled cluster ansatz	A chemistry-inspired ansatz that applies exponentials of electron excitation operators. It adapts classical coupled-cluster theory to unitary quantum circuits.
+Variational quantum algorithm	A hybrid algorithm in which a quantum computer runs a parameterized circuit and a classical optimizer tunes the parameters to minimize a cost. VQE and QAOA are examples.
+Variational quantum deflation	A VQE extension that finds excited states by adding penalties for overlap with states already found, pushing each new solution to a higher energy.
+Variational quantum eigensolver	A hybrid algorithm that estimates a Hamiltonian's ground-state energy by tuning a parameterized circuit to minimize the measured energy. It is a leading approach for chemistry on near-term hardware.
+Warm-start QAOA	A QAOA variant that starts from the solution of a relaxed, classically solvable version of the problem, instead of an equal superposition.
+Abelian HSP	The hidden subgroup problem for commutative groups, which quantum computers solve efficiently with the QFT. Factoring, discrete logarithms and Simon's problem are special cases.
+Continuous-time quantum walk	A quantum walk in which a state evolves continuously under a Hamiltonian given by a graph's adjacency matrix. It can spread across some graphs exponentially faster than a random walk.
+Discrete-time quantum walk	A quantum walk in steps, each applying a coin operation and then moving according to the coin's state. It is the basis of several search algorithms.
+Element distinctness algorithm	Ambainis's quantum walk algorithm that checks whether all N items in a list are different using about N^(2/3) queries, compared with N classically.
+Forrelation	A problem of deciding whether one Boolean function is correlated with the Fourier transform of another. It shows the largest possible separation between quantum and classical query complexity.
+Glued trees algorithm	A continuous-time quantum walk that crosses two binary trees glued together in random order, exponentially faster than any classical algorithm.
+Hidden subgroup problem	Finding a hidden subgroup of a group from a function that is constant on its cosets. It unifies Shor's and Simon's algorithms; quantum computers solve it efficiently for abelian groups.
+Non-abelian HSP	The hidden subgroup problem for non-commutative groups. Efficient solutions for groups such as the symmetric or dihedral group would break graph isomorphism or some lattice cryptography.

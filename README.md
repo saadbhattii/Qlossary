@@ -5,8 +5,14 @@ foundations and gates to hardware, error correction, error mitigation and many m
 
 The game is one HTML file with the styles, code, icon and word list inlined:
 one request of about 31 KB, no outside connections, no dependencies. The worldwide leaderboard runs on Cloudflare Pages Functions with a D1
-database. It is contacted only on the Scores screen and when a player presses
-"Add my score", so playing never makes a second request.
+database. It is contacted when the Home or Scores screen opens and when a
+player presses "Add my score".
+
+After each word the game shows a short definition of the term, a note when
+the word means something else in everyday English or another field, and a
+**Learn more** button that searches the term with "in quantum computing"
+added. Definitions are loaded only after a word ends, one small file per
+topic, so they never slow down the page or the guessing.
 
 ## Playing
 
@@ -41,6 +47,7 @@ localStorage. They can be moved with Export and Import on the Scores screen.
 
     brand/                 icon.svg (header), favicon.svg (browser tab)
     data/
+      definitions/<topic>.tsv  short definitions, loaded after each word
       domains.tsv          topic ids and the names players see, in display order
       terms/<topic>.tsv    the word list, one file per topic
     functions/api/         Cloudflare Pages Functions: leaderboard.js (GET), scores.js (POST)
@@ -59,6 +66,16 @@ localStorage. They can be moved with Export and Import on the Scores screen.
       serve.mjs            local preview, including the leaderboard
       d1-local.mjs         stands in for D1 locally, on Node's built-in SQLite
     wrangler.toml          Cloudflare settings: output folder and database binding
+
+## Definitions
+
+Definitions live in `data/definitions/<topic>.tsv`, one line per term:
+term, definition (40 to 330 characters), and an optional "other meaning" for
+words that mean something different elsewhere. See
+`data/definitions/README.md` for the format and which topics are done.
+`npm run check` shows how many terms have a definition. The build refuses a
+definition whose term doesn't exist, and writes each topic to
+`dist/defs/<topic>.<hash>.json` for the game to load.
 
 ## Editing the words
 
