@@ -307,8 +307,10 @@ function endRound(timedOut) {
   $('r-head').textContent = head;
   $('r-term').textContent = t.t + (t.a ? '  (' + t.a + ')' : '');
   $('r-where').textContent = 'Topic: ' + domainOf(t).name + ' › ' + subOf(t);
-  $('r-learn').href = learnMoreUrl(t.t);
+  $('r-learn').href = $('r-learn-side').href = learnMoreUrl(t.t);
   showDefinition(t);
+  show($('r-defbar'), true);
+  show($('r-more'), false);
   let points = '';
   if (!S.cfg.scored) points = 'Practice game, so no points are counted.';
   else if (!R.won) points = 'No points for this word.';
@@ -325,22 +327,40 @@ function endRound(timedOut) {
   say(head + ' ' + t.t + '. ' + points);
 }
 
-// The definition appears under the answer once its topic file has loaded.
-// Terms without a definition yet show only the "Learn more" link.
+// The definition is filled in as soon as its topic file has loaded, but stays
+// hidden behind "See definition" until the player asks for it.
 let defFor = null;
+// Returns true once the definition is in place, false if it could not be loaded.
+let defShown = false;
 async function showDefinition(t) {
   defFor = t;
+  defShown = false;
   const def = $('r-def');
   show($('r-other'), false);
   const file = domainOf(t).defs;
-  def.textContent = file ? 'Loading the definition...' : '';
-  show(def, !!file);
+  def.textContent = 'Loading the definition...';
+  show(def, true);
   const map = await loadDefinitions(file);
-  if (defFor !== t) return;                         // the player has moved on
+  if (defFor !== t) return false;                   // the player has moved on
   const entry = map && map[t.key];
-  if (!entry) { def.textContent = ''; show(def, false); return; }
+  if (!entry) { def.textContent = ''; show(def, false); return false; }
   def.textContent = entry[0];
   if (entry[1]) { $('r-other-text').textContent = entry[1]; show($('r-other'), true); }
+  defShown = true;
+  return true;
+}
+
+// "See definition": open the definition. If it didn't load when the word
+// ended, try once more now, and say so plainly if it still can't be loaded.
+async function seeDefinition() {
+  show($('r-defbar'), false);
+  show($('r-more'), true);
+  const t = defFor;
+  if (!defShown && t && !(await showDefinition(t)) && defFor === t) {
+    $('r-def').textContent = 'The definition could not be loaded. Check your connection and try the next word, or use Learn more.';
+    show($('r-def'), true);
+  }
+  say($('r-def').textContent);
 }
 
 // A table cell whose term links to "Learn more", for studying missed words.
@@ -826,6 +846,8 @@ function init() {
   $('h2').addEventListener('click', () => onHint(2));
   $('h3').addEventListener('click', () => onHint(3));
   $('next').addEventListener('click', onNext);
+  // "See definition" opens the definition, with Learn more below it.
+  $('r-see').addEventListener('click', seeDefinition);
   $('quit').addEventListener('click', onQuit);
   $('s-again').addEventListener('click', () => { if (lastMode === 'daily') showMenu(); else startSession(lastMode); });
   $('s-menu').addEventListener('click', showMenu);
