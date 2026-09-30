@@ -1,0 +1,58 @@
+name: Word or definition
+description: Suggest a new term, or report a wrong, unclear or missing definition.
+title: "[Word]: "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this about?
+      options:
+        - Suggest a new term
+        - A definition is wrong or unclear
+        - A term is misspelled, duplicated or in the wrong topic
+        - An "other meaning" note is missing or wrong
+        - Remove a term
+    validations:
+      required: true
+  - type: input
+    id: term
+    attributes:
+      label: Term
+      placeholder: e.g. Dynamical decoupling
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Foundations
+        - Gates & circuits
+        - Algorithms
+        - Complexity theory
+        - Communication & cryptography
+        - Sensing & metrology
+        - Models & modalities
+        - Hardware
+        - Noise & decoherence
+        - Error correction
+        - Error mitigation
+        - Metrics & benchmarking
+        - Visualization & notation
+        - Software & tools
+        - People
+        - Companies & platforms
+        - Not sure
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: The suggested definition (40 to 330 characters) or what is wrong with the current one.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A paper, textbook, documentation page or other reference.
