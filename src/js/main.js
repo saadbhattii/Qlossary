@@ -133,6 +133,7 @@ function showView(v) {
   if (v !== view && window.scrollY) window.scrollTo(0, 0);
   view = v;
   document.body.dataset.view = v;   // lets the stylesheet place the repository link per screen
+  document.documentElement.dataset.view = v;   // phone Home and Help have their own sizes, set on <html>
   for (const id of VIEWS) show($('v-' + id), id === v);
   for (const a of document.querySelectorAll('.tab')) {
     if (a.dataset.view === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
