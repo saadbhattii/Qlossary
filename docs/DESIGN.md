@@ -54,7 +54,12 @@ The background drifts slowly behind frosted cards (`backdrop-filter`).
 An attempt to speed this up (removing the card blur, putting the art on its
 own GPU layers with `will-change` and `contain`, sizing it to `100lvh`) was
 reverted because it left stale strips of the previous screen on desktop. Do not
-reintroduce those techniques.
+reintroduce those techniques on desktop.
+
+**Phones only** (inside `@media (max-width: 700px)`): no overscroll bounce,
+the art is `100lvh` tall, the drift is off and the cards have no
+`backdrop-filter`. This stops the dark flash when flinging to the bottom of a
+page. It does not touch desktop.
 
 ## Brand files
 
