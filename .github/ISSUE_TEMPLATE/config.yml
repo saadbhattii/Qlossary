@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Play Qlossary
+    url: https://qlossary.pages.dev
+    about: The live game.
+  - name: Report a security problem
+    url: https://github.com/saadbhattii/Qlossary/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.

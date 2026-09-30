@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in the game or the leaderboard does not work as it should.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. Please check the open issues first in case it is already known.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Play and start a 10-word game
+        2. Press ...
+        3. See ...
+    validations:
+      required: true
+  - type: dropdown
+    id: screen
+    attributes:
+      label: Where in the game?
+      options:
+        - Home
+        - Play (guessing a word)
+        - Result / definition
+        - Game over
+        - Scores / leaderboard
+        - Settings
+        - Help
+        - Export / Import
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Phone
+        - Tablet
+        - Desktop / laptop
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: e.g. Chrome 128 on Android 14, Safari on iOS 18, Firefox 130 on Windows
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or console errors
+      description: Drag images here. For errors, open the browser console (F12) and paste any red lines.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?

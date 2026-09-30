@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an idea or an improvement for Qlossary.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like, and why?
+      description: The problem it solves or what it would make better for players.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: How could it work?
+      description: Describe the idea. Sketches or screenshots are welcome.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered
+  - type: checkboxes
+    id: fit
+    attributes:
+      label: Fit with the project
+      options:
+        - label: It keeps the game private (nothing sent without the player pressing a button) and needs no outside services.
+        - label: I would like to help build it.
