@@ -11,10 +11,8 @@ numbers and labels, and rounded pill buttons. All styling is in
 1. **One screen.** On desktop, Home, the game and the result fit without
    scrolling. Sizes are in `rem`, and the root size follows the window's width
    and height (and the browser's zoom). Home shows as many leaderboard and
-   "Just played" rows as fit. **Phones are not held to one screen.** On phones,
-   Home and Help use a roomier design (16 px text, 44 px+ touch targets,
-   full-width main buttons, the Home lists in full) and scroll like a normal
-   page; the other phone screens keep the compact phone styles.
+   "Just played" rows as fit. Small phones may scroll on Home, but a word and
+   its result fit on one phone screen.
 2. **Bright colour is background art or a signal**, never body text.
 3. **Colour on buttons means something:**
 

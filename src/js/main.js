@@ -69,7 +69,6 @@ let homeBoard = 'total';    // which list the Home page shows
 let homeData = null;
 const HOME_ROWS = 10;       // at most; fewer if the screen is short
 const HOME_MIN_ROWS = 3;
-const PHONE = window.matchMedia('(max-width: 700px)');   // same width as the phone styles
 const RECENT_ROWS = 5;      // "Just played" rows, fewer if the screen is short
 let actData = null;
 // Names of the worldwide lists, as the buttons show them.
@@ -133,7 +132,6 @@ function showView(v) {
   if (v !== view && window.scrollY) window.scrollTo(0, 0);
   view = v;
   document.body.dataset.view = v;   // lets the stylesheet place the repository link per screen
-  document.documentElement.dataset.view = v;   // phone Home and Help have their own sizes, set on <html>
   for (const id of VIEWS) show($('v-' + id), id === v);
   for (const a of document.querySelectorAll('.tab')) {
     if (a.dataset.view === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
@@ -691,7 +689,6 @@ function fitHome() {
     if (actData) renderActivity('act', actData, m);
   };
   draw();
-  if (PHONE.matches) return;   // phones scroll, so they show the lists in full
   const bottom = id => $(id).getBoundingClientRect().bottom;
   while (document.documentElement.scrollHeight > window.innerHeight) {
     const boardLower = bottom('hw-board') >= bottom('act-board');
