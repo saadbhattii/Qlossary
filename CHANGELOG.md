@@ -17,9 +17,16 @@ Notable changes to Qlossary. The format follows
 ### Fixed
 
 - A strip of the Home screen could stay painted along the bottom of another
-  screen on desktop. Home can be a little taller than the window (it keeps the
-  top 10), and its scroll carried over to shorter screens; every screen now
-  starts at the top.
+  screen on desktop. Every screen now starts at the top when you switch to it.
+- Home fits the window again: the leaderboard shows as many rows as fit (up to
+  10) instead of always 10, and "Just played" shrinks first, down to the latest
+  game. Home is fitted again once the fonts have loaded.
+
+### Removed
+
+- The 2026-09-30 performance change (no card blur, background on separate GPU
+  layers, `100lvh`, long cache times for fonts and definitions), and the
+  forced top 10 on Home. Both were causing glitches in production.
 
 ## 2026-09-30
 

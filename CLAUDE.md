@@ -63,13 +63,15 @@ Run `npm test` and `npm run build` before every commit.
 5. **`|`, `~`, `;`** are reserved by the embedded data format.
 6. **Keep the look.** The owner is happy with the current UI; do not change
    visuals unless asked. Follow `docs/DESIGN.md`.
-7. **Performance:** the background drifts, so **never add `backdrop-filter`**
-   (or other per-frame effects) over it. Keep `.art` sized to `100lvh`, and the
-   glows and grain on their own layers.
+7. **No rendering "optimisations" on the background art.** An earlier change
+   removed the cards' `backdrop-filter` and put the drifting art and grain on
+   their own GPU layers (`will-change`, `contain: strict`, `100lvh`). It was
+   reverted: it caused glitches in production (a strip of the previous screen
+   left painted). Keep the art and cards as they are.
 8. **One screen on desktop:** Home, the game and the result fit without
-   scrolling (root font size follows the viewport; `fitHome()` trims "Just
-   played"). The Home leaderboard always shows at least the top 10
-   (`BOARD_MIN_ROWS`), even if that scrolls on phones.
+   scrolling (root font size follows the viewport). `fitHome()` trims whichever
+   Home column reaches lower: the leaderboard down to 3 rows, "Just played"
+   down to 1. Never force a fixed number of rows that makes Home scroll.
 
 ## Behaviour worth knowing
 
@@ -88,7 +90,8 @@ Run `npm test` and `npm run build` before every commit.
   `/defs/<topic>.<hash>.json` and cached.
 - **Switching screens** (`showView()`) scrolls to the top first. Keep it:
   a scroll carried from a taller Home onto a shorter screen made the browser
-  leave a strip of Home painted at the bottom.
+  leave a strip of Home painted at the bottom. `fitHome()` also runs again
+  when the fonts finish loading, since they change text sizes.
 - **localStorage** keys are prefixed `qh.`; all access goes through
   `store.js`, which tolerates blocked or full storage.
 
@@ -111,12 +114,13 @@ Run `npm test` and `npm run build` before every commit.
 
 - **Theme:** dark withinquantum look (glows, grid, dots, grain, glass cards,
   Geist fonts, pill buttons) on desktop and phone.
-- **Leaderboard:** all-time and weekly totals, "Just played", top 10 on Home,
-  gold crown for the all-time leader.
+- **Leaderboard:** all-time and weekly totals, "Just played", as many Home
+  rows as fit (up to 10), gold crown for the all-time leader.
 - **Definitions** for all terms, behind "See definition", with "other meaning"
   notes.
-- **Performance:** removed `backdrop-filter`, layered the art, `100lvh`, cache
-  headers for fonts and definitions.
+- **Reverted:** the performance change (no `backdrop-filter`, layered art,
+  `100lvh`, long cache headers) and the forced top 10 on Home, which together
+  caused glitches in production.
 - **Brand:** round GitHub icon button; favicon and `brand/logo.svg` are the
   white book without a square.
 

@@ -7,7 +7,7 @@ Everything about playing Qlossary. The short version is in the
 
 | Tab | What is there |
 | --- | --- |
-| **Home** | How to play, Start playing, today's daily challenge, the worldwide top 10 and (on wider screens) "Just played". |
+| **Home** | How to play, Start playing, today's daily challenge, the worldwide leaderboard (up to the top 10, as many as fit the window) and (on wider screens) "Just played". |
 | **Play** | Choose a game, then guess words. A game in progress stays open while you visit other tabs. |
 | **Scores** | Worldwide leaderboards (top 20), your scores in this browser, and "My progress": totals, results by topic and missed words. Export, Import and Delete live here. |
 | **Settings** | Topics, difficulty, timer, wrong guesses allowed, multi-word terms, longest term, your name. |

@@ -113,7 +113,7 @@ npm run preview   # build, then serve at http://localhost:8788 with the leaderbo
 | [Words and definitions](docs/DATA.md) | Adding terms, topics and definitions, and the rules they must pass. |
 | [Leaderboard](docs/LEADERBOARD.md) | API, boards, the crown, anti-cheat checks, moderation. |
 | [Deployment](docs/DEPLOYMENT.md) | Cloudflare Pages and D1 setup, migrations, caching. |
-| [Design](docs/DESIGN.md) | The look: colours, fonts, layout and performance rules. |
+| [Design](docs/DESIGN.md) | The look: colours, fonts, layout and rendering rules. |
 
 ### Contributing
 
