@@ -46,7 +46,7 @@ localStorage. They can be moved with Export and Import on the Scores screen.
 
 ## Repository
 
-    brand/                 icon.svg (header), favicon.svg (browser tab)
+    brand/                 icon.svg (header), favicon.svg (browser tab), logo.svg (same book, for other uses)
     data/
       definitions/<topic>.tsv  short definitions, loaded after each word
       domains.tsv          topic ids and the names players see, in display order

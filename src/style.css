@@ -8,8 +8,7 @@
 
    Size: every measurement is in rem, and the root size is set once below.
    It follows the window's width and height, stays tied to the browser's own
-   text size (so Ctrl + and Ctrl - still work), and never goes below 12 px.
-   Wider screens use 85% of the earlier size, so the page sits a little smaller. */
+   text size (so Ctrl + and Ctrl - still work), and never goes below 12 px. */
 
 /* ---------- tokens ---------- */
 
@@ -45,8 +44,8 @@
 [hidden] { display: none !important; }
 
 html {
-  font-size: 75%;
-  font-size: clamp(75%, min(calc(28.1% + 0.6354vw), 1.955vh), 134.3%);
+  font-size: 86.25%;
+  font-size: clamp(86.25%, min(calc(33.06% + 0.7475vw), 2.3vh), 158%);
   -webkit-text-size-adjust: 100%;
   background: var(--bg);
 }
@@ -362,13 +361,15 @@ table.ro td.empty { font-style: normal; color: var(--muted); }
 
 .repo {
   position: fixed; right: 1.96rem; bottom: 1.54rem; z-index: 5;
-  padding: 0.42rem 1.12rem; font-family: var(--mono); font-size: 0.98rem;
+  display: flex; align-items: center; justify-content: center;
+  width: 2.8rem; height: 2.8rem; padding: 0;
   color: var(--text); background: rgba(10, 11, 15, 0.6); text-decoration: none;
   border: 1px solid var(--pill-line); border-radius: 999px;
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   transition: background 200ms ease, border-color 200ms ease;
 }
 .repo:hover { border-color: rgba(255, 255, 255, 0.6); background: rgba(10, 11, 15, 0.8); }
+.repo svg { width: 1.26rem; height: 1.26rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- export / import ---------- */
 
@@ -474,8 +475,8 @@ table.ro td.empty { font-style: normal; color: var(--muted); }
   table.ro { font-size: 0.91rem; }
   #dom-list { columns: 1; }
   /* On phones the corner is needed for the game, so the link sits at the end of the page. */
-  .repo { position: static; display: none; margin: 0.42rem 0 0; text-align: center; font-size: 0.91rem; padding: 0.42rem 0.84rem; }
-  body[data-view="home"] .repo, body[data-view="help"] .repo { display: block; }
+  .repo { position: static; display: none; width: 2.4rem; height: 2.4rem; margin: 0.28rem auto 0; }
+  body[data-view="home"] .repo, body[data-view="help"] .repo { display: flex; }
 }
 
 /* Short phones: tighter spacing so a word still fits on one screen. */

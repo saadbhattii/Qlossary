@@ -2,9 +2,9 @@
 
 ## Lucide icon "book-a"
 
-`brand/icon.svg` and `brand/favicon.svg` use the "book-a" icon from Lucide,
-https://lucide.dev, used unchanged except that the favicon adds a white
-background square.
+`brand/icon.svg`, `brand/favicon.svg` and `brand/logo.svg` use the "book-a"
+icon from Lucide, https://lucide.dev, used unchanged except that the favicon
+and logo fill the book white.
 
 ISC License
 
