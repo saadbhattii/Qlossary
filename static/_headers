@@ -3,11 +3,3 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Cache-Control: public, max-age=0, must-revalidate
-# Fonts rarely change: keep them for 30 days, so text never re-flows on a return visit.
-/fonts/*
-  ! Cache-Control
-  Cache-Control: public, max-age=2592000
-# Definition files are named by their content, so a browser can keep them for good.
-/defs/*
-  ! Cache-Control
-  Cache-Control: public, max-age=31536000, immutable

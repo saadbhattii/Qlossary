@@ -10,8 +10,9 @@ numbers and labels, and rounded pill buttons. All styling is in
 
 1. **One screen.** On desktop, Home, the game and the result fit without
    scrolling. Sizes are in `rem`, and the root size follows the window's width
-   and height (and the browser's zoom). Phones may scroll on Home (the top 10
-   leaderboard), but a word and its result fit on one phone screen.
+   and height (and the browser's zoom). Home shows as many leaderboard and
+   "Just played" rows as fit. Small phones may scroll on Home, but a word and
+   its result fit on one phone screen.
 2. **Bright colour is background art or a signal**, never body text.
 3. **Colour on buttons means something:**
 
@@ -45,16 +46,15 @@ numbers and labels, and rounded pill buttons. All styling is in
 - Both are self-hosted as Latin subsets in `static/fonts/` (the CSP allows only
   same-site fonts). Characters outside the subset fall back to system fonts.
 
-## Performance rules
+## Rendering
 
-The background drifts slowly, so anything that must be recomputed per frame
-makes the page stutter, especially on phones:
+The background drifts slowly behind frosted cards (`backdrop-filter`).
+`prefers-reduced-motion` turns the drift and transitions off.
 
-- **No `backdrop-filter`** on cards, buttons or overlays above the art. A plain
-  translucent fill looks the same over the already-soft glows.
-- The drifting glows and the grain have their own layers (`will-change`), and
-  the art is sized to `100lvh` so a phone's address bar does not resize it.
-- `prefers-reduced-motion` turns the drift and transitions off.
+An attempt to speed this up (removing the card blur, putting the art on its
+own GPU layers with `will-change` and `contain`, sizing it to `100lvh`) was
+reverted because it left stale strips of the previous screen on desktop. Do not
+reintroduce those techniques.
 
 ## Brand files
 

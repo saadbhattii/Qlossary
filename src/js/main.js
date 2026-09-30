@@ -67,9 +67,8 @@ let boardTab = 'total';
 let scoresSub = 'boards';
 let homeBoard = 'total';    // which list the Home page shows
 let homeData = null;
-const HOME_ROWS = 10;       // rows on the Home leaderboard
-const HOME_MIN_ROWS = 3;       // "Just played" rows kept on short screens
-const BOARD_MIN_ROWS = 10;     // the Home leaderboard always shows the top 10, even if the page scrolls
+const HOME_ROWS = 10;       // at most; fewer if the screen is short
+const HOME_MIN_ROWS = 3;
 const RECENT_ROWS = 5;      // "Just played" rows, fewer if the screen is short
 let actData = null;
 // Names of the worldwide lists, as the buttons show them.
@@ -693,9 +692,12 @@ function fitHome() {
   const bottom = id => $(id).getBoundingClientRect().bottom;
   while (document.documentElement.scrollHeight > window.innerHeight) {
     const boardLower = bottom('hw-board') >= bottom('act-board');
-    if (boardLower && n > BOARD_MIN_ROWS) n--;
-    else if (m > HOME_MIN_ROWS) m--;
-    else if (n > BOARD_MIN_ROWS) n--;
+    // Trim only the column that reaches lower. "Just played" can go down to
+    // the latest game, so the leaderboard keeps as many rows as fit.
+    if (boardLower && n > HOME_MIN_ROWS) n--;
+    else if (!boardLower && m > 1) m--;
+    else if (n > HOME_MIN_ROWS) n--;
+    else if (m > 1) m--;
     else break;
     draw();
   }
@@ -915,6 +917,8 @@ function init() {
     clearTimeout(resizeId);
     resizeId = setTimeout(() => { if (view === 'home') fitHome(); }, 120);
   });
+  // The fonts change text sizes when they arrive, so fit Home again then.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (view === 'home') fitHome(); });
   bindSettings();
   showView(location.hash.slice(1) || 'home');
 }

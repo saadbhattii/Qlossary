@@ -30,7 +30,7 @@ npm run preview      # http://localhost:8788
 | `npm run preview` | Builds, then serves `dist/` with `tools/serve.mjs` on port 8788 (pass another port as an argument to `node tools/serve.mjs`). |
 
 The preview server sends the same headers as production (it reads
-`dist/_headers`, per path, like Cloudflare) and runs the functions in
+`dist/_headers`) and runs the functions in
 `functions/api/` against a local SQLite file in `.local/leaderboard.sqlite`.
 Delete `.local/` to start with an empty leaderboard.
 

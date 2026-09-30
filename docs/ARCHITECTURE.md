@@ -78,7 +78,8 @@ This is why `|`, `~` and `;` are not allowed in terms, subtopics or aliases.
   `#scores`, `#settings`, `#help`. `body[data-view]` names the current one.
 - **One screen, no scrolling** on desktop: the root font size follows the
   window's width and height, and `fitHome()` trims "Just played" rows until
-  Home fits. The Home leaderboard always keeps at least the top 10.
+  Home fits, then trims the leaderboard (never below 3 rows). It runs again
+  on resize and when the fonts finish loading.
 - **Definitions** are fetched only after a word ends, one small file per topic,
   and kept for the rest of the visit, so they never slow the guessing.
 - **Leaderboard lists** are fetched when Home or Scores opens, and cached for
@@ -107,13 +108,8 @@ Consequences for anyone changing the page:
 
 | Path | Cache-Control |
 | --- | --- |
-| `/*` (the page) | `public, max-age=0, must-revalidate` |
-| `/fonts/*` | `public, max-age=2592000` (30 days) |
-| `/defs/*` | `public, max-age=31536000, immutable` (named by content hash) |
+| Everything from `dist/` (page, fonts, definitions) | `public, max-age=0, must-revalidate` |
 | `/api/leaderboard`, `/api/activity` | `public, max-age=30` |
-
-If the fonts ever change, rename the files so returning players do not keep
-the old ones for up to 30 days.
 
 ## The leaderboard
 
