@@ -67,8 +67,9 @@ let boardTab = 'total';
 let scoresSub = 'boards';
 let homeBoard = 'total';    // which list the Home page shows
 let homeData = null;
-const HOME_ROWS = 10;       // at most; fewer if the screen is short
-const HOME_MIN_ROWS = 3;
+const HOME_ROWS = 10;       // rows on the Home leaderboard
+const HOME_MIN_ROWS = 3;       // "Just played" rows kept on short screens
+const BOARD_MIN_ROWS = 10;     // the Home leaderboard always shows the top 10, even if the page scrolls
 const RECENT_ROWS = 5;      // "Just played" rows, fewer if the screen is short
 let actData = null;
 // Names of the worldwide lists, as the buttons show them.
@@ -94,6 +95,30 @@ function td(text, cls) { return el('td', cls, text); }
 function th(text, cls) { return el('th', cls, text); }
 function row(table, cells) { const r = el('tr'); for (const c of cells) r.appendChild(c); table.appendChild(r); return r; }
 function playerName() { return settings.name || 'Guest'; }
+
+// A gold crown for the player at the top of the all-time total. The server
+// marks their rows with crown: true on every list.
+const SVG_NS = 'http://www.w3.org/2000/svg';
+function crownIcon() {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('class', 'crown');
+  svg.setAttribute('aria-hidden', 'true');
+  const p = document.createElementNS(SVG_NS, 'path');
+  p.setAttribute('d', 'M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z');
+  svg.appendChild(p);
+  return svg;
+}
+// A name, with the crown in front for the all-time leader.
+function nameNode(parent, name, crown, suffix) {
+  if (crown) {
+    parent.appendChild(crownIcon());
+    parent.appendChild(el('span', 'sr', 'All-time leader: '));
+  }
+  parent.appendChild(document.createTextNode(name + (suffix || '')));
+  return parent;
+}
+function nameCell(e) { return nameNode(td(), e.name, e.crown, e.you ? ' (you)' : ''); }
 
 // ---------- screens ----------
 
@@ -182,12 +207,17 @@ function renderActivity(prefix, data, rows) {
   if (data.recent.length) {
     row(table, [th('Name'), th('Game'), th('Score', 'n'), th('When')]);
     for (const e of data.recent.slice(0, rows)) {
-      const r = row(table, [td(e.name + (e.you ? ' (you)' : '')), td(SHORT_MODE[e.mode] || e.mode), td(num(e.score), 'n'), td(ago(data.now - e.created))]);
+      const r = row(table, [nameCell(e), td(SHORT_MODE[e.mode] || e.mode), td(num(e.score), 'n'), td(ago(data.now - e.created))]);
       if (e.you) r.className = 'you';
     }
   }
   const c = data.champion;
-  $(prefix + '-champ').textContent = c ? 'Yesterday\'s daily challenge was won by ' + c.name + ' with ' + num(c.score) + ' points.' : '';
+  const champ = $(prefix + '-champ');
+  champ.textContent = '';
+  if (c) {
+    champ.appendChild(document.createTextNode('Yesterday\'s daily challenge was won by '));
+    nameNode(champ, c.name, c.crown, ' with ' + num(c.score) + ' points.');
+  }
   const n = data.playersToday;
   $(prefix + '-count').textContent = n ? plural(n, 'player', 'players') + ' added a score today.' : 'Nobody has added a score today yet.';
 }
@@ -658,9 +688,9 @@ function fitHome() {
   const bottom = id => $(id).getBoundingClientRect().bottom;
   while (document.documentElement.scrollHeight > window.innerHeight) {
     const boardLower = bottom('hw-board') >= bottom('act-board');
-    if (boardLower && n > HOME_MIN_ROWS) n--;
+    if (boardLower && n > BOARD_MIN_ROWS) n--;
     else if (m > HOME_MIN_ROWS) m--;
-    else if (n > HOME_MIN_ROWS) n--;
+    else if (n > BOARD_MIN_ROWS) n--;
     else break;
     draw();
   }
@@ -686,7 +716,7 @@ function worldHeaders(board) {
     : [['#', 'n'], ['Name'], ['Score', 'n'], ['Words', 'n'], ['Date']];
 }
 function worldCells(e, board) {
-  const name = td(e.name + (e.you ? ' (you)' : ''));
+  const name = nameCell(e);
   const cells = isTotal(board)
     ? [td(String(e.rank), 'n'), name, td(num(e.score), 'n'), td(num(e.games), 'n')]
     : [td(String(e.rank), 'n'), name, td(num(e.score), 'n'), td(e.won + ' of ' + e.played, 'n'), td(e.day)];

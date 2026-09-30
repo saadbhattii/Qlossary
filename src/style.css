@@ -337,6 +337,8 @@ table.ro td:last-child, table.ro th:last-child { padding-right: 0.42rem; }
 table.ro tr.you td, table.ro tr.you td:nth-child(n) { font-weight: 500; color: var(--ok-text); background: rgba(62, 220, 129, 0.12); }
 table.ro tr.you td:first-child { border-radius: 0.56rem 0 0 0.56rem; }
 table.ro tr.you td:last-child { border-radius: 0 0.56rem 0.56rem 0; }
+/* The all-time leader's crown, in gold. */
+.crown { width: 1.1em; height: 1.1em; margin-right: 0.35em; vertical-align: -0.15em; fill: #FFC94D; stroke: #FFE3A1; stroke-width: 1; stroke-linejoin: round; filter: drop-shadow(0 0 4px rgba(255, 201, 77, 0.45)); }
 table.ro td.empty { font-style: normal; color: var(--muted); }
 .home-board table.ro { font-size: 1.05rem; }
 .home-activity table.ro { font-size: 0.98rem; }

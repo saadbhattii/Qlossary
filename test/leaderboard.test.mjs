@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { join } from 'node:path';
-import { checkScore, nameProblem, topScores, addScore, activity, weekStart, dayBefore, hashIp, MAX_PER_WORD, RATE_PER_HOUR } from '../lib/leaderboard.js';
+import { checkScore, nameProblem, topScores, addScore, activity, crownHolder, weekStart, dayBefore, hashIp, MAX_PER_WORD, RATE_PER_HOUR } from '../lib/leaderboard.js';
 import { openLocalD1, toPlainPlaceholders } from '../tools/d1-local.mjs';
 import { ROOT } from '../tools/tsv.mjs';
 import * as boardFn from '../functions/api/leaderboard.js';
@@ -133,6 +133,25 @@ test('a browser sees its own rows marked, and no browser IDs are returned', asyn
   assert.deepEqual(runs.filter(e => e.you).map(e => e.name).sort(), ['silly-qubit', 'transmon']);
   const act = await activity(db, DAY, 'c4a8-browser');
   assert.ok(act.recent.every(e => !('cid' in e)));
+});
+
+test('the all-time leader wears the crown on every list, and only them', async () => {
+  const db = await realDb();
+  assert.deepEqual(await crownHolder(db), { name: 'clausia', cid: 'c4a8-browser' });
+  const total = await topScores(db, 'total', DAY);
+  assert.deepEqual(total.filter(e => e.crown).map(e => e.name), ['clausia']);
+  const runs = await topScores(db, 'run', DAY);
+  assert.ok(runs.filter(e => e.crown).length >= 1);
+  assert.ok(runs.every(e => !e.crown || e.name === 'clausia'));
+  assert.ok(runs.every(e => !('cid' in e)));
+  const week = await topScores(db, 'week', DAY);
+  assert.ok(week.every(e => !e.crown || e.name === 'clausia'));
+  const act = await activity(db, DAY);
+  assert.ok(act.recent.some(e => e.crown));
+  assert.ok(act.recent.every(e => !e.crown || e.name === 'clausia'));
+  // The same name from another browser gets no crown.
+  db.raw.prepare("INSERT INTO scores (mode, name, score, won, played, day, created, cid, ip) VALUES ('run', 'clausia', 100, 1, 10, ?, 99000, 'other-browser', 'ip')").run(DAY);
+  assert.ok((await topScores(db, 'run', DAY)).every(e => !(e.crown && e.score === 100)));
 });
 
 test('recent games, yesterday\'s daily champion and players today', async () => {
