@@ -10,8 +10,6 @@ Guess your way through 1,926 terms in 16 topics, from foundations and gates to
 hardware, error correction and error mitigation, learn what each one means, and
 climb the worldwide leaderboard.
 
-[![Play now](https://img.shields.io/badge/play-qlossary.pages.dev-3EDC81?style=for-the-badge)](https://qlossary.pages.dev)
-
 [![CI](https://github.com/saadbhattii/Qlossary/actions/workflows/ci.yml/badge.svg)](https://github.com/saadbhattii/Qlossary/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Terms](https://img.shields.io/badge/terms-1%2C926-16C47F)
