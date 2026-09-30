@@ -4,7 +4,7 @@
 //   node tools/build.mjs            build dist/
 //   node tools/build.mjs --check    validate data only
 
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { gzipSync, brotliCompressSync, constants } from 'node:zlib';
@@ -188,6 +188,8 @@ function main() {
   mkdirSync(out);
   writeFileSync(join(out, 'index.html'), html);
   writeFileSync(join(out, '_headers'), headers);
+  // The two Geist fonts, served from this site (no outside connections).
+  cpSync(join(ROOT, 'static', 'fonts'), join(out, 'fonts'), { recursive: true });
   if (defOut.length) {
     mkdirSync(join(out, 'defs'));
     for (const [name, json] of defOut) writeFileSync(join(out, 'defs', name), json);
