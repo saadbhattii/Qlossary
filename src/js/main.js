@@ -126,6 +126,11 @@ const VIEWS = ['home', 'play', 'scores', 'settings', 'help'];
 
 function showView(v) {
   if (!VIEWS.includes(v)) v = 'home';
+  // Each screen starts at the top. Without this a scrolled Home (the top 10
+  // can make it a little taller than the window) keeps its scroll on a shorter
+  // screen; the browser then pulls the scroll back and can leave a strip of the
+  // old screen painted along the bottom.
+  if (v !== view && window.scrollY) window.scrollTo(0, 0);
   view = v;
   document.body.dataset.view = v;   // lets the stylesheet place the repository link per screen
   for (const id of VIEWS) show($('v-' + id), id === v);

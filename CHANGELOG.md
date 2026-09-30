@@ -14,6 +14,13 @@ Notable changes to Qlossary. The format follows
 - Issue templates (bug, feature, word or definition), a pull request template,
   and a CI workflow that runs the tests and the build.
 
+### Fixed
+
+- A strip of the Home screen could stay painted along the bottom of another
+  screen on desktop. Home can be a little taller than the window (it keeps the
+  top 10), and its scroll carried over to shorter screens; every screen now
+  starts at the top.
+
 ## 2026-09-30
 
 ### Added
