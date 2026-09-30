@@ -430,15 +430,15 @@ table.ro td.empty { font-style: normal; color: var(--muted); }
   /* "Just played" would push Home into scrolling; on phones it is on Scores > All-time total. */
   .home-activity { display: none; }
   /* The How to play card: normal reading size, like the other phone screens. */
-  .home { padding: 1.12rem 1.15rem; }
-  .tagline { display: block; font-size: 1.1rem; line-height: 1.4; margin: 0 0 0.9rem; color: var(--text); }
+  .home { padding: 0.85rem 1.1rem; }
+  .tagline { display: block; font-size: 1.05rem; line-height: 1.3; margin: 0 0 0.5rem; color: var(--text); }
   .home h1 { display: none; }   /* the top bar already shows the logo and name on phones */
-  .home h2 { font-size: 0.84rem; margin: 0 0 0.6rem; }
-  .steps { font-size: 1.05rem; line-height: 1.55; padding-left: 1.35rem; margin: 0 0 1rem; }
-  .steps li { margin: 0 0 0.45rem; }
+  .home h2 { font-size: 0.8rem; margin: 0 0 0.4rem; }
+  .steps { font-size: 1.02rem; line-height: 1.4; padding-left: 1.3rem; margin: 0 0 0.6rem; }
+  .steps li { margin: 0 0 0.12rem; }
   .home .actions { gap: 0.42rem; margin: 0 0 0.56rem; }
   .home .actions button.big { font-size: 1rem; padding: 0.56rem 1.12rem; }
-  .home #home-note { font-size: 0.84rem; line-height: 1.5; margin-top: 0.3rem; }
+  .home #home-note { font-size: 0.8rem; line-height: 1.45; }
   .board-head h2 { font-size: 1.19rem; margin: 0 0 0.56rem; }
   .board-head p { gap: 0.28rem; margin: 0 0 0.56rem; }
   .board-head button { font-size: 0.77rem; padding: 0.35rem 0.63rem; }
