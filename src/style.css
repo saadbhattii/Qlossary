@@ -8,7 +8,8 @@
 
    Size: every measurement is in rem, and the root size is set once below.
    It follows the window's width and height, stays tied to the browser's own
-   text size (so Ctrl + and Ctrl - still work), and never goes below 12 px. */
+   text size (so Ctrl + and Ctrl - still work), and never goes below 12 px.
+   Wider screens use 85% of the earlier size, so the page sits a little smaller. */
 
 /* ---------- tokens ---------- */
 
@@ -44,8 +45,8 @@
 [hidden] { display: none !important; }
 
 html {
-  font-size: 86.25%;
-  font-size: clamp(86.25%, min(calc(33.06% + 0.7475vw), 2.3vh), 158%);
+  font-size: 75%;
+  font-size: clamp(75%, min(calc(28.1% + 0.6354vw), 1.955vh), 134.3%);
   -webkit-text-size-adjust: 100%;
   background: var(--bg);
 }
@@ -255,9 +256,9 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 }
 .key:hover:not(:disabled) { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.6); }
 .key:disabled { opacity: 1; }
-/* Guessed letters: dimmed and struck through when not in the term (so it does
+/* Guessed letters: light red and struck through when not in the term (so it does
    not rely on colour alone), green when found. */
-.key.x { text-decoration: line-through; background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); color: var(--faint); }
+.key.x { text-decoration: line-through; background: var(--end-bg); border-color: var(--end-line); color: var(--end-text); }
 .key.ok { background: var(--ok-bg); border-color: var(--ok-line); color: var(--ok-text); }
 .info { margin: 0 0 0.98rem; font-family: var(--mono); font-size: 1.12rem; color: var(--soft); }
 .info span { margin-right: 1.82rem; }
@@ -280,7 +281,7 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 }
 .other b { color: var(--hint-text); }
 #result #r-where, #result #r-points { font-family: var(--mono); font-size: 0.98rem; color: var(--muted); }
-#result #r-where { margin-bottom: 0.42rem; }
+#result #r-where { margin-bottom: 0.42rem; color: var(--text); }
 #result #r-points { margin-bottom: 0.98rem; }
 #result > p:last-child { display: flex; align-items: center; gap: 0.84rem; margin: 0; }
 #result > p:last-child button { margin: 0; }
