@@ -69,6 +69,7 @@ let homeBoard = 'total';    // which list the Home page shows
 let homeData = null;
 const HOME_ROWS = 10;       // at most; fewer if the screen is short
 const HOME_MIN_ROWS = 3;
+const PHONE = window.matchMedia('(max-width: 700px)');   // same width as the phone styles
 const RECENT_ROWS = 5;      // "Just played" rows, fewer if the screen is short
 let actData = null;
 // Names of the worldwide lists, as the buttons show them.
@@ -689,6 +690,7 @@ function fitHome() {
     if (actData) renderActivity('act', actData, m);
   };
   draw();
+  if (PHONE.matches) return;   // phones scroll, so they show the lists in full
   const bottom = id => $(id).getBoundingClientRect().bottom;
   while (document.documentElement.scrollHeight > window.innerHeight) {
     const boardLower = bottom('hw-board') >= bottom('act-board');

@@ -75,6 +75,9 @@ Run `npm test` and `npm run build` before every commit.
    scrolling (root font size follows the viewport). `fitHome()` trims whichever
    Home column reaches lower: the leaderboard down to 3 rows, "Just played"
    down to 1. Never force a fixed number of rows that makes Home scroll.
+   **Phones (max-width 700px) are exempt:** they scroll, `fitHome()` returns
+   early and shows the lists in full, and the phone block in `style.css` uses
+   roomy sizes (16 px root, 44 px+ targets). Do not squeeze phones to fit.
 
 ## Behaviour worth knowing
 
