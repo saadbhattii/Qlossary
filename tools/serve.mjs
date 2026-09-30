@@ -18,10 +18,21 @@ const DB = await openLocalD1(join(ROOT, '.local', 'leaderboard.sqlite'), join(RO
 const env = DB ? { DB } : {};
 const routes = { '/api/leaderboard': leaderboard, '/api/scores': scores, '/api/activity': activityFn };
 
-// Read on every request, so a rebuild never leaves stale CSP hashes.
-function readHeaders() {
+// Read on every request, so a rebuild never leaves stale CSP hashes. Applies
+// every block whose path matches, in order, like Cloudflare: "! Name" drops a
+// header set by an earlier block.
+function readHeaders(path = '/') {
   const headers = {};
+  let on = false;
   for (const line of readFileSync(join(dist, '_headers'), 'utf8').split('\n')) {
+    if (/^\S/.test(line) && !line.startsWith('#')) {
+      const pat = line.trim();
+      on = pat.endsWith('*') ? path.startsWith(pat.slice(0, -1)) : path === pat;
+      continue;
+    }
+    if (!on) continue;
+    const drop = line.match(/^\s+!\s*([\w-]+)\s*$/);
+    if (drop) { delete headers[drop[1]]; continue; }
     const m = line.match(/^\s+([\w-]+):\s*(.*)$/);
     if (m) headers[m[1]] = m[2];
   }
@@ -49,7 +60,7 @@ createServer(async (req, res) => {
   if (def) {
     try {
       const body = readFileSync(join(dist, 'defs', def[1]));
-      res.writeHead(200, Object.assign({ 'Content-Type': 'application/json; charset=utf-8' }, readHeaders()));
+      res.writeHead(200, Object.assign({ 'Content-Type': 'application/json; charset=utf-8' }, readHeaders(path)));
       res.end(body);
     } catch (e) { res.writeHead(404); res.end('Not found'); }
     return;
@@ -58,12 +69,12 @@ createServer(async (req, res) => {
   if (font) {
     try {
       const body = readFileSync(join(dist, 'fonts', font[1]));
-      res.writeHead(200, Object.assign({ 'Content-Type': 'font/woff2' }, readHeaders()));
+      res.writeHead(200, Object.assign({ 'Content-Type': 'font/woff2' }, readHeaders(path)));
       res.end(body);
     } catch (e) { res.writeHead(404); res.end('Not found'); }
     return;
   }
   if (path !== '/' && path !== '/index.html') { res.writeHead(404); res.end('Not found'); return; }
-  res.writeHead(200, Object.assign({ 'Content-Type': 'text/html; charset=utf-8' }, readHeaders()));
+  res.writeHead(200, Object.assign({ 'Content-Type': 'text/html; charset=utf-8' }, readHeaders(path)));
   res.end(readFileSync(join(dist, 'index.html')));
 }).listen(port, () => console.log('http://localhost:' + port + (DB ? '' : '  (leaderboard off: needs Node 22.5 or later)')));
