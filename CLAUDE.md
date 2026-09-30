@@ -86,6 +86,9 @@ Run `npm test` and `npm run build` before every commit.
   submission per browser per day.
 - **Definitions** are fetched after a word ends from
   `/defs/<topic>.<hash>.json` and cached.
+- **Switching screens** (`showView()`) scrolls to the top first. Keep it:
+  a scroll carried from a taller Home onto a shorter screen made the browser
+  leave a strip of Home painted at the bottom.
 - **localStorage** keys are prefixed `qh.`; all access goes through
   `store.js`, which tolerates blocked or full storage.
 
