@@ -21,6 +21,15 @@ Notable changes to Qlossary. The format follows
 - Home fits the window again: the leaderboard shows as many rows as fit (up to
   10) instead of always 10, and "Just played" shrinks first, down to the latest
   game. Home is fitted again once the fonts have loaded.
+- Phones: no more dark flash at the bottom when scrolling fast. The page no
+  longer bounces past its end, the background covers the screen even when the
+  address bar hides, and on phones the background stands still and the cards
+  skip the frosted blur, so a fast scroll never has to redraw it.
+
+### Changed
+
+- Phones: the game status shows the game type and End game on one line and the
+  numbers in two even columns below; less empty space above the header.
 
 ### Removed
 

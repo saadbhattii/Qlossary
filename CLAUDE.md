@@ -67,7 +67,10 @@ Run `npm test` and `npm run build` before every commit.
    removed the cards' `backdrop-filter` and put the drifting art and grain on
    their own GPU layers (`will-change`, `contain: strict`, `100lvh`). It was
    reverted: it caused glitches in production (a strip of the previous screen
-   left painted). Keep the art and cards as they are.
+   left painted). Keep the art and cards as they are on desktop. Phones are the
+   one exception, inside `@media (max-width: 700px)` only: no overscroll
+   bounce, `.art` at `100lvh`, no drift and no card blur, which fixed a dark
+   flash when scrolling fast. Keep phone-only fixes inside that block.
 8. **One screen on desktop:** Home, the game and the result fit without
    scrolling (root font size follows the viewport). `fitHome()` trims whichever
    Home column reaches lower: the leaderboard down to 3 rows, "Just played"
