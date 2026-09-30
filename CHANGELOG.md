@@ -33,6 +33,8 @@ Notable changes to Qlossary. The format follows
 - Phones: the How to play card on Home has larger, easier-to-read text in a
   card of the same height, so the leaderboard keeps the same number of rows.
   Buttons unchanged.
+- Phones: "Hangman for quantum computing jargon" on Home is bold and a little
+  larger.
 
 ### Removed
 
