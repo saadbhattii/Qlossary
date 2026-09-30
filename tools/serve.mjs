@@ -54,6 +54,15 @@ createServer(async (req, res) => {
     } catch (e) { res.writeHead(404); res.end('Not found'); }
     return;
   }
+  const font = path.match(/^\/fonts\/([\w.-]+\.woff2)$/);
+  if (font) {
+    try {
+      const body = readFileSync(join(dist, 'fonts', font[1]));
+      res.writeHead(200, Object.assign({ 'Content-Type': 'font/woff2' }, readHeaders()));
+      res.end(body);
+    } catch (e) { res.writeHead(404); res.end('Not found'); }
+    return;
+  }
   if (path !== '/' && path !== '/index.html') { res.writeHead(404); res.end('Not found'); return; }
   res.writeHead(200, Object.assign({ 'Content-Type': 'text/html; charset=utf-8' }, readHeaders()));
   res.end(readFileSync(join(dist, 'index.html')));

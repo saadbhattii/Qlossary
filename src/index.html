@@ -5,10 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Qlossary</title>
 <meta name="description" content="Qlossary is a hangman game for quantum computing jargon.">
+<meta name="theme-color" content="#0A0B0F">
 <link rel="icon" type="image/svg+xml" href="/*FAVICON*/">
+<link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin>
 <style>/*CSS*/</style>
 </head>
 <body>
+<!-- Background art, decoration only: three soft colour glows, a grid, a dot field and film grain. -->
+<div class="art" aria-hidden="true">
+  <div class="drift"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+  <i class="grid"></i>
+  <i class="dots"></i>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+</div>
 <div id="app">
 
 <header class="bar top">

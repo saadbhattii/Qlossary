@@ -4,7 +4,8 @@ Hangman for quantum computing jargon. 1,926 terms in 16 topics, from
 foundations and gates to hardware, error correction, error mitigation and many more, with a global leaderboard.
 
 The game is one HTML file with the styles, code, icon and word list inlined:
-one request of about 31 KB, no outside connections, no dependencies. The worldwide leaderboard runs on Cloudflare Pages Functions with a D1
+one request of about 36 KB, plus the two Geist fonts (about 48 KB, served
+from the same site), no outside connections, no dependencies. The worldwide leaderboard runs on Cloudflare Pages Functions with a D1
 database. It is contacted when the Home or Scores screen opens and when a
 player presses "Add my score".
 
@@ -58,6 +59,7 @@ localStorage. They can be moved with Export and Import on the Scores screen.
       style.css            all styling
       js/                  game code as small ES modules (world.js talks to the leaderboard)
     static/_headers        security and cache headers for Cloudflare Pages
+    static/fonts/          Geist and Geist Mono (Latin subset), copied to dist/fonts/
     test/                  node:test suites
     tools/
       build.mjs            check the data, compute difficulty, inline everything, size check
@@ -107,4 +109,5 @@ It also fails if the page grows past 140 KB, or 40 KB compressed.
 ## Licences
 
 The code and word list are under the MIT licence in `LICENSE`. The icon is
-"book-a" from Lucide, under the ISC licence; see `THIRD_PARTY.md`.
+"book-a" from Lucide, under the ISC licence. The Geist fonts are under the
+SIL Open Font License 1.1; see `THIRD_PARTY.md` and `static/fonts/OFL.txt`.

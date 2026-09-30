@@ -23,3 +23,10 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+## Geist and Geist Mono fonts
+
+`static/fonts/geist.woff2` and `static/fonts/geist-mono.woff2` are the Geist
+and Geist Mono variable fonts by Vercel (https://vercel.com/font), reduced to
+Latin characters. They are under the SIL Open Font License, Version 1.1; the
+full licence is in `static/fonts/OFL.txt`.
