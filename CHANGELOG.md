@@ -30,11 +30,6 @@ Notable changes to Qlossary. The format follows
 
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
-- Phones, Home and Help only: a roomier layout that scrolls like a normal
-  page. Larger text and touch targets, full-width Start playing and daily
-  challenge buttons, leaderboard filters in one sideways-scrolling row, and
-  Home shows the whole top 10 and "Just played" in full. The other phone
-  screens are unchanged.
 
 ### Removed
 
