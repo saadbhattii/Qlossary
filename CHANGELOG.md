@@ -30,6 +30,8 @@ Notable changes to Qlossary. The format follows
 
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
+- Phones: the How to play card on Home uses a normal reading size (larger
+  tagline, steps and note, more space between the steps). Buttons unchanged.
 
 ### Removed
 
