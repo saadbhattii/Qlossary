@@ -69,12 +69,8 @@ html, body { margin: 0; background: var(--bg); }
 .board tr.you td:last-child { border-radius: 0 10px 10px 0; }
 .crown { width: 1em; height: 1em; margin-right: 0.35em; vertical-align: -0.12em; fill: #FFC94D; stroke: #FFE3A1; stroke-width: 1; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(255, 201, 77, 0.5)); }
 
-/* Hangman bits for the centred layout */
+/* Gallows and word for the centred layout */
 .word { font-family: var(--mono); font-size: calc(46px * var(--s)); letter-spacing: 0.18em; }
-.keys { display: grid; grid-template-columns: repeat(4, 64px); gap: 10px; }
-.key { width: 64px; height: 64px; border-radius: 15px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.05); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 27px; font-weight: 500; }
-.key.ok { border-color: var(--ok-line); background: var(--ok-bg); color: var(--ok-text); }
-.key.x { border-color: var(--end-line); background: var(--end-bg); color: var(--end-text); text-decoration: line-through; }
 .gallows { font-family: var(--mono); font-size: 34px; line-height: 1.18; color: var(--soft); margin: 0; }
 
 /* Safe-zone guides (only with &guides=1) */
@@ -127,7 +123,7 @@ if (layout === 'wide') {
     <div style="position:absolute;right:${M}px;top:50%;transform:translateY(-50%);width:${W * 0.45 - M}px">${board(rows)}</div>`;
 } else {
   // Centred: logo, title and tagline in the middle square (Reddit crops the
-  // feed thumbnail to it); hangman pieces decorate the sides.
+  // feed thumbnail to it); the gallows decorates the left side.
   c.innerHTML = `
     <pre class="gallows" style="position:absolute;left:${M + 20}px;top:50%;transform:translateY(-50%)">  +---+
   |   |
@@ -140,9 +136,6 @@ if (layout === 'wide') {
       <div class="logo" style="flex-direction:column;gap:14px">${BOOK.replace('<svg', '<svg style="width:96px;height:96px"')}<div class="title" style="font-size:104px">Qlossary</div></div>
       <div class="tagline" style="font-size:34px">Hangman for quantum<br>computing jargon.</div>
       <div class="word">Q_ANT_M</div>
-    </div>
-    <div class="keys" style="position:absolute;right:${M + 10}px;top:50%;transform:translateY(-50%)">
-      ${'QUANTMBX'.split('').map((l, i) => `<div class="key${'QANTM'.includes(l) ? ' ok' : 'BX'.includes(l) ? ' x' : ''}">${l}</div>`).join('')}
     </div>
     <div class="url" style="position:absolute;left:50%;transform:translateX(-50%);bottom:${M + 6}px">qlossary.pages.dev</div>`;
 }
