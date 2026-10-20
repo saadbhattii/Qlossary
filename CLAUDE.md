@@ -90,11 +90,15 @@ Run `npm test` and `npm run build` before every commit.
   word at 1,020 points.
 - **Daily challenge:** seeded by UTC date, five terms from five topics, one
   submission per browser per day.
-- **On-screen keyboard:** QWERTY rows from `KEY_ROWS` in `main.js`, each a
-  `.krow` inside `#keys`; find keys with `$('keys').querySelectorAll('.key')`.
+- **On-screen keyboard:** `buildKeys()` in `main.js` makes it from `KEY_ROWS`:
+  A to Z on desktop (one `.krow` with `display: contents`, so `#keys` stays a
+  13-column grid) and QWERTY rows on phones. It is rebuilt when the window
+  crosses 700px, then `renderRound()` restores the guessed letters. Find keys
+  with `$('keys').querySelectorAll('.key')`.
 - **Keys after a word** (`onKey()`): Enter = next word, D = See definition,
   L = Learn more. During a word every letter guesses, so these only apply once
-  the word is over.
+  the word is over. Desktop shows them in `#r-keys` under the buttons (hidden on
+  phones).
 - **Definitions** are fetched after a word ends from
   `/defs/<topic>.<hash>.json` and cached.
 - **Switching screens** (`showView()`) scrolls to the top first. Keep it:

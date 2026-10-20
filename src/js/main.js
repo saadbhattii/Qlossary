@@ -12,7 +12,9 @@ import { loadDefinitions, learnMoreUrl } from './defs.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
-const KEY_ROWS = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];   // on-screen keyboard, QWERTY order
+// On-screen keyboard: A to Z on desktop, QWERTY rows on phones.
+const KEY_ROWS = { desktop: ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'], phone: ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'] };
+const PHONE_KEYS = window.matchMedia('(max-width: 700px)');   // same width as the phone styles
 const MODES = {
   run: { label: '10-word game', words: 10, scored: true },
   endless: { label: 'Endless', words: Infinity, scored: true, maxLost: 3 },
@@ -345,6 +347,7 @@ function endRound(timedOut) {
   showDefinition(t);
   show($('r-defbar'), true);
   show($('r-more'), false);
+  $('r-keys').textContent = 'Press D for See definition · Press L for Learn more';
   let points = '';
   if (!S.cfg.scored) points = 'Practice game, so no points are counted.';
   else if (!R.won) points = 'No points for this word.';
@@ -389,6 +392,7 @@ async function showDefinition(t) {
 async function seeDefinition() {
   show($('r-defbar'), false);
   show($('r-more'), true);
+  $('r-keys').textContent = 'Press L for Learn more';
   const t = defFor;
   if (!defShown && t && !(await showDefinition(t)) && defFor === t) {
     $('r-def').textContent = 'The definition could not be loaded. Check your connection and try the next word, or use Learn more.';
@@ -871,11 +875,12 @@ function onKey(e) {
   }
 }
 
-// ---------- start ----------
-
-function init() {
+// The on-screen keys, rebuilt when the window crosses the phone width;
+// renderRound() then puts the guessed letters back.
+function buildKeys() {
   const keys = $('keys');
-  for (const letters of KEY_ROWS) {
+  keys.textContent = '';
+  for (const letters of KEY_ROWS[PHONE_KEYS.matches ? 'phone' : 'desktop']) {
     const krow = el('div', 'krow');
     for (const L of letters) {
       const b = el('button', 'key', L);
@@ -885,6 +890,13 @@ function init() {
     }
     keys.appendChild(krow);
   }
+}
+
+// ---------- start ----------
+
+function init() {
+  buildKeys();
+  PHONE_KEYS.addEventListener('change', () => { buildKeys(); if (R) renderRound(R.over); });
   $('home-start').addEventListener('click', () => go('play'));
   $('home-daily').addEventListener('click', () => startSession('daily'));
   $('home-return').addEventListener('click', () => go('play'));
