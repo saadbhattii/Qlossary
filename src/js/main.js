@@ -12,7 +12,7 @@ import { loadDefinitions, learnMoreUrl } from './defs.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const KEY_ROWS = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];   // on-screen keyboard, QWERTY order
 const MODES = {
   run: { label: '10-word game', words: 10, scored: true },
   endless: { label: 'Endless', words: Infinity, scored: true, maxLost: 3 },
@@ -273,7 +273,7 @@ function nextWord() {
   }
   R = newRound(term, S.mode === 'daily' ? 6 : +settings.lives);
   show($('play-area'), true); show($('result'), false);
-  for (const b of $('keys').children) { b.disabled = false; b.className = 'key'; }
+  for (const b of $('keys').querySelectorAll('.key')) { b.disabled = false; b.className = 'key'; }
   if (T) T.stop();
   const secs = timerSeconds(term);
   T = secs == null ? null : makeTimer(secs, s => { $('st-time').textContent = 'Time left ' + fmtTime(s); }, onTimeUp);
@@ -579,7 +579,7 @@ function renderRound(final) {
   w.setAttribute('aria-label', 'Term: ' + spoken.slice(0, -1).join(' '));
 
   // keyboard
-  for (const b of $('keys').children) {
+  for (const b of $('keys').querySelectorAll('.key')) {
     const L = b.dataset.l;
     const used = r.guessed.has(L);
     const wrong = r.wrong.includes(L);
@@ -875,11 +875,15 @@ function onKey(e) {
 
 function init() {
   const keys = $('keys');
-  for (const L of LETTERS) {
-    const b = el('button', 'key', L);
-    b.dataset.l = L;
-    b.addEventListener('click', () => onGuess(L));
-    keys.appendChild(b);
+  for (const letters of KEY_ROWS) {
+    const krow = el('div', 'krow');
+    for (const L of letters) {
+      const b = el('button', 'key', L);
+      b.dataset.l = L;
+      b.addEventListener('click', () => onGuess(L));
+      krow.appendChild(b);
+    }
+    keys.appendChild(krow);
   }
   $('home-start').addEventListener('click', () => go('play'));
   $('home-daily').addEventListener('click', () => startSession('daily'));

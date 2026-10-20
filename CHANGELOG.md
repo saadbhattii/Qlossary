@@ -37,6 +37,9 @@ Notable changes to Qlossary. The format follows
 
 ### Changed
 
+- The on-screen keyboard uses QWERTY order (rows of 10, 9 and 7) on desktop
+  and phones, with the same key look. On desktop it takes three rows instead
+  of two.
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
 - Phones: the How to play card on Home has larger, easier-to-read text in a

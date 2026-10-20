@@ -90,6 +90,8 @@ Run `npm test` and `npm run build` before every commit.
   word at 1,020 points.
 - **Daily challenge:** seeded by UTC date, five terms from five topics, one
   submission per browser per day.
+- **On-screen keyboard:** QWERTY rows from `KEY_ROWS` in `main.js`, each a
+  `.krow` inside `#keys`; find keys with `$('keys').querySelectorAll('.key')`.
 - **Keys after a word** (`onKey()`): Enter = next word, D = See definition,
   L = Learn more. During a word every letter guesses, so these only apply once
   the word is over.
