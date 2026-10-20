@@ -7,6 +7,10 @@ Notable changes to Qlossary. The format follows
 
 ### Added
 
+- Social preview images for links (Open Graph and X cards): one per platform
+  for X, Facebook, LinkedIn, Discord and Reddit in `static/og/`, with the logo,
+  title and leaderboard inside each platform's safe zone, and `og:` and
+  `twitter:` meta tags in the page. Template and notes in `brand/social/`.
 - Documentation: a new README with screenshots, guides in `docs/` (playing,
   development, architecture, data, leaderboard, deployment, design),
   `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CLAUDE.md` for AI

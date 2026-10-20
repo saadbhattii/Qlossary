@@ -190,6 +190,8 @@ function main() {
   writeFileSync(join(out, '_headers'), headers);
   // The two Geist fonts, served from this site (no outside connections).
   cpSync(join(ROOT, 'static', 'fonts'), join(out, 'fonts'), { recursive: true });
+  // Social preview images (Open Graph), linked from the page's meta tags.
+  cpSync(join(ROOT, 'static', 'og'), join(out, 'og'), { recursive: true });
   if (defOut.length) {
     mkdirSync(join(out, 'defs'));
     for (const [name, json] of defOut) writeFileSync(join(out, 'defs', name), json);

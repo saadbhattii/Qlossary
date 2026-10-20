@@ -35,7 +35,8 @@ browser ──GET /api/leaderboard, /api/activity──►  functions/api/*.js �
 5. Minifies `src/style.css` and fills the placeholders in `src/index.html`:
    `/*CSS*/`, `/*JS*/`, `/*ICON*/` (from `brand/icon.svg`) and `/*FAVICON*/`
    (from `brand/favicon.svg`, as a data URI).
-6. Copies `static/fonts/` to `dist/fonts/`, writes `dist/_headers` with the
+6. Copies `static/fonts/` to `dist/fonts/` and the link-preview images in
+   `static/og/` to `dist/og/`, writes `dist/_headers` with the
    SHA-256 hashes of the inline script and style, and fails if the page is over
    140 KB raw or 40 KB Brotli.
 

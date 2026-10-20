@@ -63,6 +63,15 @@ createServer(async (req, res) => {
     } catch (e) { res.writeHead(404); res.end('Not found'); }
     return;
   }
+  const og = path.match(/^\/og\/([\w.-]+\.png)$/);
+  if (og) {
+    try {
+      const body = readFileSync(join(dist, 'og', og[1]));
+      res.writeHead(200, Object.assign({ 'Content-Type': 'image/png' }, readHeaders()));
+      res.end(body);
+    } catch (e) { res.writeHead(404); res.end('Not found'); }
+    return;
+  }
   if (path !== '/' && path !== '/index.html') { res.writeHead(404); res.end('Not found'); return; }
   res.writeHead(200, Object.assign({ 'Content-Type': 'text/html; charset=utf-8' }, readHeaders()));
   res.end(readFileSync(join(dist, 'index.html')));
