@@ -69,6 +69,7 @@ src/
   js/                  game code as small ES modules, bundled in a fixed order
 static/_headers        security and cache headers for Cloudflare Pages
 static/fonts/          Geist and Geist Mono (Latin subsets), copied to dist/fonts/
+static/og/             link-preview images per platform, copied to dist/og/ (see brand/social/)
 test/                  node:test suites
 tools/
   build.mjs            validate, compute difficulty, inline everything, size check

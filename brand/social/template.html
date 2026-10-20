@@ -1,0 +1,156 @@
+<!doctype html>
+<!--
+  Social preview template for Qlossary. Not part of the game: open it in a
+  browser with the window (or a screenshot tool) set to the size below, and
+  save a PNG of exactly that size into static/og/. See brand/social/README.md.
+
+    template.html?w=1200&h=630&layout=wide         Facebook, LinkedIn (1200x627)
+    template.html?w=1200&h=600&layout=wide         X / Twitter
+    template.html?w=1200&h=630&layout=wide&big=1   Discord (shown small, so larger text)
+    template.html?w=1200&h=628&layout=center       Reddit (feed thumbnail crops the centre square)
+
+  Add &guides=1 to see the safe zones.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Qlossary social preview</title>
+<style>
+@font-face { font-family: 'Geist'; src: url(../../static/fonts/geist.woff2) format('woff2'); font-weight: 100 900; }
+@font-face { font-family: 'Geist Mono'; src: url(../../static/fonts/geist-mono.woff2) format('woff2'); font-weight: 100 900; }
+:root {
+  --bg: #0A0B0F; --text: #F4F5F7; --soft: #C9CDD6; --muted: #A1A6B3;
+  --line: rgba(255, 255, 255, 0.14); --pill-line: rgba(255, 255, 255, 0.22); --glass: rgba(10, 11, 15, 0.62);
+  --green: #3EDC81; --ok-bg: rgba(62, 220, 129, 0.14); --ok-line: rgba(62, 220, 129, 0.55); --ok-text: #BFF5D4;
+  --end-bg: rgba(255, 92, 122, 0.12); --end-line: rgba(255, 110, 130, 0.5); --end-text: #FFC2CD;
+  --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace;
+  --s: 1;   /* text scale; Discord uses a larger one */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); }
+#card { position: relative; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+
+/* Background art, as on the site. */
+.art, .art > * { position: absolute; inset: 0; }
+.blob { position: absolute; border-radius: 50%; filter: blur(48px); }
+.b1 { left: 46%; top: -30%; width: 58%; height: 95%; background: #16C47F; opacity: 0.55; }
+.b2 { left: 74%; top: 10%; width: 40%; height: 80%; background: #B6F03C; opacity: 0.35; }
+.b3 { left: 55%; top: 55%; width: 46%; height: 75%; background: #0EA5A4; opacity: 0.42; }
+.grid { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 60px 60px; }
+.dots { background-image: radial-gradient(circle, rgba(255,255,255,.2) 1px, transparent 1.4px); background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse at 75% 30%, #000 0%, transparent 55%); mask-image: radial-gradient(ellipse at 75% 30%, #000 0%, transparent 55%); }
+.grain { mix-blend-mode: overlay; opacity: 0.18; }
+
+.glass { background: var(--glass); border: 1px solid var(--line); border-radius: 28px; backdrop-filter: blur(6px); }
+.mono { font-family: var(--mono); }
+
+/* Brand block */
+.logo { display: flex; align-items: center; gap: calc(22px * var(--s)); }
+.logo svg { width: calc(76px * var(--s)); height: calc(76px * var(--s)); flex: none; }
+.title { font-size: calc(96px * var(--s)); font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
+.tagline { font-size: calc(34px * var(--s)); font-weight: 500; line-height: 1.25; color: var(--text); letter-spacing: -0.01em; }
+.chips { display: flex; flex-wrap: wrap; gap: calc(12px * var(--s)); }
+.chip { font-family: var(--mono); font-size: calc(21px * var(--s)); padding: calc(10px * var(--s)) calc(18px * var(--s)); border: 1px solid var(--pill-line); border-radius: 999px; color: var(--soft); background: rgba(10, 11, 15, 0.45); }
+.chip b { color: var(--text); font-weight: 500; }
+.url { font-family: var(--mono); font-size: calc(22px * var(--s)); color: var(--muted); letter-spacing: 0.02em; }
+.url::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--green); margin-right: 12px; vertical-align: 1px; }
+
+/* Leaderboard card, like the Home screen */
+.board { padding: 30px 34px; }
+.board h2 { margin: 0 0 18px; font-size: 32px; font-weight: 600; letter-spacing: -0.02em; }
+.board .pill { display: inline-block; font-family: var(--mono); font-size: 18px; padding: 7px 16px; border-radius: 999px; background: var(--text); color: var(--bg); font-weight: 600; margin-bottom: 16px; }
+.board table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 23px; color: var(--soft); }
+.board th { text-align: left; font-weight: 400; color: var(--muted); border-bottom: 1px solid var(--line); padding: 0 8px 10px; }
+.board td { padding: 9px 8px; white-space: nowrap; }
+.board td:nth-child(2) { color: var(--text); }
+.board .n { text-align: right; }
+.board tr.you td { background: rgba(62, 220, 129, 0.12); color: var(--ok-text); }
+.board tr.you td:first-child { border-radius: 10px 0 0 10px; }
+.board tr.you td:last-child { border-radius: 0 10px 10px 0; }
+.crown { width: 1em; height: 1em; margin-right: 0.35em; vertical-align: -0.12em; fill: #FFC94D; stroke: #FFE3A1; stroke-width: 1; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(255, 201, 77, 0.5)); }
+
+/* Hangman bits for the centred layout */
+.word { font-family: var(--mono); font-size: calc(46px * var(--s)); letter-spacing: 0.18em; }
+.keys { display: grid; grid-template-columns: repeat(4, 64px); gap: 10px; }
+.key { width: 64px; height: 64px; border-radius: 15px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.05); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 27px; font-weight: 500; }
+.key.ok { border-color: var(--ok-line); background: var(--ok-bg); color: var(--ok-text); }
+.key.x { border-color: var(--end-line); background: var(--end-bg); color: var(--end-text); text-decoration: line-through; }
+.gallows { font-family: var(--mono); font-size: 34px; line-height: 1.18; color: var(--soft); margin: 0; }
+
+/* Safe-zone guides (only with &guides=1) */
+.guide { position: absolute; border: 2px dashed rgba(255, 80, 80, 0.9); pointer-events: none; z-index: 9; }
+</style>
+</head>
+<body>
+<div id="card">
+  <div class="art">
+    <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+    <i class="grid"></i><i class="dots"></i>
+    <svg class="grain" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+  </div>
+  <div id="content"></div>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1200, H = +q.get('h') || 630, layout = q.get('layout') || 'wide';
+const card = document.getElementById('card');
+card.style.width = W + 'px'; card.style.height = H + 'px';
+if (q.get('big')) document.documentElement.style.setProperty('--s', '1.12');
+
+const BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="#F4F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="m8 13 4-7 4 7"/><path d="M9.1 11h5.7"/></svg>';
+const CROWN = '<svg class="crown" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg>';
+const ROWS = [['schrodinger', '18,420', 12, true], ['bloch_sphere', '9,751', 6], ['QUOPS', '7,331', 5], ['hadamard', '5,933', 4], ['ket0', '4,841', 3, false, true]];
+
+function board(rows) {
+  const tr = rows.map(([name, pts, games, crown, you], i) =>
+    `<tr${you ? ' class="you"' : ''}><td>${i + 1}</td><td>${crown ? CROWN : ''}${name}${you ? ' (you)' : ''}</td><td class="n">${pts}</td><td class="n">${games}</td></tr>`).join('');
+  return `<div class="glass board"><h2>Worldwide Leaderboard</h2><span class="pill">All-time total</span>
+    <table><tr><th>#</th><th>Name</th><th class="n">Points</th><th class="n">Games</th></tr>${tr}</table></div>`;
+}
+const brand = `<div class="logo">${BOOK}<div class="title">Qlossary</div></div>`;
+const chips = `<div class="chips"><span class="chip"><b>1,926</b> terms</span><span class="chip"><b>16</b> topics</span><span class="chip">Daily challenge</span></div>`;
+
+const c = document.getElementById('content');
+// Safe zone: everything important sits inside a 64 px margin (X rounds the
+// corners and may lay the domain over the bottom-left; Facebook and LinkedIn
+// can trim a few pixels when the ratio differs slightly).
+const M = 64;
+if (layout === 'wide') {
+  const rows = q.get('big') ? ROWS.slice(0, 3) : ROWS;
+  c.innerHTML = `
+    <div style="position:absolute;left:${M}px;top:${M}px;bottom:${M}px;width:${W * 0.55 - M - 28}px;display:flex;flex-direction:column;justify-content:center;gap:${q.get('big') ? 30 : 26}px">
+      ${brand}
+      <div class="tagline">Hangman for quantum<br>computing jargon.</div>
+      ${chips}
+      <div class="url">qlossary.pages.dev</div>
+    </div>
+    <div style="position:absolute;right:${M}px;top:50%;transform:translateY(-50%);width:${W * 0.45 - M}px">${board(rows)}</div>`;
+} else {
+  // Centred: logo, title and tagline in the middle square (Reddit crops the
+  // feed thumbnail to it); hangman pieces decorate the sides.
+  c.innerHTML = `
+    <pre class="gallows" style="position:absolute;left:${M + 20}px;top:50%;transform:translateY(-50%)">  +---+
+  |   |
+  O   |
+ /|\\  |
+      |
+      |
+=========</pre>
+    <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;margin-top:-18px">
+      <div class="logo" style="flex-direction:column;gap:14px">${BOOK.replace('<svg', '<svg style="width:96px;height:96px"')}<div class="title" style="font-size:104px">Qlossary</div></div>
+      <div class="tagline" style="font-size:34px">Hangman for quantum<br>computing jargon.</div>
+      <div class="word">Q_ANT_M</div>
+    </div>
+    <div class="keys" style="position:absolute;right:${M + 10}px;top:50%;transform:translateY(-50%)">
+      ${'QUANTMBX'.split('').map((l, i) => `<div class="key${'QANTM'.includes(l) ? ' ok' : 'BX'.includes(l) ? ' x' : ''}">${l}</div>`).join('')}
+    </div>
+    <div class="url" style="position:absolute;left:50%;transform:translateX(-50%);bottom:${M + 6}px">qlossary.pages.dev</div>`;
+}
+if (q.get('guides')) {
+  const g = (l, t, w, h) => c.insertAdjacentHTML('beforeend', `<div class="guide" style="left:${l}px;top:${t}px;width:${w}px;height:${h}px"></div>`);
+  g(M, M, W - 2 * M, H - 2 * M);
+  if (layout === 'center') g((W - H) / 2, 0, H, H);
+}
+</script>
+</body>
+</html>

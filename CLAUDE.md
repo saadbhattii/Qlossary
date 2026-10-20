@@ -41,7 +41,8 @@ Run `npm test` and `npm run build` before every commit.
 | `functions/api/` | `leaderboard.js`, `activity.js` (GET), `scores.js` (POST). |
 | `static/_headers` | CSP and cache rules; the build fills in the CSP hashes. |
 | `static/fonts/` | Geist and Geist Mono, Latin subsets, OFL. |
-| `brand/` | `icon.svg` (header), `favicon.svg`, `logo.svg`. |
+| `brand/` | `icon.svg` (header), `favicon.svg`, `logo.svg`; `social/` has the link-preview template and notes. |
+| `static/og/` | Link-preview images per platform; the build copies them to `dist/og/`, and the `og:`/`twitter:` meta tags in `src/index.html` point at them. |
 | `tools/` | `build.mjs`, `rules.mjs`, `tsv.mjs`, `serve.mjs`, `d1-local.mjs`. |
 | `test/` | `logic.test.mjs`, `data.test.mjs`, `leaderboard.test.mjs`. |
 | `docs/` | Player, development, architecture, data, leaderboard, deployment and design guides; `docs/screenshots/`. |
