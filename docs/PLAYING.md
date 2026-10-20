@@ -15,7 +15,8 @@ Everything about playing Qlossary. The short version is in the
 
 ## Guessing
 
-- A term is shown as blanks. Type a letter or click it on the on-screen keyboard.
+- A term is shown as blanks. Type a letter or click it on the on-screen keyboard,
+  which is laid out like a QWERTY keyboard.
 - A letter that is in the term appears everywhere it occurs, and its key turns
   green. A letter that is not in the term adds a line to the drawing, and its
   key turns light red and is struck through.
@@ -71,6 +72,9 @@ different in everyday English or another field, the topic and subtopic, and
 how the points were counted. **Learn more** opens a web search for the term
 with "in quantum computing" added. Press **Enter** or **Next word** to go on.
 
+On a keyboard: **D** opens the definition (same as **See definition**) and
+**L** opens **Learn more** in a new tab.
+
 ## Settings
 
 - **Topics:** words come only from the topics you tick.
@@ -87,7 +91,9 @@ with "in quantum computing" added. Press **Enter** or **Next word** to go on.
 
 When a game ends you can press **Add my score** to put it on the worldwide
 leaderboard under a name of up to 12 letters, digits, spaces, dots, dashes or
-underscores. Your name and score are public.
+underscores. Your name and score are public. On a keyboard, **Add my score** is
+selected when the game ends, so pressing **Enter** adds it; press Enter again
+to play again.
 
 | List | Ranks by |
 | --- | --- |

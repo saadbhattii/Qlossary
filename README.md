@@ -61,7 +61,7 @@ phone or a computer. There is nothing to install and no account to make.
 | **Daily challenge** | Five terms from five topics, the same for everyone, new at midnight UTC, one try a day. |
 | **Practice** | No score, and the timer can be turned off. |
 
-**Keys:** letters guess · **1**, **2**, **3** take the hints · **Enter** goes to the next word.
+**Keys:** letters guess · **1**, **2**, **3** take the hints · after a word, **D** shows the definition, **L** opens Learn more and **Enter** goes to the next word.
 
 Full rules, scoring, hints and the leaderboard are in the
 **[player guide](docs/PLAYING.md)**.

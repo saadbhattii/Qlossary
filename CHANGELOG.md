@@ -7,6 +7,8 @@ Notable changes to Qlossary. The format follows
 
 ### Added
 
+- Keyboard shortcuts after a word: **D** shows the definition and **L** opens
+  Learn more (Enter still goes to the next word). Listed on the Help screen.
 - Social preview images for links (Open Graph and X cards): one per platform
   for X, Facebook, LinkedIn, Discord and Reddit in `static/og/`, with the logo,
   title and leaderboard inside each platform's safe zone, and `og:` and
@@ -20,6 +22,9 @@ Notable changes to Qlossary. The format follows
 
 ### Fixed
 
+- Game over: when the score can be added to the worldwide leaderboard,
+  **Add my score** is selected, so Enter adds it instead of starting a new game.
+  After it is added, Enter plays again. Pressing Enter twice never sends it twice.
 - A strip of the Home screen could stay painted along the bottom of another
   screen on desktop. Every screen now starts at the top when you switch to it.
 - Home fits the window again: the leaderboard shows as many rows as fit (up to
@@ -32,6 +37,9 @@ Notable changes to Qlossary. The format follows
 
 ### Changed
 
+- The on-screen keyboard uses QWERTY order (rows of 10, 9 and 7) on desktop
+  and phones, with the same key look. On desktop it takes three rows instead
+  of two.
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
 - Phones: the How to play card on Home has larger, easier-to-read text in a

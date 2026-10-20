@@ -12,7 +12,7 @@ import { loadDefinitions, learnMoreUrl } from './defs.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const KEY_ROWS = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];   // on-screen keyboard, QWERTY order
 const MODES = {
   run: { label: '10-word game', words: 10, scored: true },
   endless: { label: 'Endless', words: Infinity, scored: true, maxLost: 3 },
@@ -273,7 +273,7 @@ function nextWord() {
   }
   R = newRound(term, S.mode === 'daily' ? 6 : +settings.lives);
   show($('play-area'), true); show($('result'), false);
-  for (const b of $('keys').children) { b.disabled = false; b.className = 'key'; }
+  for (const b of $('keys').querySelectorAll('.key')) { b.disabled = false; b.className = 'key'; }
   if (T) T.stop();
   const secs = timerSeconds(term);
   T = secs == null ? null : makeTimer(secs, s => { $('st-time').textContent = 'Time left ' + fmtTime(s); }, onTimeUp);
@@ -492,12 +492,13 @@ function showSummary(head, saved, words, d) {
   const again = $('s-again');
   if (lastMode === 'daily') { again.textContent = 'Choose another game'; show($('s-menu'), false); }
   else { again.textContent = 'Play again'; show($('s-menu'), true); }
-  again.focus();
+  // Enter adds the score first when it can be added; Play again comes after.
+  if (lastGame) $('w-add').focus(); else again.focus();
   say('Game over. ' + head + ' ' + saved);
 }
 
 async function addToWorld() {
-  if (!lastGame || lastGame.sent) return;
+  if (!lastGame || lastGame.sent || $('w-add').disabled) return;   // disabled: already sending
   const name = $('w-name').value.replace(/\s+/g, ' ').trim();
   const problem = worldNameProblem(name);
   const msg = $('w-msg');
@@ -509,6 +510,7 @@ async function addToWorld() {
   try {
     const res = await submitScore({ mode: lastGame.mode, name, pts: lastGame.pts, won: lastGame.won, day: lastGame.day, cid: browserId() });
     lastGame.sent = true;
+    $('s-again').focus();   // the score is in, so Enter now plays again
     const list = MODES[lastGame.mode].label.toLowerCase();
     const t = res.total;
     if (t) {
@@ -577,7 +579,7 @@ function renderRound(final) {
   w.setAttribute('aria-label', 'Term: ' + spoken.slice(0, -1).join(' '));
 
   // keyboard
-  for (const b of $('keys').children) {
+  for (const b of $('keys').querySelectorAll('.key')) {
     const L = b.dataset.l;
     const used = r.guessed.has(L);
     const wrong = r.wrong.includes(L);
@@ -850,9 +852,18 @@ function onKey(e) {
   if (view === 'home') { if (k === 'Enter') { e.preventDefault(); go('play'); } return; }
   if (view !== 'play') return;
   if (!$('menu').hidden) { if (k === 'Enter') { e.preventDefault(); startSession('run'); } return; }
-  if (!$('summary').hidden) { if (k === 'Enter') { e.preventDefault(); $('s-again').click(); } return; }
+  if (!$('summary').hidden) {
+    if (k === 'Enter') { e.preventDefault(); if (lastGame && !lastGame.sent) addToWorld(); else $('s-again').click(); }
+    return;
+  }
   if (!S || !R) return;
-  if (R.over) { if (k === 'Enter') { e.preventDefault(); onNext(); } return; }
+  if (R.over) {
+    // After a word: Enter goes on, D opens the definition, L opens Learn more.
+    if (k === 'Enter') { e.preventDefault(); onNext(); }
+    else if ((k === 'd' || k === 'D') && !$('r-defbar').hidden) { e.preventDefault(); seeDefinition(); }
+    else if (k === 'l' || k === 'L') { e.preventDefault(); ($('r-more').hidden ? $('r-learn-side') : $('r-learn')).click(); }
+    return;
+  }
   if (k.length === 1) {
     const L = k.toUpperCase();
     if (L >= 'A' && L <= 'Z') { e.preventDefault(); onGuess(L); return; }
@@ -864,11 +875,15 @@ function onKey(e) {
 
 function init() {
   const keys = $('keys');
-  for (const L of LETTERS) {
-    const b = el('button', 'key', L);
-    b.dataset.l = L;
-    b.addEventListener('click', () => onGuess(L));
-    keys.appendChild(b);
+  for (const letters of KEY_ROWS) {
+    const krow = el('div', 'krow');
+    for (const L of letters) {
+      const b = el('button', 'key', L);
+      b.dataset.l = L;
+      b.addEventListener('click', () => onGuess(L));
+      krow.appendChild(b);
+    }
+    keys.appendChild(krow);
   }
   $('home-start').addEventListener('click', () => go('play'));
   $('home-daily').addEventListener('click', () => startSession('daily'));
