@@ -22,6 +22,9 @@ Notable changes to Qlossary. The format follows
 
 ### Fixed
 
+- Game over: when the score can be added to the worldwide leaderboard,
+  **Add my score** is selected, so Enter adds it instead of starting a new game.
+  After it is added, Enter plays again. Pressing Enter twice never sends it twice.
 - A strip of the Home screen could stay painted along the bottom of another
   screen on desktop. Every screen now starts at the top when you switch to it.
 - Home fits the window again: the leaderboard shows as many rows as fit (up to

@@ -492,12 +492,13 @@ function showSummary(head, saved, words, d) {
   const again = $('s-again');
   if (lastMode === 'daily') { again.textContent = 'Choose another game'; show($('s-menu'), false); }
   else { again.textContent = 'Play again'; show($('s-menu'), true); }
-  again.focus();
+  // Enter adds the score first when it can be added; Play again comes after.
+  if (lastGame) $('w-add').focus(); else again.focus();
   say('Game over. ' + head + ' ' + saved);
 }
 
 async function addToWorld() {
-  if (!lastGame || lastGame.sent) return;
+  if (!lastGame || lastGame.sent || $('w-add').disabled) return;   // disabled: already sending
   const name = $('w-name').value.replace(/\s+/g, ' ').trim();
   const problem = worldNameProblem(name);
   const msg = $('w-msg');
@@ -509,6 +510,7 @@ async function addToWorld() {
   try {
     const res = await submitScore({ mode: lastGame.mode, name, pts: lastGame.pts, won: lastGame.won, day: lastGame.day, cid: browserId() });
     lastGame.sent = true;
+    $('s-again').focus();   // the score is in, so Enter now plays again
     const list = MODES[lastGame.mode].label.toLowerCase();
     const t = res.total;
     if (t) {
@@ -850,7 +852,10 @@ function onKey(e) {
   if (view === 'home') { if (k === 'Enter') { e.preventDefault(); go('play'); } return; }
   if (view !== 'play') return;
   if (!$('menu').hidden) { if (k === 'Enter') { e.preventDefault(); startSession('run'); } return; }
-  if (!$('summary').hidden) { if (k === 'Enter') { e.preventDefault(); $('s-again').click(); } return; }
+  if (!$('summary').hidden) {
+    if (k === 'Enter') { e.preventDefault(); if (lastGame && !lastGame.sent) addToWorld(); else $('s-again').click(); }
+    return;
+  }
   if (!S || !R) return;
   if (R.over) {
     // After a word: Enter goes on, D opens the definition, L opens Learn more.

@@ -90,7 +90,9 @@ On a keyboard: **D** opens the definition (same as **See definition**) and
 
 When a game ends you can press **Add my score** to put it on the worldwide
 leaderboard under a name of up to 12 letters, digits, spaces, dots, dashes or
-underscores. Your name and score are public.
+underscores. Your name and score are public. On a keyboard, **Add my score** is
+selected when the game ends, so pressing **Enter** adds it; press Enter again
+to play again.
 
 | List | Ranks by |
 | --- | --- |
