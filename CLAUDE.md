@@ -90,6 +90,9 @@ Run `npm test` and `npm run build` before every commit.
   word at 1,020 points.
 - **Daily challenge:** seeded by UTC date, five terms from five topics, one
   submission per browser per day.
+- **Keys after a word** (`onKey()`): Enter = next word, D = See definition,
+  L = Learn more. During a word every letter guesses, so these only apply once
+  the word is over.
 - **Definitions** are fetched after a word ends from
   `/defs/<topic>.<hash>.json` and cached.
 - **Switching screens** (`showView()`) scrolls to the top first. Keep it:

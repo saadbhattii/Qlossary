@@ -852,7 +852,13 @@ function onKey(e) {
   if (!$('menu').hidden) { if (k === 'Enter') { e.preventDefault(); startSession('run'); } return; }
   if (!$('summary').hidden) { if (k === 'Enter') { e.preventDefault(); $('s-again').click(); } return; }
   if (!S || !R) return;
-  if (R.over) { if (k === 'Enter') { e.preventDefault(); onNext(); } return; }
+  if (R.over) {
+    // After a word: Enter goes on, D opens the definition, L opens Learn more.
+    if (k === 'Enter') { e.preventDefault(); onNext(); }
+    else if ((k === 'd' || k === 'D') && !$('r-defbar').hidden) { e.preventDefault(); seeDefinition(); }
+    else if (k === 'l' || k === 'L') { e.preventDefault(); ($('r-more').hidden ? $('r-learn-side') : $('r-learn')).click(); }
+    return;
+  }
   if (k.length === 1) {
     const L = k.toUpperCase();
     if (L >= 'A' && L <= 'Z') { e.preventDefault(); onGuess(L); return; }

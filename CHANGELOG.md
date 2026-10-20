@@ -7,6 +7,8 @@ Notable changes to Qlossary. The format follows
 
 ### Added
 
+- Keyboard shortcuts after a word: **D** shows the definition and **L** opens
+  Learn more (Enter still goes to the next word). Listed on the Help screen.
 - Social preview images for links (Open Graph and X cards): one per platform
   for X, Facebook, LinkedIn, Discord and Reddit in `static/og/`, with the logo,
   title and leaderboard inside each platform's safe zone, and `og:` and

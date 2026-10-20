@@ -71,6 +71,9 @@ different in everyday English or another field, the topic and subtopic, and
 how the points were counted. **Learn more** opens a web search for the term
 with "in quantum computing" added. Press **Enter** or **Next word** to go on.
 
+On a keyboard: **D** opens the definition (same as **See definition**) and
+**L** opens **Learn more** in a new tab.
+
 ## Settings
 
 - **Topics:** words come only from the topics you tick.
