@@ -12,9 +12,8 @@ import { loadDefinitions, learnMoreUrl } from './defs.js';
 
 const DATA = parseData(QDATA);
 const $ = id => document.getElementById(id);
-// On-screen keyboard: A to Z on desktop, QWERTY rows on phones.
-const KEY_ROWS = { desktop: ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'], phone: ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'] };
-const PHONE_KEYS = window.matchMedia('(max-width: 700px)');   // same width as the phone styles
+// On-screen keyboard layouts, chosen in Settings (A to Z unless the player picks QWERTY).
+const KEY_ROWS = { abc: ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'], qwerty: ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'] };
 const MODES = {
   run: { label: '10-word game', words: 10, scored: true },
   endless: { label: 'Endless', words: Infinity, scored: true, maxLost: 3 },
@@ -36,7 +35,7 @@ const GALLOWS = [
 
 const DEFAULTS = {
   domains: DATA.domains.map(d => d.id), diff: 'any', timer: 'auto',
-  lives: 8, balanced: true, multi: true, maxLen: 44, name: '',
+  lives: 8, balanced: true, multi: true, maxLen: 44, name: '', keyboard: 'abc',
 };
 const settings = Object.assign({}, DEFAULTS, load('settings', {}));
 if (!Array.isArray(settings.domains)) settings.domains = DEFAULTS.domains.slice();
@@ -776,6 +775,7 @@ function renderSettings() {
   for (const r of document.querySelectorAll('input[name=diff]')) r.checked = r.value === String(settings.diff);
   for (const r of document.querySelectorAll('input[name=timer]')) r.checked = r.value === String(settings.timer);
   for (const r of document.querySelectorAll('input[name=lives]')) r.checked = r.value === String(settings.lives);
+  for (const r of document.querySelectorAll('input[name=keyboard]')) r.checked = r.value === keyLayout();
   $('o-balanced').checked = settings.balanced;
   $('o-multi').checked = settings.multi;
   $('o-maxlen').value = settings.maxLen;
@@ -797,6 +797,12 @@ function bindSettings() {
     for (const r of document.querySelectorAll('input[name=' + name + ']')) {
       r.addEventListener('change', () => { settings[name] = name === 'lives' ? +r.value : r.value; saveSettings(); });
     }
+  }
+  for (const r of document.querySelectorAll('input[name=keyboard]')) {
+    r.addEventListener('change', () => {
+      settings.keyboard = r.value; saveSettings();
+      buildKeys(); if (R) renderRound(R.over);   // a game in progress keeps its guessed letters
+    });
   }
   $('o-balanced').addEventListener('change', e => { settings.balanced = e.target.checked; saveSettings(); });
   $('o-multi').addEventListener('change', e => { settings.multi = e.target.checked; saveSettings(); });
@@ -875,12 +881,17 @@ function onKey(e) {
   }
 }
 
-// The on-screen keys, rebuilt when the window crosses the phone width;
-// renderRound() then puts the guessed letters back.
+// Any unknown value (old or imported settings) means the default A to Z.
+function keyLayout() { return settings.keyboard === 'qwerty' ? 'qwerty' : 'abc'; }
+
+// The on-screen keys, rebuilt when the layout setting changes; renderRound()
+// then puts the guessed letters back.
 function buildKeys() {
   const keys = $('keys');
+  const layout = keyLayout();
   keys.textContent = '';
-  for (const letters of KEY_ROWS[PHONE_KEYS.matches ? 'phone' : 'desktop']) {
+  keys.dataset.layout = layout;   // the stylesheet arranges the rows per layout
+  for (const letters of KEY_ROWS[layout]) {
     const krow = el('div', 'krow');
     for (const L of letters) {
       const b = el('button', 'key', L);
@@ -896,7 +907,6 @@ function buildKeys() {
 
 function init() {
   buildKeys();
-  PHONE_KEYS.addEventListener('change', () => { buildKeys(); if (R) renderRound(R.over); });
   $('home-start').addEventListener('click', () => go('play'));
   $('home-daily').addEventListener('click', () => startSession('daily'));
   $('home-return').addEventListener('click', () => go('play'));
