@@ -90,11 +90,14 @@ Run `npm test` and `npm run build` before every commit.
   word at 1,020 points.
 - **Daily challenge:** seeded by UTC date, five terms from five topics, one
   submission per browser per day.
-- **On-screen keyboard:** `buildKeys()` in `main.js` makes it from `KEY_ROWS`:
-  A to Z on desktop (one `.krow` with `display: contents`, so `#keys` stays a
-  13-column grid) and QWERTY rows on phones. It is rebuilt when the window
-  crosses 700px, then `renderRound()` restores the guessed letters. Find keys
-  with `$('keys').querySelectorAll('.key')`.
+- **On-screen keyboard:** `buildKeys()` in `main.js` makes it from `KEY_ROWS`
+  and the **Keyboard layout** setting (`settings.keyboard`, read through
+  `keyLayout()`: anything but `'qwerty'` means the default A to Z). A to Z is
+  one `.krow` with `display: contents`, so `#keys` stays a grid (13 per row on
+  desktop, 9 on phones); QWERTY is three rows, styled by
+  `#keys[data-layout=qwerty]`. Changing the setting rebuilds the keys and
+  `renderRound()` restores the guessed letters. Find keys with
+  `$('keys').querySelectorAll('.key')`.
 - **Keys after a word** (`onKey()`): Enter = next word, D = See definition,
   L = Learn more. During a word every letter guesses, so these only apply once
   the word is over. Desktop shows them in `#r-keys` under the buttons (hidden on

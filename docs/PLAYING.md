@@ -16,7 +16,7 @@ Everything about playing Qlossary. The short version is in the
 ## Guessing
 
 - A term is shown as blanks. Type a letter or click it on the on-screen keyboard
-  (A to Z on desktop, QWERTY on phones).
+  (A to Z, or QWERTY if you choose it in Settings).
 - A letter that is in the term appears everywhere it occurs, and its key turns
   green. A letter that is not in the term adds a line to the drawing, and its
   key turns light red and is struck through.
@@ -82,6 +82,8 @@ buttons reminds you.
 - **Difficulty:** any, easy, medium, hard or expert.
 - **Time for each word:** automatic, 30, 60 or 90 seconds, or none (practice only).
 - **Wrong guesses allowed:** 6, 8 (default) or 10.
+- **Keyboard layout:** A to Z (default) or QWERTY, for the on-screen keyboard.
+  It changes straight away, even in the middle of a word.
 - **Mix words across all topics** (recommended): picks a topic first, so big
   topics like Hardware come up more often than small ones, but do not take over.
 - **Include terms of more than one word** and **Longest term** narrow the pool.

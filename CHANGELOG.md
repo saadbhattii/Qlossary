@@ -38,8 +38,10 @@ Notable changes to Qlossary. The format follows
 
 ### Changed
 
-- On phones the on-screen keyboard uses QWERTY order (rows of 10, 9 and 7),
-  with the same key look. Desktop keeps the A to Z keyboard.
+- Settings has a **Keyboard layout** option: **A to Z** (the default, as
+  before) or **QWERTY** (rows of 10, 9 and 7), on desktop and phones. It applies
+  straight away, even in the middle of a word, and is saved with the other
+  settings.
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
 - Phones: the How to play card on Home has larger, easier-to-read text in a
