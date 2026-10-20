@@ -8,7 +8,8 @@ Notable changes to Qlossary. The format follows
 ### Added
 
 - Keyboard shortcuts after a word: **D** shows the definition and **L** opens
-  Learn more (Enter still goes to the next word). Listed on the Help screen.
+  Learn more (Enter still goes to the next word). Listed on the Help screen, and
+  on desktop in a small line under the See definition and Learn more buttons.
 - Social preview images for links (Open Graph and X cards): one per platform
   for X, Facebook, LinkedIn, Discord and Reddit in `static/og/`, with the logo,
   title and leaderboard inside each platform's safe zone, and `og:` and
@@ -37,9 +38,8 @@ Notable changes to Qlossary. The format follows
 
 ### Changed
 
-- The on-screen keyboard uses QWERTY order (rows of 10, 9 and 7) on desktop
-  and phones, with the same key look. On desktop it takes three rows instead
-  of two.
+- On phones the on-screen keyboard uses QWERTY order (rows of 10, 9 and 7),
+  with the same key look. Desktop keeps the A to Z keyboard.
 - Phones: the game status shows the game type and End game on one line and the
   numbers in two even columns below; less empty space above the header.
 - Phones: the How to play card on Home has larger, easier-to-read text in a

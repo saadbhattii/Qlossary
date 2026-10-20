@@ -15,8 +15,8 @@ Everything about playing Qlossary. The short version is in the
 
 ## Guessing
 
-- A term is shown as blanks. Type a letter or click it on the on-screen keyboard,
-  which is laid out like a QWERTY keyboard.
+- A term is shown as blanks. Type a letter or click it on the on-screen keyboard
+  (A to Z on desktop, QWERTY on phones).
 - A letter that is in the term appears everywhere it occurs, and its key turns
   green. A letter that is not in the term adds a line to the drawing, and its
   key turns light red and is struck through.
@@ -73,7 +73,8 @@ how the points were counted. **Learn more** opens a web search for the term
 with "in quantum computing" added. Press **Enter** or **Next word** to go on.
 
 On a keyboard: **D** opens the definition (same as **See definition**) and
-**L** opens **Learn more** in a new tab.
+**L** opens **Learn more** in a new tab. On desktop a small line under the
+buttons reminds you.
 
 ## Settings
 

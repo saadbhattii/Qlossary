@@ -245,9 +245,9 @@ fieldset label { display: inline-block; margin-right: 1rem; }
 .c.m { color: var(--end-text); text-decoration: underline; text-underline-offset: 0.18em; }
 .instr { margin: 0 0 0.84rem; font-size: 1.12rem; color: var(--soft); }
 
-/* QWERTY rows of 10, 9 and 7 keys, centred on each other like a keyboard. */
-#keys { display: flex; flex-direction: column; align-items: center; width: max-content; gap: 0.42rem; margin-bottom: 0.98rem; }
-.krow { display: flex; gap: 0.42rem; }
+/* Desktop: A to Z in rows of 13 (the one .krow just passes its keys through). */
+#keys { display: grid; grid-template-columns: repeat(13, 3.22rem); gap: 0.42rem; margin-bottom: 0.98rem; }
+.krow { display: contents; }
 .key {
   width: 3.22rem; height: 3.22rem; margin: 0; padding: 0;
   display: flex; align-items: center; justify-content: center;
@@ -281,6 +281,8 @@ fieldset label { display: inline-block; margin-right: 1rem; }
   background: var(--hint-bg); border: 1px solid var(--hint-line); border-radius: 0.84rem; padding: 0.42rem 0.84rem;
 }
 .other b { color: var(--hint-text); }
+/* Keyboard shortcuts under the buttons (desktop only; phones hide it). */
+#result #r-keys { font-family: var(--mono); font-size: 0.84rem; color: var(--muted); margin: -0.42rem 0 0.84rem; }
 #result #r-where, #result #r-points { font-family: var(--mono); font-size: 0.98rem; color: var(--muted); }
 #result #r-where { margin-bottom: 0.42rem; color: var(--text); }
 #result #r-points { margin-bottom: 0.98rem; }
@@ -466,8 +468,9 @@ table.ro td.empty { font-style: normal; color: var(--muted); }
   .w { margin-right: 1.24ch; }
   .c { width: 1.24ch; }
   .instr { font-size: 0.98rem; margin: 0 0.28rem 0.56rem; }
-  #keys { width: 100%; gap: 0.28rem; margin-bottom: 0; }
-  .krow { width: 100%; justify-content: center; gap: 0.28rem; }
+  /* Phones: QWERTY rows of 10, 9 and 7 keys, centred on each other like a keyboard. */
+  #keys { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 0.28rem; margin-bottom: 0; }
+  .krow { display: flex; width: 100%; justify-content: center; gap: 0.28rem; }
   /* Ten keys fill the top row; the shorter rows keep the same key width. */
   .key { flex: none; width: calc((100% - 9 * 0.28rem) / 10); height: 2.8rem; font-size: 1.19rem; border-radius: 0.7rem; }
   .info { font-size: 0.91rem; margin: 0.56rem 0.28rem 0.42rem; }
@@ -485,6 +488,7 @@ table.ro td.empty { font-style: normal; color: var(--muted); }
   #r-def { font-size: 0.98rem; line-height: 1.5; }
   .other { font-size: 0.9rem; padding: 0.3rem 0.6rem; }
   a.learn, #r-defbar button { font-size: 0.91rem; }
+  #result #r-keys { display: none; }   /* no keyboard on a phone */
   #result #r-where, #result #r-points { font-size: 0.84rem; }
   #result #r-where { margin-bottom: 0.28rem; }
   #result #r-points { margin-bottom: 0.7rem; }
